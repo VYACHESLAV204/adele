@@ -1,0 +1,180 @@
+.mainDiv {
+	width: 805px;
+	height: 885px;
+	display: flex;
+	margin-top: 50px;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.H2Settings {
+	color: #000;
+	margin-bottom: 50px;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.profileSettingsDiv {
+	display: flex;
+	flex-direction: column;
+}
+.profileSettingsDiv > div > label {
+	color: #000;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.inputDiv {
+	width: 802px;
+	height: 56px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 46px;
+}
+.profileSettingsDiv > div > input {
+	width: 495px;
+	height: 56px;
+	border-radius: 5px;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	color: rgba(167, 167, 167, 0.7);
+	text-align: left;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.profileSettingsButton {
+	width: 199px;
+	height: 51px;
+	border-radius: 8px;
+	background: #5250c5;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+	color: #fff;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	border: 0;
+}
+.contactInfo {
+	color: #000;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-top: 46px;
+	margin-bottom: 42px;
+}
+
+.changePhotoDiv {
+	display: flex;
+	width: 680px;
+	height: 252px;
+}
+.changePhotoDiv > div > p {
+	color: #000;
+	margin-right: 69px;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.ManPhotoImg {
+	width: 248px;
+	height: 248px;
+	border-radius: 248px;
+}
+.circleDiv {
+	width: 58px;
+	height: 58px;
+	border-radius: 50%;
+	margin-left: -2rem;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1rem;
+	background-color: #f2f2ff;
+	stroke-width: 2px;
+	display: flex;
+	border: 1.5px solid #9090d8;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+.editText {
+	color: #000;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 200;
+	line-height: normal;
+}
+.inputsDiv {
+	width: 599px;
+	margin-top: 70px;
+	height: 145px;
+}
+.inputDivNameNCity {
+	width: 598px;
+	height: 56px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 33px;
+	align-items: center;
+}
+.inputDivNameNCity > label {
+	color: #000;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.inputDivNameNCity > input {
+	width: 495px;
+	height: 56px;
+	border-radius: 5px;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	color: rgba(167, 167, 167, 0.7);
+	text-align: left;
+	font-family: Vela Sans;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.Button {
+	width: 199px;
+	height: 51px;
+	border-radius: 8px;
+	background: #5250c5;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	color: #fff;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	align-self: flex-start;
+	border: 0px;
+}

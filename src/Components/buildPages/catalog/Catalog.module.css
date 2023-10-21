@@ -1,0 +1,127 @@
+.H2NameOfCategory {
+	text-align: left;
+	color: var(--black, #212121);
+	font-family: Vela Sans;
+	font-size: 24px;
+	width: 862px;
+	height: 30px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-bottom: 40px;
+	margin-top: 40px;
+}
+.CatDiv {
+	display: flex;
+	flex-wrap: wrap;
+	width: 862px;
+	height: 132px;
+}
+.OneCat {
+	border-radius: 8px;
+	margin-bottom: 20px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+
+	width: 144px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.TwoCat {
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+
+	width: 187px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.ThreeCat {
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+
+	width: 191px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.FourCat {
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+
+	width: 196px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.FiveCat {
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+
+	width: 144px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.SixCat {
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+
+	width: 187px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.SevenCat {
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+
+	width: 187px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.CatText {
+	color: #000;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}

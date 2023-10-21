@@ -1,0 +1,94 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+.mainTitle{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 2rem;
+}
+.secondTitle{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.btn{
+	border: 0;
+	color: #fff;
+	width: 196px;
+	height: 45px;
+	border-radius: 7px;
+	background: #5250C5;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+.input{
+    width: 210px;
+	height: 39px;
+	border-radius: 5px;
+	border: 1px solid #9090D8;
+	background: #F2F2FF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	margin-top: 15px;
+	padding-left: 10px;
+}
+@font-face {
+	font-family: 'Vela Sans';
+	src: local('VelaSansExtraLight'),
+		url('./fonts/TTF/VelaSans-ExtraLight.ttf') format('truetype');
+	font-weight: 200;
+}
+@font-face {
+	font-family: 'Vela Sans';
+	src: local('VelaSansLight'),
+		url('./fonts/TTF/VelaSans-Light.ttf') format('truetype');
+	font-weight: 300;
+}
+@font-face {
+	font-family: 'Vela Sans';
+	src: local('VelaSansRegular'),
+		url('./fonts/TTF/VelaSans-Regular.ttf') format('truetype');
+	font-weight: 400;
+}
+@font-face {
+	font-family: 'Vela Sans';
+	src: local('VelaSansMedium'),
+		url('./fonts/TTF/VelaSans-Medium.ttf') format('truetype');
+	font-weight: 500;
+}
+@font-face {
+	font-family: 'Vela Sans';
+	src: local('VelaSansSemi-Bold'),
+		url('./fonts/TTF/VelaSans-SemiBold.ttf') format('truetype');
+	font-weight: 600;
+}
+@font-face {
+	font-family: 'Vela Sans';
+	src: local('VelaSansBold'),
+		url('./fonts/TTF/VelaSans-Bold.ttf') format('truetype');
+	font-weight: 700;
+}
+@font-face {
+	font-family: 'Vela Sans';
+	src: local('VelaSansExtraBold'),
+		url('./fonts/TTF/VelaSans-ExtraBold.ttf') format('truetype');
+	font-weight: 800;
+}

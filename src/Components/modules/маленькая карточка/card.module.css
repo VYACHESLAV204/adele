@@ -1,0 +1,53 @@
+.MainCardDiv {
+	width: 191px;
+	height: 299px;
+}
+.CardImgDiv {
+	width: 191px;
+	height: 177px;
+}
+.CardImgDiv > img {
+	border-radius: 5px;
+}
+.CardInfoDiv {
+	height: 122px;
+	width: 191px;
+	display: flex;
+	padding: 14px 0px;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.CardInfoDiv > h3 {
+	width: 156px;
+	text-align: left;
+	color: #1c1c85;
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin: 0px 0px 8px 0px;
+}
+.CardInfoDivPrice {
+	margin: 0px 0px 8px 0px;
+	color: #212121;
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.CardInfoDiv > p:last-child {
+	color: #727272;
+	font-family: Vela Sans;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin: 0;
+}
+.IMG {
+	object-fit: cover;
+	width: 191px;
+	height: 177px;
+}

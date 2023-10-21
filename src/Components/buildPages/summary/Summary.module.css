@@ -1,0 +1,298 @@
+.summaryContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 600vh;
+  justify-content: space-between;
+}
+.MainTitle{
+  color: #000;
+  font-family: Vela Sans;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 700;
+}
+.pageTitle{
+  font-family: Vela Sans;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.categoryContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.categoryTitle{
+  font-family: Vela Sans;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  margin-right: 15px;
+}
+.categoryText{
+  margin: 0;
+}
+.input{
+  width: 495px;
+  height: 56px;
+  border-radius: 5px;
+  border: 1px solid #9090D8;
+  background: #F2F2FF;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  padding-left: 15px;
+}
+.workCategory{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.marginRight{
+  margin-right: 15px;
+}
+.inputAbout{
+  color: #5F5F5F;
+  font-size: 17px;
+}
+.checkboxContainer{
+  display: flex;
+  flex-direction: row;
+}
+.checkboxItem{
+  width: 22px;
+  height: 22px;
+  margin-right: 15px;
+}
+.checkboxText{
+  margin: 0;
+}
+.genderContainer{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+.genderBtn{
+  width: 143px;
+  height: 51px;
+  border-radius: 8px;
+  background: #5250C5;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+  border: 0;
+  color:#F2F2FF;
+  margin-right: 15px;
+}
+.genderUnactive{
+  border: 1px solid #9090D8;
+  background: #F2F2FF;
+  color: #000;
+}
+.inputNewborn{
+  width: 143px;
+  height: 56px;
+  margin-right: 15px;
+}
+.inputNewborn2{
+  width: 170px;
+  height: 56px;
+  margin-right: 15px;
+}
+.dateNewborn{
+  display: flex;
+  flex-direction: row;
+  align-items:center
+}
+.workingType{
+  display: flex;
+  flex-direction: row;
+}
+.checkboxBox{
+  display: flex;
+  flex-direction: row;
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  width: 1224px;
+  height: 621px;
+  padding: 40px 40px 40px 40px;
+  border-radius: 5px;
+  border: 2px solid #5250C5;
+  box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+.aboutDesc{
+  display: flex;
+  flex-direction: row;
+}
+.inputDesc{
+  width: 495px;
+  height: 236px;
+}
+.addNew{
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+}
+.addBtn{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  align-items:center;
+}
+.addText{
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+.aboutStudy{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  width: 1224px;
+  height: 528px;
+  padding: 40px 40px 40px 40px;
+  border-radius: 5px;
+  border: 2px solid #5250C5;
+  box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+.marginTop{
+  margin-top: 25px;
+}
+.inputContainer{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+}
+.inputDate{
+  width: 143px;
+}
+
+.aboutLang{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  width: 1224px;
+  height: 223px;
+  padding: 40px 40px 40px 40px;
+  border-radius: 5px;
+  border: 2px solid #5250C5;
+  box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+.Ul{visibility: hidden;top: -1000px;
+  position: absolute;
+  left: 290px;
+}
+.inputDate:hover ~ .Ul{visibility: visible;top: 2534px;
+  position: absolute;
+  left: 290px;transition: 0.3s ease;}
+
+.calendarValue{
+  display: none;
+  position: absolute;
+  top: -100px;
+  left: 290px;
+}
+.calendarValueOn{
+  display: block;
+}
+.inputNewborn ~ .calendarValue{
+  visibility: visible;
+}
+.inputBox{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+.textAbout{
+  font-size: 20px;
+}
+.inputPrice{
+	width: 210px;
+	height: 39px;
+	border-radius: 5px;
+	border: 1px solid #9090D8;
+	background: #F2F2FF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	margin-top: 15px;
+	padding-left: 10px;
+}
+.photo{
+	color:#000;
+	width: 100px;
+	height: 100px;
+}
+.photoContainer{
+	width: 225px;
+	height: 165px;
+	background-color:#000;
+	display: flex;
+	justify-content: flex-end;
+	border-radius: 6px;
+}
+.photoClose{
+	width: 40px;
+	height: 37px;
+}
+.photoSectionContainer{
+	display: flex;
+}
+.addPhotoContainer{
+	width: 295px;
+	height: 150px;
+	border-radius: 6px;
+	border: 1px solid #9090D8;
+	background: #F2F2FF;
+	margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center
+}
+.photoInput{
+	pointer-events: none;
+}
+.plusPhoto{
+	width: 28px;
+	height: 28px;
+}
+.textLeft{
+	text-align: left;
+}
+.flexRow{
+	display: flex;
+	flex-direction: row;
+}
+.inputPrice{
+	width: 210px;
+	height: 39px;
+	border-radius: 5px;
+	border: 1px solid #9090D8;
+	background: #F2F2FF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	margin-top: 15px;
+	padding-left: 10px;
+}
+.marginLeft{
+	margin-left: 15px;
+}
+.titleTextStyle{
+  text-align: left;
+}
+.textMargin{
+	margin-top: 20px;
+}
+.btn{
+	border: 0;
+	color: #fff;
+	width: 196px;
+	height: 45px;
+	border-radius: 7px;
+	background: #5250C5;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}

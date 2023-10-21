@@ -1,0 +1,42 @@
+.FooterMainDiv {
+	display: flex;
+	margin-top: 80px;
+}
+.TexSupportDiv {
+    border-radius: 20px 20px 0px 0px;
+	width: 278px;
+	height: 45px;
+	display: flex;
+    color: #fff;
+	justify-content: center;
+	align-items: center;
+	background-color: #5250c5;
+	margin-right: 40px;
+}
+.FooterTexts {
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0em;
+	text-align: center;
+}
+.NumberDiv {
+	width: 174px;
+	height: 45px;
+	margin-right: 40px;
+	border: 1px solid #9090d8;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    border-radius: 20px 20px 0px 0px;
+}
+.EmailDiv {
+    border-radius: 20px 20px 0px 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 136px;
+	height: 45px;
+	border: 1px solid #9090d8;
+}

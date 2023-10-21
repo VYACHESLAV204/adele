@@ -1,0 +1,149 @@
+h2{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0;
+    padding: 0;  
+}
+
+.sectionContainer{
+    display: flex;
+    align-items: flex-start;
+}
+.mainTitle{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 6rem;
+}
+.secondTitle{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.btn{
+	border: 0;
+	color: #fff;
+	width: 196px;
+	height: 45px;
+	border-radius: 7px;
+	background: #5250C5;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+.input{
+    width: 210px;
+	height: 39px;
+	border-radius: 5px;
+	border: 1px solid #9090D8;
+	background: #F2F2FF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	margin-top: 15px;
+	padding-left: 10px;
+}
+.leftWrapper{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5rem;
+    margin-right: 3rem;
+}
+.rightWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.btnBox{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+.textContainer{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.textContent{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.imageBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.imageItem{
+    width: 220px;
+    height: 220px;
+    border-radius: 100%;
+}
+.iconItem{
+    width: 26px;
+    height: 26px;
+}
+.imageIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    background-color: #F2F2FF;
+    border: 2px solid #9090D8;
+    border-radius: 100%;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+    margin-left: -2rem;
+}
+.userName{
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.line{
+    width: 270px;
+    height: 2px;
+    background-color:#9090D8
+}
+.secondBtn{
+    border: 1px solid #9090D8;
+    background-color: #F2F2FF;
+    color: #000;
+    margin-left: 2rem;
+}
+.cardItem{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    margin-bottom: 2rem;
+}
+.cardImg{
+    width: 280px;
+    height: 255px;
+    margin-right: 6rem;
+}
+.cardText{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    margin-right: 6rem;
+}
+.textInCard{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.colorPurple{
+   color:#5250C5;
+}

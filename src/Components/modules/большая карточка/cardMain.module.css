@@ -1,0 +1,120 @@
+.mainDiv {
+	width: 881px;
+	height: 323px;
+	display: flex;
+	margin-bottom: 20px;
+}
+.leftDiv {
+	width: 316px;
+	height: 323px;
+}
+.leftDiv > img {
+	border-radius: 15px;
+}
+
+.rightDiv {
+	width: 529px;
+	height: 323px;
+	margin-left: 36px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.H2Name {
+	color: var(--, #1c1c85);
+	text-align: center;
+	margin-top: 22px;
+	margin-bottom: 9px;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.Price {
+	color: #000;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	margin-top: 0;
+	margin-bottom: 9px;
+}
+.Price > span {
+	color: #78b453;
+}
+.AboutHeader {
+	color: #000;
+	font-family: Vela Sans;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-top: 0;
+	margin-bottom: 3px;
+}
+.AboutText {
+	color: #000;
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin-top: 0;
+	text-align: left;
+	margin-bottom: 5px;
+}
+.Organization {
+	color: #000;
+	font-family: Vela Sans;
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 10px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+}
+.PhoneNumberDiv {
+	width: 171px;
+	height: 29px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 0;
+	margin-bottom: 13px;
+	border-radius: 5px;
+	background-color: #5250c5;
+}
+.PhoneNumberDiv > p {
+	color: #fff;
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.City {
+	color: #000;
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	margin-top: 0;
+	line-height: normal;
+}
+.CitySpan {
+	color: #000;
+	font-family: Vela Sans;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.IMG {
+	width: 316px;
+	height: 323px;
+	object-fit: cover;
+}

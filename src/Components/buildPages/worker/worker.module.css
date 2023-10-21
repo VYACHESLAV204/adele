@@ -1,0 +1,166 @@
+h1{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+h2{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+h3{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+p{
+    margin: 0;
+    padding: 0;  
+    text-align: left;
+}
+
+.sectionContainer{
+    height: 200vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.firstSection{
+    display: inline-flex;
+    
+}
+.mainTitle{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 1rem;
+}
+.secondTitle{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 1rem;
+}
+.grayText{
+    color: #434343;
+    font-weight: 400;
+}
+.inlineFlexBox{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.btn{
+	border: 0;
+	color: #fff;
+	width: 196px;
+	height: 45px;
+	border-radius: 7px;
+	background: #5250C5;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+.input{
+    width: 210px;
+	height: 39px;
+	border-radius: 5px;
+	border: 1px solid #9090D8;
+	background: #F2F2FF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	margin-top: 15px;
+	padding-left: 10px;
+}
+.firstSection{
+    margin-top: 4rem;   
+}
+.secondSection{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.userPhoto{
+    width: 526px;
+    height: 469px;
+    margin-right: 1rem;
+}
+.textContentBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35rem;
+}
+.greenBox{
+    padding: 2px 2px 2px 2px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: #78B453;
+    border-radius: 2px;
+}
+.greenBox2{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 143px;
+    height: 51px;
+    background-color: #78B453;
+    border-radius: 8px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.greenText{
+    color:#fff;
+}
+.greenText2{
+    color:#fff;
+    font-size: 20px;
+}
+.colorPurple{
+    border: 2px solid #9090D8;
+    background-color: #F2F2FF
+}
+.thirdSection{
+    width: 1224px;
+    height: 471px;
+    border-radius: 5px;
+    padding: 2rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.workTime{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+}
+.firstLine{
+    display: flex;
+    justify-content: space-between;
+}
+.secondLine{
+    display: flex;
+    justify-content: flex-start;
+}
+.fourSection{
+    width: 1224px;
+    height: 171px;
+    border-radius: 5px;
+    padding: 2rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.fiveSection{
+    margin-top: 2rem;
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cashBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}

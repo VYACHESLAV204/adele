@@ -1,0 +1,26 @@
+.MainSearchDiv {
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	width: 240px;
+	height: 40px;
+    border-radius: 5px 20px 20px 5px;
+}
+.Input {
+	border: none;
+	margin-right: 5px;
+
+	width: 180px;
+	height: 32px;
+}
+.Button {
+	width: 60px;
+	border: 0px;
+	background: none;
+	height: 40px;
+}
+.Img {
+	width: 58px;
+	height: 46px;
+}

@@ -1,0 +1,181 @@
+.MenuDiv {
+	display: flex;
+	flex-wrap: wrap;
+	width: 910px;
+	margin-top: 30px;
+	height: 136px;
+	align-items: flex-start;
+	gap: 17px;
+	margin-bottom: 50px;
+}
+.MenuDiv > p {
+	color: #000;
+	text-align: center;
+	font-family: Inter;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+.container {
+	display: flex;
+}
+.MenuCarier {
+	width: 159px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuBlocks {
+	width: 194px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuBuildingMaterials {
+	width: 209px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuRitualItems {
+	width: 209px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuMachines {
+	width: 147px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuTools {
+	width: 189px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuSpecialEquipment {
+	width: 151px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuWork {
+	width: 169px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuServices {
+	width: 172px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 56px;
+	flex-shrink: 0;
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+}
+.MenuImg {
+	width: 82px;
+	height: 56px;
+}
+.MenuTexts {
+	color: #212121;
+	font-family: Vela Sans;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.H2SpecialText {
+	display: flex;
+	margin-bottom: 40px;
+	color: #000;
+	font-family: Inter;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.RowCardDiv {
+	display: flex;
+	flex-wrap: wrap;
+}
+.ColumnCardDiv {
+	display: flex;
+	flex-direction: column;
+}
+.MainMenuDiv {
+	display: flex;
+	flex-wrap: wrap;
+	width: 1225px;
+	margin-top: 30px;
+	height: 136px;
+	align-items: flex-start;
+	gap: 30px;
+	margin-bottom: 50px;
+}
+.H2BestPractique {
+	width: 202px;
+	color: #212121;
+	font-family: Vela Sans;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.AdCardsDiv {
+	width: 271px;
+	height: 180vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 15px;
+	border: 2px solid #9090d8;
+	background-color: #f2f2ff;
+}

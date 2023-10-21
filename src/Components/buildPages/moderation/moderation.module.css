@@ -1,0 +1,126 @@
+h2{
+    margin: 0;
+    padding: 0;
+}
+h3{
+    margin: 0;
+    padding: 0;
+}
+p{
+    margin: 0;
+    padding: 0;  
+}
+
+.sectionContainer{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.mainTitle{
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.secondTitle{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.btn{
+	border: 0;
+	color: #fff;
+	width: 196px;
+	height: 45px;
+	border-radius: 7px;
+	background: #5250C5;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+.secondBtn{
+    border: 1px solid #9090D8;
+    background-color: #F2F2FF;
+    color: #000;
+    margin-left: 2rem;
+}
+.input{
+    width: 210px;
+	height: 39px;
+	border-radius: 5px;
+	border: 1px solid #9090D8;
+	background: #F2F2FF;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
+	margin-top: 15px;
+	padding-left: 10px;
+}
+.btnBox{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.colorPurple{
+    color:#5250C5;
+ }
+
+.cardItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.cardPhoto{
+    width: 316px;
+    height: 323px;
+}
+
+.priceBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center
+}
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    margin-left: 2.5rem;
+}
+.priceTitle{
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.priceIco{
+    width: 16px;
+    height: 17px;
+    margin-left: 1rem;
+}
+.titleText{
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-right: 1rem;
+}
+.cityBox{
+    display: inline-flex;
+}
+.btnActions{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.secondBtn2{
+    border: 1px solid #9090D8;
+    background-color: #F2F2FF;
+    color: #000;
+    margin-top: 1.5rem;
+}
+.marginTop{
+    margin-top: 3rem;
+}
