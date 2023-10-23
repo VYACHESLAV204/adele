@@ -105,9 +105,19 @@ const Menu: React.FC<MenuProps> = ({
 								}
 							>
 								<div className={s.MenuOnceDiv}>
-									<li onClick={() => setCategory('Карьер')}>
+								<NavLink
+										className={s.Link}
+										to={'/catalog/'}
+									>
+										<li
+											onClick={() => {
+												setUnderCategory('нет'),
+													setCategory('Карьер')
+											}}
+										>
 										Карьер
-									</li>
+										</li>
+									</NavLink>
 									<img src={MenuArrow} alt='' />
 								</div>
 							</ul>
@@ -573,76 +583,139 @@ const Menu: React.FC<MenuProps> = ({
 												: s.InnerLiHidden
 										}
 									>
-										<li
-											onClick={() => {
-												setUnderCategory('Диски'),
-													setCategory('Инструменты')
-											}}
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Диски
-										</li>
-										<li
-											onClick={() => {
-												setUnderCategory('Сегменты'),
-													setCategory('Инструменты')
-											}}
+											<li
+												onClick={() => {
+													setUnderCategory('Диски'),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Диски
+											</li>
+										</NavLink>
+
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Сегменты
-										</li>
-										<li
-											onClick={() => {
-												setUnderCategory('Канат'),
-													setCategory('Инструменты')
-											}}
+											<li
+												onClick={() => {
+													setUnderCategory(
+														'Сегменты'
+													),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Сегменты
+											</li>
+										</NavLink>
+
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Канат
-										</li>
-										<li
-											onClick={() => {
-												setUnderCategory(
-													'Шлифовальный инструмент'
-												),
-													setCategory('Инструменты')
-											}}
+											<li
+												onClick={() => {
+													setUnderCategory('Канат'),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Канат
+											</li>
+										</NavLink>
+
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Шлифовальный инструмент
-										</li>
-										<li
-											onClick={() => {
-												setUnderCategory('Фрезы'),
-													setCategory('Инструменты')
-											}}
+											<li
+												onClick={() => {
+													setUnderCategory(
+														'Шлифовальный инструмент'
+													),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Шлифовальный инструмент
+											</li>
+										</NavLink>
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Фрезы
-										</li>
-										<li
-											onClick={() => {
-												setUnderCategory('Химия'),
-													setCategory('Инструменты')
-											}}
+											<li
+												onClick={() => {
+													setUnderCategory('Фрезы'),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Фрезы
+											</li>
+										</NavLink>
+
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Химия
-										</li>
-										<li
-											onClick={() => {
-												setUnderCategory(
-													'Электро, Пневмоинструмент'
-												),
-													setCategory('Инструменты')
-											}}
+											<li
+												onClick={() => {
+													setUnderCategory('Химия'),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Химия
+											</li>
+										</NavLink>
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Электро, Пневмоинструмент
-										</li>
-										<li
-											onClick={() => {
-												setUnderCategory(
-													'Твердосплавный инструмент'
-												),
-													setCategory('Инструменты')
-											}}
+											<li
+												onClick={() => {
+													setUnderCategory(
+														'Электро, Пневмоинструмент'
+													),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Электро, Пневмоинструмент
+											</li>
+										</NavLink>
+
+										<NavLink
+											className={s.Link}
+											to={'/catalog/'}
 										>
-											Твердосплавный инструмент
-										</li>
+											<li
+												onClick={() => {
+													setUnderCategory(
+														'Твердосплавный инструмент'
+													),
+														setCategory(
+															'Инструменты'
+														)
+												}}
+											>
+												Твердосплавный инструмент
+											</li>
+										</NavLink>
 									</ul>
 								</div>
 							</ul>
@@ -690,22 +763,35 @@ const Menu: React.FC<MenuProps> = ({
 											: s.InnerLiHidden
 									}
 								>
-									<li
-										onClick={() => {
-											setUnderCategory('Новая техника'),
-												setCategory('Спец техника')
-										}}
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Новая техника
-									</li>
-									<li
-										onClick={() => {
-											setUnderCategory('Б/У техника'),
-												setCategory('Спец техника')
-										}}
+										<li
+											onClick={() => {
+												setUnderCategory(
+													'Новая техника'
+												),
+													setCategory('Спец техника')
+											}}
+										>
+											Новая техника
+										</li>
+									</NavLink>
+
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Б/У техника
-									</li>
+										<li
+											onClick={() => {
+												setUnderCategory('Б/У техника'),
+													setCategory('Спец техника')
+											}}
+										>
+											Б/У техника
+										</li>{' '}
+									</NavLink>
 								</ul>
 							</ul>
 						</li>
@@ -742,30 +828,49 @@ const Menu: React.FC<MenuProps> = ({
 											: s.InnerLiHidden
 									}
 								>
-									<li
-										onClick={() => {
-											setUnderCategory('Ищу работу'),
-												setCategory('Работа')
-										}}
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Ищу работу
-									</li>
-									<li
-										onClick={() => {
-											setUnderCategory('Ищу сотрудника'),
-												setCategory('Работа')
-										}}
+										<li
+											onClick={() => {
+												setUnderCategory('Ищу работу'),
+													setCategory('Работа')
+											}}
+										>
+											Ищу работу
+										</li>
+									</NavLink>
+
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Ищу сотрудника
-									</li>
-									<li
-										onClick={() => {
-											setUnderCategory('Резюме'),
-												setCategory('Работа')
-										}}
+										<li
+											onClick={() => {
+												setUnderCategory(
+													'Ищу сотрудника'
+												),
+													setCategory('Работа')
+											}}
+										>
+											Ищу сотрудника
+										</li>
+									</NavLink>
+
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Резюме
-									</li>
+										<li
+											onClick={() => {
+												setUnderCategory('Резюме'),
+													setCategory('Работа')
+											}}
+										>
+											Резюме
+										</li>
+									</NavLink>
 								</ul>
 							</ul>
 						</li>
@@ -807,48 +912,77 @@ const Menu: React.FC<MenuProps> = ({
 											: s.InnerLiHidden
 									}
 								>
-									<li
-										onClick={() => {
-											setUnderCategory('Ремонт'),
-												setCategory('Услуги')
-										}}
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Ремонт
-									</li>
-									<li
-										onClick={() => {
-											setUnderCategory('Резка камня'),
-												setCategory('Услуги')
-										}}
+										<li
+											onClick={() => {
+												setUnderCategory('Ремонт'),
+													setCategory('Услуги')
+											}}
+										>
+											Ремонт
+										</li>
+									</NavLink>
+
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Резка камня
-									</li>
-									<li
-										onClick={() => {
-											setUnderCategory('Полировка'),
-												setCategory('Услуги')
-										}}
+										<li
+											onClick={() => {
+												setUnderCategory('Резка камня'),
+													setCategory('Услуги')
+											}}
+										>
+											Резка камня
+										</li>
+									</NavLink>
+
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Полировка
-									</li>
-									<li
-										onClick={() => {
-											setUnderCategory(
-												'Напайка сегментов'
-											),
-												setCategory('Услуги')
-										}}
+										<li
+											onClick={() => {
+												setUnderCategory('Полировка'),
+													setCategory('Услуги')
+											}}
+										>
+											Полировка
+										</li>
+									</NavLink>
+
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Напайка сегментов
-									</li>
-									<li
-										onClick={() => {
-											setUnderCategory('Перевозка'),
-												setCategory('Услуги')
-										}}
+										<li
+											onClick={() => {
+												setUnderCategory(
+													'Напайка сегментов'
+												),
+													setCategory('Услуги')
+											}}
+										>
+											Напайка сегментов
+										</li>
+									</NavLink>
+
+									<NavLink
+										className={s.Link}
+										to={'/catalog/'}
 									>
-										Перевозка
-									</li>
+										<li
+											onClick={() => {
+												setUnderCategory('Перевозка'),
+													setCategory('Услуги')
+											}}
+										>
+											Перевозка
+										</li>
+									</NavLink>
 								</ul>
 							</ul>
 						</li>

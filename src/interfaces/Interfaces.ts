@@ -38,3 +38,4 @@ export interface ICatalogProps {
 	total_pages_ads: number
 	total_pages_noads: number
 }
+

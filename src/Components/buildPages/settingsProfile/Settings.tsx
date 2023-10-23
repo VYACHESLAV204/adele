@@ -1,19 +1,26 @@
+import { NavLink } from 'react-router-dom'
 import s from './Settings.module.css'
 import { useState, useEffect } from 'react'
+interface settingsFetch {
+	username: string
+	phone: string
+	status: boolean
+}
 function Settings() {
 	const [line, setLine] = useState(false)
-	const [settingsData, setSettingsData] = useState()
-	const token = localStorage.getItem('token')
+	const [settingsData, setSettingsData] = useState<settingsFetch>()
+	
 
 	useEffect(() => {
-		fetch('http://31.129.105.19/api/v1/profile-settings', {
-			headers: {
-				Authorization: `Bearer ${token}`,
-			},
-		})
+		fetch(
+			`http://31.129.105.19/api/v1/profile-management?jwt=${localStorage.getItem(
+				'token'
+			)}`
+		)
 			.then((response) => response.json())
-			.then((data) => setSettingsData(data))
+			.then((data:settingsFetch) => setSettingsData(data))
 	}, [])
+
 	return (
 		<div className={s.settingsSection}>
 			<h1 className={s.mainTitle}>Управление профилем</h1>
@@ -49,18 +56,20 @@ function Settings() {
 			</div>
 			<div className={s.sectionBox}>
 				<div className={`${s.firstLineContainer} ${s.lineContainer}`}>
-					<p className={s.lineInfo}>Номер профиля</p>
-					<p className={s.lineInfo}>Имя в профиле</p>
+					<p className={s.lineInfo}>Номер в профиле:</p>
+					<p className={s.lineInfo}>Имя в профиле:</p>
 				</div>
 				<div className={`${s.firstLineContainer} ${s.lineContainer}`}>
-					<p className={s.lineInfo}>33 123 123 123</p>
-					<p className={s.lineInfo}>EDGAR</p>
+					<p className={s.lineInfo}>{settingsData?.phone}</p>
+					<p className={s.lineInfo}>{settingsData?.username}</p>
 				</div>
 				<div className={`${s.firstLineContainer} ${s.lineContainer}`}>
-					<link rel='stylesheet' href='' />
-					<p className={s.lineLink}>Посмотреть</p>
-					<link rel='stylesheet' href='' />
-					<p className={s.lineLink}>Изменить профиль</p>
+					<NavLink to={'/profile/'}>
+						<p className={s.lineLink}>Посмотреть</p>
+					</NavLink>
+					<NavLink to={'/profile/'}>
+						<p className={s.lineLink}>Изменить профиль</p>
+					</NavLink>
 				</div>
 			</div>
 		</div>

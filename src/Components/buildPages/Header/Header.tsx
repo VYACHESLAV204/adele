@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-import { useEffect, useState } from 'react'
+import {  useState } from 'react'
 
 import Menu from '../../modules/Меню/Menu'
 import logo from '../../../assets/logo.svg'
@@ -7,12 +7,12 @@ import geoForHeader from '../../../assets/geoForHeader.svg'
 import HeaderMenu3Line from '../../../assets/HeaderMenu3Line.svg'
 import InputButton from '../../modules/Поиск в шапке/Search'
 import RegionSelectTemplate from '../../modules/select/SelectTemplate'
+
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void
 	setModalType: React.Dispatch<React.SetStateAction<'auth' | 'reg' | ''>>
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-	isLoggin: boolean
 	citys: { label: string; value: string }[]
 }
 
@@ -20,14 +20,13 @@ const Header: React.FC<HeaderProps> = ({
 	setModalType,
 	setIsOpen,
 	citys,
-	isLoggin,
 	setCategory,
 	setUnderCategory,
 }) => {
 	const [BurgerisOpen, setBurgerisOpen] = useState(false)
-	useEffect(() => {
-		console.log(isLoggin)
-	}, [isLoggin])
+	const headerUsername = localStorage.getItem('username')
+	const isLoggin = localStorage.getItem('status')
+		
 
 	function RegionSelect() {
 		// Состояние для выбранного региона
@@ -71,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({
 			</div>
 			{isLoggin ? (
 				<div>
-					<h1>sa</h1>
+					<h1>{headerUsername}</h1>
 				</div>
 			) : (
 				<div className={styles.signInIpDiv}>

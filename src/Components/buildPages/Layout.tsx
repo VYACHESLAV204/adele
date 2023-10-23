@@ -1,4 +1,3 @@
-import {useState} from 'react'
 import Footer from './footer/Footer'
 import Header from './Header/Header'
 import Reg from '../modules/авторизация и регистрация/Reg'
@@ -22,19 +21,22 @@ const Layout: React.FC<HeaderProps> = ({
 	setCategory,
 	setUnderCategory,
 }) => {
-	const [isLoggin, setIsLoggin] = useState(false)
 	return (
 		<>
 			<Header
 				setIsOpen={setIsOpen}
 				setModalType={setModalType}
 				citys={citys}
-				isLoggin={isLoggin}
+
 				setCategory={setCategory}
 				setUnderCategory={setUnderCategory}
 			/>
 
-			<Reg setIsOpen={setIsOpen} setIsLoggin={setIsLoggin} modalType={modalType} isOpen={isOpen} />
+			<Reg
+				setIsOpen={setIsOpen}
+				modalType={modalType}
+				isOpen={isOpen}
+			/>
 			<Footer children={children} />
 		</>
 	)
