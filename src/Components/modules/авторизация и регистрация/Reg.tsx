@@ -4,11 +4,12 @@ import RegThird from './RegThird'
 import { useState } from 'react'
 import Modal from './Modal'
 import Auth from './Auth'
+
 type RegProps = {
 	modalType: 'auth' | 'reg' | ''
 	isOpen: boolean
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-	setIsLoggin: React.Dispatch<React.SetStateAction<boolean>>
+	
 }
 const Reg: React.FC<RegProps> = (props: RegProps) => {
 	const [stage, setStage] = useState(1)
@@ -20,15 +21,14 @@ const Reg: React.FC<RegProps> = (props: RegProps) => {
 
 	return (
 		<>
-			{/* <button onClick={() => { setModalType('auth'); setIsOpen(true); }}>Авторизация</button>
-			<button onClick={() => { setModalType('reg'); setIsOpen(true); }}>Регистрация</button> */}
 			<Modal
 				isOpen={props.isOpen}
 				closeModal={() => props.setIsOpen(false)}
 			>
 				{props.modalType === 'auth' && (
-					<Auth setIsLoggin ={props.setIsLoggin} 
-					closeModal={() => props.setIsOpen(false)} />
+					<Auth
+						closeModal={() => props.setIsOpen(false)}
+					/>
 				)}
 				{props.modalType === 'reg' && (
 					<>

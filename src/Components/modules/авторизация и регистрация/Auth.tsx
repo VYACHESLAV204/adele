@@ -1,9 +1,9 @@
 import styles from './Reg.module.css'
 import React, { useState, FormEvent } from 'react'
 import hidePassword from '../../../assets/mdi_hide-outline.svg'
+
 interface ModalProps {
 	closeModal: () => void
-	setIsLoggin: React.Dispatch<React.SetStateAction<boolean>>
 }
 const Auth: React.FC<ModalProps> = (props) => {
 	const [email, setEmail] = useState('')
@@ -19,9 +19,10 @@ const Auth: React.FC<ModalProps> = (props) => {
 				body: JSON.stringify({ email, password }),
 			})
 			const data = await response.json()
-			localStorage.setItem('token', data.token)
-			if (data.token) {
-				props.setIsLoggin(true)
+			if (data.status) {
+				localStorage.setItem('token', data.token)
+				localStorage.setItem('status', data.status)
+				localStorage.setItem('username', data.username)
 				props.closeModal()
 			}
 		} catch (error) {
@@ -38,6 +39,7 @@ const Auth: React.FC<ModalProps> = (props) => {
 						onChange={(e) => setEmail(e.target.value)}
 						className={styles.InputEmail}
 						type='email'
+						name='email'
 						placeholder='Электронная почта'
 						required
 					/>
@@ -50,6 +52,8 @@ const Auth: React.FC<ModalProps> = (props) => {
 						onChange={(e) => setPassword(e.target.value)}
 						className={styles.InputEmail}
 						type='password'
+						name='password'
+
 						placeholder='Пароль'
 						required
 					/>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { ICatalogProps } from './interfaces/Interfaces.js'
-import { CardAdResponse } from './interfaces/Interfaces.js'
+
+import { ICatalogProps, CardAdResponse } from './interfaces/Interfaces.js'
 import './App.css'
 import MainPage from './Components/buildPages/mainPage/MainPage.js'
 import CardDetails from './Components/buildPages/cardinner/cardDetails.js'
@@ -16,6 +16,7 @@ import InfoProfile from './Components/buildPages/infoProfile/infoProfile.js'
 import MyAds from './Components/buildPages/myAds/myAds.js'
 import Worker from './Components/buildPages/worker/worker.js'
 import Moderation from './Components/buildPages/moderation/moderation.js'
+import Error401 from './Components/buildPages/401Error/401.js'
 
 function App() {
 	const [modalType, setModalType] = useState<'auth' | 'reg' | ''>('')
@@ -25,6 +26,11 @@ function App() {
 	const [cards, setCards] = useState<CardAdResponse>()
 	const [categoryForNewCard, setCategoryForNewCard] = useState('')
 	const [underCategoryForNewCard, setUnderCategoryForNewCard] = useState('')
+	const [page, setPage] = useState(1)
+	const isLoggin = localStorage.getItem('status')
+	useEffect(() => {
+		console.log(isLoggin)
+	}, [])
 
 	useEffect(() => {
 		fetch('http://31.129.105.19/api/v1/citys')
@@ -46,7 +52,7 @@ function App() {
 			body: JSON.stringify({
 				category: categoryForNewCard,
 				sub_category: underCategoryForNewCard,
-				page: 1,
+				page: page,
 			}),
 		})
 			.then((response) => response.json())
@@ -121,6 +127,7 @@ function App() {
 										has_next_noads={
 											cardsArray.has_next_noads
 										}
+										setPage={setPage}
 										page_ads={cardsArray.page_ads}
 										page_noads={cardsArray.page_noads}
 										stasus={cardsArray.stasus}
@@ -137,27 +144,62 @@ function App() {
 								)
 							}
 						/>
+
 						<Route
 							path='/new-card/'
 							element={
-								<NewCard
-									category={categoryForNewCard}
-									underCategory={underCategoryForNewCard}
-								/>
+								isLoggin ? (
+									<NewCard
+										category={categoryForNewCard}
+										underCategory={underCategoryForNewCard}
+									/>
+								) : (
+									<Error401 />
+								)
 							}
 						/>
+
 						<Route
 							path='/profile/'
-							element={<Profile citys={citys} />}
+							element={
+								isLoggin ? (
+									<Profile citys={citys} />
+								) : (
+									<Error401 />
+								)
+							}
 						/>
 
-						<Route path='/summary/' element={<Summary />} />
-						<Route path='/settings/' element={<Settings />} />
-						<Route path='/defence/' element={<Defence />} />
-						<Route path='/info-profile' element={<InfoProfile />} />
-						<Route path='/my-ads/' element={<MyAds />} />
-						<Route path='/worker/' element={<Worker />} />
-						<Route path='/moderation/' element={<Moderation />} />
+						<Route
+							path='/summary/'
+							element={isLoggin ? <Summary /> : <Error401 />}
+						/>
+						<Route
+							path='/settings/'
+							element={isLoggin ? <Settings /> : <Error401 />}
+						/>
+						{/* Дима */}
+						<Route
+							path='/defence/'
+							element={isLoggin ? <Defence /> : <Error401 />}
+						/>
+						{/* Стили и город */}
+						<Route
+							path='/info-profile'
+							element={isLoggin ? <InfoProfile /> : <Error401 />}
+						/>
+						<Route
+							path='/my-ads/'
+							element={isLoggin ? <MyAds /> : <Error401 />}
+						/>
+						<Route
+							path='/worker/'
+							element={isLoggin ? <Worker /> : <Error401 />}
+						/>
+						<Route
+							path='/moderation/'
+							element={isLoggin ? <Moderation /> : <Error401 />}
+						/>
 					</Routes>
 				</Layout>
 			</div>
@@ -165,4 +207,3 @@ function App() {
 	)
 }
 export default App
-//Это основной компонент,если хочешь посмотреть какой-то блок,то замени им элемент MainPage Удалив cardData

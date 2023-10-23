@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import Menu from '../../modules/Меню/Menu'
 import logo from '../../../assets/logo.svg'
@@ -9,12 +9,12 @@ import InputButton from '../../modules/Поиск в шапке/Search'
 import RegionSelectTemplate from '../../modules/select/SelectTemplate'
 import User from '../../../assets/solar_user-outline.svg'
 import Interface from '../../../assets/interface.svg'
+
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void
 	setModalType: React.Dispatch<React.SetStateAction<'auth' | 'reg' | ''>>
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-	isLoggin: boolean
 	citys: { label: string; value: string }[]
 }
 
@@ -22,14 +22,13 @@ const Header: React.FC<HeaderProps> = ({
 	setModalType,
 	setIsOpen,
 	citys,
-	isLoggin,
 	setCategory,
 	setUnderCategory,
 }) => {
 	const [BurgerisOpen, setBurgerisOpen] = useState(false)
-	useEffect(() => {
-		console.log(isLoggin)
-	}, [isLoggin])
+	const [NavOrNew, setNavOrNew] = useState(false)
+	const headerUsername = localStorage.getItem('username')
+	const isLoggin = localStorage.getItem('status')
 
 	function RegionSelect() {
 		// Состояние для выбранного региона
@@ -50,6 +49,7 @@ const Header: React.FC<HeaderProps> = ({
 				onClick={(e) => {
 					e.preventDefault()
 					e.stopPropagation()
+					setNavOrNew(false)
 					setBurgerisOpen(!BurgerisOpen)
 				}}
 				className={styles.BurgerMenu}
@@ -59,6 +59,7 @@ const Header: React.FC<HeaderProps> = ({
 				</button>
 				<h2>Все категории</h2>
 				<Menu
+					NavOrNew={NavOrNew}
 					setCategory={setCategory}
 					setUnderCategory={setUnderCategory}
 					BurgerisOpen={BurgerisOpen}
@@ -69,11 +70,28 @@ const Header: React.FC<HeaderProps> = ({
 				<InputButton />
 			</div>
 			<div>
-				<button className={styles.NewAdd}>Разместить обьявление</button>
+				<button
+					onClick={(e) => {
+						e.preventDefault()
+						e.stopPropagation()
+						setNavOrNew(true)
+						setBurgerisOpen(!BurgerisOpen)
+					}}
+					className={styles.NewAdd}
+				>
+					Разместить обьявление
+				</button>
+				<Menu
+					NavOrNew={NavOrNew}
+					setCategory={setCategory}
+					setUnderCategory={setUnderCategory}
+					BurgerisOpen={BurgerisOpen}
+					setBurgerIsOpen={setBurgerisOpen}
+				></Menu>
 			</div>
 			{isLoggin ? (
 				<div>
-					<h1>sa</h1>
+					<h1>{headerUsername}</h1>
 				</div>
 			) : (
 				<div className={styles.signInIpDiv}>

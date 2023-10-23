@@ -34,7 +34,9 @@ export interface ICatalogProps {
 	categorys_index: number
 	page_noads: number
 	stasus: boolean
+	setPage: React.Dispatch<React.SetStateAction<number>>
 	sub_category_all: { category: string; id: number }[]
 	total_pages_ads: number
 	total_pages_noads: number
 }
+

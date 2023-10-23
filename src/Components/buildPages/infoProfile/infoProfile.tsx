@@ -10,11 +10,10 @@ const InfoProfile = () => {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch('http://31.129.105.19/api/v1/profile-settings', {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      }
-    })
+
+    const url = `http://31.129.105.19/api/v1/profile-settings?jwt=${localStorage.getItem("token")}`;
+    
+    fetch(url)
       .then(response => response.json())
       .then(data => setProfileData(data));
   }, []);

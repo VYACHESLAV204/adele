@@ -13,6 +13,8 @@ const CardDetails: FC<CardAdResponse> = ({
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
 	useEffect(() => {
+		console.log(numberId);
+		
 		const foundCard =
 			card_ads_1.find((card) => card.id_card === numberId) ||
 			card_ads_2.find((card) => card.id_card === numberId) ||
