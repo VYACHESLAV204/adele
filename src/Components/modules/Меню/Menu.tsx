@@ -4,6 +4,7 @@ import MenuArrow from '../../../assets/Menu arrow.svg'
 import { NavLink } from 'react-router-dom'
 
 interface MenuProps {
+	NavOrNew: boolean
 	BurgerisOpen: boolean
 	setBurgerIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	setCategory: React.Dispatch<React.SetStateAction<string>>
@@ -14,6 +15,7 @@ const Menu: React.FC<MenuProps> = ({
 	BurgerisOpen,
 	setBurgerIsOpen,
 	setCategory,
+	NavOrNew,
 	setUnderCategory,
 }) => {
 	const toggleMenu = () => {
@@ -105,9 +107,13 @@ const Menu: React.FC<MenuProps> = ({
 								}
 							>
 								<div className={s.MenuOnceDiv}>
-								<NavLink
+									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -115,9 +121,14 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory('Карьер')
 											}}
 										>
-										Карьер
+											Карьер
 										</li>
 									</NavLink>
+
+									{/* <NavLink
+										className={s.Link}
+										to={NavOrNew?'/new-card/':'/catalog/'}
+									></NavLink> */}
 									<img src={MenuArrow} alt='' />
 								</div>
 							</ul>
@@ -168,7 +179,11 @@ const Menu: React.FC<MenuProps> = ({
 									>
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -181,7 +196,11 @@ const Menu: React.FC<MenuProps> = ({
 										</NavLink>
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -194,7 +213,11 @@ const Menu: React.FC<MenuProps> = ({
 										</NavLink>
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -209,7 +232,11 @@ const Menu: React.FC<MenuProps> = ({
 										</NavLink>
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -269,7 +296,11 @@ const Menu: React.FC<MenuProps> = ({
 								>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -284,7 +315,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -299,7 +334,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -314,7 +353,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -369,7 +412,11 @@ const Menu: React.FC<MenuProps> = ({
 								>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -386,7 +433,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -401,7 +452,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -418,7 +473,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -433,7 +492,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -448,7 +511,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -463,7 +530,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -518,7 +589,11 @@ const Menu: React.FC<MenuProps> = ({
 								>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -531,7 +606,11 @@ const Menu: React.FC<MenuProps> = ({
 									</NavLink>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -585,7 +664,11 @@ const Menu: React.FC<MenuProps> = ({
 									>
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -601,7 +684,11 @@ const Menu: React.FC<MenuProps> = ({
 
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -619,7 +706,11 @@ const Menu: React.FC<MenuProps> = ({
 
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -635,7 +726,11 @@ const Menu: React.FC<MenuProps> = ({
 
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -652,7 +747,11 @@ const Menu: React.FC<MenuProps> = ({
 										</NavLink>
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -668,7 +767,11 @@ const Menu: React.FC<MenuProps> = ({
 
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -683,7 +786,11 @@ const Menu: React.FC<MenuProps> = ({
 										</NavLink>
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -701,7 +808,11 @@ const Menu: React.FC<MenuProps> = ({
 
 										<NavLink
 											className={s.Link}
-											to={'/catalog/'}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
 										>
 											<li
 												onClick={() => {
@@ -765,7 +876,11 @@ const Menu: React.FC<MenuProps> = ({
 								>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -781,7 +896,11 @@ const Menu: React.FC<MenuProps> = ({
 
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -830,7 +949,11 @@ const Menu: React.FC<MenuProps> = ({
 								>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -844,7 +967,11 @@ const Menu: React.FC<MenuProps> = ({
 
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -860,7 +987,11 @@ const Menu: React.FC<MenuProps> = ({
 
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -914,7 +1045,11 @@ const Menu: React.FC<MenuProps> = ({
 								>
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -928,7 +1063,11 @@ const Menu: React.FC<MenuProps> = ({
 
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -942,7 +1081,11 @@ const Menu: React.FC<MenuProps> = ({
 
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -956,7 +1099,11 @@ const Menu: React.FC<MenuProps> = ({
 
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {
@@ -972,7 +1119,11 @@ const Menu: React.FC<MenuProps> = ({
 
 									<NavLink
 										className={s.Link}
-										to={'/catalog/'}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
 									>
 										<li
 											onClick={() => {

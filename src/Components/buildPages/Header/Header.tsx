@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-import {  useState } from 'react'
+import { useState } from 'react'
 
 import Menu from '../../modules/Меню/Menu'
 import logo from '../../../assets/logo.svg'
@@ -24,9 +24,9 @@ const Header: React.FC<HeaderProps> = ({
 	setUnderCategory,
 }) => {
 	const [BurgerisOpen, setBurgerisOpen] = useState(false)
+	const [NavOrNew, setNavOrNew] = useState(false)
 	const headerUsername = localStorage.getItem('username')
 	const isLoggin = localStorage.getItem('status')
-		
 
 	function RegionSelect() {
 		// Состояние для выбранного региона
@@ -47,6 +47,7 @@ const Header: React.FC<HeaderProps> = ({
 				onClick={(e) => {
 					e.preventDefault()
 					e.stopPropagation()
+					setNavOrNew(false)
 					setBurgerisOpen(!BurgerisOpen)
 				}}
 				className={styles.BurgerMenu}
@@ -56,6 +57,7 @@ const Header: React.FC<HeaderProps> = ({
 				</button>
 				<h2>Все категории</h2>
 				<Menu
+					NavOrNew={NavOrNew}
 					setCategory={setCategory}
 					setUnderCategory={setUnderCategory}
 					BurgerisOpen={BurgerisOpen}
@@ -66,7 +68,24 @@ const Header: React.FC<HeaderProps> = ({
 				<InputButton />
 			</div>
 			<div>
-				<button className={styles.NewAdd}>Разместить обьявление</button>
+				<button
+					onClick={(e) => {
+						e.preventDefault()
+						e.stopPropagation()
+						setNavOrNew(true)
+						setBurgerisOpen(!BurgerisOpen)
+					}}
+					className={styles.NewAdd}
+				>
+					Разместить обьявление
+				</button>
+				<Menu
+					NavOrNew={NavOrNew}
+					setCategory={setCategory}
+					setUnderCategory={setUnderCategory}
+					BurgerisOpen={BurgerisOpen}
+					setBurgerIsOpen={setBurgerisOpen}
+				></Menu>
 			</div>
 			{isLoggin ? (
 				<div>

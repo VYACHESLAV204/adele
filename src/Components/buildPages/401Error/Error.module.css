@@ -1,0 +1,11 @@
+.h2 {
+	font-family: 'Vela Sans';
+	font-size: 35px;
+	color: #403eb5;
+}
+.div {
+	display: flex;
+	justify-content: center;
+	height: 200px;
+	align-items: center;
+}

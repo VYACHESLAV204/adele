@@ -16,7 +16,7 @@ import InfoProfile from './Components/buildPages/infoProfile/infoProfile.js'
 import MyAds from './Components/buildPages/myAds/myAds.js'
 import Worker from './Components/buildPages/worker/worker.js'
 import Moderation from './Components/buildPages/moderation/moderation.js'
-import Error401 from './Components/buildPages/401.js'
+import Error401 from './Components/buildPages/401Error/401.js'
 
 function App() {
 	const [modalType, setModalType] = useState<'auth' | 'reg' | ''>('')
@@ -26,6 +26,7 @@ function App() {
 	const [cards, setCards] = useState<CardAdResponse>()
 	const [categoryForNewCard, setCategoryForNewCard] = useState('')
 	const [underCategoryForNewCard, setUnderCategoryForNewCard] = useState('')
+	const [page, setPage] = useState(1)
 	const isLoggin = localStorage.getItem('status')
 	useEffect(() => {
 		console.log(isLoggin)
@@ -51,7 +52,7 @@ function App() {
 			body: JSON.stringify({
 				category: categoryForNewCard,
 				sub_category: underCategoryForNewCard,
-				page: 1,
+				page: page,
 			}),
 		})
 			.then((response) => response.json())
@@ -126,6 +127,7 @@ function App() {
 										has_next_noads={
 											cardsArray.has_next_noads
 										}
+										setPage={setPage}
 										page_ads={cardsArray.page_ads}
 										page_noads={cardsArray.page_noads}
 										stasus={cardsArray.stasus}
