@@ -7,6 +7,8 @@ import geoForHeader from '../../../assets/geoForHeader.svg'
 import HeaderMenu3Line from '../../../assets/HeaderMenu3Line.svg'
 import InputButton from '../../modules/Поиск в шапке/Search'
 import RegionSelectTemplate from '../../modules/select/SelectTemplate'
+import User from '../../../assets/solar_user-outline.svg'
+import Interface from '../../../assets/interface.svg'
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void
@@ -42,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
 
 	return (
 		<div className={styles.MainDiv}>
-			<img src={logo} alt='Логотип' />
+			<img className={styles.logo} src={logo} alt='Логотип' />
 			{RegionSelect()}
 			<div
 				onClick={(e) => {
@@ -96,6 +98,15 @@ const Header: React.FC<HeaderProps> = ({
 					</button>
 				</div>
 			)}
+				<div className={styles.signInDivMob}>
+					<img src={User} alt="" />
+				</div>
+				<div className={`${styles.searchContainer} ${styles.searchContainerMob}` }>
+					<InputButton />
+				</div>
+				<div className={styles.signInDivMob}>
+					<img src={Interface} alt="" />
+				</div>
 		</div>
 	)
 }

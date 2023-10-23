@@ -24,3 +24,12 @@
 	width: 58px;
 	height: 46px;
 }
+@media (max-width: 330px) {
+	.Input{
+		width: 123px;
+	}
+	.MainSearchDiv{
+		width: 193px;
+	}
+	
+}
