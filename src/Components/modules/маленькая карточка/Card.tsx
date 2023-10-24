@@ -17,7 +17,7 @@ const Card: FC<{
 						key={item.id_card}
 						style={inlineStyles}
 					>
-						<div
+						<div 
 							style={inlineStyles}
 							className={styles.MainCardDiv}
 						>
