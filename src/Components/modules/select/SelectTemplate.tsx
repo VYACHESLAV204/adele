@@ -1,36 +1,35 @@
 // RegionSelect.tsx
-import { useState } from 'react'
+
 import Select from 'react-select'
 
-type OptionType = { label: string; value: string }
+export type OptionType = { label: string; value: string }
 type RegionSelectProps = {
 	citys: { label: string; value: string }[]
-	style?: { width: string }
+	style?: { width: string; marginLeft: string }
+	City: OptionType | undefined // updated this line
+	setCity: React.Dispatch<React.SetStateAction<OptionType | undefined>>
 }
-
 const RegionSelectTemplate: React.FC<RegionSelectProps> = ({
 	citys,
+	setCity,
 	style,
+	City,
 }) => {
-	const [selectedRegion, setSelectedRegion] = useState<OptionType>(citys[0])
-
-	const handleChange = (
-		selectedOption: OptionType | null,
-		
-	) => {
+	const handleChange = (selectedOption: OptionType | null) => {
 		if (selectedOption !== null) {
-			setSelectedRegion(selectedOption)
+			setCity(selectedOption)
 		}
 	}
+
 	return (
 		<Select
-			value={selectedRegion}
+			value={City}
 			options={citys}
 			onChange={handleChange}
 			styles={{
 				control: (base) => ({
 					...base,
-					marginLeft: 10,
+					marginLeft: style?.marginLeft || 10,
 					width: style?.width || 160,
 				}),
 			}}

@@ -7,9 +7,7 @@ interface settingsFetch {
 	status: boolean
 }
 function Settings() {
-	const [line, setLine] = useState(false)
 	const [settingsData, setSettingsData] = useState<settingsFetch>()
-	
 
 	useEffect(() => {
 		fetch(
@@ -18,7 +16,7 @@ function Settings() {
 			)}`
 		)
 			.then((response) => response.json())
-			.then((data:settingsFetch) => setSettingsData(data))
+			.then((data: settingsFetch) => setSettingsData(data))
 	}, [])
 
 	return (
@@ -27,30 +25,23 @@ function Settings() {
 			<div className={s.selectorBox}>
 				<div className={`${s.slider} ${s.sliderOptions}`}>
 					<div className={s.selectContainer}>
-						<h2
-							onClick={() => setLine(false)}
-							className={s.sliderTextItem}
-						>
-							Основные данные
-						</h2>
-						{line ? (
-							<div className={s.lineUnActive}></div>
-						) : (
-							<div className={s.lineActive} />
-						)}
+						<h2 className={s.sliderTextItem}>Основные данные</h2>
+
+						<div className={s.lineActive} />
 					</div>
 					<div className={s.selectContainer}>
-						<h3
-							onClick={() => setLine(true)}
-							className={`${s.sliderTextItem} ${s.sliderMargin}`}
+						<NavLink
+							style={{ textDecoration: 'none', color: 'inherit' }}
+							to={'/info-profile/'}
 						>
-							Вид профиля
-						</h3>
-						{line ? (
-							<div className={s.lineActive} />
-						) : (
-							<div className={s.lineUnActive}></div>
-						)}
+							<h3
+								className={`${s.sliderTextItem} ${s.sliderMargin}`}
+							>
+								Вид профиля
+							</h3>
+						</NavLink>
+
+						<div className={s.lineUnActive}></div>
 					</div>
 				</div>
 			</div>

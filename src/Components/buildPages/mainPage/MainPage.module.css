@@ -159,6 +159,11 @@
 	gap: 30px;
 	margin-bottom: 50px;
 }
+.NavLink {
+	cursor: pointer;
+	color: inherit;
+	text-decoration: none;
+}
 .H2BestPractique {
 	width: 202px;
 	color: #212121;

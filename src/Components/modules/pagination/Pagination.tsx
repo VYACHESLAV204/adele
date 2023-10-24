@@ -1,12 +1,22 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
+import s from './Pagination.module.css'
 interface Pagprops {
 	totalPages: number
+	currentPage: number
+	setCurrentPage: React.Dispatch<React.SetStateAction<number>>
 }
-const Pagination: FC<Pagprops> = ({ totalPages }) => {
+const Pagination: FC<Pagprops> = ({
+	totalPages,
+	currentPage,
+	setCurrentPage,
+}) => {
 	// Функция для изменения текущей страницы
-	const changePage = (page) => {
+	const changePage = (page: number) => {
 		setCurrentPage(page)
 	}
+	useEffect(() => {
+		console.log(currentPage)
+	}, [])
 
 	// Генерация массива страниц для кнопок
 	const generatePageNumbers = () => {
@@ -33,7 +43,7 @@ const Pagination: FC<Pagprops> = ({ totalPages }) => {
 			pageNumbers.push(
 				<button
 					key={page}
-					className={currentPage === page ? 'active' : ''}
+					className={currentPage === page ? s.active : s.inactive}
 					onClick={() => changePage(page)}
 				>
 					{page}
@@ -57,19 +67,21 @@ const Pagination: FC<Pagprops> = ({ totalPages }) => {
 	}
 
 	return (
-		<div>
+		<div style={{display:'flex',alignItems:'center'}}>
 			<button
+				style={{ border: '0px', backgroundColor: '#ffffff' }}
 				disabled={currentPage === 1}
 				onClick={() => changePage(currentPage - 1)}
 			>
-				&lt; Previous
+				Предыдущая &lt;
 			</button>
 			{generatePageNumbers()}
 			<button
+				style={{ border: '0px', backgroundColor: '#ffffff' }}
 				disabled={currentPage === totalPages}
 				onClick={() => changePage(currentPage + 1)}
 			>
-				Next &gt;
+				Следующая &gt;
 			</button>
 		</div>
 	)

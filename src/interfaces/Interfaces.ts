@@ -4,6 +4,7 @@ export interface CardAdResponse {
 	card_ads_2: CardAd[]
 	card_no_ads_1: CardAd[]
 	card_no_ads_2: CardAd[]
+	setCategory: React.Dispatch<React.SetStateAction<string>>
 }
 
 export interface CardAd {
@@ -31,6 +32,8 @@ export interface ICatalogProps {
 	has_next_ads: boolean
 	has_next_noads: boolean
 	page_ads: number
+	page: number
+	setSubCat: React.Dispatch<React.SetStateAction<string>>
 	categorys_index: number
 	page_noads: number
 	stasus: boolean
@@ -39,4 +42,6 @@ export interface ICatalogProps {
 	total_pages_ads: number
 	total_pages_noads: number
 }
-
+export interface ProfileAndInfoProfileProps {
+	citys: { label: string; value: string }[]
+}

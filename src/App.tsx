@@ -62,7 +62,7 @@ function App() {
 			.catch((error) => {
 				console.error('Ошибка:', error)
 			})
-	}, [categoryForNewCard, underCategoryForNewCard])
+	}, [categoryForNewCard, underCategoryForNewCard,page])
 
 	useEffect(() => {
 		console.log(cardsArray)
@@ -91,12 +91,14 @@ function App() {
 										card_no_ads_1={cards.card_no_ads_1}
 										card_no_ads_2={cards.card_no_ads_2}
 										status={cards.status}
+										setCategory={setCategoryForNewCard}
 									/>
 								)
 							}
 						/>
 
 						<Route
+						// Починить
 							path='/card/:id'
 							element={
 								cards && (
@@ -109,6 +111,7 @@ function App() {
 										card_no_ads_2={
 											cards.card_no_ads_2 || []
 										}
+										setCategory={setCategoryForNewCard}
 									/>
 								)
 							}
@@ -124,6 +127,7 @@ function App() {
 										categorys_index={
 											cardsArray.categorys_index
 										}
+										page={page}
 										has_next_noads={
 											cardsArray.has_next_noads
 										}
@@ -131,6 +135,7 @@ function App() {
 										page_ads={cardsArray.page_ads}
 										page_noads={cardsArray.page_noads}
 										stasus={cardsArray.stasus}
+										setSubCat={setUnderCategoryForNewCard}
 										sub_category_all={
 											cardsArray.sub_category_all
 										}
@@ -146,6 +151,7 @@ function App() {
 						/>
 
 						<Route
+						// Диме
 							path='/new-card/'
 							element={
 								isLoggin ? (
@@ -160,6 +166,7 @@ function App() {
 						/>
 
 						<Route
+						//Диме
 							path='/profile/'
 							element={
 								isLoggin ? (
@@ -175,18 +182,20 @@ function App() {
 							element={isLoggin ? <Summary /> : <Error401 />}
 						/>
 						<Route
-							path='/settings/'
+						//Готово
+						path='/settings/'
 							element={isLoggin ? <Settings /> : <Error401 />}
 						/>
-						{/* Дима */}
+						
 						<Route
+						//Готово
 							path='/defence/'
 							element={isLoggin ? <Defence /> : <Error401 />}
 						/>
-						{/* Стили и город */}
 						<Route
+						// Готово
 							path='/info-profile'
-							element={isLoggin ? <InfoProfile /> : <Error401 />}
+							element={isLoggin ? <InfoProfile  citys={citys} /> : <Error401 />}
 						/>
 						<Route
 							path='/my-ads/'

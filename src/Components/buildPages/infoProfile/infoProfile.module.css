@@ -1,81 +1,84 @@
-h2{
-    margin: 0;
-    padding: 0;
+h2 {
+	margin: 0;
+	padding: 0;
 }
-h3{
-    margin: 0;
-    padding: 0;
+h3 {
+	margin: 0;
+	padding: 0;
 }
-p{
-    margin: 0;
-    padding: 0;  
+p {
+	margin: 0;
+	padding: 0;
 }
 
-.sectionContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    height: 65vh
+.sectionContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	height: 65vh;
 }
-.contentContainer{
-    display: inline-flex;
+.contentContainer {
+	display: inline-flex;
 }
-.mainTitle{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-top: 2rem;
+.mainTitle {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-top: 2rem;
 }
-.secondTitle{
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.secondTitle {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
 }
-.btn{
+.btn {
 	border: 0;
 	color: #fff;
 	width: 196px;
 	height: 45px;
 	border-radius: 7px;
-	background: #5250C5;
+	background: #5250c5;
 	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
 }
-.input{
-    width: 210px;
+.input {
+	width: 210px;
 	height: 39px;
 	border-radius: 5px;
-	border: 1px solid #9090D8;
-	background: #F2F2FF;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	margin-top: 15px;
 	padding-left: 10px;
 }
-.rightWrapper{
-    display: flex;
-    flex-direction: column;
-    height: 30vh;
-    justify-content: space-evenly;
-    margin-right: 8rem;
+.rightWrapper {
+	display: flex;
+	flex-direction: column;
+	height: 30vh;
+	justify-content: space-evenly;
+	margin-right: 8rem;
 }
-.textContent{
-    text-align: left;
+.textContent {
+	text-align: left;
 }
-.phoneConteiner{
-    display:inline-flex
+.phoneConteiner {
+	display: inline-flex;
 }
-.descText{
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    color: #6F6F6F;
-    margin-left: 20px;
+.SeveralPhones {
+	display: flex;
+	flex-direction: column;
 }
-.leftWrapper{
-    display: flex;
-    flex-direction: column;
-    height: 30vh;
-    justify-content: space-evenly;
+.descText {
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	color: #6f6f6f;
+}
+.leftWrapper {
+	display: flex;
+	flex-direction: column;
+	height: 30vh;
+	justify-content: space-evenly;
 }

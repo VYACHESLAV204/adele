@@ -81,9 +81,11 @@
 
 .changePhotoDiv {
 	display: flex;
+	align-items: center;
 	width: 680px;
 	height: 252px;
 }
+
 .changePhotoDiv > div > p {
 	color: #000;
 	margin-right: 69px;

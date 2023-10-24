@@ -4,15 +4,15 @@ import CardMain from '../../modules/большая карточка/CardMain'
 import Card from '../../modules/маленькая карточка/Card'
 import ColumnCardsStyles from '../mainPage/MainPage.module.css'
 import styles from './Catalog.module.css'
-import Pagination from '../../modules/Pagination'
+import Pagination from '../../modules/pagination/Pagination'
 const Catalog: FC<ICatalogProps> = ({
 	card_ads,
 	card_noads,
 	has_next_ads,
 	has_next_noads,
-	page_ads,
-	page_noads,
-	stasus,
+	page,
+	setPage,
+	setSubCat,
 	categorys_index,
 	sub_category_all,
 	total_pages_ads,
@@ -28,10 +28,7 @@ const Catalog: FC<ICatalogProps> = ({
 		card_noads,
 		has_next_ads,
 		has_next_noads,
-		page_ads,
-		page_noads,
-		stasus,
-		sub_category_all,
+		page,
 		total_pages_ads,
 		total_pages_noads
 	)
@@ -56,7 +53,11 @@ const Catalog: FC<ICatalogProps> = ({
 							const styleClass =
 								styleClasses[index % styleClasses.length]
 							return (
-								<div key={Cat.id} className={styleClass}>
+								<div
+									onClick={() => setSubCat(Cat.category)}
+									key={Cat.id}
+									className={styleClass}
+								>
 									<p className={styles.CatText}>
 										{Cat.category}
 									</p>
@@ -78,7 +79,11 @@ const Catalog: FC<ICatalogProps> = ({
 					<Card cardsStyles={CardsStylesColumn} cardsAd={card_ads} />
 				</div>
 
-				<Pagination totalPages={totalPages} />
+				<Pagination
+					currentPage={page}
+					setCurrentPage={setPage}
+					totalPages={total_pages_ads}
+				/>
 			</div>
 		</div>
 	)
