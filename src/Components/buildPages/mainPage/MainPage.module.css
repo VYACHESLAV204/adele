@@ -1,3 +1,4 @@
+
 .MenuDiv {
 	display: flex;
 	flex-wrap: wrap;
@@ -11,7 +12,6 @@
 .MenuDiv > p {
 	color: #000;
 	text-align: center;
-	font-family: Inter;
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 500;
@@ -28,6 +28,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -39,6 +40,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -50,6 +52,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -61,6 +64,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -72,6 +76,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -83,6 +88,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -94,6 +100,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -105,6 +112,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -116,6 +124,7 @@
 	height: 56px;
 	flex-shrink: 0;
 	border-radius: 8px;
+	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
@@ -135,7 +144,6 @@
 	display: flex;
 	margin-bottom: 40px;
 	color: #000;
-	font-family: Inter;
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 600;
@@ -184,4 +192,93 @@
 	border-radius: 15px;
 	border: 2px solid #9090d8;
 	background-color: #f2f2ff;
+}
+.AdCardsDivMob{
+	display: none;
+	width: 95%;
+	height: 100%;
+	border-radius: 15px;
+	border: 2px solid #9090d8;
+	background-color: #f2f2ff;
+	padding: 1rem 1rem 1rem 1rem;
+	margin-bottom: 2rem;
+}
+.H2BestPractiqueMob{
+	width: 202px;
+	color: #212121;
+	font-family: Vela Sans;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-bottom: 2rem;
+}
+.menuBoxMob{
+	display: none;
+}
+@media (max-width: 1025px) {
+	.AdCardsDiv{
+		display: none;
+	}
+	.AdCardsDivMob{
+		display: block;
+		width: 90%;
+	}
+	.MainMenuDiv{
+		width: 100%;
+	}
+	
+	
+}
+@media (max-width: 769px) {
+	.MenuDiv{
+		padding-top: 20px;
+		width: 100%;
+		flex-wrap: wrap;
+		display: flex;
+		flex-direction: row;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-padding: 24px;
+		flex-basis: 50%;
+	}
+	.MenuDiv{
+		display: none;
+	}
+	.menuBoxMob{
+		display: flex;
+		padding-top: 20px;
+		width: 100vw;
+		flex-wrap: nowrap;
+		display: flex;
+		flex-direction: column;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-padding: 24px;
+		gap: 17px;
+		flex-basis: 100%;
+	}
+	.firstLine{
+		display: flex;
+		flex-direction: row;
+	}
+	.secondLine{
+		display: flex;
+		flex-direction: row;
+	}
+	.marginRight{
+		margin-right: 1rem;
+	}
+	.AdCardsDivMob{
+		width: 95vw;
+	}
+}
+@media (max-width: 430px) {
+	.menuBoxMob{
+		margin-top: 2.5rem;
+	}
+	.AdCardsDivMob{
+		width: 91vw;
+		margin-top: 5.5rem;
+	}
 }

@@ -15,7 +15,7 @@
 .BurgerMenu {
 	display: flex;
 	align-items: center;
-	margin-right: 29px;
+	margin-right: 13px;
 	justify-content: center;
 	padding: 0px 5px;
 	height: 39px;
@@ -114,4 +114,70 @@
 }
 .signInIpDiv {
 	display: flex;
+}
+.signInDivMob{
+	display: none;
+}
+.searchContainerMob{
+	display: none;
+}
+@media (max-width: 1025px) {
+	.NewAdd{
+		display: none;
+	}
+	.RegionDiv{
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+	.BurgerMenu{
+		width: 175px;
+		margin-right: 10px;
+	}
+	.MainDiv{
+		justify-content: center;
+	}
+	.signInIpDiv{
+		margin-right: 25px;
+	}
+}
+@media (max-width: 769px){
+	.signInIpDiv{
+		display: none;
+	}
+	.signInDivMob{
+		display: block;
+	}
+	.BurgerMenu{
+		display: none;
+	}
+}
+@media (max-width: 430px) {
+	.MainDiv{
+		width: 98%;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+	.searchContainer{
+		display: none;
+	}
+	.searchContainerMob{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		
+	}	
+}
+@media (max-width: 376px) {
+	.logo{
+		width: 25%;
+		margin-left: 0.2rem;
+	}
+	.RegionDiv{
+		margin-right: 3px;
+    	margin-left: 3px;
+	}
+	.signInDivMob{
+		margin-right: 0.2rem;
+	}
 }

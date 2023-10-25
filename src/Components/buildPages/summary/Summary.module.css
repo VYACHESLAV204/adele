@@ -11,6 +11,7 @@
   font-size: 25px;
   font-style: normal;
   font-weight: 700;
+  margin-top: 5rem;
 }
 .pageTitle{
   font-family: Vela Sans;
@@ -295,4 +296,131 @@
 	border-radius: 7px;
 	background: #5250C5;
 	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+}
+@media (max-width: 1025px) {
+    .summaryContainer{
+      margin-left: 1rem;
+    }
+    .about{
+      width: 88vw;
+    }
+    .aboutStudy{
+      width: 88vw;
+    }
+    .aboutLang{
+      width: 88vw;
+    }
+}
+@media (max-width: 769px) {
+  .about{
+    width: 85vw;
+  }
+  .aboutStudy{
+    width: 85vw;
+  }
+  .aboutLang{
+    width: 85vw;
+  }
+}
+@media (max-width: 430px) {
+  .workCategory{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .input{
+    width: 80vw;
+  }
+  .dateNewborn{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .inputNewborn{
+    width: 143px;
+    height: 56px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+
+  }
+  .inputNewborn2{
+    width: 170px;
+    height: 56px;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .genderContainer{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .genderBtn{
+    margin-bottom: 1rem;
+  }
+  .summaryContainer{
+    width: 100vw;
+  }
+  .about{
+    width: 83%;
+    height: 654px;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  }
+  .aboutDesc{
+    flex-direction: column;
+  }
+  .aboutStudy{
+    width: 83%;
+    height: 490px;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  }
+  .aboutLang{
+    width: 83%;
+    height: 180px;
+    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  }
+  .addNew{
+    width: 30px;
+    height: 30px;
+  }
+  .addText{
+    font-size: 18px;
+  }
+  .photoSectionContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .addPhotoContainer{
+    margin-left: 0;
+  }
+  .photoContainer{
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 375px) {
+  .addBtn{
+    margin-top: 0.5rem;
+  }
+  .summaryContainer{
+    width: 95vw;
+    margin-top: 2rem;
+  }
+  .about{
+    width: 87%;
+    height: 700px;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .aboutStudy{
+    width: 87%;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .aboutLang{
+    width: 87%;
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .input{
+    width: 90%;
+  }
+  .inputPrice{
+    width: 100px;
+  }
+  .inputDesc{
+    width: 250px;
+  }
 }
