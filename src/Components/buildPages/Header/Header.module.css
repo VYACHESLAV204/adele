@@ -150,6 +150,9 @@
 	.BurgerMenu{
 		display: none;
 	}
+	.userNameMob{
+		display: none;
+	}
 }
 @media (max-width: 430px) {
 	.MainDiv{

@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({
 				></Menu>
 			</div>
 			{isLoggin ? (
-				<div>
+				<div className={styles.userNameMob}>
 					<h1>{headerUsername}</h1>
 				</div>
 			) : (

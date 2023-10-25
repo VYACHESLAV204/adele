@@ -23,6 +23,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						Выберите категорию объявления:
 					</label>
 					<input
+						className={s.input}
 						type='text'
 						id='Category'
 						value={category}
@@ -34,6 +35,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						Выберите подкатегорию обьявления:
 					</label>
 					<input
+						className={s.input}
 						type='text'
 						id='underCategory'
 						value={underCategory}
@@ -43,6 +45,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 				<div className={s.setTitle}>
 					<label htmlFor='title'>Заголовок объявления:</label>
 					<input
+						className={s.input}
 						id='title'
 						placeholder='Например: Обработка камня'
 						type='text'
@@ -67,7 +70,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						</div>
 						<div className={s.addPhotoContainer}>
 							<div className={s.plusContainer}>
-							<p>Нажмите, чтобы добавить новую фотографию</p>
+							<p className={s.addPhotoText}>Нажмите, чтобы добавить новую фотографию</p>
 							<img className={s.plusPhoto} src={plus} alt="" />
 							</div>
 							<input className={s.photoInput}type="file" />
@@ -81,12 +84,12 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						<img className={s.marginLeft} src={greenMoney} alt='' />
 					</div>
 					<div>
-						<p>Контактные данные в объявлении</p>
-						<p>Телефон</p>
+						<p style={{marginBottom: '1rem' , marginTop: '1rem'}}>Контактные данные в объявлении</p>
+						<p style={{marginBottom: '1rem' , marginTop: '1rem'}}>Телефон</p>
 						<input className={s.inputPhone} type='number' placeholder='+7 123 456 78 90' />
 					</div>
 					<div>
-						<h2 className={s.titleTextStyle}>Выбор тарифа оплаты объявления</h2>
+						<h2 style={{marginBottom: '1rem' , marginTop: '1rem'}} className={s.titleTextStyle}>Выбор тарифа оплаты объявления</h2>
 						<div>
 							<div className={s.priceSectionContainer}>	
 								<div className={s.priceContainer}>

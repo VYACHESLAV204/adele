@@ -6,15 +6,16 @@ interface ProfileProps {
 	citys: { label: string; value: string }[]
 }
 const Profile: React.FC<ProfileProps> = ({ citys }) => {
-	const style={width:'500px'}
+	const style={width:'40vw'}
 	return (
 		<div className={s.mainDiv}>
 			<h2 className={s.H2Settings}>Настройки профиля</h2>
 			<div>
 				<form className={s.profileSettingsDiv} action='submit'>
-					<div className={s.inputDiv}>
+					<div style={{flexDirection: 'column' , alignItems: 'flex-start' , height: '100px' }} className={s.inputDiv}>
 						<label htmlFor='email'>Электронная почта</label>
 						<input
+							className={s.inputStyles}
 							type='email'
 							placeholder='info@info.ru'
 							id='email'
@@ -34,7 +35,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 						<p>Фотография</p>
 					</div>
 
-					<div>
+					<div className={s.photoContainer}>
 						<img className={s.ManPhotoImg} src={WorkPhoto} alt='' />
 						<div className={s.circleDiv}>
 							<img src={editPan} alt='' />
