@@ -9,19 +9,23 @@ import InputButton from '../../modules/Поиск в шапке/Search'
 import RegionSelectTemplate from '../../modules/select/SelectTemplate'
 import User from '../../../assets/solar_user-outline.svg'
 import Interface from '../../../assets/interface.svg'
-
+import { OptionType } from '../../modules/select/SelectTemplate'
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void
 	setModalType: React.Dispatch<React.SetStateAction<'auth' | 'reg' | ''>>
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	citys: { label: string; value: string }[]
+	City: OptionType | undefined // updated this line
+	setCity: React.Dispatch<React.SetStateAction<OptionType | undefined>>
 }
 
 const Header: React.FC<HeaderProps> = ({
 	setModalType,
 	setIsOpen,
 	citys,
+	City,
+	setCity,
 	setCategory,
 	setUnderCategory,
 }) => {
@@ -36,7 +40,11 @@ const Header: React.FC<HeaderProps> = ({
 		return (
 			<div className={styles.RegionDiv}>
 				<img src={geoForHeader} alt='' />
-				<RegionSelectTemplate citys={citys}></RegionSelectTemplate>
+				<RegionSelectTemplate
+					City={City}
+					setCity={setCity}
+					citys={citys}
+				/>
 			</div>
 		)
 	}
@@ -116,15 +124,17 @@ const Header: React.FC<HeaderProps> = ({
 					</button>
 				</div>
 			)}
-				<div className={styles.signInDivMob}>
-					<img src={User} alt="" />
-				</div>
-				<div className={`${styles.searchContainer} ${styles.searchContainerMob}` }>
-					<InputButton />
-				</div>
-				<div className={styles.signInDivMob}>
-					<img src={Interface} alt="" />
-				</div>
+			<div className={styles.signInDivMob}>
+				<img src={User} alt='' />
+			</div>
+			<div
+				className={`${styles.searchContainer} ${styles.searchContainerMob}`}
+			>
+				<InputButton />
+			</div>
+			<div className={styles.signInDivMob}>
+				<img src={Interface} alt='' />
+			</div>
 		</div>
 	)
 }

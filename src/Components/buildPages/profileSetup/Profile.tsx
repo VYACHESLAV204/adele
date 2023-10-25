@@ -7,10 +7,11 @@ import RegionSelectTemplate, {
 
 interface ProfileProps {
 	citys: { label: string; value: string }[]
+	City: OptionType | undefined // updated this line
+	setCity: React.Dispatch<React.SetStateAction<OptionType | undefined>>
 }
 
 const Profile: React.FC<ProfileProps> = ({ citys }) => {
-	const [profile, setProfile] = useState({})
 	const [email, setEmail] = useState('')
 	const [name, setName] = useState('')
 	const [city, setCity] = useState<OptionType | undefined>({
@@ -28,7 +29,6 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 		)
 			.then((response) => response.json())
 			.then((data) => {
-				setProfile(data)
 				setEmail(data.email)
 				setName(data.username)
 				setCity({ value: data.city, label: data.city })
@@ -70,7 +70,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 				headers: {
 					'Content-Type':
 						'multipart/form-data; boundary=<calculated when request is sent>',
-					'Accept': '*/*',
+					Accept: '*/*',
 					'Access-control-Allow-origin': '*',
 				},
 				body: formData,

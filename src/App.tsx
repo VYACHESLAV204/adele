@@ -17,7 +17,7 @@ import MyAds from './Components/buildPages/myAds/myAds.js'
 import Worker from './Components/buildPages/worker/worker.js'
 import Moderation from './Components/buildPages/moderation/moderation.js'
 import Error401 from './Components/buildPages/401Error/401.js'
-
+import { OptionType } from './Components/modules/select/SelectTemplate.js'
 function App() {
 	const [modalType, setModalType] = useState<'auth' | 'reg' | ''>('')
 	const [isOpen, setIsOpen] = useState(false)
@@ -27,6 +27,10 @@ function App() {
 	const [categoryForNewCard, setCategoryForNewCard] = useState('')
 	const [underCategoryForNewCard, setUnderCategoryForNewCard] = useState('')
 	const [page, setPage] = useState(1)
+	const [city, setCity] = useState<OptionType | undefined>({
+		label: '',
+		value: '',
+	})
 	const isLoggin = localStorage.getItem('status')
 	useEffect(() => {
 		console.log(isLoggin)
@@ -62,7 +66,7 @@ function App() {
 			.catch((error) => {
 				console.error('Ошибка:', error)
 			})
-	}, [categoryForNewCard, underCategoryForNewCard,page])
+	}, [categoryForNewCard, underCategoryForNewCard, page])
 
 	useEffect(() => {
 		console.log(cardsArray)
@@ -75,6 +79,8 @@ function App() {
 					citys={citys}
 					setModalType={setModalType}
 					setIsOpen={setIsOpen}
+					City={city}
+					setCity={setCity}
 					isOpen={isOpen}
 					modalType={modalType}
 					setCategory={setCategoryForNewCard}
@@ -98,7 +104,7 @@ function App() {
 						/>
 
 						<Route
-						// Починить
+							// Починить
 							path='/card/:id'
 							element={
 								cards && (
@@ -151,7 +157,7 @@ function App() {
 						/>
 
 						<Route
-						// Диме
+							// Диме
 							path='/new-card/'
 							element={
 								isLoggin ? (
@@ -166,11 +172,15 @@ function App() {
 						/>
 
 						<Route
-						//Диме
+							//Диме
 							path='/profile/'
 							element={
 								isLoggin ? (
-									<Profile citys={citys} />
+									<Profile
+										City={city}
+										setCity={setCity}
+										citys={citys}
+									/>
 								) : (
 									<Error401 />
 								)
@@ -182,20 +192,26 @@ function App() {
 							element={isLoggin ? <Summary /> : <Error401 />}
 						/>
 						<Route
-						//Готово
-						path='/settings/'
+							//Готово
+							path='/settings/'
 							element={isLoggin ? <Settings /> : <Error401 />}
 						/>
-						
+
 						<Route
-						//Готово
+							//Готово
 							path='/defence/'
 							element={isLoggin ? <Defence /> : <Error401 />}
 						/>
 						<Route
-						// Готово
+							// Готово
 							path='/info-profile'
-							element={isLoggin ? <InfoProfile  citys={citys} /> : <Error401 />}
+							element={
+								isLoggin ? (
+									<InfoProfile citys={citys} />
+								) : (
+									<Error401 />
+								)
+							}
 						/>
 						<Route
 							path='/my-ads/'
