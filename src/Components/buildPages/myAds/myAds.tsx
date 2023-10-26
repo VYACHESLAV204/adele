@@ -1,6 +1,7 @@
 import s from './myAds.module.css'
 import photo from '../../../assets/photoFromInnerCard.png'
 import editPen from '../../../assets/editPan.svg'
+import humburgerMob from '../../../assets/humburgerMob.svg'
 
 const myAds = () => {
   return (
@@ -25,34 +26,42 @@ const myAds = () => {
             </div>
         </div>
         <div className={s.rightWrapper}>
-            <h1 className={s.mainTitle}>Мои объявления</h1>
+            <div className={s.firstLine}>
+                <h1 className={s.mainTitle}>Мои объявления</h1>
+                <button className={s.profileBtn}>Профиль
+                    <img className={s.humburgerMob} src={humburgerMob} alt="" />
+                </button> 
+            </div>
             <div className={s.btnBox}>
                 <button className={s.btn}>Ждут действий</button>
                 <button className={`${s.btn} ${s.secondBtn}`}>Архив</button>
             </div>
             <div className={s.cardBox}>
                 <div className={s.cardItem}>
+                    <p className={`${s.textContent} ${s.colorPurple} ${s.titleMob}`}>Объявление 1</p>
                     <img className={s.cardImg} src={photo} alt="" />
                     <div className={s.cardText}>
-                        <p className={`${s.textContent} ${s.colorPurple}`}>Объявление 1</p>
+                        <p className={`${s.textContent} ${s.colorPurple} ${s.textDesctop}`}>Объявление 1</p>
                         <p className={`${s.textInCard} ${s.textInCard}`}>Зарплата не указана</p>
                         <p className={`${s.textInCard} ${s.textInCard}`}>Москва</p>
                     </div>
                     <button className={s.btn}>Опубликовать</button>
                 </div>
                 <div className={s.cardItem}>
+                    <p className={`${s.textContent} ${s.colorPurple} ${s.titleMob}`}>Объявление 1</p>
                     <img className={s.cardImg} src={photo} alt="" />
                     <div className={s.cardText}>
-                        <p className={`${s.textContent} ${s.colorPurple}`}>Объявление 1</p>
+                        <p className={`${s.textContent} ${s.colorPurple} ${s.textDesctop}`}>Объявление 1</p>
                         <p className={`${s.textInCard} ${s.textInCard}`}>Зарплата не указана</p>
                         <p className={`${s.textInCard} ${s.textInCard}`}>Москва</p>
                     </div>
                     <button className={s.btn}>Опубликовать</button>
                 </div>
                 <div className={s.cardItem}>
+                    <p className={`${s.textContent} ${s.colorPurple} ${s.titleMob}`}>Объявление 1</p>
                     <img className={s.cardImg} src={photo} alt="" />
                     <div className={s.cardText}>
-                        <p className={`${s.textContent} ${s.colorPurple}`}>Объявление 1</p>
+                        <p className={`${s.textContent} ${s.colorPurple} ${s.textDesctop}`}>Объявление 1</p>
                         <p className={`${s.textInCard} ${s.textInCard}`}>Зарплата не указана</p>
                         <p className={`${s.textInCard} ${s.textInCard}`}>Москва</p>
                     </div>

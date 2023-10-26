@@ -20,7 +20,8 @@ p{
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    margin-top: 6rem;
+    margin-right: 2rem;
+
 }
 .secondTitle{
     font-size: 20px;
@@ -146,4 +147,89 @@ p{
 }
 .colorPurple{
    color:#5250C5;
+}
+.firstLine{
+    display: flex;
+    margin-top: 6rem;
+}
+.profileBtn{
+    display: none;
+}
+.titleMob{
+    display: none;
+}
+@media (max-width: 1025px) {
+    .leftWrapper{
+        display: none;
+    }
+    .profileBtn{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        color: #FFF;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 124px;
+        height: 38px;
+        background-color:#5250C5;
+        border-color: #5250C5;
+        border-style: hidden;
+        border-radius: 3px
+    }
+    .humburgerMob{
+        margin-left: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .cardImg{
+        margin-right: 2rem;
+    }
+    .cardText{
+        margin-right: 2rem;
+    }
+    
+}
+@media (max-width: 430px) {
+    .titleMob{
+        display: block;
+        margin-bottom: 2rem;
+    }
+    .textDesctop{
+        display: none;
+    }
+    .cardItem{
+        flex-direction: column;
+    }
+    .cardBox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+    .rightWrapper{
+        align-items: center;
+    }
+    .textInCard{
+        margin-bottom: 2rem;
+    }
+}
+@media (max-width: 425px) {
+    .btnBox{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0.2rem;
+    }
+    .btn{
+        width: 45vw;
+    }
+}
+@media (max-width:350px) {
+    .mainTitle{
+        font-size: 20px;
+    }
+    
 }

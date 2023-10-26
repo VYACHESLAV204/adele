@@ -90,19 +90,16 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 			})
 	}
 
-	const style = { width: '500px', marginLeft: '0px' }
+	const style = { width:'40vw', marginLeft: '0px' }
 	return (
 		<div className={s.mainDiv}>
 			<h2 className={s.H2Settings}>Настройки профиля</h2>
 			<div>
-				<form
-					className={s.profileSettingsDiv}
-					action='submit'
-					onSubmit={handleFormSubmit}
-				>
-					<div className={s.inputDiv}>
+				<form className={s.profileSettingsDiv} onSubmit={handleFormSubmit} action='submit'>
+					<div style={{flexDirection: 'column' , alignItems: 'flex-start' , height: '100px' }} className={s.inputDiv}>
 						<label htmlFor='email'>Электронная почта</label>
 						<input
+							className={s.inputStyles}
 							type='email'
 							placeholder='info@info.ru'
 							id='email'
@@ -125,7 +122,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 					</div>
 					<input type='file' onChange={handlePhotoUpload} />
 
-					<div>
+					<div className={s.photoContainer}>
 						<img className={s.ManPhotoImg} src={photo_get} alt='' />
 						<div className={s.circleDiv}>
 							<img src={editPan} alt='' />

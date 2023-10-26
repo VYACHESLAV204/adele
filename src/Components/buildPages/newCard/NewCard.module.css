@@ -231,3 +231,79 @@
 .priceTag{
 	font-weight: 700;
 }
+.H2Cat{
+	margin-top: 2rem;
+}
+@media (max-width: 1025px) {
+	.MainDiv {
+		width: 100%;
+		height: 1480px;
+		margin-left: 1rem;
+	}
+	.setTitle > input {
+		width: 85vw;
+	}
+	.description > textarea{
+		width: 85vw;
+	}
+	.addPhotoContainer{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items:center;
+	}
+	.addPhotoText{
+		text-align: center;
+	}
+	
+}
+@media (max-width: 769px) {
+	.priceContainer{
+		align-items: center;
+	}
+	
+}
+@media (max-width: 430px) {
+	.photoSectionContainer{
+		flex-direction: column;
+	}
+	.addPhotoContainer{
+		margin-left: 0;
+		margin-top: 2rem;
+	}
+	.H2Cat{
+		margin-top: 7rem;
+	}
+	.priceSectionContainer{
+		flex-direction: column;
+	}
+	.MainDiv{
+		width: 90%;
+		height: 2050px;
+	}
+	.SelectCatDiv{
+		height: 106px;
+	}
+	.SelectCatDiv > label{
+		font-size: 15px;
+		text-align: left;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.setTitle > input{
+		font-size: 15px;
+	}
+	.description > textarea{
+		font-size: 15px;
+	}
+	.priceContainer{
+		margin-bottom: 1rem;
+		align-items: center;
+	}
+	.titleTextStyle{
+		font-size: 20px;
+	}
+	.textMargin{
+		margin-top: 2rem;
+	}
+}

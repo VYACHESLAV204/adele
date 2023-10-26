@@ -18,6 +18,8 @@ import Worker from './Components/buildPages/worker/worker.js'
 import Moderation from './Components/buildPages/moderation/moderation.js'
 import Error401 from './Components/buildPages/401Error/401.js'
 import { OptionType } from './Components/modules/select/SelectTemplate.js'
+import ProfileMob from './Components/buildPages/profilePopupMob/ProfilePopupMob.js'
+
 function App() {
 	const [modalType, setModalType] = useState<'auth' | 'reg' | ''>('')
 	const [isOpen, setIsOpen] = useState(false)
@@ -224,6 +226,10 @@ function App() {
 						<Route
 							path='/moderation/'
 							element={isLoggin ? <Moderation /> : <Error401 />}
+						/>
+						<Route
+							path='/profile-mob/'
+							element={<ProfileMob/>}
 						/>
 					</Routes>
 				</Layout>
