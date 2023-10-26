@@ -6,6 +6,8 @@ import { CardAd, CardAdResponse } from '../../../interfaces/Interfaces'
 const CardDetails: FC<CardAdResponse> = ({
 	card_ads_1,
 	card_ads_2,
+	card_ads,
+	card_noads,
 	card_no_ads_1,
 	card_no_ads_2,
 }) => {
@@ -13,9 +15,11 @@ const CardDetails: FC<CardAdResponse> = ({
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
 	useEffect(() => {
-		console.log(numberId);
-		
+		console.log(numberId)
+
 		const foundCard =
+			card_noads?.find((card) => card.id_card === numberId) ||
+			card_ads?.find((card) => card.id_card === numberId) ||
 			card_ads_1.find((card) => card.id_card === numberId) ||
 			card_ads_2.find((card) => card.id_card === numberId) ||
 			card_no_ads_1.find((card) => card.id_card === numberId) ||

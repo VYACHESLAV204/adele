@@ -116,6 +116,8 @@ function App() {
 										card_no_ads_1={
 											cards.card_no_ads_1 || []
 										}
+										card_ads={cardsArray?.card_ads}
+										card_noads={cardsArray?.card_noads}
 										card_no_ads_2={
 											cards.card_no_ads_2 || []
 										}

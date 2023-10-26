@@ -26,6 +26,7 @@ export type SummaryFieldsType = {
 }
 
 const Summary = () => {
+	const [id_user, setId_user] = useState('')
 	const [summaryFields, setSummaryFields] = useState<SummaryFieldsType>({
 		category: 'Работа',
 		subcategory: 'резюме',
@@ -149,16 +150,13 @@ const Summary = () => {
 		summaryToServer.append('type_work', summaryFields.type_work)
 		summaryToServer.append('about_me', summaryFields.about_me)
 		summaryToServer.append('cant_dollars', summaryFields.cant_dollars)
+
 		if (summaryFields.photos !== null) {
 			for (let i = 0; i < summaryFields.photos.length; i++) {
 				summaryToServer.append(`photos${i}`, summaryFields.photos[i])
 			}
 		}
-		const toServerJson = {
-			workExp: workExp,
-			educationFields: educationFields,
-			languageFields: languageFields,
-		}
+		
 
 		fetch(
 			`http://31.129.105.19/api/v1/add-summary?jwt=${localStorage.getItem(
@@ -166,26 +164,40 @@ const Summary = () => {
 			)}`,
 			{
 				method: 'POST',
-				// headers: {
-				// 	'Content-Type':''  ,
-				// },
 				body: summaryToServer,
 			}
-		).then(() => {
-			fetch(
-				`http://31.129.105.19/api/v1/add-summary-next?jwt=${localStorage.getItem(
-					'token'
-				)}`,
-				{
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-					},
-					mode: 'cors',
-					body: JSON.stringify(toServerJson),
+		)
+			.then((data) => data.json())
+			.then((data) => {
+				setId_user(data.id_user)
+				const toServerJson = {
+					profile_id: data.id_user,
+					workExp: workExp,
+					educationFields: educationFields,
+					languageFields: languageFields,
 				}
-			)
-		})
+		
+				return fetch(
+					`http://31.129.105.19/api/v1/add-summary-next?jwt=${localStorage.getItem(
+						'token'
+					)}`,
+					{
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						mode: 'cors',
+						body: JSON.stringify(toServerJson),
+					}
+				)
+			})
+			.then((response) => response.json())
+			.then((data) => {
+				// Ваш код для обработки ответа на второй запрос
+			})
+			.catch((error) => {
+				// Ваш код для обработки возможных ошибок
+			});
 	}
 	return (
 		<div className={s.summaryContainer}>

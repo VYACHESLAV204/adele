@@ -4,6 +4,8 @@ export interface CardAdResponse {
 	card_ads_2: CardAd[]
 	card_no_ads_1: CardAd[]
 	card_no_ads_2: CardAd[]
+	card_ads?: CardAd[]
+	card_noads?: CardAd[]
 	setCategory: React.Dispatch<React.SetStateAction<string>>
 }
 
