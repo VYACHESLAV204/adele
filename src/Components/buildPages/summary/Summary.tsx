@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import s from './Summary.module.css'
 import addNew from '../../../assets/addNew.svg'
 import greenMoney from '../../../assets/greenmoney.svg'
-import photoClose from '../../../assets/photoClose.svg'
 import plus from '../../../assets/plus.svg'
 import 'react-widgets/styles.css'
 import DateInput from '../../modules/dateInput/DateInput'
@@ -21,25 +20,12 @@ export type SummaryFieldsType = {
 	togouthome: string
 	contry_people: string
 	type_work: string
-
-	name_universitet: string
-	universitet_why_jobs: string
-	years_stop_univer: string
-	language: string
-	level_language: string
 	about_me: string
 	cant_dollars: string
-	photos: string
+	photos: File[] | null
 }
-// name_company: string[]
-// 	why_jobs: string[]
-// 	start_work_time: string[]
-// 	stop_work_time: string[]
-// 	every_time: boolean[]
 
 const Summary = () => {
-	const [workPlaceCount, setWorkPlaceCount] = useState([0])
-
 	const [summaryFields, setSummaryFields] = useState<SummaryFieldsType>({
 		category: 'Работа',
 		subcategory: 'резюме',
@@ -55,16 +41,23 @@ const Summary = () => {
 		togouthome: 'Возможен',
 		contry_people: '',
 		type_work: '',
-
-		name_universitet: '',
-		universitet_why_jobs: '',
-		years_stop_univer: '',
-		language: '',
-		level_language: '',
 		about_me: '',
 		cant_dollars: '',
-		photos: '',
+		photos: null,
 	})
+	const [educationFields, setEducationFields] = useState([
+		{
+			years_stop_univer: '',
+			name_universitet: '',
+			universitet_why_jobs: '',
+		},
+	])
+	const [languageFields, setLanguageFields] = useState([
+		{
+			language: '',
+			level_language: '',
+		},
+	])
 	const [workExp, setWorkExp] = useState([
 		{
 			description_jobs: '',
@@ -75,6 +68,62 @@ const Summary = () => {
 			every_time: false,
 		},
 	])
+	const currentYear = new Date().getFullYear()
+	const years = Array.from({ length: 100 }, (_, i) => currentYear - i)
+
+	const updateWorkExpFields = (
+		index: number,
+		key: keyof (typeof workExp)[0],
+		value: string | boolean
+	) => {
+		setWorkExp((prevState) => {
+			const newArray = [...prevState]
+			newArray[index] = { ...newArray[index], [key]: value }
+			return newArray
+		})
+	}
+
+	const updateEducationFields = (
+		index: number,
+		key: keyof (typeof educationFields)[0],
+		value: string
+	) => {
+		setEducationFields((prevState) => {
+			const newArray = [...prevState]
+			newArray[index] = { ...newArray[index], [key]: value }
+			return newArray
+		})
+	}
+
+	const updateLanguageFields = (
+		index: number,
+		key: keyof (typeof languageFields)[0],
+		value: string
+	) => {
+		setLanguageFields((prevState) => {
+			const newArray = [...prevState]
+			newArray[index] = { ...newArray[index], [key]: value }
+			return newArray
+		})
+	}
+
+	useEffect(() => {
+		console.log(workExp, languageFields, educationFields)
+	}, [workExp, languageFields, educationFields])
+
+	const updateSummaryFields = (
+		key: keyof SummaryFieldsType,
+		value: string | boolean | File[]
+	) => {
+		setSummaryFields((prevState) => ({
+			...prevState,
+			[key]: value,
+		}))
+	}
+
+	useEffect(() => {
+		console.log(summaryFields)
+	}, [summaryFields])
 
 	const sendFormData = () => {
 		const summaryToServer = new FormData()
@@ -98,24 +147,18 @@ const Summary = () => {
 		summaryToServer.append('togouthome', summaryFields.togouthome)
 		summaryToServer.append('contry_people', summaryFields.contry_people)
 		summaryToServer.append('type_work', summaryFields.type_work)
-
-		summaryToServer.append(
-			'name_universitet',
-			summaryFields.name_universitet
-		)
-		summaryToServer.append(
-			'universitet_why_jobs',
-			summaryFields.universitet_why_jobs
-		)
-		summaryToServer.append(
-			'years_stop_univer',
-			summaryFields.years_stop_univer
-		)
-		summaryToServer.append('language', summaryFields.language)
-		summaryToServer.append('level_language', summaryFields.level_language)
 		summaryToServer.append('about_me', summaryFields.about_me)
 		summaryToServer.append('cant_dollars', summaryFields.cant_dollars)
-		summaryToServer.append('photos', summaryFields.photos)
+		if (summaryFields.photos !== null) {
+			for (let i = 0; i < summaryFields.photos.length; i++) {
+				summaryToServer.append(`photos${i}`, summaryFields.photos[i])
+			}
+		}
+		const toServerJson = {
+			workExp: workExp,
+			educationFields: educationFields,
+			languageFields: languageFields,
+		}
 
 		fetch(
 			`http://31.129.105.19/api/v1/add-summary?jwt=${localStorage.getItem(
@@ -123,11 +166,14 @@ const Summary = () => {
 			)}`,
 			{
 				method: 'POST',
+				// headers: {
+				// 	'Content-Type':''  ,
+				// },
 				body: summaryToServer,
 			}
 		).then(() => {
 			fetch(
-				`http://31.129.105.19/api/v1/add-summary?jwt=${localStorage.getItem(
+				`http://31.129.105.19/api/v1/add-summary-next?jwt=${localStorage.getItem(
 					'token'
 				)}`,
 				{
@@ -136,43 +182,11 @@ const Summary = () => {
 						'Content-Type': 'application/json',
 					},
 					mode: 'cors',
-					body: JSON.stringify(workExp),
+					body: JSON.stringify(toServerJson),
 				}
 			)
 		})
 	}
-	const updateWorkExpFields = (
-		index: number,
-		key: keyof (typeof workExp)[0],
-		value: string | boolean
-	) => {
-		setWorkExp((prevState) => {
-			const newArray = [...prevState]
-			newArray[index] = { ...newArray[index], [key]: value }
-			return newArray
-		})
-	}
-	useEffect(() => {
-		console.log(workExp)
-	}, [workExp])
-
-	// В области рендеринга, для каждого input:
-
-	// Для добавления нового блока работы:
-	const updateSummaryFields = (
-		key: keyof SummaryFieldsType,
-		value: string | boolean | File
-	) => {
-		setSummaryFields((prevState) => ({
-			...prevState,
-			[key]: value,
-		}))
-	}
-
-	useEffect(() => {
-		console.log(summaryFields)
-	}, [summaryFields])
-
 	return (
 		<div className={s.summaryContainer}>
 			<h1 className={s.MainTitle}>Резюме</h1>
@@ -415,7 +429,7 @@ const Summary = () => {
 			<h2 className={s.pageTitle}>
 				Укажите дополнительные параметры и опции
 			</h2>
-			{workPlaceCount.map((_, index) => {
+			{workExp.map((_, index) => {
 				return (
 					<div className={`${s.aboutContainer} ${s.about}`}>
 						<div className={s.workCategory}>
@@ -445,7 +459,7 @@ const Summary = () => {
 										'why_jobs',
 										e.target.value
 									)
-								} // Используйте соответствующее свойство для каждого input
+								}
 							/>
 						</div>
 						<div className={s.dateNewborn}>
@@ -460,7 +474,7 @@ const Summary = () => {
 										'start_work_time',
 										e.target.value
 									)
-								} // Используйте соответствующее свойство для каждого input
+								}
 							/>
 							<p className={s.marginRight}>Окончание работы</p>
 							<input
@@ -490,7 +504,7 @@ const Summary = () => {
 									// Используйте соответствующее свойство для каждого input
 								/>
 								<p className={s.checkboxText}>
-									Полная занятость
+									По настоящее время
 								</p>
 							</div>
 						</div>
@@ -527,7 +541,7 @@ const Summary = () => {
 							description_jobs: '',
 						},
 					])
-					setWorkPlaceCount([...workPlaceCount, 1])
+					// setWorkPlaceCount([...workPlaceCount, 1])
 				}}
 			>
 				<img className={s.addNew} src={addNew} alt='' />
@@ -538,73 +552,117 @@ const Summary = () => {
 			<h2 className={`${s.pageTitle} ${s.marginTop}`}>
 				Учебные заведения
 			</h2>
-
-			<div className={`${s.aboutContainer} ${s.aboutStudy}`}>
-				<div className={s.workCategory}>
-					<p
-						style={{ marginBottom: '2rem' }}
-						className={s.marginRight}
-					>
-						Название заведения
-					</p>
-					<div className={s.inputContainer}>
-						<input
-							className={`${s.input} ${s.inputWork}`}
-							type='text'
-							placeholder='Каменщик'
-						/>
-						<p className={s.inputAbout}>
-							Название учебного заведения
-						</p>
-					</div>
-				</div>
-				<div className={s.workCategory}>
-					<p
-						style={{ marginBottom: '2rem' }}
-						className={s.marginRight}
-					>
-						Должность
-					</p>
-					<div className={s.inputContainer}>
-						<input
-							className={`${s.input} ${s.inputWork}`}
-							type='text'
-							placeholder='Каменщик'
-						/>
-						<p className={s.inputAbout}>
-							Например “Оператор станка”
-						</p>
-					</div>
-				</div>
-				<div className={s.workCategory}>
-					<p
-						style={{ marginBottom: '2rem' }}
-						className={s.marginRight}
-					>
-						Год окончания
-					</p>
-					<div className={s.inputContainer}>
-						<div>
-							<input
-								className={`${s.input} ${s.inputDate}`}
-								type=''
-								placeholder='--'
-							/>
-							<ul className={s.Ul}>
-								<li className={s.LiTest}>1231321</li>
-								<li>123</li>
-								<li>123</li>
-							</ul>
+			{educationFields.map((_, index) => {
+				return (
+					<div className={`${s.aboutContainer} ${s.aboutStudy}`}>
+						<div className={s.workCategory}>
+							<p
+								style={{ marginBottom: '2rem' }}
+								className={s.marginRight}
+							>
+								Название заведения
+							</p>
+							<div className={s.inputContainer}>
+								<input
+									className={`${s.input} ${s.inputWork}`}
+									type='text'
+									placeholder='Название заведения'
+									value={
+										educationFields[index].name_universitet
+									}
+									onChange={(e) =>
+										updateEducationFields(
+											index,
+											'name_universitet',
+											e.target.value
+										)
+									}
+								/>
+								<p className={s.inputAbout}>Например, СПБГУ</p>
+							</div>
 						</div>
-						<p className={s.inputAbout}>
-							Если вы ещё учитесь год - предполагаемого окончания
-						</p>
+						<div className={s.workCategory}>
+							<p
+								style={{ marginBottom: '2rem' }}
+								className={s.marginRight}
+							>
+								Ваша профессия
+							</p>
+							<div className={s.inputContainer}>
+								<input
+									className={`${s.input} ${s.inputWork}`}
+									type='text'
+									placeholder='Ваша профессия'
+									value={
+										educationFields[index]
+											.universitet_why_jobs
+									}
+									onChange={(e) =>
+										updateEducationFields(
+											index,
+											'universitet_why_jobs',
+											e.target.value
+										)
+									}
+								/>
+								<p className={s.inputAbout}>
+									Например “Оператор станка”
+								</p>
+							</div>
+						</div>
+						<div className={s.workCategory}>
+							<p
+								style={{ marginBottom: '2rem' }}
+								className={s.marginRight}
+							>
+								Год окончания
+							</p>
+							<div className={s.inputContainer}>
+								<div>
+									<select
+										className={`${s.input} ${s.inputNewborn}`}
+										value={
+											educationFields[index]
+												.years_stop_univer
+										}
+										onChange={(e) =>
+											updateEducationFields(
+												index,
+												'years_stop_univer',
+												e.target.value
+											)
+										}
+									>
+										{years.map((year, index) => (
+											<option key={index} value={year}>
+												{year}
+											</option>
+										))}
+									</select>
+								</div>
+								<p className={s.inputAbout}>
+									Если вы ещё учитесь год - предполагаемого
+									окончания
+								</p>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
+				)
+			})}
 			<button
 				className={s.addBtn}
 				style={{ border: '0px', backgroundColor: '#fff' }}
+				onClick={() => {
+					setEducationFields((prevEducationFields) => [
+						...prevEducationFields,
+						{
+							years_stop_univer: '',
+							name_universitet: '',
+							universitet_why_jobs: '',
+						},
+					])
+					// setEducationFieldsCount([...educationFieldsCount, 1])
+				}}
 			>
 				<img className={s.addNew} src={addNew} alt='' />
 				<p className={`${s.marginRight} ${s.addText}`}>
@@ -612,30 +670,65 @@ const Summary = () => {
 				</p>
 			</button>
 			<h2 className={`${s.pageTitle} ${s.marginTop}`}>Знания языков</h2>
-			<div className={`${s.aboutLang} ${s.langContainer}`}>
-				<div className={s.workCategory}>
-					<p className={s.marginRight}>Название языка</p>
-					<div className={s.inputContainer}>
-						<input
-							className={`${s.input} ${s.inputWork}`}
-							type='text'
-							placeholder='Английский'
-						/>
-					</div>
-				</div>
+			{languageFields.map((_, index) => {
+				return (
+					<div className={`${s.aboutLang} ${s.langContainer}`}>
+						<div className={s.workCategory}>
+							<p className={s.marginRight}>Название языка</p>
+							<div className={s.inputContainer}>
+								<input
+									className={`${s.input} ${s.inputWork}`}
+									type='text'
+									placeholder='Английский'
+									value={languageFields[index].language}
+									onChange={(e) =>
+										updateLanguageFields(
+											index,
+											'language',
+											e.target.value
+										)
+									}
+								/>
+							</div>
+						</div>
 
-				<div className={s.inputBox}>
-					<p className={s.marginRight}>Год окончания</p>
-					<input
-						className={`${s.input} ${s.inputDate}`}
-						type=''
-						placeholder='--'
-					/>
-				</div>
-			</div>
+						<div className={s.inputBox}>
+							<p className={s.marginRight}>Уровень владения</p>
+							<select
+								className={`${s.input} ${s.inputDate}`}
+								placeholder=''
+								value={languageFields[index].level_language}
+								onChange={(e) =>
+									updateLanguageFields(
+										index,
+										'level_language',
+										e.target.value
+									)
+								}
+							>
+								<option value='A1'>A1</option>
+								<option value='A2'>A2</option>
+								<option value='B1'>B1</option>
+								<option value='B2'>B2</option>
+								<option value='C1'>C1</option>
+								<option value='C2'>C2</option>
+							</select>
+						</div>
+					</div>
+				)
+			})}
 			<button
 				className={s.addBtn}
 				style={{ border: '0px', backgroundColor: '#fff' }}
+				onClick={() => {
+					setLanguageFields((prevEducationFields) => [
+						...prevEducationFields,
+						{
+							language: '',
+							level_language: '',
+						},
+					])
+				}}
 			>
 				<img className={s.addNew} src={addNew} alt='' />
 				<p className={`${s.marginRight} ${s.addText}`}>
@@ -644,16 +737,27 @@ const Summary = () => {
 			</button>
 			<div className={s.aboutDesc}>
 				<p className={`${s.marginRight} ${s.textAbout}`}>О себе</p>
-				<input className={`${s.input} ${s.inputDesc}`} type='text' />
+				<input
+					value={summaryFields.about_me}
+					onChange={(e) =>
+						updateSummaryFields('about_me', e.target.value)
+					}
+					className={`${s.input} ${s.inputDesc}`}
+					type='text'
+				/>
 			</div>
 			<div>
 				<label className={s.marginRight} htmlFor=''>
-					Цена:
+					Зарплата:
 				</label>
 				<input
 					className={s.inputPrice}
 					type='text'
-					placeholder='12 500'
+					value={summaryFields.cant_dollars}
+					placeholder='40 000'
+					onChange={(e) =>
+						updateSummaryFields('cant_dollars', e.target.value)
+					}
 				/>
 				<img className={s.marginLeft} src={greenMoney} alt='' />
 			</div>
@@ -664,22 +768,56 @@ const Summary = () => {
 				</p>
 				<div className={s.photoSectionContainer}>
 					<div className={`${s.photo} ${s.photoContainer}`}>
-						<img className={s.photoClose} src={photoClose} alt='' />
+						{summaryFields.photos !== null && (
+							<img
+								className={s.photoClose}
+								src={URL.createObjectURL(
+									summaryFields.photos[0]
+								)}
+								alt=''
+							/>
+						)}
 					</div>
-					<div className={s.addPhotoContainer}>
-						<div className={s.plusContainer}>
-							<p
-								style={{
-									textAlign: 'center',
-									marginBottom: '1rem',
-								}}
-							>
-								Нажмите, чтобы добавить новую фотографию
-							</p>
-							<img className={s.plusPhoto} src={plus} alt='' />
+					<input
+						multiple
+						id='photoInput'
+						style={{ display: 'none' }}
+						onChange={(e) => {
+							if (e.target.files instanceof FileList) {
+								updateSummaryFields(
+									'photos',
+									Array.from(e.target.files)
+								)
+							}
+						}}
+						className={s.photoInput}
+						type='file'
+					/>
+					<label htmlFor='photoInput'>
+						<div className={s.addPhotoContainer}>
+							<div className={s.plusContainer}>
+								<p
+									style={{
+										textAlign: 'center',
+										marginBottom: '1rem',
+									}}
+								>
+									{summaryFields.photos?.length
+										? `Нажмите, чтобы добавить новую фотографию, уже ${summaryFields.photos?.length} загружено`
+										: 'Нажмите или перетащите новую фотографию'}
+								</p>
+								<img
+									className={s.plusPhoto}
+									src={plus}
+									alt=''
+								/>
+								<p>
+									Качественные фото с чистым фоном - залог
+									высоких продаж
+								</p>
+							</div>
 						</div>
-						<input className={s.photoInput} type='file' />
-					</div>
+					</label>
 				</div>
 			</div>
 			<button

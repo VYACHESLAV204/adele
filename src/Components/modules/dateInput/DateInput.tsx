@@ -4,7 +4,7 @@ import { SummaryFieldsType } from '../../buildPages/summary/Summary'
 type DateInputProps = {
 	updateSummary: (
 		key: keyof SummaryFieldsType,
-		newValue: string | boolean | File,
+		newValue: string,
 		index?: number
 	) => void
 	// ... any other props

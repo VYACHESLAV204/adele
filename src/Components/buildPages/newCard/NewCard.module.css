@@ -114,8 +114,10 @@
 	border-radius: 6px;
 }
 .photoClose{
-	width: 40px;
-	height: 37px;
+width: 225px;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 6px;
 }
 .photoSectionContainer{
 	display: flex;

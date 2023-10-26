@@ -951,8 +951,8 @@ const Menu: React.FC<MenuProps> = ({
 										className={s.Link}
 										to={
 											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
+												? '/summary/'
+												: '/summary/'
 										}
 									>
 										<li
