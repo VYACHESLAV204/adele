@@ -167,7 +167,6 @@ const Summary = () => {
 		)
 			.then((data) => data.json())
 			.then((data) => {
-				setId_user(data.id_user)
 				const toServerJson = {
 					profile_id: data.id_user,
 					workExp: workExp,
