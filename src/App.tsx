@@ -56,8 +56,12 @@ function App() {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				category: categoryForNewCard,
-				sub_category: underCategoryForNewCard,
+				category:
+					categoryForNewCard !== '' ? categoryForNewCard : 'Блоки',
+				sub_category:
+					underCategoryForNewCard !== ''
+						? underCategoryForNewCard
+						: null,
 				page: page,
 			}),
 		})
@@ -68,6 +72,31 @@ function App() {
 			.catch((error) => {
 				console.error('Ошибка:', error)
 			})
+	}, [categoryForNewCard, underCategoryForNewCard, page])
+	useEffect(() => {
+		if (
+			categoryForNewCard === 'Работа' &&
+			underCategoryForNewCard === 'Ищу сотрудника'
+		) {
+			fetch('http://31.129.105.19/api/v1/index-summary', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					category: categoryForNewCard,
+					sub_category: underCategoryForNewCard,
+					page: page,
+				}),
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					setCardsArray(data)
+				})
+				.catch((error) => {
+					console.error('Ошибка:', error)
+				})
+		}
 	}, [categoryForNewCard, underCategoryForNewCard, page])
 
 	useEffect(() => {
@@ -106,7 +135,7 @@ function App() {
 						/>
 
 						<Route
-							// Починить
+							//Готово
 							path='/card/:id'
 							element={
 								cards && (
@@ -192,6 +221,7 @@ function App() {
 						/>
 
 						<Route
+							//Готово
 							path='/summary/'
 							element={isLoggin ? <Summary /> : <Error401 />}
 						/>
@@ -229,10 +259,7 @@ function App() {
 							path='/moderation/'
 							element={isLoggin ? <Moderation /> : <Error401 />}
 						/>
-						<Route
-							path='/profile-mob/'
-							element={<ProfileMob/>}
-						/>
+						<Route path='/profile-mob/' element={<ProfileMob />} />
 					</Routes>
 				</Layout>
 			</div>

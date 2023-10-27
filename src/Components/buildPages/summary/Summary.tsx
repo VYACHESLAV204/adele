@@ -26,7 +26,6 @@ export type SummaryFieldsType = {
 }
 
 const Summary = () => {
-	const [id_user, setId_user] = useState('')
 	const [summaryFields, setSummaryFields] = useState<SummaryFieldsType>({
 		category: 'Работа',
 		subcategory: 'резюме',
@@ -156,7 +155,6 @@ const Summary = () => {
 				summaryToServer.append(`photos${i}`, summaryFields.photos[i])
 			}
 		}
-		
 
 		fetch(
 			`http://31.129.105.19/api/v1/add-summary?jwt=${localStorage.getItem(
@@ -169,14 +167,13 @@ const Summary = () => {
 		)
 			.then((data) => data.json())
 			.then((data) => {
-				setId_user(data.id_user)
 				const toServerJson = {
 					profile_id: data.id_user,
 					workExp: workExp,
 					educationFields: educationFields,
 					languageFields: languageFields,
 				}
-		
+
 				return fetch(
 					`http://31.129.105.19/api/v1/add-summary-next?jwt=${localStorage.getItem(
 						'token'
@@ -191,13 +188,6 @@ const Summary = () => {
 					}
 				)
 			})
-			.then((response) => response.json())
-			.then((data) => {
-				// Ваш код для обработки ответа на второй запрос
-			})
-			.catch((error) => {
-				// Ваш код для обработки возможных ошибок
-			});
 	}
 	return (
 		<div className={s.summaryContainer}>
