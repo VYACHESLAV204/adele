@@ -30,6 +30,7 @@ export interface CardAd {
 
 export interface ICatalogProps {
 	card_ads: CardAd[]
+	resume?:any[]
 	card_noads: CardAd[]
 	has_next_ads: boolean
 	has_next_noads: boolean

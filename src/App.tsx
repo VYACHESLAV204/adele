@@ -20,11 +20,13 @@ import Error401 from './Components/buildPages/401Error/401.js'
 import { OptionType } from './Components/modules/select/SelectTemplate.js'
 import ProfileMob from './Components/buildPages/profilePopupMob/ProfilePopupMob.js'
 
+
 function App() {
 	const [modalType, setModalType] = useState<'auth' | 'reg' | ''>('')
 	const [isOpen, setIsOpen] = useState(false)
 	const [citys, setCitys] = useState([])
 	const [cardsArray, setCardsArray] = useState<ICatalogProps>()
+	const [resume, setResume] = useState()
 	const [cards, setCards] = useState<CardAdResponse>()
 	const [categoryForNewCard, setCategoryForNewCard] = useState('')
 	const [underCategoryForNewCard, setUnderCategoryForNewCard] = useState('')
@@ -91,7 +93,7 @@ function App() {
 			})
 				.then((response) => response.json())
 				.then((data) => {
-					setCardsArray(data)
+					setResume(data)
 				})
 				.catch((error) => {
 					console.error('Ошибка:', error)
@@ -178,6 +180,7 @@ function App() {
 										sub_category_all={
 											cardsArray.sub_category_all
 										}
+										resume={resume}
 										total_pages_ads={
 											cardsArray.total_pages_ads
 										}

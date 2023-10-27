@@ -11,6 +11,7 @@ const Catalog: FC<ICatalogProps> = ({
 	has_next_ads,
 	has_next_noads,
 	page,
+	resume,
 	setPage,
 	setSubCat,
 	categorys_index,
@@ -30,7 +31,8 @@ const Catalog: FC<ICatalogProps> = ({
 		has_next_noads,
 		page,
 		total_pages_ads,
-		total_pages_noads
+		total_pages_noads,
+		resume
 	)
 
 	const styleClasses = [
@@ -42,51 +44,107 @@ const Catalog: FC<ICatalogProps> = ({
 		styles.SixCat,
 		styles.SevenCat,
 	]
-
-	return (
-		<div style={{}}>
-			<div style={{ display: 'flex', flexWrap: 'wrap' }}>
-				<h2 className={styles.H2NameOfCategory}>{categorys_index}</h2>
-				<div style={{ marginRight: 65 }}>
-					<div className={styles.CatDiv}>
-						{sub_category_all?.map((Cat, index) => {
-							const styleClass =
-								styleClasses[index % styleClasses.length]
-							return (
-								<div
-									onClick={() => setSubCat(Cat.category)}
-									key={Cat.id}
-									className={styleClass}
-								>
-									<p className={styles.CatText}>
-										{Cat.category}
-									</p>
-								</div>
-							)
-						})}
-					</div>
-					<div style={{ marginTop: 15 }}>
-						<CardMain Cards={card_ads} />
-					</div>
-				</div>
-				<div
-					style={{ marginTop: -50 }}
-					className={ColumnCardsStyles.AdCardsDiv}
-				>
-					<h2 className={ColumnCardsStyles.H2BestPractique}>
-						Лучшие предложения:
+	if (!resume) {
+		return (
+			<div style={{}}>
+				<div style={{ display: 'flex', flexWrap: 'wrap' }}>
+					<h2 className={styles.H2NameOfCategory}>
+						{categorys_index}
 					</h2>
-					<Card cardsStyles={CardsStylesColumn} cardsAd={card_ads} />
-				</div>
+					<div style={{ marginRight: 65 }}>
+						<div className={styles.CatDiv}>
+							{sub_category_all?.map((Cat, index) => {
+								const styleClass =
+									styleClasses[index % styleClasses.length]
+								return (
+									<div
+										onClick={() => setSubCat(Cat.category)}
+										key={Cat.id}
+										className={styleClass}
+									>
+										<p className={styles.CatText}>
+											{Cat.category}
+										</p>
+									</div>
+								)
+							})}
+						</div>
+						<div style={{ marginTop: 15 }}>
+							<CardMain Cards={card_ads} />
+						</div>
+					</div>
+					<div
+						style={{ marginTop: -50 }}
+						className={ColumnCardsStyles.AdCardsDiv}
+					>
+						<h2 className={ColumnCardsStyles.H2BestPractique}>
+							Лучшие предложения:
+						</h2>
+						<Card
+							cardsStyles={CardsStylesColumn}
+							cardsAd={card_ads}
+						/>
+					</div>
 
-				<Pagination
-					currentPage={page}
-					setCurrentPage={setPage}
-					totalPages={total_pages_ads}
-				/>
+					<Pagination
+						currentPage={page}
+						setCurrentPage={setPage}
+						totalPages={total_pages_ads}
+					/>
+				</div>
 			</div>
-		</div>
-	)
+		)
+	} else if (resume) {
+		return (
+			<div style={{}}>
+				<div style={{ display: 'flex', flexWrap: 'wrap' }}>
+					<h2 className={styles.H2NameOfCategory}>
+						{categorys_index}
+					</h2>
+					<div style={{ marginRight: 65 }}>
+						<div className={styles.CatDiv}>
+							{sub_category_all?.map((Cat, index) => {
+								const styleClass =
+									styleClasses[index % styleClasses.length]
+								return (
+									<div
+										onClick={() => setSubCat(Cat.category)}
+										key={Cat.id}
+										className={styleClass}
+									>
+										<p className={styles.CatText}>
+											{Cat.category}
+										</p>
+									</div>
+								)
+							})}
+						</div>
+						<div style={{ marginTop: 15 }}>
+							<CardMain Cards={card_ads} />
+						</div>
+					</div>
+					<div
+						style={{ marginTop: -50 }}
+						className={ColumnCardsStyles.AdCardsDiv}
+					>
+						<h2 className={ColumnCardsStyles.H2BestPractique}>
+							Лучшие предложения:
+						</h2>
+						<Card
+							cardsStyles={CardsStylesColumn}
+							cardsAd={card_ads}
+						/>
+					</div>
+
+					<Pagination
+						currentPage={page}
+						setCurrentPage={setPage}
+						totalPages={total_pages_ads}
+					/>
+				</div>
+			</div>
+		)
+	}
 }
 
 export default Catalog
