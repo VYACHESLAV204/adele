@@ -54,11 +54,29 @@ const Catalog: FC<ICatalogProps> = ({
 	if (!resume) {
 		return (
 			<div style={{}}>
-				<div style={{ display: 'flex', flexWrap: 'wrap' }}>
+				<div
+					className={styles.sectionBoxNew}
+					style={{ display: 'flex', flexWrap: 'wrap' }}
+				>
 					<h2 className={styles.H2NameOfCategory}>
 						{categorys_index}
 					</h2>
-					<div style={{ marginRight: 65 }}>
+					<div
+						className={`${ColumnCardsStyles.AdCardsDivMob} ${styles.AdCardsDivMob}`}
+					>
+						<h2 className={ColumnCardsStyles.H2BestPractiqueMob}>
+							Лучшие предложения:
+						</h2>
+						<Card
+							cardsStyles={CardStylesMob}
+							cardsAd={card_ads || []}
+						/>
+					</div>
+
+					<div
+						className={styles.catDivMain}
+						style={{ marginRight: 65 }}
+					>
 						<div className={styles.CatDiv}>
 							{sub_category_all?.map((Cat, index) => {
 								const styleClass =
@@ -76,7 +94,11 @@ const Catalog: FC<ICatalogProps> = ({
 								)
 							})}
 						</div>
-						<div style={{ marginTop: 15 }}>
+
+						<div
+							className={styles.cardsMainDiv}
+							style={{ marginTop: 15 }}
+						>
 							<CardMain Cards={card_ads} />
 						</div>
 					</div>
@@ -92,98 +114,40 @@ const Catalog: FC<ICatalogProps> = ({
 							cardsAd={card_ads}
 						/>
 					</div>
-
 					<Pagination
 						currentPage={page}
 						setCurrentPage={setPage}
 						totalPages={total_pages_ads}
 					/>
 				</div>
-				return (
-				<div style={{}}>
-					<div
-						className={styles.sectionBoxNew}
-						style={{ display: 'flex', flexWrap: 'wrap' }}
-					>
-						<h2 className={styles.H2NameOfCategory}>
-							{categorys_index}
-						</h2>
-						<div
-							className={`${ColumnCardsStyles.AdCardsDivMob} ${styles.AdCardsDivMob}`}
-						>
-							<h2
-								className={ColumnCardsStyles.H2BestPractiqueMob}
-							>
-								Лучшие предложения:
-							</h2>
-							<Card
-								cardsStyles={CardStylesMob}
-								cardsAd={card_ads || []}
-							/>
-						</div>
-
-						<div
-							className={styles.catDivMain}
-							style={{ marginRight: 65 }}
-						>
-							<div className={styles.CatDiv}>
-								{sub_category_all?.map((Cat, index) => {
-									const styleClass =
-										styleClasses[
-											index % styleClasses.length
-										]
-									return (
-										<div
-											onClick={() =>
-												setSubCat(Cat.category)
-											}
-											key={Cat.id}
-											className={styleClass}
-										>
-											<p className={styles.CatText}>
-												{Cat.category}
-											</p>
-										</div>
-									)
-								})}
-							</div>
-
-							<div
-								className={styles.cardsMainDiv}
-								style={{ marginTop: 15 }}
-							>
-								<CardMain Cards={card_ads} />
-							</div>
-						</div>
-						<div
-							style={{ marginTop: -50 }}
-							className={ColumnCardsStyles.AdCardsDiv}
-						>
-							<h2 className={ColumnCardsStyles.H2BestPractique}>
-								Лучшие предложения:
-							</h2>
-							<Card
-								cardsStyles={CardsStylesColumn}
-								cardsAd={card_ads}
-							/>
-						</div>
-						<Pagination
-							currentPage={page}
-							setCurrentPage={setPage}
-							totalPages={total_pages_ads}
-						/>
-					</div>
-				</div>
 			</div>
 		)
 	} else if (resume) {
 		return (
 			<div style={{}}>
-				<div style={{ display: 'flex', flexWrap: 'wrap' }}>
+				<div
+					className={styles.sectionBoxNew}
+					style={{ display: 'flex', flexWrap: 'wrap' }}
+				>
 					<h2 className={styles.H2NameOfCategory}>
 						{categorys_index}
 					</h2>
-					<div style={{ marginRight: 65 }}>
+					<div
+						className={`${ColumnCardsStyles.AdCardsDivMob} ${styles.AdCardsDivMob}`}
+					>
+						<h2 className={ColumnCardsStyles.H2BestPractiqueMob}>
+							Лучшие предложения:
+						</h2>
+						<Card
+							cardsStyles={CardStylesMob}
+							cardsAd={card_ads || []}
+						/>
+					</div>
+
+					<div
+						className={styles.catDivMain}
+						style={{ marginRight: 65 }}
+					>
 						<div className={styles.CatDiv}>
 							{sub_category_all?.map((Cat, index) => {
 								const styleClass =
@@ -201,7 +165,11 @@ const Catalog: FC<ICatalogProps> = ({
 								)
 							})}
 						</div>
-						<div style={{ marginTop: 15 }}>
+
+						<div
+							className={styles.cardsMainDiv}
+							style={{ marginTop: 15 }}
+						>
 							<CardMain Cards={card_ads} />
 						</div>
 					</div>
@@ -217,7 +185,6 @@ const Catalog: FC<ICatalogProps> = ({
 							cardsAd={card_ads}
 						/>
 					</div>
-
 					<Pagination
 						currentPage={page}
 						setCurrentPage={setPage}
