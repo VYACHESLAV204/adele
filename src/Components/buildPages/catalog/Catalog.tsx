@@ -42,12 +42,27 @@ const Catalog: FC<ICatalogProps> = ({
 		styles.SixCat,
 		styles.SevenCat,
 	]
+	const CardStylesMob = {
+		display: 'flex',
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		justifyContent: 'space-between',
+		width: '91vw',
+	}
 
 	return (
 		<div style={{}}>
-			<div style={{ display: 'flex', flexWrap: 'wrap' }}>
+			<div className={styles.sectionBoxNew} style={{ display: 'flex', flexWrap: 'wrap' }}>
 				<h2 className={styles.H2NameOfCategory}>{categorys_index}</h2>
-				<div style={{ marginRight: 65 }}>
+					<div className={`${ColumnCardsStyles.AdCardsDivMob} ${styles.AdCardsDivMob}`} >
+							<h2 className={ColumnCardsStyles.H2BestPractiqueMob}>Лучшие предложения:</h2>
+							<Card 
+								cardsStyles={CardStylesMob}
+								cardsAd={card_ads || []}
+							/>
+					</div>
+
+				<div className={styles.catDivMain} style={{ marginRight: 65 }}>
 					<div className={styles.CatDiv}>
 						{sub_category_all?.map((Cat, index) => {
 							const styleClass =
@@ -65,7 +80,8 @@ const Catalog: FC<ICatalogProps> = ({
 							)
 						})}
 					</div>
-					<div style={{ marginTop: 15 }}>
+					
+					<div className={styles.cardsMainDiv} style={{ marginTop: 15 }}>
 						<CardMain Cards={card_ads} />
 					</div>
 				</div>
@@ -78,7 +94,6 @@ const Catalog: FC<ICatalogProps> = ({
 					</h2>
 					<Card cardsStyles={CardsStylesColumn} cardsAd={card_ads} />
 				</div>
-
 				<Pagination
 					currentPage={page}
 					setCurrentPage={setPage}
