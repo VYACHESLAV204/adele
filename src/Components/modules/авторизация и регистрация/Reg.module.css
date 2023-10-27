@@ -146,3 +146,95 @@
 	width: 70%;
 	margin-bottom: 2rem;
 }
+@media (max-width: 1025px) {
+	.hidePassword{
+		left: 19rem;
+	}
+	.register{
+		font-size: 18px;
+	}
+	.textSimple{
+		font-size: 18px;
+	}
+	.PText{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.TypeSelect{
+		margin-right: 1rem;
+    	width: 55%;
+	}
+	.InputEmail{
+		width: 90%;
+	}
+	.label{
+		font-size: 18px;
+	}
+}
+@media (max-width: 769px) {
+	.innerDiv{
+		width: 90%;
+	}
+	.register{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.Continue{
+		margin-bottom: 0;
+	}
+	.hidePassword{
+		left: 17.5rem;
+		height: 45px;
+		width: 45px;
+	}
+}
+@media (max-width:430px) {
+	
+	.hidePassword{
+		left: 15rem;
+		width: 40px;
+		height: 40px;
+		top: 5.9rem;
+	}	
+	.MainDivFirstPopUp{
+		width: 80vw;
+	}
+	.H2text{
+		font-size: 20px;
+	}
+	.InputEmail{
+		font-size: 15px;
+	}
+	.Continue{
+		margin-bottom: 0.5rem;
+	}
+}
+@media (max-width:380px) {
+	.hidePassword{
+		left: 14rem;
+	}
+	
+}
+@media (max-width: 376px) {
+	.hidePassword{
+		left: 13rem;
+	}
+	.label{
+		text-align: left;
+	}
+}
+@media (max-width:345px) {
+	.Continue{
+		width: 80%;
+	}
+	.hidePassword{
+		left: 12rem;
+	}
+	
+}
+@media (max-width: 320px) {
+	.hidePassword{
+		left: 11rem;
+	}
+	
+}
