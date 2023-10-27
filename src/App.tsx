@@ -56,7 +56,8 @@ function App() {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				category:categoryForNewCard !== ''? categoryForNewCard : 'Блоки' ,
+				category:
+					categoryForNewCard !== '' ? categoryForNewCard : 'Блоки',
 				sub_category:
 					underCategoryForNewCard !== ''
 						? underCategoryForNewCard
@@ -71,6 +72,31 @@ function App() {
 			.catch((error) => {
 				console.error('Ошибка:', error)
 			})
+	}, [categoryForNewCard, underCategoryForNewCard, page])
+	useEffect(() => {
+		if (
+			categoryForNewCard === 'Работа' &&
+			underCategoryForNewCard === 'Ищу сотрудника'
+		) {
+			fetch('http://31.129.105.19/api/v1/index-summary', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					category: categoryForNewCard,
+					sub_category: underCategoryForNewCard,
+					page: page,
+				}),
+			})
+				.then((response) => response.json())
+				.then((data) => {
+					setCardsArray(data)
+				})
+				.catch((error) => {
+					console.error('Ошибка:', error)
+				})
+		}
 	}, [categoryForNewCard, underCategoryForNewCard, page])
 
 	useEffect(() => {
@@ -195,7 +221,7 @@ function App() {
 						/>
 
 						<Route
-						//Готово
+							//Готово
 							path='/summary/'
 							element={isLoggin ? <Summary /> : <Error401 />}
 						/>
