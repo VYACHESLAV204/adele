@@ -431,4 +431,7 @@
 	.inputDesc {
 		width: 250px;
 	}
+	.summaryContainer{
+		margin-top: 0;
+	}
 }

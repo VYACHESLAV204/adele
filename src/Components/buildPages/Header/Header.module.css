@@ -1,6 +1,6 @@
 .MainDiv {
 	display: flex;
-	height: 52px;
+	height: auto;
 	align-items: center;
 	margin-top: 60px;
 }
@@ -120,6 +120,46 @@
 }
 .searchContainerMob{
 	display: none;
+}
+.Ul {
+	visibility: hidden;
+	top: -1000px;
+	position: absolute;
+	left: 85rem;
+	border-radius: 8px;
+	border: 1px solid #9090D8;
+	background-color: #F2F2FF;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	width: 100px;
+	height: 80px;
+	padding-left: 0;
+}
+.userLogin:hover ~ .Ul {
+	visibility: visible;
+	top: 8rem;
+	position: absolute;
+	left: 88rem;
+/* 	transition: 0.3s ease; */
+}
+li{
+	list-style-type: none;
+}
+.listItem{
+	text-align: left;
+	margin-bottom: 1rem;
+}
+.userLogin{
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	text-decoration-line: underline;
 }
 @media (max-width: 1025px) {
 	.NewAdd{

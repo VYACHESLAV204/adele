@@ -99,7 +99,11 @@ const Header: React.FC<HeaderProps> = ({
 			</div>
 			{isLoggin ? (
 				<div className={styles.userNameMob}>
-					<h1>{headerUsername}</h1>
+					<h1 className={styles.userLogin}>{headerUsername}</h1>
+					<ul className={styles.Ul}>
+						<li className={styles.liItem}>Мой аккаунт</li>
+						<li className={styles.liItem}>Выйти</li>
+					</ul>
 				</div>
 			) : (
 				<div className={styles.signInIpDiv}>
