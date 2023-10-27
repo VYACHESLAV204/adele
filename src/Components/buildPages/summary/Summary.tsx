@@ -754,7 +754,7 @@ const Summary = () => {
 				</label>
 				<input
 					className={s.inputPrice}
-					type='text'
+					type='number'
 					value={summaryFields.cant_dollars}
 					placeholder='40 000'
 					onChange={(e) =>

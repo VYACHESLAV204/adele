@@ -27,16 +27,7 @@ const Pagination: FC<Pagprops> = ({
 		let endPage = Math.min(totalPages, currentPage + 2)
 
 		// Добавляем кнопки для предыдущих страниц
-		if (startPage > 1) {
-			pageNumbers.push(
-				<button key={1} onClick={() => changePage(1)}>
-					1
-				</button>
-			)
-			if (startPage > 2) {
-				pageNumbers.push(<span key='ellipsis_left'>...</span>)
-			}
-		}
+		
 
 		// Добавляем кнопки для текущего диапазона страниц
 		for (let page = startPage; page <= endPage; page++) {
@@ -52,16 +43,7 @@ const Pagination: FC<Pagprops> = ({
 		}
 
 		// Добавляем кнопки для следующих страниц
-		if (endPage < totalPages) {
-			if (endPage < totalPages - 1) {
-				pageNumbers.push(<span key='ellipsis_right'>...</span>)
-			}
-			pageNumbers.push(
-				<button key={totalPages} onClick={() => changePage(totalPages)}>
-					{totalPages}
-				</button>
-			)
-		}
+		
 
 		return pageNumbers
 	}
@@ -73,7 +55,7 @@ const Pagination: FC<Pagprops> = ({
 				disabled={currentPage === 1}
 				onClick={() => changePage(currentPage - 1)}
 			>
-				Предыдущая &lt;
+			&lt; Предыдущая 
 			</button>
 			{generatePageNumbers()}
 			<button
