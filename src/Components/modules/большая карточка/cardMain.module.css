@@ -131,14 +131,18 @@
 	.mainDiv{
 		flex-direction: column;
 		height: 100%;
-		align-items: center;
 	}
 	.IMG{
 		width: 95%;
 		height: 30vh;
 	}
 	.leftDiv{
+		display: flex;
+		justify-content: center;
 		height: 100%;
-		width: 95%;
+		width: 100%;
+	}
+	.rightDiv{
+		margin-left: 1rem;
 	}
 }
