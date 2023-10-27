@@ -147,8 +147,9 @@
 }
 @media (max-width: 769px) {
 	.CatDiv{
-		width: 100vw;
-		margin-bottom: 3rem;
+		gap: 20px;
+    	width: 100vw;
+    	margin-bottom: 9rem;
 	}
 	.AdCardsDivMob{
 		width: 90vw;
@@ -168,8 +169,11 @@
 	}
 }
 @media (max-width: 430px) {
+	.CatDiv{
+		margin-bottom: 5rem;
+	}
 	.H2NameOfCategory{
-		margin-top: 6rem;;
+		margin-top: 2rem;;
 	}
 	.AdCardsDivMob{
 		margin-top: 0;
@@ -208,5 +212,6 @@
 	.CatDiv{
 		gap: 1rem;
 		justify-content: center;
-	}
+	    margin-bottom: 12rem;
 }
+	}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import s from './Menu.module.css'
 import MenuArrow from '../../../assets/Menu arrow.svg'
 import { NavLink } from 'react-router-dom'
+import closeIcon from '../../../assets/closeIcon.svg'
 
 interface MenuProps {
 	NavOrNew: boolean
@@ -78,6 +79,7 @@ const Menu: React.FC<MenuProps> = ({
 		FnSetSub('', false)
 	}, [BurgerisOpen])
 
+
 	return (
 		<div
 			onClick={(e) => e.stopPropagation()}
@@ -85,6 +87,9 @@ const Menu: React.FC<MenuProps> = ({
 		>
 			<div className={s.MainDiv}>
 				<div className='1'>
+					<div className={s.mobileMenuTitle}>
+						<p className={s.titleMenuItem}>Все категории</p>
+					</div>
 					<ul className={s.menu}>
 						<li>
 							<div
@@ -1121,7 +1126,8 @@ const Menu: React.FC<MenuProps> = ({
 				</div>
 				<div className={s.line}></div>
 			</div>
-			<button onClick={toggleMenu}>
+			<button className={s.btnProperty} onClick={toggleMenu}>
+				<img className={s.closeIcon} src={closeIcon} alt="" />
 				{BurgerisOpen ? 'Закрыть меню' : 'Открыть меню'}
 			</button>
 		</div>

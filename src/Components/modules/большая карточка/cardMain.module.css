@@ -21,8 +21,8 @@
 	align-items: flex-start;
 }
 .H2Name {
-	color: var(--, #1c1c85);
-	text-align: center;
+	color: #1c1c85;
+	text-align: left;
 	margin-top: 22px;
 	margin-bottom: 9px;
 	font-family: Vela Sans;
