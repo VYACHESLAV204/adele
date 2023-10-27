@@ -125,3 +125,88 @@
 	font-weight: 500;
 	line-height: normal;
 }
+.AdCardsDiv{
+	max-height: 147vh;
+}
+@media (max-width: 1025px) {
+	.H2NameOfCategory{
+		margin-left: 1rem;
+	}
+	.AdCardsDivMob{
+		margin-left: 1rem;
+	}
+	.CatDiv{
+		margin-left: 1rem;
+	}
+	.cardsMainDiv{
+		margin-left: 1rem;
+	}
+	.sectionBoxNew{
+		display: flex;
+	}
+}
+@media (max-width: 769px) {
+	.CatDiv{
+		width: 100vw;
+		margin-bottom: 3rem;
+	}
+	.AdCardsDivMob{
+		width: 90vw;
+		margin-left: 0;
+	}
+	.sectionBoxNew{
+		width: 100vw;
+	}
+	.H2NameOfCategory{
+		margin-left: 0;
+	}
+	.CatDiv{
+		margin-left: 0;
+	}
+	.cardsMainDiv{
+		margin-left: 0;
+	}
+}
+@media (max-width: 430px) {
+	.H2NameOfCategory{
+		margin-top: 6rem;;
+	}
+	.AdCardsDivMob{
+		margin-top: 0;
+	}
+	.cardsMainDiv{
+		margin-top: 7rem !important;
+	}
+	.OneCat{
+		margin-right: 0;
+		width: 45%;
+	}
+	.TwoCat{
+		margin-right: 0;
+		width: 45%;
+	}
+	.ThreeCat{
+		margin-right: 0;
+		width: 45%;
+	}
+	.FourCat{
+		margin-right: 0;
+		width: 45%;
+	}
+	.FiveCat{
+		margin-right: 0;
+		width: 45%;
+	}
+	.SixCat{
+		margin-right: 0;
+		width: 45%;
+	}
+	.SevenCat{
+		margin-right: 0;
+		width: 45%;
+	}
+	.CatDiv{
+		gap: 1rem;
+		justify-content: center;
+	}
+}

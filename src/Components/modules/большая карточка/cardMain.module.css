@@ -118,3 +118,31 @@
 	height: 323px;
 	object-fit: cover;
 }
+@media (max-width:769px) {
+	.mainDiv{
+		width: 100vw;
+	}
+	.rightDiv{
+		width: 65vw;
+	}
+	
+}
+@media (max-width: 430px) {
+	.mainDiv{
+		flex-direction: column;
+		height: 100%;
+	}
+	.IMG{
+		width: 95%;
+		height: 30vh;
+	}
+	.leftDiv{
+		display: flex;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+	}
+	.rightDiv{
+		margin-left: 1rem;
+	}
+}

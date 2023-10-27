@@ -33,3 +33,53 @@
 	margin: 0;
 	padding: 0;
 }
+@media (max-width: 1025px) {
+	.closeIcon{
+		left: 31rem;
+	}
+}
+@media (max-width: 769px) {
+	.closeIcon{
+		left: 23.4rem;
+	}
+	
+}
+@media (max-width: 430px) {
+	.closeIcon{
+		left: 20.6rem;
+	}
+}
+@media (max-width: 400px) {
+	.closeIcon{
+		left: 19.5rem;
+	}
+	
+}
+@media (max-width:380px) {
+	.closeIcon{
+		left: 18.5rem;
+	}
+	
+}
+@media (max-width: 376px) {
+	.closeIcon{
+		left: 18.3rem;
+	}
+	
+}
+@media (max-width: 360px) {
+	.closeIcon{
+		left: 17.5rem;
+	}
+	
+}
+@media (max-width: 345px) {
+	.closeIcon{
+		left: 16.5rem;
+	}
+}
+@media (max-width: 330px) {
+	.closeIcon{
+		left: 16rem;
+	}
+}
