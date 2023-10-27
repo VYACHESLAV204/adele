@@ -56,8 +56,11 @@ function App() {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				category: categoryForNewCard,
-				sub_category: underCategoryForNewCard,
+				category:categoryForNewCard !== ''? categoryForNewCard : 'Блоки' ,
+				sub_category:
+					underCategoryForNewCard !== ''
+						? underCategoryForNewCard
+						: null,
 				page: page,
 			}),
 		})
@@ -106,7 +109,7 @@ function App() {
 						/>
 
 						<Route
-							// Починить
+							//Готово
 							path='/card/:id'
 							element={
 								cards && (
@@ -192,6 +195,7 @@ function App() {
 						/>
 
 						<Route
+						//Готово
 							path='/summary/'
 							element={isLoggin ? <Summary /> : <Error401 />}
 						/>
@@ -229,10 +233,7 @@ function App() {
 							path='/moderation/'
 							element={isLoggin ? <Moderation /> : <Error401 />}
 						/>
-						<Route
-							path='/profile-mob/'
-							element={<ProfileMob/>}
-						/>
+						<Route path='/profile-mob/' element={<ProfileMob />} />
 					</Routes>
 				</Layout>
 			</div>

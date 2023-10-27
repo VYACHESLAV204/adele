@@ -950,9 +950,7 @@ const Menu: React.FC<MenuProps> = ({
 									<NavLink
 										className={s.Link}
 										to={
-											NavOrNew
-												? '/summary/'
-												: '/summary/'
+											NavOrNew ? '/summary/' : '/catalog/'
 										}
 									>
 										<li
@@ -982,24 +980,6 @@ const Menu: React.FC<MenuProps> = ({
 											}}
 										>
 											Ищу сотрудника
-										</li>
-									</NavLink>
-
-									<NavLink
-										className={s.Link}
-										to={
-											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
-										}
-									>
-										<li
-											onClick={() => {
-												setUnderCategory('Резюме'),
-													setCategory('Работа')
-											}}
-										>
-											Резюме
 										</li>
 									</NavLink>
 								</ul>
