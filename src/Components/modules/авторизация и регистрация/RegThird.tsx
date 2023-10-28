@@ -26,7 +26,7 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 		setState((prevState) => ({ ...prevState, [fieldName]: newValue }))
 	}
 	function SendData() {
-		fetch('http://31.129.105.19/api/v1/last-check-in', {
+		fetch('http://stoneworking.ru/api/v1/last-check-in', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

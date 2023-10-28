@@ -7,7 +7,7 @@ type RegPropsFirst = {
 }
 const RegFirst = (props: RegPropsFirst) => {
 	function SendMail() {
-		fetch('http://31.129.105.19/api/v1/send-mail', {
+		fetch('http://stoneworking.ru/api/v1/send-mail', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

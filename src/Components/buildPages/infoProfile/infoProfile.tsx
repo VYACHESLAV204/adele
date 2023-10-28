@@ -19,7 +19,7 @@ const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 	const token = localStorage.getItem('token')
 
 	useEffect(() => {
-		const url = `http://31.129.105.19/api/v1/profile-settings?jwt=${localStorage.getItem(
+		const url = `http://stoneworking.ru/api/v1/profile-settings?jwt=${localStorage.getItem(
 			'token'
 		)}`
 

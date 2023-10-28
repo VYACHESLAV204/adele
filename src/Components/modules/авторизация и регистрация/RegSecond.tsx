@@ -9,7 +9,7 @@ type RegPropsSecond = {
 export const RegSecond = (props: RegPropsSecond) => {
 	const [pass, setPass] = useState('')
 	function CheakPass() {
-		fetch('http://31.129.105.19/api/v1/check-code', {
+		fetch('http://stoneworking.ru/api/v1/check-code', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

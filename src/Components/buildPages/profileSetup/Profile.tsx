@@ -23,7 +23,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 
 	useEffect(() => {
 		fetch(
-			`http://31.129.105.19/api/v1/profile-settings?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/api/v1/profile-settings?jwt=${localStorage.getItem(
 				'token'
 			)}`
 		)
@@ -90,13 +90,24 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 			})
 	}
 
-	const style = { width:'40vw', marginLeft: '0px' }
+	const style = { width: '40vw', marginLeft: '0px' }
 	return (
 		<div className={s.mainDiv}>
 			<h2 className={s.H2Settings}>Настройки профиля</h2>
 			<div>
-				<form className={s.profileSettingsDiv} onSubmit={handleFormSubmit} action='submit'>
-					<div style={{flexDirection: 'column' , alignItems: 'flex-start' , height: '100px' }} className={s.inputDiv}>
+				<form
+					className={s.profileSettingsDiv}
+					onSubmit={handleFormSubmit}
+					action='submit'
+				>
+					<div
+						style={{
+							flexDirection: 'column',
+							alignItems: 'flex-start',
+							height: '100px',
+						}}
+						className={s.inputDiv}
+					>
 						<label htmlFor='email'>Электронная почта</label>
 						<input
 							className={s.inputStyles}

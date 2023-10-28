@@ -14,11 +14,14 @@ const Auth: React.FC<ModalProps> = (props) => {
 		e.preventDefault()
 
 		try {
-			const response = await fetch('http://31.129.105.19/api/v1/login', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ email, password }),
-			})
+			const response = await fetch(
+				'http://stoneworking.ru/api/v1/login',
+				{
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ email, password }),
+				}
+			)
 			const data = await response.json()
 			if (data.status) {
 				localStorage.setItem('token', data.token)
@@ -54,7 +57,6 @@ const Auth: React.FC<ModalProps> = (props) => {
 						className={styles.InputEmail}
 						type='password'
 						name='password'
-
 						placeholder='Пароль'
 						required
 					/>
