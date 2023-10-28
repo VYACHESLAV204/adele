@@ -61,7 +61,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 		event.preventDefault()
 
 		fetch(
-			`http://31.129.105.19/api/v1/profile-settings-post?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/api/v1/profile-settings-post?jwt=${localStorage.getItem(
 				'token'
 			)}`,
 			{

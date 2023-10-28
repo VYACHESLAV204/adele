@@ -9,7 +9,7 @@ const Defence = () => {
 		// Проверяем, что оба поля заполнены
 		if (oldPassword && newPassword) {
 			fetch(
-				`http://31.129.105.19/api/v1/replace-password?jwt=${localStorage.getItem(
+				`http://stoneworking.ru/api/v1/replace-password?jwt=${localStorage.getItem(
 					'token'
 				)}`,
 				{

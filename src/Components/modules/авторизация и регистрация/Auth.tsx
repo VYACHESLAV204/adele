@@ -4,6 +4,7 @@ import hidePassword from '../../../assets/mdi_hide-outline.svg'
 
 interface ModalProps {
 	closeModal: () => void
+	setModalType: (value: React.SetStateAction<'auth' | 'reg' | ''>) => void
 }
 const Auth: React.FC<ModalProps> = (props) => {
 	const [email, setEmail] = useState('')
@@ -61,7 +62,7 @@ const Auth: React.FC<ModalProps> = (props) => {
 				</form>
 			</div>
 			<div className={styles.line}></div>
-			<a href=''>
+			<a onClick={() => props.setModalType('reg')}>
 				<p style={{ color: '#5250C5' }} className={styles.register}>
 					Регистрация
 				</p>

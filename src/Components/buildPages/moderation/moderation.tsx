@@ -9,7 +9,7 @@ const moderation = () => {
 
 	useEffect(() => {
 		fetch(
-			`http://31.129.105.19/get_admin_posts?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/get_admin_posts?jwt=${localStorage.getItem(
 				'token'
 			)}`,
 			{
@@ -18,7 +18,8 @@ const moderation = () => {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
-					id: 1,
+					id: '1',
+					page:'1'
 				}),
 			}
 		)

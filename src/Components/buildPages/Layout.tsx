@@ -38,7 +38,7 @@ const Layout: React.FC<HeaderProps> = ({
 				setUnderCategory={setUnderCategory}
 			/>
 
-			<Reg setIsOpen={setIsOpen} modalType={modalType} isOpen={isOpen} />
+			<Reg setIsOpen={setIsOpen} setModalType={setModalType} modalType={modalType} isOpen={isOpen} />
 			<Footer children={children} />
 		</>
 	)

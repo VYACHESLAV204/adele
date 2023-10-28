@@ -10,6 +10,7 @@ import RegionSelectTemplate from '../../modules/select/SelectTemplate'
 import User from '../../../assets/solar_user-outline.svg'
 import Interface from '../../../assets/interface.svg'
 import { OptionType } from '../../modules/select/SelectTemplate'
+import { NavLink } from 'react-router-dom'
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void
@@ -33,7 +34,29 @@ const Header: React.FC<HeaderProps> = ({
 	const [NavOrNew, setNavOrNew] = useState(false)
 	const headerUsername = localStorage.getItem('username')
 	const isLoggin = localStorage.getItem('status')
-
+	const [MenuUser, setMenuUser] = useState(false)
+	function logout() {
+		fetch(
+			`http://stoneworking.ru/api/v1/logout?jwt=${localStorage.getItem(
+				'token'
+			)}`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		)
+			.then((res) => console.log(res))
+			.then(() => {
+				localStorage.removeItem('token'),
+					localStorage.removeItem('status')
+			})
+	}
+	const myStyles: React.CSSProperties = {
+		display:'flex'
+	  };
+	
 	function RegionSelect() {
 		// Состояние для выбранного региона
 
@@ -75,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({
 				></Menu>
 			</div>
 			<div className={styles.searchContainer}>
-				<InputButton />
+				{/* <InputButton styles={myStyles} /> */}
 			</div>
 			<div>
 				<button
@@ -99,10 +122,21 @@ const Header: React.FC<HeaderProps> = ({
 			</div>
 			{isLoggin ? (
 				<div className={styles.userNameMob}>
-					<h1 className={styles.userLogin}>{headerUsername}</h1>
+					<h1
+						onClick={() => setMenuUser(!MenuUser)}
+						className={
+							MenuUser ? styles.userLoginActive : styles.userLogin
+						}
+					>
+						{headerUsername}
+					</h1>
 					<ul className={styles.Ul}>
+						<NavLink to={'/my-ads/'}>
 						<li className={styles.liItem}>Мой аккаунт</li>
-						<li className={styles.liItem}>Выйти</li>
+							</NavLink>
+						<li onClick={() => logout()} className={styles.liItem}>
+							Выйти
+						</li>
 					</ul>
 				</div>
 			) : (
@@ -128,15 +162,31 @@ const Header: React.FC<HeaderProps> = ({
 					</button>
 				</div>
 			)}
-			<div className={styles.signInDivMob}>
+		{isLoggin?<NavLink className={styles.LinkToProfileMob} style={{width:'50px'}} to={'/my-ads/'}>
+						<li className={styles.liItem}>Мой аккаунт</li>
+							</NavLink>	:<div
+				onClick={() => {
+					setModalType('auth')
+					setIsOpen(true)
+				}}
+				className={styles.signInDivMob}
+			>
 				<img src={User} alt='' />
-			</div>
+			</div>}
 			<div
 				className={`${styles.searchContainer} ${styles.searchContainerMob}`}
 			>
-				<InputButton />
+				<InputButton styles={myStyles} />
 			</div>
-			<div className={styles.signInDivMob}>
+			<div
+				onClick={(e) => {
+					e.preventDefault()
+					e.stopPropagation()
+					setNavOrNew(false)
+					setBurgerisOpen(!BurgerisOpen)
+				}}
+				className={styles.signInDivMob}
+			>
 				<img src={Interface} alt='' />
 			</div>
 		</div>

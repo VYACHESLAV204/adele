@@ -157,7 +157,7 @@ const Summary = () => {
 		}
 
 		fetch(
-			`http://31.129.105.19/api/v1/add-summary?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/api/v1/add-summary?jwt=${localStorage.getItem(
 				'token'
 			)}`,
 			{
@@ -175,7 +175,7 @@ const Summary = () => {
 				}
 
 				return fetch(
-					`http://31.129.105.19/api/v1/add-summary-next?jwt=${localStorage.getItem(
+					`http://stoneworking.ru/api/v1/add-summary-next?jwt=${localStorage.getItem(
 						'token'
 					)}`,
 					{

@@ -1,3 +1,5 @@
+
+
 import { NavLink } from 'react-router-dom'
 import s from './Settings.module.css'
 import { useState, useEffect } from 'react'
@@ -11,7 +13,7 @@ function Settings() {
 
 	useEffect(() => {
 		fetch(
-			`http://31.129.105.19/api/v1/profile-management?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/api/v1/profile-management?jwt=${localStorage.getItem(
 				'token'
 			)}`
 		)

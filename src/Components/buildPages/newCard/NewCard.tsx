@@ -69,7 +69,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 		}
 
 		const response = await fetch(
-			`http://31.129.105.19/api/v1/add-post?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/api/v1/add-post?jwt=${localStorage.getItem(
 				'token'
 			)}`,
 			{

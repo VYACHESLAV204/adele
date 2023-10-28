@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import s from './myAds.module.css'
 import humburgerMob from '../../../assets/humburgerMob.svg'
-export interface myAds {
+export interface myAds1 {
 	my_posts_false: adminCard[]
 	my_posts_true: adminCard[]
+	my_posts_none: adminCard[]
 	name_user: string
 	photo_user: string
 	status: boolean
@@ -23,13 +25,38 @@ interface adminCard {
 	tariff: string
 	username: string
 }
-const myAds = () => {
-	const [posts, setPosts] = useState<myAds>()
+const myAds2 = () => {
+	const [posts, setPosts] = useState<myAds1>()
 	const [isArchive, setIsArchive] = useState(false)
+	const [Action, setAction] = useState('exit_archive')
+	function deletePost(id: number) {
+		fetch(
+			`http://stoneworking.ru/api/v1/delete-post?jwt=${localStorage.getItem(
+				'token'
+			)}`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					id_card: id,
+					del: Action,
+				}),
+			}
+		)
+			.then((response) => response.json())
+			.then((data) => {
+				console.log(data)
+			})
+			.catch((error) => {
+				console.error('Ошибка:', error)
+			})
+	}
 
 	useEffect(() => {
 		fetch(
-			`http://31.129.105.19/api/v1/my-posts?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/api/v1/my-posts?jwt=${localStorage.getItem(
 				'token'
 			)}`
 		)
@@ -60,12 +87,20 @@ const myAds = () => {
 					<h2 className={s.userName}>{posts?.name_user}</h2>
 					<div className={s.line}></div>
 					<p className={s.textContent}>Мои объявления</p>
-					<p className={s.textContent}>Резюме</p>
+					<NavLink to={'/summary/'}>
+						<p className={s.textContent}>Резюме</p>
+					</NavLink>
 					<div className={s.line}></div>
 					<p className={s.textContent}>Платные услуги</p>
-					<p className={s.textContent}>Управление профилем</p>
-					<p className={s.textContent}>Защита профиля</p>
-					<p className={s.textContent}>Настройки</p>
+					<NavLink to={'/info-profile/'}>
+						<p className={s.textContent}>Управление профилем</p>
+					</NavLink>
+					<NavLink to={'/defence/'}>
+						<p className={s.textContent}>Защита профиля</p>
+					</NavLink>
+					<NavLink to={'/settings/'}>
+						<p className={s.textContent}>Настройки</p>
+					</NavLink>
 				</div>
 			</div>
 			<div className={s.rightWrapper}>
@@ -114,9 +149,12 @@ const myAds = () => {
 				</div>
 				<div className={s.cardBox}>
 					{isArchive
-						? posts?.my_posts_true.map((item) => {
+						? posts?.my_posts_none.map((item) => {
 								return (
-									<div key={item.id_card} className={s.cardItem}>
+									<div
+										key={item.id_card}
+										className={s.cardItem}
+									>
 										<p
 											className={`${s.textContent} ${s.colorPurple} ${s.titleMob}`}
 										>
@@ -147,15 +185,39 @@ const myAds = () => {
 											</p>
 										</div>
 
-										<button className={s.btn}>
-											Опубликовать
-										</button>
+										<div className={s.divButton}>
+											<select
+												onChange={(e) =>
+													setAction(e.target.value)
+												}
+												className={`${s.btn} ${s.btnWActions}`}
+											>
+												<option value='exit_archive'>
+													Опубликовать
+												</option>
+
+												<option value='delete'>
+													Удалить
+												</option>
+											</select>
+											<img
+												className=''
+												src='src\assets\Menu arrow.svg'
+												alt=''
+												onClick={() =>
+													deletePost(item.id_card)
+												}
+											/>
+										</div>
 									</div>
 								)
 						  })
 						: posts?.my_posts_false.map((item) => {
 								return (
-									<div key={item.id_card} className={s.cardItem}>
+									<div
+										key={item.id_card}
+										className={s.cardItem}
+									>
 										<p
 											className={`${s.textContent} ${s.colorPurple} ${s.titleMob}`}
 										>
@@ -184,6 +246,31 @@ const myAds = () => {
 													? `Город ${item.city}`
 													: `Город не указан`}
 											</p>
+											<div className={s.divButton}>
+												<select
+													onChange={(e) =>
+														setAction(
+															e.target.value
+														)
+													}
+													className={s.btn}
+												>
+													<option value='push_archive'>
+														Убрать в архив
+													</option>
+													<option value='delete'>
+														Удалить
+													</option>
+												</select>
+												<img
+													className=''
+													src='src\assets\Menu arrow.svg'
+													alt=''
+													onClick={() =>
+														deletePost(item.id_card)
+													}
+												/>
+											</div>
 										</div>
 									</div>
 								)
@@ -194,4 +281,4 @@ const myAds = () => {
 	)
 }
 
-export default myAds
+export default myAds2

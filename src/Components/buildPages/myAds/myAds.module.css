@@ -1,238 +1,251 @@
-h2{
-    margin: 0;
-    padding: 0;
+h2 {
+	margin: 0;
+	padding: 0;
 }
-h3{
-    margin: 0;
-    padding: 0;
+h3 {
+	margin: 0;
+	padding: 0;
 }
-p{
-    margin: 0;
-    padding: 0;  
+p {
+	margin: 0;
+	padding: 0;
 }
-
-.sectionContainer{
-    display: flex;
-    align-items: flex-start;
+.divButton {
+	display: flex;
+	background: #5250c5;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 7px;
 }
-.mainTitle{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-right: 2rem;
-
+.sectionContainerActive {
+	display: flex;
+	align-items: flex-start;
 }
-.secondTitle{
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.sectionContainer {
+	display: none;
+	align-items: flex-start;
 }
-.btn{
-	border: 0;
+.mainTitle {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-right: 2rem;
+}
+.secondTitle {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.btn {
+	border: 0px;
 	color: #fff;
 	width: 196px;
 	height: 45px;
 	border-radius: 7px;
-	background: #5250C5;
+	background: #5250c5;
 	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
-    margin-left: 2rem;
+	margin-left: 2rem;
 }
-.input{
-    width: 210px;
+.btnWActions {
+	margin-left: 0;
+	border-radius: 8px;
+}
+.input {
+	width: 210px;
 	height: 39px;
 	border-radius: 5px;
-	border: 1px solid #9090D8;
-	background: #F2F2FF;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	margin-top: 15px;
 	padding-left: 10px;
 }
-.leftWrapper{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 5rem;
-    margin-right: 3rem;
+.leftWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 5rem;
+	margin-right: 3rem;
 }
-.rightWrapper{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.rightWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
-.btnBox{
-    margin-top: 2rem;
-    margin-bottom: 5rem;
+.btnBox {
+	margin-top: 2rem;
+	margin-bottom: 5rem;
 }
-.btnBox>button:first-child{margin-left: 0px;}
-.textContainer{
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
+.btnBox > button:first-child {
+	margin-left: 0px;
 }
-.textContent{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.textContainer {
+	height: 50vh;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-evenly;
 }
-.imageBox{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    align-self: center;
+.textContent {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
 }
-.imageItem{
-    width: 220px;
-    height: 220px;
-    border-radius: 100%;
+.imageBox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	align-self: center;
 }
-.iconItem{
-    width: 26px;
-    height: 26px;
+.imageItem {
+	width: 220px;
+	height: 220px;
+	border-radius: 100%;
 }
-.imageIcon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 58px;
-    height: 58px;
-    background-color: #F2F2FF;
-    border: 2px solid #9090D8;
-    border-radius: 100%;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
-    margin-left: -2rem;
+.iconItem {
+	width: 26px;
+	height: 26px;
 }
-.userName{
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
+.imageIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 58px;
+	height: 58px;
+	background-color: #f2f2ff;
+	border: 2px solid #9090d8;
+	border-radius: 100%;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+	margin-left: -2rem;
 }
-.line{
-    width: 270px;
-    height: 2px;
-    background-color:#9090D8
+.userName {
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
 }
-.secondBtn{
-    border: 1px solid #9090D8;
-    background-color: #F2F2FF;
-    color: #000;
-    margin-left: 2rem;
+.line {
+	width: 270px;
+	height: 2px;
+	background-color: #9090d8;
 }
-.cardItem{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items:center;
-    margin-bottom: 2rem;
+.secondBtn {
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	color: #000;
+	margin-left: 2rem;
 }
-.cardImg{
-    width: 280px;
-    height: 255px;
-    margin-right: 6rem;
+.cardItem {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-bottom: 2rem;
 }
-.cardText{
-    display: flex;
-    flex-direction: column;
-    align-items:flex-start;
-    justify-content: center;
-    margin-right: 6rem;
+.cardImg {
+	width: 280px;
+	height: 255px;
+	margin-right: 6rem;
 }
-.textInCard{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+.cardText {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	margin-right: 6rem;
 }
-.colorPurple{
-   color:#5250C5;
+.textInCard {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
 }
-.firstLine{
-    display: flex;
-    margin-top: 6rem;
+.colorPurple {
+	color: #5250c5;
 }
-.profileBtn{
-    display: none;
+.firstLine {
+	display: flex;
+	margin-top: 6rem;
 }
-.titleMob{
-    display: none;
+.profileBtn {
+	display: none;
+}
+.titleMob {
+	display: none;
 }
 @media (max-width: 1025px) {
-    .leftWrapper{
-        display: none;
-    }
-    .profileBtn{
-        display: flex;
-        align-items:center;
-        justify-content: center;
-        color: #FFF;
-        font-size: 15px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        width: 124px;
-        height: 38px;
-        background-color:#5250C5;
-        border-color: #5250C5;
-        border-style: hidden;
-        border-radius: 3px
-    }
-    .humburgerMob{
-        margin-left: 1rem;
-    }
+	.leftWrapper {
+		display: none;
+	}
+	.profileBtn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		font-size: 15px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		width: 124px;
+		height: 38px;
+		background-color: #5250c5;
+		border-color: #5250c5;
+		border-style: hidden;
+		border-radius: 3px;
+	}
+	.humburgerMob {
+		margin-left: 1rem;
+	}
 }
 @media (max-width: 768px) {
-    .cardImg{
-        margin-right: 2rem;
-    }
-    .cardText{
-        margin-right: 2rem;
-    }
-    
+	.cardImg {
+		margin-right: 2rem;
+	}
+	.cardText {
+		margin-right: 2rem;
+	}
 }
 @media (max-width: 430px) {
-    .titleMob{
-        display: block;
-        margin-bottom: 2rem;
-    }
-    .textDesctop{
-        display: none;
-    }
-    .cardItem{
-        flex-direction: column;
-    }
-    .cardBox{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items:center;
-    }
-    .rightWrapper{
-        align-items: center;
-    }
-    .textInCard{
-        margin-bottom: 2rem;
-    }
+	.titleMob {
+		display: block;
+		margin-bottom: 2rem;
+	}
+	.textDesctop {
+		display: none;
+	}
+	.cardItem {
+		flex-direction: column;
+	}
+	.cardBox {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.rightWrapper {
+		align-items: center;
+	}
+	.textInCard {
+		margin-bottom: 2rem;
+	}
 }
 @media (max-width: 425px) {
-    .btnBox{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        margin-left: 0.2rem;
-    }
-    .btn{
-        width: 45vw;
-    }
+	.btnBox {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-left: 0.2rem;
+	}
+	.btn {
+		width: 45vw;
+	}
 }
-@media (max-width:350px) {
-    .mainTitle{
-        font-size: 20px;
-    }
-    
+@media (max-width: 350px) {
+	.mainTitle {
+		font-size: 20px;
+	}
 }

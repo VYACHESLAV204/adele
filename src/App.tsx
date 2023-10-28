@@ -13,13 +13,12 @@ import Summary from './Components/buildPages/summary/Summary.js'
 import Settings from './Components/buildPages/settingsProfile/Settings.js'
 import Defence from './Components/buildPages/profileDefence/defence.js'
 import InfoProfile from './Components/buildPages/infoProfile/infoProfile.js'
-import MyAds from './Components/buildPages/myAds/myAds.js'
+import MyAds2 from './Components/buildPages/myAds/MyAds.tsx'
 import Worker from './Components/buildPages/worker/worker.js'
 import Moderation from './Components/buildPages/moderation/moderation.js'
 import Error401 from './Components/buildPages/401Error/401.js'
 import { OptionType } from './Components/modules/select/SelectTemplate.js'
 import ProfileMob from './Components/buildPages/profilePopupMob/ProfilePopupMob.js'
-
 
 function App() {
 	const [modalType, setModalType] = useState<'auth' | 'reg' | ''>('')
@@ -41,18 +40,18 @@ function App() {
 	}, [])
 
 	useEffect(() => {
-		fetch('http://31.129.105.19/api/v1/citys')
+		fetch('http://stoneworking.ru/api/v1/citys')
 			.then((response) => response.json())
 			.then((data) => setCitys(data.city))
 			.catch((error) => console.log(error))
 
-		fetch('http://31.129.105.19/api/v1/index-page')
+		fetch('http://stoneworking.ru/api/v1/index-page')
 			.then((responce) => responce.json())
 			.then((data: CardAdResponse) => setCards(data))
 	}, [])
 
 	useEffect(() => {
-		fetch('http://31.129.105.19/api/v1/index-category', {
+		fetch('http://stoneworking.ru/api/v1/index-category', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -80,7 +79,7 @@ function App() {
 			categoryForNewCard === 'Работа' &&
 			underCategoryForNewCard === 'Ищу сотрудника'
 		) {
-			fetch('http://31.129.105.19/api/v1/index-summary', {
+			fetch('http://stoneworking.ru/api/v1/index-summary', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -233,7 +232,10 @@ function App() {
 							path='/settings/'
 							element={isLoggin ? <Settings /> : <Error401 />}
 						/>
-
+						<Route
+							path='/my-ads/'
+							element={isLoggin ? <MyAds2 /> : <Error401 />}
+						/>
 						<Route
 							//Готово
 							path='/defence/'
@@ -241,7 +243,7 @@ function App() {
 						/>
 						<Route
 							// Готово
-							path='/info-profile'
+							path='/info-profile/'
 							element={
 								isLoggin ? (
 									<InfoProfile citys={citys} />
@@ -250,14 +252,12 @@ function App() {
 								)
 							}
 						/>
-						<Route
-							path='/my-ads/'
-							element={isLoggin ? <MyAds /> : <Error401 />}
-						/>
+
 						<Route
 							path='/worker/'
 							element={isLoggin ? <Worker /> : <Error401 />}
 						/>
+
 						<Route
 							path='/moderation/'
 							element={isLoggin ? <Moderation /> : <Error401 />}

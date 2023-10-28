@@ -9,6 +9,7 @@ type RegProps = {
 	modalType: 'auth' | 'reg' | ''
 	isOpen: boolean
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+	setModalType: (value: React.SetStateAction<'auth' | 'reg' | ''>) => void
 	
 }
 const Reg: React.FC<RegProps> = (props: RegProps) => {
@@ -26,7 +27,7 @@ const Reg: React.FC<RegProps> = (props: RegProps) => {
 				closeModal={() => props.setIsOpen(false)}
 			>
 				{props.modalType === 'auth' && (
-					<Auth
+					<Auth setModalType={props.setModalType}
 						closeModal={() => props.setIsOpen(false)}
 					/>
 				)}

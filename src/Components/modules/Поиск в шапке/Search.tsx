@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import s from './Search.module.css'
 import lens from '../../../assets/lens.svg'
-const InputButton = () => {
+interface MyComponentProps {
+	styles: React.CSSProperties
+}
+const InputButton: React.FC<MyComponentProps> = ({ styles }) => {
 	const [inputValue, setInputValue] = useState('')
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,7 +17,7 @@ const InputButton = () => {
 	}
 
 	return (
-		<div className={s.MainSearchDiv}>
+		<div style={styles} className={s.MainSearchDiv}>
 			<input
 				type='text'
 				value={inputValue}

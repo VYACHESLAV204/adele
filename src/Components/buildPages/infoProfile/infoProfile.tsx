@@ -34,7 +34,7 @@ const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 
 	const handleSave = () => {
 		fetch(
-			`http://31.129.105.19/api/v1/profile-settings-replace?jwt=${localStorage.getItem(
+			`http://stoneworking.ru/api/v1/profile-settings-replace?jwt=${localStorage.getItem(
 				'token'
 			)}`,
 			{

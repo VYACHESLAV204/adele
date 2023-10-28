@@ -118,6 +118,9 @@
 .signInDivMob{
 	display: none;
 }
+.LinkToProfileMob{display: none;}
+
+.LinkToProfileMob
 .searchContainerMob{
 	display: none;
 }
@@ -138,8 +141,16 @@
 	height: 80px;
 	padding-left: 0;
 }
-.userLogin:hover ~ .Ul {
+.userLoginActive ~ .Ul {
 	visibility: visible;
+	top: 8rem;
+	position: absolute;
+	left: 88rem;
+	
+/* 	transition: 0.3s ease; */
+}
+.userLogin ~ .Ul {
+	visibility: hidden;
 	top: 8rem;
 	position: absolute;
 	left: 88rem;
@@ -153,6 +164,15 @@ li{
 	margin-bottom: 1rem;
 }
 .userLogin{
+	text-align: center;
+	font-family: Vela Sans;
+	font-size: 17px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	text-decoration-line: underline;
+}
+.userLoginActive{
 	text-align: center;
 	font-family: Vela Sans;
 	font-size: 17px;
@@ -210,6 +230,7 @@ li{
 		padding: 10px;
 		
 	}	
+	.LinkToProfileMob{display: block;}
 }
 @media (max-width: 376px) {
 	.logo{
