@@ -234,11 +234,11 @@ li{
 }
 @media (max-width: 376px) {
 	.logo{
-		width: 25%;
+		width: 30%;
 		margin-left: 0.2rem;
 	}
 	.RegionDiv{
-		margin-right: 3px;
+		margin-right: 5px;
     	margin-left: 3px;
 	}
 	.signInDivMob{

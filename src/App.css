@@ -4,3 +4,4 @@
 	box-sizing: border-box;
 	text-align: center;
 }
+a{color: inherit;text-decoration: none;}

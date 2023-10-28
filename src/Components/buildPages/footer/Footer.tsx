@@ -8,32 +8,30 @@ const Footer: React.FC<IpropsFooter> = ({ children }) => {
 			{children}
 			<div className={stylesF.sectionBox}>
 				<div className={stylesF.FooterMainDiv}>
-					<div className={stylesF.PhoneNum}>
-						<p className={stylesF.FooterTexts}>7 123 456 78 90</p>
-					</div>
 					<div className={stylesF.TexSupportDiv}>
 						<p className={stylesF.FooterTexts}>
-							Тех поддержка +7 123 456 78 90
+							Тех поддержка +7 495 115 15 95
 						</p>
 					</div>
 					<div className={stylesF.EmailDiv}>
-						<p className={stylesF.FooterTexts}>info@info.ru</p>
+						<p className={stylesF.FooterTexts}>
+							info.stoneworking@yandex.ru
+						</p>
 					</div>
 				</div>
 			</div>
 			<div className={stylesF.sectionBoxMob}>
 				<div className={stylesF.FooterMainDivMob}>
-					<div className={stylesF.phoneEmail}>					
-						<div className={stylesF.PhoneNum}>
-							<p className={stylesF.FooterTexts}>7 123 456 78 90</p>
-						</div>
+					<div className={stylesF.phoneEmail}>
 						<div className={stylesF.EmailDiv}>
-							<p className={stylesF.FooterTexts}>info@info.ru</p>
+							<p className={stylesF.FooterTexts}>
+								info.stoneworking@yandex.ru
+							</p>
 						</div>
 					</div>
 					<div className={stylesF.TexSupportDiv}>
 						<p className={stylesF.FooterTexts}>
-							Тех поддержка +7 123 456 78 90
+							Тех поддержка +7 495 115 15 95
 						</p>
 					</div>
 				</div>

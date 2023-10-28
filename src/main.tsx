@@ -10,6 +10,7 @@ import './fonts/TTF/VelaSans-Regular.ttf'
 import './fonts/TTF/VelaSans-SemiBold.ttf'
 import './index.css'
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
 		<App />

@@ -49,7 +49,19 @@ function App() {
 			.then((responce) => responce.json())
 			.then((data: CardAdResponse) => setCards(data))
 	}, [])
+	useEffect(() => {
+		document.documentElement.setAttribute('lang', 'ru') // или querySelector()
+		document.createElement('meta')
+		var metaTag = document.createElement('meta')
+		metaTag.name = 'google'
+		metaTag.content = 'notranslate'
 
+		// Находим <head> элемент на странице
+		var head = document.head || document.getElementsByTagName('head')[0]
+
+		// Вставляем элемент <meta> в <head>
+		head.appendChild(metaTag)
+	}, [])
 	useEffect(() => {
 		fetch('http://stoneworking.ru/api/v1/index-category', {
 			method: 'POST',
@@ -262,7 +274,10 @@ function App() {
 							path='/moderation/'
 							element={isLoggin ? <Moderation /> : <Error401 />}
 						/>
-						<Route path='/profile-mob/' element={<ProfileMob />} />
+						<Route
+							path='/profile-mob/'
+							element={isLoggin ? <ProfileMob /> : <Error401 />}
+						/>
 					</Routes>
 				</Layout>
 			</div>

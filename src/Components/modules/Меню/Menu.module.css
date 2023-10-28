@@ -47,6 +47,9 @@
 	border-radius: 15px 17px 17px 0px;
 	justify-content: space-between;
 }
+.MenuOnceDiv > a {
+	margin: 0;
+}
 .MenuOnceDiv3 {
 	width: 272px;
 	height: 49px;
@@ -158,43 +161,37 @@
 .MainDiv {
 	display: flex;
 }
-.mobileMenuTitle{
+.mobileMenuTitle {
 	display: none;
 }
-.closeIcon{
+.closeIcon {
 	display: none;
 }
-@media (max-width:1024px) {
-	.menuWrapperActive{
+@media (max-width: 1024px) {
+	.menuWrapperActive {
 		left: 226px;
 		top: 45px;
 	}
-	.submenuActive{
+	.submenuActive {
 		top: 58px;
 		left: 560px;
 	}
-	
-
-
-
 }
 @media (max-width: 769px) {
-	.menuWrapperActive{
+	.menuWrapperActive {
 		left: 91px;
-    	top: 45px;
+		top: 45px;
 	}
-	.submenuActive{
+	.submenuActive {
 		top: 55px;
 		left: 425px;
 	}
-	
 }
-@media (max-width:430px) {
-	.MenuOnceDiv{
+@media (max-width: 430px) {
+	.MenuOnceDiv {
 		display: none;
-		
 	}
-	.submenu{
+	.submenu {
 		visibility: visible;
 		opacity: 100%;
 		top: 20px;
@@ -202,54 +199,54 @@
 		padding: 0;
 		position: relative;
 	}
-	.menuWrapperActive{
+	.menuWrapperActive {
 		top: 0;
 		left: 0;
-		width:105vw;
+		width: 105vw;
 		height: 100%;
 	}
-	.line{
+	.line {
 		border-color: #fff;
 	}
-	.MenuOnceDiv3{
+	.MenuOnceDiv3 {
 		width: 80vw;
 	}
-	.menu{
+	.menu {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
 		width: 100vw;
 	}
-	.MainDiv{
+	.MainDiv {
 		margin-bottom: -1rem;
 	}
-	.btnProperty{
+	.btnProperty {
 		margin-top: 1rem;
 	}
-	.titleMenuItem{
+	.titleMenuItem {
 		font-size: 18px;
 		font-style: normal;
 		font-weight: 600;
 		line-height: normal;
 	}
-	.mobileMenuTitle{
+	.mobileMenuTitle {
 		width: 100vw;
 		height: 60px;
 		display: flex;
 		justify-content: flex-start;
-		align-items:center;
+		align-items: center;
 		padding-left: 3rem;
 		border-radius: 3px;
-		border: 1px solid #9090D8;
-		background: #F2F2FF
+		border: 1px solid #9090d8;
+		background: #f2f2ff;
 	}
-	.btn{
-		background-color:#fff;
+	.btn {
+		background-color: #fff;
 		border: #fff;
 		margin: 0;
 		padding: 0;
 	}
-	.closeIcon{
+	.closeIcon {
 		display: block;
 		position: absolute;
 		left: 23.5rem;
@@ -257,14 +254,12 @@
 	}
 }
 @media (max-width: 400px) {
-	.closeIcon{
+	.closeIcon {
 		left: 20.5rem;
 	}
-	
 }
 @media (max-width: 350px) {
-	.closeIcon{
+	.closeIcon {
 		left: 17.5rem;
 	}
-	
 }

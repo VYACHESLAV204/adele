@@ -1,5 +1,5 @@
 import styles from './Header.module.css'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 import Menu from '../../modules/Меню/Menu'
 import logo from '../../../assets/logo.svg'
@@ -34,6 +34,8 @@ const Header: React.FC<HeaderProps> = ({
 	const [NavOrNew, setNavOrNew] = useState(false)
 	const headerUsername = localStorage.getItem('username')
 	const isLoggin = localStorage.getItem('status')
+	const [mobileSearch, setMobileSearch] = useState(false)
+	const [PcSearch, setPcSearch] = useState(true)
 	const [MenuUser, setMenuUser] = useState(false)
 	function logout() {
 		fetch(
@@ -54,8 +56,24 @@ const Header: React.FC<HeaderProps> = ({
 			})
 	}
 	const myStyles: React.CSSProperties = {
-		display:'flex'
-	  };
+		display: 'flex',
+	}
+	useEffect(() => {
+	  
+		
+	if(window.innerWidth <= 450){
+		setPcSearch(false)
+		setMobileSearch(true)
+	}
+	if(window.innerWidth >= 450){
+		setPcSearch(true)
+		setMobileSearch(false)
+	}
+	}, [window.innerWidth])
+	useEffect(() => {
+	  console.log(PcSearch,mobileSearch);
+	  
+	}, [PcSearch,mobileSearch])
 	
 	function RegionSelect() {
 		// Состояние для выбранного региона
@@ -74,7 +92,9 @@ const Header: React.FC<HeaderProps> = ({
 
 	return (
 		<div className={styles.MainDiv}>
-			<img className={styles.logo} src={logo} alt='Логотип' />
+			<NavLink to={'/'}>
+				<img className={styles.logo} src={logo} alt='Логотип' />
+			</NavLink>
 			{RegionSelect()}
 			<div
 				onClick={(e) => {
@@ -98,7 +118,7 @@ const Header: React.FC<HeaderProps> = ({
 				></Menu>
 			</div>
 			<div className={styles.searchContainer}>
-				{/* <InputButton styles={myStyles} /> */}
+				 {PcSearch?<InputButton styles={myStyles} />:<></>} 
 			</div>
 			<div>
 				<button
@@ -132,8 +152,8 @@ const Header: React.FC<HeaderProps> = ({
 					</h1>
 					<ul className={styles.Ul}>
 						<NavLink to={'/my-ads/'}>
-						<li className={styles.liItem}>Мой аккаунт</li>
-							</NavLink>
+							<li className={styles.liItem}>Мой аккаунт</li>
+						</NavLink>
 						<li onClick={() => logout()} className={styles.liItem}>
 							Выйти
 						</li>
@@ -162,21 +182,30 @@ const Header: React.FC<HeaderProps> = ({
 					</button>
 				</div>
 			)}
-		{isLoggin?<NavLink className={styles.LinkToProfileMob} style={{width:'50px'}} to={'/my-ads/'}>
-						<li className={styles.liItem}>Мой аккаунт</li>
-							</NavLink>	:<div
-				onClick={() => {
-					setModalType('auth')
-					setIsOpen(true)
-				}}
-				className={styles.signInDivMob}
-			>
-				<img src={User} alt='' />
-			</div>}
+			{isLoggin ? (
+				<NavLink
+					className={styles.LinkToProfileMob}
+					style={{ width: '50px' }}
+					to={'/profile-mob/'}
+				>
+					<img src={User} alt='' />
+					
+				</NavLink>
+			) : (
+				<div
+					onClick={() => {
+						setModalType('auth')
+						setIsOpen(true)
+					}}
+					className={styles.signInDivMob}
+				>
+					<img src={User} alt='' />
+				</div>
+			)}
 			<div
 				className={`${styles.searchContainer} ${styles.searchContainerMob}`}
 			>
-				<InputButton styles={myStyles} />
+				{mobileSearch?<InputButton styles={myStyles} />: <></>}
 			</div>
 			<div
 				onClick={(e) => {

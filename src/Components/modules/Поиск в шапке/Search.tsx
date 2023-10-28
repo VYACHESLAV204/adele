@@ -22,7 +22,7 @@ const InputButton: React.FC<MyComponentProps> = ({ styles }) => {
 				type='text'
 				value={inputValue}
 				onChange={handleInputChange}
-				placeholder='Введите значение'
+				placeholder='Поиск объявления'
 				className={s.Input}
 			/>
 			<button className={s.Button}>

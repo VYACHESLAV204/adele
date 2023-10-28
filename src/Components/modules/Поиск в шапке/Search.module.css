@@ -24,6 +24,7 @@
 	width: 58px;
 	height: 46px;
 }
+.Input:focus-visible{outline:0px}
 @media (max-width: 330px) {
 	.Input{
 		width: 123px;

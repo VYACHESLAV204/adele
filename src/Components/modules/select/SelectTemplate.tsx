@@ -26,6 +26,7 @@ const RegionSelectTemplate: React.FC<RegionSelectProps> = ({
 			value={City}
 			options={citys}
 			onChange={handleChange}
+			defaultInputValue="Выберите город"
 			styles={{
 				control: (base) => ({
 					...base,

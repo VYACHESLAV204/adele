@@ -36,8 +36,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 136px;
+	width: 220px;
 	height: 45px;
+	margin-bottom: 15px;
 	border: 1px solid #9090d8;
 }
 .PhoneNum{

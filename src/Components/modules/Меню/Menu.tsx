@@ -79,7 +79,6 @@ const Menu: React.FC<MenuProps> = ({
 		FnSetSub('', false)
 	}, [BurgerisOpen])
 
-
 	return (
 		<div
 			onClick={(e) => e.stopPropagation()}
@@ -124,6 +123,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('нет'),
 													setCategory('Карьер')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Карьер
@@ -194,6 +194,9 @@ const Menu: React.FC<MenuProps> = ({
 												onClick={() => {
 													setUnderCategory('Гранит'),
 														setCategory('Блоки')
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Гранит
@@ -211,6 +214,9 @@ const Menu: React.FC<MenuProps> = ({
 												onClick={() => {
 													setUnderCategory('Мрамор'),
 														setCategory('Блоки')
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Мрамор
@@ -230,6 +236,9 @@ const Menu: React.FC<MenuProps> = ({
 														'Покупают'
 													),
 														setCategory('Блоки')
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Покупают
@@ -247,6 +256,9 @@ const Menu: React.FC<MenuProps> = ({
 												onClick={() => {
 													setUnderCategory('Продают'),
 														setCategory('Блоки')
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Продают
@@ -313,6 +325,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Строй материалы'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Гранит
@@ -332,6 +345,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Строй материалы'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Мрамор
@@ -351,6 +365,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Строй материалы'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Покупают
@@ -370,6 +385,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Строй материалы'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Продают
@@ -431,6 +447,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Ритуальные изделия'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Прямоугольные
@@ -450,6 +467,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Ритуальные изделия'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Фигурные
@@ -471,6 +489,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Ритуальные изделия'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Эксклюзивные
@@ -490,6 +509,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Ритуальные изделия'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Цоколя
@@ -509,6 +529,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Ритуальные изделия'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Плиты
@@ -528,6 +549,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Ритуальные изделия'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Гранит
@@ -547,6 +569,7 @@ const Menu: React.FC<MenuProps> = ({
 													setCategory(
 														'Ритуальные изделия'
 													)
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Мрамор
@@ -604,6 +627,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Для карьера'),
 													setCategory('Станки')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Для карьера
@@ -623,6 +647,7 @@ const Menu: React.FC<MenuProps> = ({
 													'Для производства'
 												),
 													setCategory('Станки')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Для производства
@@ -681,6 +706,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Диски
@@ -703,6 +731,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Сегменты
@@ -723,6 +754,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Канат
@@ -745,6 +779,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Шлифовальный инструмент
@@ -764,6 +801,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Фрезы
@@ -784,6 +824,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Химия
@@ -805,6 +848,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Электро, Пневмоинструмент
@@ -827,6 +873,9 @@ const Menu: React.FC<MenuProps> = ({
 														setCategory(
 															'Инструменты'
 														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
 												}}
 											>
 												Твердосплавный инструмент
@@ -857,20 +906,18 @@ const Menu: React.FC<MenuProps> = ({
 								}
 							>
 								<div
-									onClick={() =>
+									onClick={() => {
 										FnSetHover(
 											'specialTecknik',
 											!hover.specialTecknik
 										)
-									}
-									className={s.MenuOnceDiv3}
+										setCategory('Спец техника')
+										setBurgerIsOpen(!BurgerisOpen)
+									}}
+									className={s.MenuOnceDiv}
 								>
 									<li>Спец техника</li>
-									<img
-										className={s.MenuInnerImgRotate}
-										src={MenuArrow}
-										alt=''
-									/>
+									<img src={MenuArrow} alt='' />
 								</div>
 								<ul
 									className={
@@ -879,43 +926,7 @@ const Menu: React.FC<MenuProps> = ({
 											: s.InnerLiHidden
 									}
 								>
-									<NavLink
-										className={s.Link}
-										to={
-											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
-										}
-									>
-										<li
-											onClick={() => {
-												setUnderCategory(
-													'Новая техника'
-												),
-													setCategory('Спец техника')
-											}}
-										>
-											Новая техника
-										</li>
-									</NavLink>
-
-									<NavLink
-										className={s.Link}
-										to={
-											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
-										}
-									>
-										<li
-											onClick={() => {
-												setUnderCategory('Б/У техника'),
-													setCategory('Спец техника')
-											}}
-										>
-											Б/У техника
-										</li>{' '}
-									</NavLink>
+								
 								</ul>
 							</ul>
 						</li>
@@ -962,6 +973,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Ищу работу'),
 													setCategory('Работа')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Ищу работу
@@ -982,6 +994,7 @@ const Menu: React.FC<MenuProps> = ({
 													'Ищу сотрудника'
 												),
 													setCategory('Работа')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Ищу сотрудника
@@ -1040,6 +1053,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Ремонт'),
 													setCategory('Услуги')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Ремонт
@@ -1058,6 +1072,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Резка камня'),
 													setCategory('Услуги')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Резка камня
@@ -1076,6 +1091,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Полировка'),
 													setCategory('Услуги')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Полировка
@@ -1096,6 +1112,7 @@ const Menu: React.FC<MenuProps> = ({
 													'Напайка сегментов'
 												),
 													setCategory('Услуги')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Напайка сегментов
@@ -1114,6 +1131,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Перевозка'),
 													setCategory('Услуги')
+												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
 											Перевозка
@@ -1127,7 +1145,7 @@ const Menu: React.FC<MenuProps> = ({
 				<div className={s.line}></div>
 			</div>
 			<button className={s.btnProperty} onClick={toggleMenu}>
-				<img className={s.closeIcon} src={closeIcon} alt="" />
+				<img className={s.closeIcon} src={closeIcon} alt='' />
 				{BurgerisOpen ? 'Закрыть меню' : 'Открыть меню'}
 			</button>
 		</div>
