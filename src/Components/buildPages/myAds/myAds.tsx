@@ -25,7 +25,7 @@ interface adminCard {
 	tariff: string
 	username: string
 }
-const myAds2 = () => {
+const myAds = () => {
 	const [posts, setPosts] = useState<myAds1>()
 	const [isArchive, setIsArchive] = useState(false)
 	const [Action, setAction] = useState('exit_archive')
@@ -281,4 +281,4 @@ const myAds2 = () => {
 	)
 }
 
-export default myAds2
+export default myAds

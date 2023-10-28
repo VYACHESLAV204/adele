@@ -22,7 +22,7 @@ p {
 	align-items: flex-start;
 }
 .sectionContainer {
-	display: none;
+	display: block;
 	align-items: flex-start;
 }
 .mainTitle {
