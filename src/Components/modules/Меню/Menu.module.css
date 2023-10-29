@@ -11,9 +11,9 @@
 .menuWrapperActive {
 	left: 310px;
 	position: fixed;
-	top: 140px;
+	top: 2px;
 	width: 630px;
-	height: 690px;
+	height: 510px;
 	transition: left 0.3s ease;
 	border-radius: 8px;
 	border: 2px solid #9090d8;
@@ -24,7 +24,7 @@
 .menu {
 	list-style-type: none;
 	padding: 20px;
-	margin: 0;
+	margin: 0;height: 500px;
 }
 
 .menu > li {
@@ -48,6 +48,9 @@
 	justify-content: space-between;
 }
 .MenuOnceDiv > a {
+	margin: 0;
+}
+.MenuOnceDiv3 > a {
 	margin: 0;
 }
 .MenuOnceDiv3 {
@@ -81,8 +84,19 @@
 	font-weight: 400;
 	line-height: normal;
 }
-
+.MenuOnceDiv3 > h2 {
+	text-align: center;
+	font-family: Inter;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
 .MenuOnceDiv > img {
+	width: 15px;
+	height: 20px;
+}
+.MenuOnceDiv3 > img {
 	width: 15px;
 	height: 20px;
 }
@@ -92,6 +106,7 @@
 	height: 20px;
 }
 .submenu {
+	
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -99,7 +114,7 @@
 	list-style-type: none;
 	padding: 10px;
 	position: fixed; /* Позиционируем подменю абсолютно относительно родительского элемента */
-	top: 170px;
+	top: 14px;
 	left: 630px; /* Смещаем его вправо на 100% от ширины родительского элемента */
 	min-width: 200px; /* Устанавливаем минимальную ширину */
 	background-color: white;
@@ -118,7 +133,7 @@
 	list-style-type: none;
 	padding: 10px;
 	position: fixed; /* Позиционируем подменю абсолютно относительно родительского элемента */
-	top: 170px;
+	top: 14px;
 	left: 630px; /* Смещаем его вправо на 100% от ширины родительского элемента */
 	min-width: 200px; /* Устанавливаем минимальную ширину */
 	background-color: white;
@@ -160,6 +175,8 @@
 }
 .MainDiv {
 	display: flex;
+	overflow-x: auto;
+	height: 500px;
 }
 .mobileMenuTitle {
 	display: none;
@@ -189,7 +206,7 @@
 }
 @media (max-width: 430px) {
 	.MenuOnceDiv {
-		display: none;
+	display: none;
 	}
 	.submenu {
 		visibility: visible;
@@ -210,6 +227,7 @@
 	}
 	.MenuOnceDiv3 {
 		width: 80vw;
+		
 	}
 	.menu {
 		display: flex;

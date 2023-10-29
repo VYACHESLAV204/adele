@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({
 				<button>
 					<img src={HeaderMenu3Line} alt='' />
 				</button>
-				<h2>Все категории</h2>
+				<h2 style={{width:'120px'}}>Все категории</h2>
 				<Menu
 					NavOrNew={NavOrNew}
 					setCategory={setCategory}

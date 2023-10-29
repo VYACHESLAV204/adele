@@ -7,6 +7,7 @@ type RegPropsThird = {
 	email: string
 	setEmail: React.Dispatch<React.SetStateAction<string>>
 	isLegalEntity: 'Физическое лицо' | 'Юридическое лицо'
+	setModalType: (value: React.SetStateAction<'auth' | 'reg' | ''>) => void
 	setIsLegalEntity: React.Dispatch<
 		React.SetStateAction<'Физическое лицо' | 'Юридическое лицо'>
 	>
@@ -34,6 +35,7 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 			body: JSON.stringify({ state }),
 		})
 			.then(() => props.setStage(props.stage + 1))
+			.then(() => props.setModalType('auth'))
 			.catch((Error) => alert(Error))
 	}
 	return (

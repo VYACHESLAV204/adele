@@ -21,9 +21,8 @@ const ProfilePopupMob = () => {
 					<div className={s.line}></div>
 					<p className={s.textContent}>Платные услуги</p>
 					<NavLink to={'/info-profile/'}>
-
-                    <p className={s.textContent}>Управление профилем</p>
-                    </NavLink>
+						<p className={s.textContent}>Управление профилем</p>
+					</NavLink>
 					<NavLink to={'/defence/'}>
 						<p className={s.textContent}>Защита профиля</p>
 					</NavLink>

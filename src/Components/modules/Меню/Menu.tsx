@@ -98,7 +98,7 @@ const Menu: React.FC<MenuProps> = ({
 										!submenu.submenuCarier
 									)
 								}
-								className={s.MenuOnceDiv}
+								className={s.MenuOnceDiv3}
 							>
 								<h2>Карьер</h2>
 								<img src={MenuArrow} alt='' />
@@ -893,7 +893,7 @@ const Menu: React.FC<MenuProps> = ({
 										!submenu.specialTecknik
 									)
 								}
-								className={s.MenuOnceDiv}
+								className={s.MenuOnceDiv3}
 							>
 								<h2>Спец техника</h2>
 								<img src={MenuArrow} alt='' />
@@ -925,9 +925,7 @@ const Menu: React.FC<MenuProps> = ({
 											? s.InnerLiVisible
 											: s.InnerLiHidden
 									}
-								>
-								
-								</ul>
+								></ul>
 							</ul>
 						</li>
 						<li>
@@ -1144,10 +1142,10 @@ const Menu: React.FC<MenuProps> = ({
 				</div>
 				<div className={s.line}></div>
 			</div>
-			<button className={s.btnProperty} onClick={toggleMenu}>
+			{/* <button className={s.btnProperty} onClick={toggleMenu}>
 				<img className={s.closeIcon} src={closeIcon} alt='' />
 				{BurgerisOpen ? 'Закрыть меню' : 'Открыть меню'}
-			</button>
+			</button> */}
 		</div>
 	)
 }

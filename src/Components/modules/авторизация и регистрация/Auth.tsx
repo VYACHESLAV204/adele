@@ -47,11 +47,7 @@ const Auth: React.FC<ModalProps> = (props) => {
 						placeholder='Электронная почта'
 						required
 					/>
-					<img
-						className={styles.hidePassword}
-						src={hidePassword}
-						alt=''
-					/>
+
 					<input
 						onChange={(e) => setPassword(e.target.value)}
 						className={styles.InputEmail}

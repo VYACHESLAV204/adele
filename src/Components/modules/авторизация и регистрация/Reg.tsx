@@ -10,7 +10,6 @@ type RegProps = {
 	isOpen: boolean
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	setModalType: (value: React.SetStateAction<'auth' | 'reg' | ''>) => void
-	
 }
 const Reg: React.FC<RegProps> = (props: RegProps) => {
 	const [stage, setStage] = useState(1)
@@ -27,7 +26,8 @@ const Reg: React.FC<RegProps> = (props: RegProps) => {
 				closeModal={() => props.setIsOpen(false)}
 			>
 				{props.modalType === 'auth' && (
-					<Auth setModalType={props.setModalType}
+					<Auth
+						setModalType={props.setModalType}
 						closeModal={() => props.setIsOpen(false)}
 					/>
 				)}
@@ -55,6 +55,7 @@ const Reg: React.FC<RegProps> = (props: RegProps) => {
 								setStage={setStage}
 								email={email}
 								setEmail={setEmail}
+								setModalType={props.setModalType}
 								isLegalEntity={isLegalEntity}
 								setIsLegalEntity={setIsLegalEntity}
 							/>
