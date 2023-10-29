@@ -1,14 +1,15 @@
 import Card from '../../modules/маленькая карточка/Card'
 import { FC, useEffect } from 'react'
-import BuldingMaterials from '../../../assets/BuldingMaterials.svg'
+import BuldingMaterials from '../../../assets/BuldingMaterials.png'
 import Stanki from '../../../assets/Stanki.svg'
-import Work from '../../../assets/Work.svg'
-import blocks from '../../../assets/blocks.svg'
-import carier from '../../../assets/carier.svg'
-import rituals from '../../../assets/rituals.svg'
-import serveces from '../../../assets/serveces.svg'
-import specialTequinick from '../../../assets/specialTequinick.svg'
-import tools from '../../../assets/tools.svg'
+import Work from '../../../assets/Work.png'
+import Work2 from '../../../assets/Work.svg'
+import blocks from '../../../assets/blocks.png'
+import carier from '../../../assets/carier.png'
+import rituals from '../../../assets/rituals.png'
+import serveces from '../../../assets/serveces.png'
+import specialTequinick from '../../../assets/specialTequinick.png'
+import tools from '../../../assets/tools.png'
 import s from './MainPage.module.css'
 import { CardAdResponse } from '../../../interfaces/Interfaces'
 import { NavLink } from 'react-router-dom'
@@ -56,7 +57,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuCarier}
 						>
 							<p className={s.MenuTexts}>Карьер</p>
-							<img className={s.MenuImg} src={carier} alt='' />
+							<img className={`${s.MenuImg} ${s.MenuCarierImg}`} src={carier} alt='' />
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -87,7 +88,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuRitualItems}
 						>
 							<p className={s.MenuTexts}>Ритуальные изделия</p>
-							<img className={s.MenuImg} src={rituals} alt='' />
+							<img className={`${s.MenuImg} ${s.MenuRitualsImg}`} src={rituals} alt='' />
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -105,7 +106,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuTools}
 						>
 							<p className={s.MenuTexts}>Инструменты</p>
-							<img className={s.MenuImg} src={tools} alt='' />
+							<img className={`${s.MenuImg} ${s.MenuToolsImg}`} src={tools} alt='' />
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -115,7 +116,7 @@ const MainPage: FC<CardAdResponse> = ({
 						>
 							<p className={s.MenuTexts}>Спец техника</p>
 							<img
-								className={s.MenuImg}
+								className={`${s.MenuImg} ${s.MenuSpecialImg}`}
 								src={specialTequinick}
 								alt=''
 							/>
@@ -127,7 +128,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuWork}
 						>
 							<p className={s.MenuTexts}>Работа</p>
-							<img className={s.MenuImg} src={Work} alt='' />
+							<img className={`${s.MenuImg} ${s.MenuWorkImg}`} src={Work} alt='' />
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -136,7 +137,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuServices}
 						>
 							<p className={s.MenuTexts}>Услуги</p>
-							<img className={s.MenuImg} src={serveces} alt='' />
+							<img className={`${s.MenuImg} ${s.MenuServiceImg}`} src={serveces} alt='' />
 						</div>
 					</NavLink>
 				</div>
@@ -258,7 +259,7 @@ const MainPage: FC<CardAdResponse> = ({
 								className={s.MenuWork}
 							>
 								<p className={s.MenuTexts}>Работа</p>
-								<img className={s.MenuImg} src={Work} alt='' />
+								<img className={s.MenuImg} src={Work2} alt='' />
 							</div>
 						</NavLink>
 						<NavLink className={s.NavLink} to={'/catalog/'}>
