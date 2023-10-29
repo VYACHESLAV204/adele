@@ -136,16 +136,35 @@
 	width: 82px;
 	height: 56px;
 }
+.MenuCarierImg{
+	margin-left: 1.1rem;
+}
+.MenuBlocksImg{
+	width: 60px;
+    height: 72px;
+}
 .MenuWorkImg{
-	width: 110px;
+	width: 55px;
+    margin-left: 3rem;
 }
 .MenuServiceImg{
 	width: 90px;
     height: 96px;
 }
 .MenuRitualsImg{
-	width: 101px;
+	width: 35px;
     height: 49px;
+}
+.MenuMaterialImg{
+	width: 90.63px;
+    height: 67.859px;
+}
+.MenuStankiImg{
+	width: 37.643px;
+	height: 51.81px;
+}
+.MenuSpecialImg{
+	width: 68px;
 }
 .MenuTexts {
 	color: #212121;

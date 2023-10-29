@@ -1,7 +1,7 @@
 import Card from '../../modules/маленькая карточка/Card'
 import { FC, useEffect } from 'react'
 import BuldingMaterials from '../../../assets/BuldingMaterials.png'
-import Stanki from '../../../assets/Stanki.svg'
+import Stanki from '../../../assets/stanki.png'
 import Work from '../../../assets/Work.png'
 import Work2 from '../../../assets/Work.svg'
 import blocks from '../../../assets/blocks.png'
@@ -66,7 +66,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuBlocks}
 						>
 							<p className={s.MenuTexts}>Блоки</p>
-							<img className={s.MenuImg} src={blocks} alt='' />
+							<img className={`${s.MenuImg} ${s.MenuBlocksImg}`}src={blocks} alt='' />
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -76,7 +76,7 @@ const MainPage: FC<CardAdResponse> = ({
 						>
 							<p className={s.MenuTexts}>Строй материалы</p>
 							<img
-								className={s.MenuImg}
+								className={`${s.MenuImg} ${s.MenuMaterialImg}`}
 								src={BuldingMaterials}
 								alt=''
 							/>
@@ -97,7 +97,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuMachines}
 						>
 							<p className={s.MenuTexts}>Станки</p>
-							<img className={s.MenuImg} src={Stanki} alt='' />
+							<img className={`${s.MenuImg} ${s.MenuStankiImg}`} src={Stanki} alt='' />
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
