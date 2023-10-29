@@ -31,16 +31,8 @@ const Catalog: FC<ICatalogProps> = ({
 		flexDirection: 'column',
 		flexWrap: 'wrap',
 	}
-	console.log(
-		card_ads,
-		card_noads,
-		has_next_ads,
-		has_next_noads,
-		page,
-		total_pages_ads,
-		total_pages_noads,
-		resume
-	)
+console.log(sub_category_all);
+
 
 	const styleClasses = [
 		styles.OneCat,
@@ -81,6 +73,9 @@ const Catalog: FC<ICatalogProps> = ({
 							{sub_category_all?.map((Cat, index) => {
 								const styleClass =
 									styleClasses[index % styleClasses.length]
+									if(categorys_index === 'Блоки'){
+										
+									}
 								return (
 									<div
 										onClick={() => setSubCat(Cat.category)}

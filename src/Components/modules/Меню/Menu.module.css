@@ -24,7 +24,8 @@
 .menu {
 	list-style-type: none;
 	padding: 20px;
-	margin: 0;height: 500px;
+	margin: 0;
+	height: 500px;
 }
 
 .menu > li {
@@ -106,7 +107,6 @@
 	height: 20px;
 }
 .submenu {
-	
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -182,7 +182,7 @@
 	display: none;
 }
 .closeIcon {
-	display: none;
+	width: 15px;height: 15px;
 }
 @media (max-width: 1024px) {
 	.menuWrapperActive {
@@ -206,7 +206,7 @@
 }
 @media (max-width: 430px) {
 	.MenuOnceDiv {
-	display: none;
+		display: none;
 	}
 	.submenu {
 		visibility: visible;
@@ -227,7 +227,6 @@
 	}
 	.MenuOnceDiv3 {
 		width: 80vw;
-		
 	}
 	.menu {
 		display: flex;
@@ -240,6 +239,8 @@
 	}
 	.btnProperty {
 		margin-top: 1rem;
+		border: none;
+		background-color: #fff;
 	}
 	.titleMenuItem {
 		font-size: 18px;

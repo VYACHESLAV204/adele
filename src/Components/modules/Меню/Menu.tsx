@@ -911,13 +911,15 @@ const Menu: React.FC<MenuProps> = ({
 											'specialTecknik',
 											!hover.specialTecknik
 										)
-										setCategory('Спец техника')
-										setBurgerIsOpen(!BurgerisOpen)
 									}}
 									className={s.MenuOnceDiv}
 								>
 									<li>Спец техника</li>
-									<img src={MenuArrow} alt='' />
+									<img
+										src={MenuArrow}
+										className={s.MenuInnerImgRotate}
+										alt=''
+									/>
 								</div>
 								<ul
 									className={
@@ -925,7 +927,62 @@ const Menu: React.FC<MenuProps> = ({
 											? s.InnerLiVisible
 											: s.InnerLiHidden
 									}
-								></ul>
+								>
+									<ul
+										className={
+											hover.specialTecknik
+												? s.InnerLiVisible
+												: s.InnerLiHidden
+										}
+									>
+										<NavLink
+											className={s.Link}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
+										>
+											<li
+												onClick={() => {
+													setUnderCategory(
+														'Покупают'
+													),
+														setCategory(
+															'Спец техника'
+														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
+												}}
+											>
+												Покупают
+											</li>
+										</NavLink>
+										<NavLink
+											className={s.Link}
+											to={
+												NavOrNew
+													? '/new-card/'
+													: '/catalog/'
+											}
+										>
+											<li
+												onClick={() => {
+													setUnderCategory('Продают'),
+														setCategory(
+															'Спец техника'
+														)
+													setBurgerIsOpen(
+														!BurgerisOpen
+													)
+												}}
+											>
+												Продают
+											</li>
+										</NavLink>
+									</ul>
+								</ul>
 							</ul>
 						</li>
 						<li>
@@ -1142,10 +1199,18 @@ const Menu: React.FC<MenuProps> = ({
 				</div>
 				<div className={s.line}></div>
 			</div>
-			{/* <button className={s.btnProperty} onClick={toggleMenu}>
+			<button
+				className={s.btnProperty}
+				style={{
+					all: 'unset',
+					position: 'relative',
+					top: '-501px',
+					left: '337px',
+				}}
+				onClick={toggleMenu}
+			>
 				<img className={s.closeIcon} src={closeIcon} alt='' />
-				{BurgerisOpen ? 'Закрыть меню' : 'Открыть меню'}
-			</button> */}
+			</button>
 		</div>
 	)
 }

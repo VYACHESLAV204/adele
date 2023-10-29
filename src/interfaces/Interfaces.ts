@@ -37,7 +37,7 @@ export interface ICatalogProps {
 	page_ads: number
 	page: number
 	setSubCat: React.Dispatch<React.SetStateAction<string>>
-	categorys_index: number
+	categorys_index: string
 	page_noads: number
 	stasus: boolean
 	setPage: React.Dispatch<React.SetStateAction<number>>

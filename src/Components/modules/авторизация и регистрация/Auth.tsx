@@ -1,6 +1,6 @@
 import styles from './Reg.module.css'
 import React, { useState, FormEvent } from 'react'
-import hidePassword from '../../../assets/mdi_hide-outline.svg'
+
 
 interface ModalProps {
 	closeModal: () => void
