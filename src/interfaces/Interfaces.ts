@@ -37,6 +37,7 @@ export interface ICatalogProps {
 	page_ads: number
 	page: number
 	setSubCat: React.Dispatch<React.SetStateAction<string>>
+	setCat: React.Dispatch<React.SetStateAction<string>>
 	categorys_index: string
 	page_noads: number
 	stasus: boolean
@@ -45,16 +46,10 @@ export interface ICatalogProps {
 		category: string
 		id: number
 		cat?: string
-		mass?: [{ name: string[]; cat: string }]
+		mass?: [{ name: string[]; cat?: string }]
 	}[]
 	total_pages_ads: number
 	total_pages_noads: number
-	mass: [
-		{
-			name: ['Покупают', 'Покупают новое', 'Покупают Б/У']
-			cat: 'Спец техника'
-		}
-	]
 }
 export interface ProfileAndInfoProfileProps {
 	citys: { label: string; value: string }[]

@@ -384,18 +384,13 @@ const Summary = () => {
 			</div>
 			<div className={s.workCategory}>
 				<p className={s.marginRight}>Гражданство</p>
-				<select
+				<input
 					className={`${s.input} ${s.inputWork}`}
 					value={summaryFields.contry_people}
 					onChange={(e) =>
 						updateSummaryFields('contry_people', e.target.value)
 					}
-				>
-					<option value='Российское гражданство'>
-						Российское гражданство
-					</option>
-					<option value='Без гражданства'>Без гражданства</option>
-				</select>
+				></input>
 			</div>
 			<div className={s.workingType}>
 				<p className={s.marginRight}>Тип занятости</p>
@@ -826,7 +821,7 @@ const Summary = () => {
 				onClick={sendFormData}
 				className={`${s.btn} ${s.textMargin}`}
 			>
-				Разместить обьявление
+				Разместить объявление
 			</button>
 		</div>
 	)

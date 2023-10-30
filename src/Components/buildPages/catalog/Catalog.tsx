@@ -14,6 +14,7 @@ const Catalog: FC<ICatalogProps> = ({
 	page,
 	resume,
 	setPage,
+	setCat,
 	setSubCat,
 	categorys_index,
 	sub_category_all,
@@ -73,58 +74,16 @@ const Catalog: FC<ICatalogProps> = ({
 							{sub_category_all?.map((Cat, index) => {
 								const styleClass =
 									styleClasses[index % styleClasses.length]
-								if (sub_category_all[index].mass) {
-									return (
-										<select
-											onClick={() =>
-												setSubCat(Cat.category)
-											}
-											key={Cat.id}
-											className={styleClass}
-										>
-											{Cat.mass?.map((option) => {
-												if (option.cat) {
-													return option.name.map(
-														(name) => {
-															return (
-																<NavLink
-																	to={
-																		option.cat
-																	}
-																>
-																	<option
-																		value={
-																			name
-																		}
-																	>
-																		{name}
-																	</option>
-																</NavLink>
-															)
-														}
-													)
-												} else {
-													option.name.map((name) => {
-														return (
-															<select>
-																<option
-																	value={name}
-																>
-																	{name}
-																</option>
-															</select>
-														)
-													})
-												}
-											})}
-										</select>
-									)
-								} else
+								if (!Cat.mass) {
 									return (
 										<div
-											onClick={() =>
-												setSubCat(Cat.category)
-											}
+											onClick={() => {
+												if (Cat.cat) {
+													setCat(Cat.cat)
+												} else {
+													setSubCat(Cat.category)
+												}
+											}}
 											key={Cat.id}
 											className={styleClass}
 										>
@@ -133,6 +92,30 @@ const Catalog: FC<ICatalogProps> = ({
 											</p>
 										</div>
 									)
+								} else if (Cat.mass) {
+									return (
+										<select
+											onChange={(e) => {
+												if (Cat.mass?.[0].cat) {
+													setCat(Cat.mass[0].cat)
+													setSubCat(e.target.value)
+												} else {
+													setSubCat(e.target.value)
+												}
+											}}
+											key={Cat.id}
+											className={styleClass}
+										>
+											{Cat.mass[0].name.map((name) => {
+												return (
+													<option value={name}>
+														{name}
+													</option>
+												)
+											})}
+										</select>
+									)
+								}
 							})}
 						</div>
 

@@ -57,7 +57,11 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuCarier}
 						>
 							<p className={s.MenuTexts}>Карьер</p>
-							<img className={`${s.MenuImg} ${s.MenuCarierImg}`} src={carier} alt='' />
+							<img
+								className={`${s.MenuImg} ${s.MenuCarierImg}`}
+								src={carier}
+								alt=''
+							/>
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -66,15 +70,19 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuBlocks}
 						>
 							<p className={s.MenuTexts}>Блоки</p>
-							<img className={`${s.MenuImg} ${s.MenuBlocksImg}`}src={blocks} alt='' />
+							<img
+								className={`${s.MenuImg} ${s.MenuBlocksImg}`}
+								src={blocks}
+								alt=''
+							/>
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
 						<div
-							onClick={() => setCategory('Строй материалы')}
+							onClick={() => setCategory('Стройматериалы')}
 							className={s.MenuBuildingMaterials}
 						>
-							<p className={s.MenuTexts}>Строй материалы</p>
+							<p className={s.MenuTexts}>Стройматериалы</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuMaterialImg}`}
 								src={BuldingMaterials}
@@ -88,7 +96,11 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuRitualItems}
 						>
 							<p className={s.MenuTexts}>Ритуальные изделия</p>
-							<img className={`${s.MenuImg} ${s.MenuRitualsImg}`} src={rituals} alt='' />
+							<img
+								className={`${s.MenuImg} ${s.MenuRitualsImg}`}
+								src={rituals}
+								alt=''
+							/>
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -97,7 +109,11 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuMachines}
 						>
 							<p className={s.MenuTexts}>Станки</p>
-							<img className={`${s.MenuImg} ${s.MenuStankiImg}`} src={Stanki} alt='' />
+							<img
+								className={`${s.MenuImg} ${s.MenuStankiImg}`}
+								src={Stanki}
+								alt=''
+							/>
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -106,15 +122,19 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuTools}
 						>
 							<p className={s.MenuTexts}>Инструменты</p>
-							<img className={`${s.MenuImg} ${s.MenuToolsImg}`} src={tools} alt='' />
+							<img
+								className={`${s.MenuImg} ${s.MenuToolsImg}`}
+								src={tools}
+								alt=''
+							/>
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
 						<div
-							onClick={() => setCategory('Спец техника')}
+							onClick={() => setCategory('Спецтехника')}
 							className={s.MenuSpecialEquipment}
 						>
-							<p className={s.MenuTexts}>Спец техника</p>
+							<p className={s.MenuTexts}>Спецтехника</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuSpecialImg}`}
 								src={specialTequinick}
@@ -128,7 +148,11 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuWork}
 						>
 							<p className={s.MenuTexts}>Работа</p>
-							<img className={`${s.MenuImg} ${s.MenuWorkImg}`} src={Work} alt='' />
+							<img
+								className={`${s.MenuImg} ${s.MenuWorkImg}`}
+								src={Work}
+								alt=''
+							/>
 						</div>
 					</NavLink>
 					<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -137,7 +161,11 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuServices}
 						>
 							<p className={s.MenuTexts}>Услуги</p>
-							<img className={`${s.MenuImg} ${s.MenuServiceImg}`} src={serveces} alt='' />
+							<img
+								className={`${s.MenuImg} ${s.MenuServiceImg}`}
+								src={serveces}
+								alt=''
+							/>
 						</div>
 					</NavLink>
 				</div>
@@ -178,11 +206,11 @@ const MainPage: FC<CardAdResponse> = ({
 						</NavLink>
 						<NavLink className={s.NavLink} to={'/catalog/'}>
 							<div
-								onClick={() => setCategory('Строй материалы')}
+								onClick={() => setCategory('Стройматериалы')}
 								style={{ marginRight: '1rem' }}
 								className={s.MenuBuildingMaterials}
 							>
-								<p className={s.MenuTexts}>Строй материалы</p>
+								<p className={s.MenuTexts}>Стройматериалы</p>
 								<img
 									className={s.MenuImg}
 									src={BuldingMaterials}
@@ -240,11 +268,11 @@ const MainPage: FC<CardAdResponse> = ({
 						</NavLink>
 						<NavLink className={s.NavLink} to={'/catalog/'}>
 							<div
-								onClick={() => setCategory('Спец техника')}
+								onClick={() => setCategory('Спецтехника')}
 								style={{ marginRight: '1rem' }}
 								className={s.MenuSpecialEquipment}
 							>
-								<p className={s.MenuTexts}>Спец техника</p>
+								<p className={s.MenuTexts}>Спецтехника</p>
 								<img
 									className={s.MenuImg}
 									src={specialTequinick}

@@ -98,7 +98,7 @@ const Menu: React.FC<MenuProps> = ({
 										!submenu.submenuCarier
 									)
 								}
-								className={s.MenuOnceDiv3}
+								className={s.MenuOnceDiv}
 							>
 								<h2>Карьер</h2>
 								<img src={MenuArrow} alt='' />
@@ -110,32 +110,33 @@ const Menu: React.FC<MenuProps> = ({
 										: s.submenu
 								}
 							>
-								<div className={s.MenuOnceDiv}>
-									<NavLink
-										className={s.Link}
-										to={
-											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
+								<NavLink
+									style={{ marginBottom: '0px' }}
+									className={s.Link}
+									onClick={() => {
+										setUnderCategory('Нет'),
+											setCategory('Карьер')
+										setBurgerIsOpen(!BurgerisOpen)
+									}}
+									to={NavOrNew ? '/new-card/' : '/catalog/'}
+								>
+									<div
+										onClick={() =>
+											FnSetHover(
+												'submenuCarier',
+												!hover.submenuCarier
+											)
 										}
+										className={s.MenuOnceDiv3}
 									>
-										<li
-											onClick={() => {
-												setUnderCategory('нет'),
-													setCategory('Карьер')
-												setBurgerIsOpen(!BurgerisOpen)
-											}}
-										>
-											Карьер
-										</li>
-									</NavLink>
-
-									{/* <NavLink
-										className={s.Link}
-										to={NavOrNew?'/new-card/':'/catalog/'}
-									></NavLink> */}
-									<img src={MenuArrow} alt='' />
-								</div>
+										<li>Карьер</li>
+										<img
+											className={s.MenuImg}
+											src={MenuArrow}
+											alt=''
+										/>
+									</div>
+								</NavLink>
 							</ul>
 						</li>
 						<li>
@@ -278,7 +279,7 @@ const Menu: React.FC<MenuProps> = ({
 								}
 								className={s.MenuOnceDiv}
 							>
-								<h2>Строй материалы</h2>
+								<h2>Стройматериалы</h2>
 								<img src={MenuArrow} alt='' />
 							</div>
 							<ul
@@ -297,7 +298,7 @@ const Menu: React.FC<MenuProps> = ({
 									}
 									className={s.MenuOnceDiv3}
 								>
-									<li>Строй материалы</li>
+									<li>Стройматериалы</li>
 									<img
 										className={s.MenuInnerImgRotate}
 										src={MenuArrow}
@@ -323,7 +324,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Гранит'),
 													setCategory(
-														'Строй материалы'
+														'Стройматериалы'
 													)
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
@@ -343,7 +344,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Мрамор'),
 													setCategory(
-														'Строй материалы'
+														'Стройматериалы'
 													)
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
@@ -363,7 +364,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Покупают'),
 													setCategory(
-														'Строй материалы'
+														'Стройматериалы'
 													)
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
@@ -383,7 +384,7 @@ const Menu: React.FC<MenuProps> = ({
 											onClick={() => {
 												setUnderCategory('Продают'),
 													setCategory(
-														'Строй материалы'
+														'Стройматериалы'
 													)
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
@@ -893,9 +894,9 @@ const Menu: React.FC<MenuProps> = ({
 										!submenu.specialTecknik
 									)
 								}
-								className={s.MenuOnceDiv3}
+								className={s.MenuOnceDiv}
 							>
-								<h2>Спец техника</h2>
+								<h2>Спецтехника</h2>
 								<img src={MenuArrow} alt='' />
 							</div>
 							<ul
@@ -906,18 +907,18 @@ const Menu: React.FC<MenuProps> = ({
 								}
 							>
 								<div
-									onClick={() => {
+									onClick={() =>
 										FnSetHover(
 											'specialTecknik',
 											!hover.specialTecknik
 										)
-									}}
-									className={s.MenuOnceDiv}
+									}
+									className={s.MenuOnceDiv3}
 								>
-									<li>Спец техника</li>
+									<li>Спецтехника</li>
 									<img
-										src={MenuArrow}
 										className={s.MenuInnerImgRotate}
+										src={MenuArrow}
 										alt=''
 									/>
 								</div>
@@ -928,60 +929,42 @@ const Menu: React.FC<MenuProps> = ({
 											: s.InnerLiHidden
 									}
 								>
-									<ul
-										className={
-											hover.specialTecknik
-												? s.InnerLiVisible
-												: s.InnerLiHidden
+									<NavLink
+										className={s.Link}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
 										}
 									>
-										<NavLink
-											className={s.Link}
-											to={
-												NavOrNew
-													? '/new-card/'
-													: '/catalog/'
-											}
+										<li
+											onClick={() => {
+												setUnderCategory('Покупают'),
+													setCategory('Спецтехника')
+												setBurgerIsOpen(!BurgerisOpen)
+											}}
 										>
-											<li
-												onClick={() => {
-													setUnderCategory(
-														'Покупают'
-													),
-														setCategory(
-															'Спец техника'
-														)
-													setBurgerIsOpen(
-														!BurgerisOpen
-													)
-												}}
-											>
-												Покупают
-											</li>
-										</NavLink>
-										<NavLink
-											className={s.Link}
-											to={
-												NavOrNew
-													? '/new-card/'
-													: '/catalog/'
-											}
+											Покупают
+										</li>
+									</NavLink>
+									<NavLink
+										className={s.Link}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
+									>
+										<li
+											onClick={() => {
+												setUnderCategory('Продают'),
+													setCategory('Спецтехника')
+												setBurgerIsOpen(!BurgerisOpen)
+											}}
 										>
-											<li
-												onClick={() => {
-													setUnderCategory('Продают'),
-														setCategory(
-															'Спец техника'
-														)
-													setBurgerIsOpen(
-														!BurgerisOpen
-													)
-												}}
-											>
-												Продают
-											</li>
-										</NavLink>
-									</ul>
+											Продают
+										</li>
+									</NavLink>
 								</ul>
 							</ul>
 						</li>

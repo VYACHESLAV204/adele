@@ -79,6 +79,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 		)
 
 		const data = await response.json()
+		.then(() => alert('Ваше объявление успешно отправленно на модерацию'))
 		console.log(data)
 	}
 
@@ -299,7 +300,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 								type='submit'
 								className={`${s.btn} ${s.textMargin}`}
 							>
-								Разместить обьявление
+								Разместить объявление
 							</button>
 						</div>
 					</div>

@@ -96,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({
 				<img className={styles.logo} src={logo} alt='Логотип' />
 			</NavLink>
 			{RegionSelect()}
-			<div
+			<div 
 				onClick={(e) => {
 					e.preventDefault()
 					e.stopPropagation()

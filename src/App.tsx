@@ -187,6 +187,7 @@ function App() {
 										page_ads={cardsArray.page_ads}
 										page_noads={cardsArray.page_noads}
 										stasus={cardsArray.stasus}
+										setCat={setCategoryForNewCard}
 										setSubCat={setUnderCategoryForNewCard}
 										sub_category_all={
 											cardsArray.sub_category_all

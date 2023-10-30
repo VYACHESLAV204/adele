@@ -182,7 +182,8 @@
 	display: none;
 }
 .closeIcon {
-	width: 15px;height: 15px;
+	width: 15px;
+	height: 15px;
 }
 @media (max-width: 1024px) {
 	.menuWrapperActive {
@@ -233,6 +234,7 @@
 		justify-content: center;
 		flex-direction: column;
 		width: 100vw;
+		padding: 70px 0px 0px 0px;
 	}
 	.MainDiv {
 		margin-bottom: -1rem;
