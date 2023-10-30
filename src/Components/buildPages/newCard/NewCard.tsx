@@ -191,7 +191,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 					<div>
 						<input
 							className={s.inputPrice}
-							type='text'
+							type='number'
 							placeholder='12 500'
 							onChange={(e) => setPriceState(e.target.value)}
 						/>

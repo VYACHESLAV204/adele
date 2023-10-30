@@ -5,6 +5,7 @@ import Card from '../../modules/маленькая карточка/Card'
 import ColumnCardsStyles from '../mainPage/MainPage.module.css'
 import styles from './Catalog.module.css'
 import Pagination from '../../modules/pagination/Pagination'
+import { NavLink } from 'react-router-dom'
 const Catalog: FC<ICatalogProps> = ({
 	card_ads,
 	card_noads,
@@ -31,8 +32,7 @@ const Catalog: FC<ICatalogProps> = ({
 		flexDirection: 'column',
 		flexWrap: 'wrap',
 	}
-console.log(sub_category_all);
-
+	console.log(sub_category_all)
 
 	const styleClasses = [
 		styles.OneCat,
@@ -73,20 +73,66 @@ console.log(sub_category_all);
 							{sub_category_all?.map((Cat, index) => {
 								const styleClass =
 									styleClasses[index % styleClasses.length]
-									if(categorys_index === 'Блоки'){
-										
-									}
-								return (
-									<div
-										onClick={() => setSubCat(Cat.category)}
-										key={Cat.id}
-										className={styleClass}
-									>
-										<p className={styles.CatText}>
-											{Cat.category}
-										</p>
-									</div>
-								)
+								if (sub_category_all[index].mass) {
+									return (
+										<select
+											onClick={() =>
+												setSubCat(Cat.category)
+											}
+											key={Cat.id}
+											className={styleClass}
+										>
+											{Cat.mass?.map((option) => {
+												if (option.cat) {
+													return option.name.map(
+														(name) => {
+															return (
+																<NavLink
+																	to={
+																		option.cat
+																	}
+																>
+																	<option
+																		value={
+																			name
+																		}
+																	>
+																		{name}
+																	</option>
+																</NavLink>
+															)
+														}
+													)
+												} else {
+													option.name.map((name) => {
+														return (
+															<select>
+																<option
+																	value={name}
+																>
+																	{name}
+																</option>
+															</select>
+														)
+													})
+												}
+											})}
+										</select>
+									)
+								} else
+									return (
+										<div
+											onClick={() =>
+												setSubCat(Cat.category)
+											}
+											key={Cat.id}
+											className={styleClass}
+										>
+											<p className={styles.CatText}>
+												{Cat.category}
+											</p>
+										</div>
+									)
 							})}
 						</div>
 

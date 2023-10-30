@@ -17,7 +17,7 @@ const Card: FC<{
 						key={item.id_card}
 						style={inlineStyles}
 					>
-						<div 
+						<div
 							style={inlineStyles}
 							className={styles.MainCardDiv}
 						>
@@ -29,11 +29,11 @@ const Card: FC<{
 								/>
 							</div>
 							<div className={styles.CardInfoDiv}>
-								<h3>{item.price}</h3>
+								<h3>{item.caption}</h3>
 								<p className={styles.CardInfoDivPrice}>
-									{item.price}
+									{item.description}
 								</p>
-								<p>{item.city}</p>
+								<p>{`${item.price} Р`}</p>
 							</div>
 						</div>
 					</Link>

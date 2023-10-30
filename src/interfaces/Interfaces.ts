@@ -30,7 +30,7 @@ export interface CardAd {
 
 export interface ICatalogProps {
 	card_ads: CardAd[]
-	resume?:any[]
+	resume?: any[]
 	card_noads: CardAd[]
 	has_next_ads: boolean
 	has_next_noads: boolean
@@ -41,9 +41,20 @@ export interface ICatalogProps {
 	page_noads: number
 	stasus: boolean
 	setPage: React.Dispatch<React.SetStateAction<number>>
-	sub_category_all: { category: string; id: number }[]
+	sub_category_all: {
+		category: string
+		id: number
+		cat?: string
+		mass?: [{ name: string[]; cat: string }]
+	}[]
 	total_pages_ads: number
 	total_pages_noads: number
+	mass: [
+		{
+			name: ['Покупают', 'Покупают новое', 'Покупают Б/У']
+			cat: 'Спец техника'
+		}
+	]
 }
 export interface ProfileAndInfoProfileProps {
 	citys: { label: string; value: string }[]
