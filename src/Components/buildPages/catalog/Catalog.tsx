@@ -5,12 +5,9 @@ import Card from '../../modules/маленькая карточка/Card'
 import ColumnCardsStyles from '../mainPage/MainPage.module.css'
 import styles from './Catalog.module.css'
 import Pagination from '../../modules/pagination/Pagination'
-import { NavLink } from 'react-router-dom'
+
 const Catalog: FC<ICatalogProps> = ({
 	card_ads,
-	card_noads,
-	has_next_ads,
-	has_next_noads,
 	page,
 	resume,
 	setPage,
@@ -19,7 +16,6 @@ const Catalog: FC<ICatalogProps> = ({
 	categorys_index,
 	sub_category_all,
 	total_pages_ads,
-	total_pages_noads,
 }) => {
 	const CardStylesMob = {
 		display: 'flex',
