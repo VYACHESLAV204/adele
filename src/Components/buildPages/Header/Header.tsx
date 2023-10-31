@@ -154,7 +154,7 @@ const Header: React.FC<HeaderProps> = ({
 						<NavLink to={'/my-ads/'}>
 							<li className={styles.liItem}>Мой аккаунт</li>
 						</NavLink>
-						<li onClick={() => logout()} className={styles.liItem}>
+						<li style={{cursor:'pointer'}} onClick={() => logout()} className={styles.liItem}>
 							Выйти
 						</li>
 					</ul>

@@ -17,6 +17,7 @@ p {
 	justify-content: space-between;
 	border-radius: 7px;
 }
+.MarginZero{margin-left: 0px;}
 .sectionContainerActive {
 	display: flex;
 	align-items: flex-start;

@@ -27,7 +27,22 @@ export interface CardAd {
 	telephone_two: null | string
 	username: string
 }
-
+export interface CardMod {
+	caption: string
+	category: string
+	check_moder: string
+	city: string
+	description: string
+	email: string
+	id_card: number
+	id_user: string
+	path_file: string[]
+	phone: string
+	price: string
+	subcategory: string
+	tariff: string
+	username: string
+}
 export interface ICatalogProps {
 	card_ads: CardAd[]
 	resume?: any[]

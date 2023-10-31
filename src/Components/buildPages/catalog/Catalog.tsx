@@ -9,7 +9,7 @@ import Pagination from '../../modules/pagination/Pagination'
 const Catalog: FC<ICatalogProps> = ({
 	card_ads,
 	page,
-	resume,
+	resume,card_noads,
 	setPage,
 	setCat,
 	setSubCat,
@@ -119,7 +119,7 @@ const Catalog: FC<ICatalogProps> = ({
 							className={styles.cardsMainDiv}
 							style={{ marginTop: 15 }}
 						>
-							<CardMain Cards={card_ads} />
+							<CardMain Cards={card_noads} />
 						</div>
 					</div>
 					<div
@@ -172,17 +172,48 @@ const Catalog: FC<ICatalogProps> = ({
 							{sub_category_all?.map((Cat, index) => {
 								const styleClass =
 									styleClasses[index % styleClasses.length]
-								return (
-									<div
-										onClick={() => setSubCat(Cat.category)}
-										key={Cat.id}
-										className={styleClass}
-									>
-										<p className={styles.CatText}>
-											{Cat.category}
-										</p>
-									</div>
-								)
+								if (!Cat.mass) {
+									return (
+										<div
+											onClick={() => {
+												if (Cat.cat) {
+													setCat(Cat.cat)
+												} else {
+													setSubCat(Cat.category)
+												}
+											}}
+											key={Cat.id}
+											className={styleClass}
+										>
+											<p className={styles.CatText}>
+												{Cat.category}
+											</p>
+										</div>
+									)
+								} else if (Cat.mass) {
+									return (
+										<select
+											onChange={(e) => {
+												if (Cat.mass?.[0].cat) {
+													setCat(Cat.mass[0].cat)
+													setSubCat(e.target.value)
+												} else {
+													setSubCat(e.target.value)
+												}
+											}}
+											key={Cat.id}
+											className={styleClass}
+										>
+											{Cat.mass[0].name.map((name) => {
+												return (
+													<option value={name}>
+														{name}
+													</option>
+												)
+											})}
+										</select>
+									)
+								}
 							})}
 						</div>
 
@@ -190,7 +221,7 @@ const Catalog: FC<ICatalogProps> = ({
 							className={styles.cardsMainDiv}
 							style={{ marginTop: 15 }}
 						>
-							<CardMain Cards={card_ads} />
+							<CardMain Cards={card_noads} />
 						</div>
 					</div>
 					<div

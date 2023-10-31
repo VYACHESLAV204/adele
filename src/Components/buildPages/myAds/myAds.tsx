@@ -29,31 +29,37 @@ const myAds = () => {
 	const [posts, setPosts] = useState<myAds1>()
 	const [isArchive, setIsArchive] = useState(false)
 	const [Action, setAction] = useState('exit_archive')
-	function deletePost(id: number) {
-		fetch(
-			`http://stoneworking.ru/api/v1/delete-post?jwt=${localStorage.getItem(
-				'token'
-			)}`,
-			{
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					id_card: id,
-					del: Action,
-				}),
-			}
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				console.log(data)
-			})
-			.catch((error) => {
-				console.error('Ошибка:', error)
-			})
-	}
+	const [ThisId, setThisId] = useState(1)
 
+	useEffect(() => {
+		function deletePost(id: number) {
+			fetch(
+				`http://stoneworking.ru/api/v1/delete-post?jwt=${localStorage.getItem(
+					'token'
+				)}`,
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						id_card: id,
+						del: Action,
+					}),
+				}
+			)
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data)
+					setPosts(undefined)
+				})
+				.catch((error) => {
+					console.error('Ошибка:', error)
+				})
+		}
+
+		deletePost(ThisId)
+	}, [ThisId, Action])
 	useEffect(() => {
 		fetch(
 			`http://stoneworking.ru/api/v1/my-posts?jwt=${localStorage.getItem(
@@ -64,6 +70,7 @@ const myAds = () => {
 			.then((data) => {
 				setPosts(data)
 				console.log(data)
+
 			})
 			.catch((error) => {
 				console.error('Ошибка:', error)
@@ -187,11 +194,16 @@ const myAds = () => {
 
 										<div className={s.divButton}>
 											<select
-												onChange={(e) =>
+												onChange={(e) => {
 													setAction(e.target.value)
-												}
-												className={`${s.btn} ${s.btnWActions}`}
+													setThisId(item.id_card)
+												}}
+												defaultValue={''}
+												className={`${s.btn} ${s.btnWActions} ${s.marginZero}`}
 											>
+												<option value='exit_archive'>
+													Выберите действие
+												</option>
 												<option value='exit_archive'>
 													Опубликовать
 												</option>
@@ -200,14 +212,6 @@ const myAds = () => {
 													Удалить
 												</option>
 											</select>
-											<img
-												className=''
-												src='src\assets\Menu arrow.svg'
-												alt=''
-												onClick={() =>
-													deletePost(item.id_card)
-												}
-											/>
 										</div>
 									</div>
 								)
@@ -248,13 +252,17 @@ const myAds = () => {
 											</p>
 											<div className={s.divButton}>
 												<select
-													onChange={(e) =>
+													onChange={(e) => {
 														setAction(
 															e.target.value
 														)
-													}
-													className={s.btn}
+														setThisId(item.id_card)
+													}}
+													className={`${s.btn} ${s.btnWActions} ${s.marginZero}`}
 												>
+													<option value=''>
+														Выберите действие
+													</option>
 													<option value='push_archive'>
 														Убрать в архив
 													</option>
@@ -262,14 +270,6 @@ const myAds = () => {
 														Удалить
 													</option>
 												</select>
-												<img
-													className=''
-													src='src\assets\Menu arrow.svg'
-													alt=''
-													onClick={() =>
-														deletePost(item.id_card)
-													}
-												/>
 											</div>
 										</div>
 									</div>

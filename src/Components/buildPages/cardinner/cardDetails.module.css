@@ -70,7 +70,7 @@
 
 .Img {
 	object-fit: cover;
-	height: 491px;
+	width: 491px;
 	height: 453px;
 	border-radius: 15px;
 }

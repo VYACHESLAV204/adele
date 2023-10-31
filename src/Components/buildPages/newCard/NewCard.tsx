@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import greenMoney from '../../../assets/greenmoney.svg'
 
-import plus from '../../../assets/plus.svg'
+
 import s from './NewCard.module.css'
+import Reactdropzone from './photos'
 
 interface InewCardProps {
 	category: string
@@ -78,8 +79,11 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 			}
 		)
 
-		const data = await response.json()
-		.then(() => alert('Ваше объявление успешно отправленно на модерацию'))
+		const data = await response
+			.json()
+			.then(() =>
+				alert('Ваше объявление успешно отправленно на модерацию')
+			)
 		console.log(data)
 	}
 
@@ -137,20 +141,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						Фотографии
 					</h4>
 					<p style={{ textAlign: 'left' }}>Не более 5 фото</p>
-					<input
-						multiple
-						className={s.photoInput}
-						id='setPhoto'
-						style={{ display: 'none' }}
-						type='file'
-						onChange={(e) =>
-							setPhotoStates(
-								e.target.files
-									? Array.from(e.target.files)
-									: undefined
-							)
-						}
-					/>
+
 					<label htmlFor='setPhoto'>
 						<div className={s.photoSectionContainer}>
 							<div className={`${s.photo} ${s.photoContainer}`}>
@@ -166,22 +157,21 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 									alt=''
 								/>
 							</div>
+									<p style={{marginTop:'2rem'}}>
+										Перетащите свой фото сюда или нажмите и
+										выберите их через файловую систему
+									</p>
 							<div className={s.addPhotoContainer}>
 								<div className={s.plusContainer}>
-									<img
-										className={s.plusPhoto}
-										src={plus}
-										alt=''
+									<Reactdropzone
+										setPhotoStates={setPhotoStates}
 									/>
-									<p>
-										Нажмите, чтобы добавить новую фотографию
-									</p>
 								</div>
-								<p>
-									Качественные фото с чистым фоном - залог
-									высоких продаж
-								</p>
 							</div>
+							<p>
+								Качественные фото с чистым фоном - залог высоких
+								продаж
+							</p>
 						</div>
 					</label>
 				</div>
