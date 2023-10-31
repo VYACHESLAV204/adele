@@ -93,7 +93,7 @@
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
 .MenuToolsImg{
-	margin-right: -1.2rem;
+	margin-right: -0.3rem;
 }
 .MenuSpecialEquipment {
 	width: 151px;
@@ -145,7 +145,6 @@
 }
 .MenuWorkImg{
 	width: 55px;
-    margin-left: 3rem;
 }
 .MenuServiceImg{
 	width: 90px;
@@ -158,6 +157,7 @@
 .MenuMaterialImg{
 	width: 90.63px;
     height: 67.859px;
+	margin-right: -1.2rem;
 }
 .MenuStankiImg{
 	width: 37.643px;
@@ -165,6 +165,7 @@
 }
 .MenuSpecialImg{
 	width: 68px;
+	margin-right: -0.4rem;
 }
 .MenuTexts {
 	color: #212121;
@@ -173,7 +174,7 @@
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
-	width: 52px;
+	width: 50%;
 }
 .H2SpecialText {
 	display: flex;
@@ -183,6 +184,13 @@
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
+}
+.MenuSpecialText{
+	width: 61%;
+    margin-left: 0.2rem;
+}
+.MenuWorkText{
+	margin-left: 1.9rem;
 }
 .RowCardDiv {
 	display: flex;
@@ -307,11 +315,29 @@
 	.AdCardsDivMob{
 		width: 95vw;
 	}
+	.MenuTexts{
+		margin-right: 1rem;
+	}
+	.MenuBlocksImg{
+		width: 56px;
+		height: 62px;
+	}
+	.MenuStankiImg{
+		width: 51px;
+		height: 52px;
+	}
+	.MenuRitualsImg{
+		width: 52px;
+		height: 52px;
+	}
 }
 @media (max-width: 430px) {
 
 	.AdCardsDivMob{
 		width: 91vw;
 		margin-top: 5.5rem;
+	}
+	.MenuTexts{
+		margin-right: 0.9rem;
 	}
 }
