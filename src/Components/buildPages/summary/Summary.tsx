@@ -5,6 +5,9 @@ import greenMoney from '../../../assets/greenmoney.svg'
 import plus from '../../../assets/plus.svg'
 import 'react-widgets/styles.css'
 import DateInput from '../../modules/dateInput/DateInput'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 export type SummaryFieldsType = {
 	category: string
 	subcategory: string
@@ -28,7 +31,7 @@ export type SummaryFieldsType = {
 const Summary = () => {
 	const [summaryFields, setSummaryFields] = useState<SummaryFieldsType>({
 		category: 'Работа',
-		subcategory: 'резюме',
+		subcategory: 'Ищу сотрудника',
 		info_job: '',
 		job: '',
 		graphic_job: '2/2',
@@ -45,6 +48,14 @@ const Summary = () => {
 		cant_dollars: '',
 		photos: null,
 	})
+	const settings = {
+		dots: true,
+		vertical: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	}
 	const [educationFields, setEducationFields] = useState([
 		{
 			years_stop_univer: '',
@@ -766,13 +777,28 @@ const Summary = () => {
 				<div className={s.photoSectionContainer}>
 					<div className={`${s.photo} ${s.photoContainer}`}>
 						{summaryFields.photos !== null && (
-							<img
-								className={s.photoClose}
-								src={URL.createObjectURL(
-									summaryFields.photos[0]
-								)}
-								alt=''
-							/>
+							<Slider adaptiveHeight {...settings}>
+								{summaryFields.photos.map((image, index) => (
+									<div
+										style={{
+											height: '179px',
+											width: '229px',
+										}}
+										key={index}
+									>
+										<img
+											style={{
+												height: '179px',
+												width: '229px',
+												objectFit: 'cover',
+												borderRadius: '8px',
+											}}
+											src={URL.createObjectURL(image)}
+											alt={`Slide ${index}`}
+										/>
+									</div>
+								))}
+							</Slider>
 						)}
 					</div>
 					<input

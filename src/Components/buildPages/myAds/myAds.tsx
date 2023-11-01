@@ -30,7 +30,7 @@ const myAds = () => {
 	const [isArchive, setIsArchive] = useState(false)
 	const [Action, setAction] = useState('exit_archive')
 	const [ThisId, setThisId] = useState(1)
-const [reload, setReload] = useState(false)
+	const [reload, setReload] = useState(false)
 	useEffect(() => {
 		function deletePost(id: number) {
 			fetch(
@@ -70,7 +70,6 @@ const [reload, setReload] = useState(false)
 			.then((data) => {
 				setPosts(data)
 				console.log(data)
-
 			})
 			.catch((error) => {
 				console.error('Ошибка:', error)
@@ -113,14 +112,20 @@ const [reload, setReload] = useState(false)
 			<div className={s.rightWrapper}>
 				<div className={s.firstLine}>
 					<h1 className={s.mainTitle}>Мои объявления</h1>
-					<button className={s.profileBtn}>
-						Профиль
-						<img
-							className={s.humburgerMob}
-							src={humburgerMob}
-							alt=''
-						/>
-					</button>
+					<NavLink style={{ cursor: 'pointer' }} to={'/profile-mob/'}>
+						<button
+							style={{ cursor: 'pointer' }}
+							className={s.profileBtn}
+						>
+							Профиль
+							<img
+								className={s.humburgerMob}
+								src={humburgerMob}
+								alt=''
+								style={{ cursor: 'pointer' }}
+							/>
+						</button>
+					</NavLink>
 				</div>
 				<div className={s.btnBox}>
 					{isArchive ? (

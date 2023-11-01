@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	height: 600vh;
+height: 653vh;
 	justify-content: space-between;
 }
 .MainTitle {
@@ -238,10 +238,10 @@
 	height: 100px;
 }
 .photoContainer {
-	width: 225px;
-	height: 165px;
+	width: 229px;
+	height: 179px;
 	background-color: #000;
-	display: flex;
+	border-radius: 15px;
 	justify-content: flex-end;
 	border-radius: 6px;
 }
@@ -253,6 +253,7 @@
 }
 .photoSectionContainer {
 	display: flex;
+	align-items: center;
 }
 .addPhotoContainer {
 	width: 295px;
@@ -431,7 +432,7 @@
 	.inputDesc {
 		width: 250px;
 	}
-	.summaryContainer{
+	.summaryContainer {
 		margin-top: 0;
 	}
 }

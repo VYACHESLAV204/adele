@@ -48,6 +48,7 @@ p {
 	background: #5250c5;
 	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
 	margin-left: 2rem;
+	cursor: pointer;
 }
 .btnWActions {
 	margin-left: 0;
