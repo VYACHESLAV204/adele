@@ -45,7 +45,7 @@
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
 .MenuBuildingMaterials {
-	width: 209px;
+	width: 229px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -92,11 +92,9 @@
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
-.MenuToolsImg{
-	margin-right: -0.3rem;
-}
+
 .MenuSpecialEquipment {
-	width: 151px;
+	width: 172px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -109,7 +107,7 @@
 }
 
 .MenuWork {
-	width: 169px;
+	width: 141px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -137,6 +135,7 @@
 	height: 56px;
 }
 .MenuCarierImg{
+	border-radius: 0 5px 5px 0;
 	margin-left: 1.1rem;
 }
 .MenuBlocksImg{
@@ -145,6 +144,8 @@
 }
 .MenuWorkImg{
 	width: 55px;
+	margin-right: -0.4rem;
+	border-radius: 0 5px 5px 0;
 }
 .MenuServiceImg{
 	width: 90px;
@@ -157,7 +158,7 @@
 .MenuMaterialImg{
 	width: 90.63px;
     height: 67.859px;
-	margin-right: -1.2rem;
+
 }
 .MenuStankiImg{
 	width: 37.643px;
@@ -166,6 +167,11 @@
 .MenuSpecialImg{
 	width: 68px;
 	margin-right: -0.4rem;
+}
+.MenuToolsImg{
+	margin-right: -0.3rem;
+	height: 57px;
+	border-radius: 0 5px 5px 0;
 }
 .MenuTexts {
 	color: #212121;
@@ -189,8 +195,8 @@
 	width: 61%;
     margin-left: 0.2rem;
 }
-.MenuWorkText{
-	margin-left: 1.9rem;
+.MenuServiceText{
+	margin-left: 0.5rem;
 }
 .RowCardDiv {
 	display: flex;
@@ -316,19 +322,36 @@
 		width: 95vw;
 	}
 	.MenuTexts{
-		margin-right: 1rem;
+		margin-left: 0.6rem;
+	}
+	.MenuCarierImg{
+		border-radius: 0 7px 7px 0;
 	}
 	.MenuBlocksImg{
 		width: 56px;
 		height: 62px;
 	}
 	.MenuStankiImg{
-		width: 51px;
+		width: 40px;
 		height: 52px;
 	}
 	.MenuRitualsImg{
-		width: 52px;
+		width: 38px;
 		height: 52px;
+	}
+	.MenuSpecialImg{
+		width: 60px;
+	}
+	.MenuToolsImg{
+		margin-right: -0.15rem;
+		height: 58px;
+	}
+	.MenuWorkImg{
+		margin-right: -0.1rem;
+	}
+	.MenuServiceImg{
+		width: 66px;
+		height: 66px;
 	}
 }
 @media (max-width: 430px) {
@@ -339,5 +362,21 @@
 	}
 	.MenuTexts{
 		margin-right: 0.9rem;
+	}
+	.MenuCarierImg{
+		margin-left: 0;
+	}
+	.MenuToolsImg{
+		margin-left: -1.2rem;
+	}
+	.MenuSpecialEquipment{
+		width: 182px;
+	}
+	.MenuSpecialImg{
+		margin-right: 0.3rem;
+	}
+	.MenuWorkImg{
+		margin-left: 0.2rem;
+		margin-right: 0;
 	}
 }

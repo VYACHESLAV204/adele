@@ -160,7 +160,7 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Услуги')}
 							className={s.MenuServices}
 						>
-							<p className={s.MenuTexts}>Услуги</p>
+							<p className={`${s.MenuTexts} ${s.MenuServiceText}`}>Услуги</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuServiceImg}`}
 								src={serveces}
@@ -184,7 +184,7 @@ const MainPage: FC<CardAdResponse> = ({
 							>
 								<p className={s.MenuTexts}>Карьер</p>
 								<img
-									className={s.MenuImg}
+									className={`${s.MenuImg} ${s.MenuCarierImg}`}
 									src={carier}
 									alt=''
 								/>
@@ -263,7 +263,7 @@ const MainPage: FC<CardAdResponse> = ({
 								className={s.MenuTools}
 							>
 								<p className={s.MenuTexts}>Инструменты</p>
-								<img className={s.MenuImg} src={tools} alt='' />
+								<img className={`${s.MenuImg} ${s.MenuToolsImg}`} src={tools} alt='' />
 							</div>
 						</NavLink>
 						<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -274,7 +274,7 @@ const MainPage: FC<CardAdResponse> = ({
 							>
 								<p className={s.MenuTexts}>Спецтехника</p>
 								<img
-									className={s.MenuImg}
+									className={`${s.MenuImg} ${s.MenuSpecialImg}`}
 									src={specialTequinick}
 									alt=''
 								/>
@@ -287,7 +287,7 @@ const MainPage: FC<CardAdResponse> = ({
 								className={s.MenuWork}
 							>
 								<p className={s.MenuTexts}>Работа</p>
-								<img className={s.MenuImg} src={Work2} alt='' />
+								<img className={`${s.MenuImg} ${s.MenuWorkImg}`} src={Work} alt='' />
 							</div>
 						</NavLink>
 						<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -298,7 +298,7 @@ const MainPage: FC<CardAdResponse> = ({
 							>
 								<p className={s.MenuTexts}>Услуги</p>
 								<img
-									className={s.MenuImg}
+									className={`${s.MenuImg} ${s.MenuServiceImg}`}
 									src={serveces}
 									alt=''
 								/>
