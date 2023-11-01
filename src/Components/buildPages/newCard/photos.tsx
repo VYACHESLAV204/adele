@@ -22,7 +22,7 @@ const Reactdropzone: React.FC<ChildComponentProps> = ({ setPhotoStates }) => {
 		onDragEnter: (e) => e.preventDefault,
 		onDragLeave: (e) => e.preventDefault,
 		onDragOver: (e) => e.preventDefault,
-		onDropAccepted(files, event) {
+		onDropAccepted(_, event) {
 			event.preventDefault()
 		},
 	})

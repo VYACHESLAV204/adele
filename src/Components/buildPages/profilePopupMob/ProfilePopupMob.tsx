@@ -26,7 +26,7 @@ const ProfilePopupMob = () => {
 					<NavLink to={'/defence/'}>
 						<p className={s.textContent}>Защита профиля</p>
 					</NavLink>
-					<NavLink to={'/settings/'}>
+					<NavLink to={'/profile/'}>
 						<p className={s.textContent}>Настройки</p>
 					</NavLink>
 				</div>

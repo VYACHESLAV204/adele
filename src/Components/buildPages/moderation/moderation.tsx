@@ -163,7 +163,7 @@ const moderation = () => {
 												deletePost(
 													item.id_card,
 													item.id_user,
-													'False'
+													'null'
 												)
 											}
 										>

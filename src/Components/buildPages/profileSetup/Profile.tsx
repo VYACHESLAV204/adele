@@ -4,7 +4,7 @@ import editPan from '../../../assets/editPan.svg'
 import RegionSelectTemplate, {
 	OptionType,
 } from '../../modules/select/SelectTemplate'
-
+import WorkMan from '../../../assets/hardWorkingMan.svg'
 interface ProfileProps {
 	citys: { label: string; value: string }[]
 	City: OptionType | undefined // updated this line
@@ -18,7 +18,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 		label: '',
 		value: '',
 	})
-	const [photo, setPhoto] = useState<File | null>(null)
+	const [photo, setPhoto] = useState<File>()
 	const [photo_get, setPhoto_get] = useState('')
 
 	useEffect(() => {
@@ -131,16 +131,33 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 					<div>
 						<p>Фотография</p>
 					</div>
-					<input type='file' onChange={handlePhotoUpload} />
+					<input
+						type='file'
+						id='ProfilePhoto'
+						style={{ display: 'none' }}
+						onChange={handlePhotoUpload}
+					/>
 
 					<div className={s.photoContainer}>
-						<img className={s.ManPhotoImg} src={photo_get} alt='' />
-						<div className={s.circleDiv}>
-							<img src={editPan} alt='' />
-						</div>
-						<div>
-							<p className={s.editText}>Редактировать</p>
-						</div>
+						<img
+							className={s.ManPhotoImg}
+							src={
+								photo_get ||
+								(photo ? URL.createObjectURL(photo) : WorkMan)
+							}
+							alt=''
+						/>
+						<label
+							className={s.labelForPhoto}
+							htmlFor='ProfilePhoto'
+						>
+							<div className={s.circleDiv}>
+								<img src={editPan} alt='' />
+							</div>
+							<div>
+								<p className={s.editText}>Редактировать</p>
+							</div>
+						</label>
 					</div>
 				</div>
 				<div className={s.inputsDiv}>

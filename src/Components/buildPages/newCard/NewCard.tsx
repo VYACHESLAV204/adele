@@ -4,7 +4,8 @@ import greenMoney from '../../../assets/greenmoney.svg'
 import s from './NewCard.module.css'
 import Reactdropzone from './photos'
 import Slider from 'react-slick'
-
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 interface InewCardProps {
 	category: string
 	underCategory: string
@@ -18,10 +19,22 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 	const [priceState, setPriceState] = useState('')
 	const [phoneState, setPhoneState] = useState('')
 	const [tariffState, setTariffState] = useState('')
-
+	// const [photoForSlider, setphotoForSlider] = useState<string[]>()
 	// Assuming you have 5 photo inputs, if not, adjust as needed
-	const [photoStates, setPhotoStates] = useState<File[]>()
+	const [photoStates, setPhotoStates] = useState<File[]>([])
 
+	// if (photoStates.length > 0) {
+	// 	const photoURLs = photoStates.map((file) => URL.createObjectURL(file))
+	// 	setphotoForSlider(photoURLs)
+	// }
+	const settings = {
+		dots: true,
+		vertical: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	}
 	useEffect(() => {
 		console.log(category)
 		console.log(underCategory)
@@ -144,9 +157,20 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 
 					<label htmlFor='setPhoto'>
 						<div className={s.photoSectionContainer}>
-							<div className={`${s.photo} ${s.photoContainer}`}>
-								<Slider images={photoStates}/>
+							<div className={s.SliderContainer}>
+								<Slider adaptiveHeight {...settings}>
+									{photoStates.map((image, index) => (
+										<div key={index}>
+											<img
+												className={s.SliderImg}
+												src={URL.createObjectURL(image)}
+												alt={`Slide ${index}`}
+											/>
+										</div>
+									))}
+								</Slider>
 							</div>
+
 							<p style={{ marginTop: '2rem', width: '350px' }}>
 								Перетащите свой фото сюда или нажмите и выберите
 								их через файловую систему

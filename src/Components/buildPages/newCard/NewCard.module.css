@@ -1,6 +1,6 @@
 .MainDiv {
 	width: 805px;
-	height: 1616px;
+
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -53,7 +53,6 @@
 	font-weight: 400;
 	line-height: normal;
 	margin-bottom: 36px;
-	
 }
 .setTitle > input {
 	width: 805px;
@@ -95,85 +94,96 @@
 	border: 1px solid #9090d8;
 	background: #f2f2ff;
 	font-size: 18px;
-  font-family: 'Vela Sans';
+	font-family: 'Vela Sans';
 	padding-top: 15px;
 	padding-left: 15px;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 }
-.photo{
-	color:#000;
+.photo {
+	color: #000;
 	width: 100px;
 	height: 100px;
 }
-.photoContainer{
+.photoContainer {
 	width: 225px;
 	height: 165px;
-	background-color:#000;
+	background-color: #000;
 	display: flex;
 	justify-content: flex-end;
 	border-radius: 6px;
 }
-.photoClose{
-width: 225px;
-    height: 165px;
-    object-fit: cover;
-    border-radius: 6px;
+
+.photoClose {
+	width: 225px;
+	height: 165px;
+	object-fit: cover;
+	border-radius: 6px;
 }
-.photoSectionContainer{
-	display: flex;flex-direction: column;
+.photoSectionContainer {
+	display: flex;
+	flex-direction: column;
+	width: 500px;
 }
-.addPhotoContainer{
+.SliderImg {
+	height: 300px;
+	width: 600px;
+	object-fit: cover;
+}
+.SliderContainer{height: 300px;width: 500px;}
+.addPhotoContainer {
 	width: 295px;
 	height: 150px;
-	border-radius: 6px;display: flex;align-items: center;justify-content: center;
-	border: 1px solid #9090D8;
-	background: #F2F2FF;
-
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
 }
-.photoInput{
+.photoInput {
 	pointer-events: none;
 }
-.plusPhoto{
+.plusPhoto {
 	width: 28px;
 	height: 28px;
 }
-.textLeft{
+.textLeft {
 	text-align: left;
 }
-.flexRow{
+.flexRow {
 	display: flex;
 	flex-direction: row;
 }
-.inputPrice{
+.inputPrice {
 	width: 210px;
 	height: 39px;
 	border-radius: 5px;
-	border: 1px solid #9090D8;
-	background: #F2F2FF;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	margin-top: 15px;
 	padding-left: 10px;
 }
-.marginLeft{
+.marginLeft {
 	margin-left: 15px;
 }
-.labelProperty{
+.labelProperty {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
-.textMargin{
+.textMargin {
 	margin-top: 20px;
 }
-.inputPhone{
+.inputPhone {
 	width: 210px;
 	height: 39px;
 	border-radius: 5px;
-	border: 1px solid #9090D8;
-	background: #F2F2FF;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	padding-left: 10px;
 }
-.titleTextStyle{
+.titleTextStyle {
 	color: #000;
 	font-family: Vela Sans;
 	font-size: 24px;
@@ -181,131 +191,135 @@ width: 225px;
 	font-weight: 600;
 	line-height: normal;
 }
-.checkbox{
+.checkbox {
 	margin-right: 10px;
 	width: 18px;
 	border-radius: 3px;
-	border: 1px solid #9090D8;
-	background-color: #F2F2FF;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
 }
-.btn{
+.btn {
 	border: 0;
 	color: #fff;
 	width: 196px;
 	height: 45px;
 	border-radius: 7px;
-	background: #5250C5;
+	background: #5250c5;
 	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
 }
-.priceContainer{
+.priceContainer {
 	width: 290px;
 	height: 140px;
 	border-radius: 14px;
-	border: 1px solid #9090D8;
-	background: #F2F2FF;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
 	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
 	display: flex;
 	flex-wrap: nowrap;
-  flex-direction: row-reverse;
-  justify-content: space-around;
+	flex-direction: row-reverse;
+	justify-content: space-around;
 	margin-right: 15px;
 }
-.priceElipse{
+.priceElipse {
 	margin-top: 15px;
 	width: 20px;
 	height: 20px;
-	background-color: #5250C5;
-	border-radius: 100%
+	background-color: #5250c5;
+	border-radius: 100%;
 }
-.priceSectionContainer{
+.priceSectionContainer {
 	display: inline-flex;
 	width: 80%;
 	margin-top: 25px;
 	margin-bottom: 25px;
 }
-.priceNotActive{
+.priceNotActive {
 	background-color: #f2f2ff;
-	border: 2px solid #5250C5;
+	border: 2px solid #5250c5;
 }
-.textRight{
+.textRight {
 	text-align: right;
 }
-.priceTag{
+.priceTag {
 	font-weight: 700;
 }
-.H2Cat{
+.H2Cat {
 	margin-top: 2rem;
 }
 @media (max-width: 1025px) {
 	.MainDiv {
 		width: 100%;
-		height: 1480px;
+
 		margin-left: 1rem;
 	}
 	.setTitle > input {
 		width: 85vw;
 	}
-	.description > textarea{
+	.description > textarea {
 		width: 85vw;
 	}
-	.addPhotoContainer{
+	.addPhotoContainer {
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		align-items:center;
-	}
-	.addPhotoText{
-		text-align: center;
-	}
-	
-}
-@media (max-width: 769px) {
-	.priceContainer{
 		align-items: center;
 	}
-	
+	.addPhotoText {
+		text-align: center;
+	}
+}
+@media (max-width: 769px) {
+	.priceContainer {
+		align-items: center;
+	}
 }
 @media (max-width: 430px) {
-	.photoSectionContainer{
+	.photoSectionContainer {
 		flex-direction: column;
 	}
-	.addPhotoContainer{
+	.SliderContainer{width: 300px;}
+	.SliderImg {
+		height: 300px;
+		width: 300px;
+	}
+	.addPhotoContainer {
 		margin-left: 0;
 		margin-top: 1rem;
 	}
-	.H2Cat{
+	.H2Cat {
 		margin-top: 7rem;
 	}
-	.priceSectionContainer{
+	.priceSectionContainer {
 		flex-direction: column;
 	}
-	.MainDiv{
+	.MainDiv {
 		width: 90%;
-		height: 2050px;
 	}
-	.SelectCatDiv{
+	.SelectCatDiv {
 		height: 106px;
+		width: 300px;
 	}
-	.SelectCatDiv > label{
+	.SelectCatDiv > label {
 		font-size: 15px;
 		text-align: left;
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}
-	.setTitle > input{
+	.setTitle > input {
 		font-size: 15px;
 	}
-	.description > textarea{
+	.description > textarea {
 		font-size: 15px;
 	}
-	.priceContainer{
+	.priceContainer {
 		margin-bottom: 1rem;
 		align-items: center;
 	}
-	.titleTextStyle{
+	.titleTextStyle {
 		font-size: 20px;
 	}
-	.textMargin{
+	.textMargin {
 		margin-top: 2rem;
 	}
+	.flexRow>p{width: 300px;}
 }

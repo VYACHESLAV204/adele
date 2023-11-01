@@ -25,7 +25,7 @@ export const RegSecond = (props: RegPropsSecond) => {
 				<h2 className={styles.H2text}>Подтвердите электронную почту</h2>
 				<p className={styles.PText}>
 					В течении 2-х минут вам придет сообщение на ваш адрес
-					электронной почты info@infomail.ru
+					электронной почты.
 				</p>
 				<form
 					onSubmit={(e) => {

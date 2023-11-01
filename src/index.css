@@ -18,34 +18,34 @@ body {
 	min-width: 320px;
 	min-height: 100vh;
 }
-.mainTitle{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-top: 2rem;
+.mainTitle {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	margin-top: 2rem;
 }
-.secondTitle{
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.secondTitle {
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
 }
-.btn{
+.btn {
 	border: 0;
 	color: #fff;
 	width: 196px;
 	height: 45px;
 	border-radius: 7px;
-	background: #5250C5;
+	background: #5250c5;
 	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
 }
-.input{
-    width: 210px;
+.input {
+	width: 210px;
 	height: 39px;
 	border-radius: 5px;
-	border: 1px solid #9090D8;
-	background: #F2F2FF;
+	border: 1px solid #9090d8;
+	background: #f2f2ff;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	margin-top: 15px;
 	padding-left: 10px;
@@ -92,3 +92,15 @@ body {
 		url('./fonts/TTF/VelaSans-ExtraBold.ttf') format('truetype');
 	font-weight: 800;
 }
+.slick-prev,
+.slick-next {
+	font: normal normal normal 22px/0 FontAwesome;
+	top: 50%;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0px;
+	background-color: #5250c5;
+	color: transparent;
+	transition: all 0.3s ease;
+}
+.slick-prev:hover{background-color: #5250c5;}

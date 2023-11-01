@@ -1,7 +1,8 @@
 import { FC, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import s from './cardDetails.module.css'
-import greenMoney from '../../../assets/greenmoney.svg'
+import st from '../newCard/NewCard.module.css'
+import Slider from 'react-slick'
 import { CardAd, CardAdResponse } from '../../../interfaces/Interfaces'
 const CardDetails: FC<CardAdResponse> = ({
 	card_ads_1,
@@ -14,6 +15,14 @@ const CardDetails: FC<CardAdResponse> = ({
 	const [This, setThis] = useState<CardAd>()
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
+	const settings = {
+		dots: true,
+		vertical: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+	}
 	useEffect(() => {
 		console.log(numberId)
 
@@ -28,23 +37,43 @@ const CardDetails: FC<CardAdResponse> = ({
 			setThis(foundCard)
 		}
 	}, [card_no_ads_2, numberId])
+	useEffect(() => {
+		console.log(This)
+	}, [This])
 
 	const [showNumber, setShowNumber] = useState(false)
 	if (This) {
 		return (
 			<div className={s.mainDiv}>
 				<div className={s.leftDiv}>
-					<img className={s.Img} src={This.path_file[0]} alt='' />
+					<Slider adaptiveHeight {...settings}>
+						{This.path_file.map((image, index) => (
+							<div
+								style={{
+									borderRadius: '15px',
+									width: '491px',
+									height: '453px',
+								}}
+								key={index}
+							>
+								<img
+									className={st.SliderImg}
+									src={image}
+									alt={`Slide ${index}`}
+									style={{
+										height: '420px',
+										width: '491px',
+										borderRadius: '15px',
+									}}
+								/>
+							</div>
+						))}
+					</Slider>
 				</div>
 				<div className={s.rightDiv}>
 					<h2 className={s.H2Name}>{This.caption}</h2>
 					<div className={s.priceBox}>
 						<p className={s.price}>{This.price}</p>
-						<img
-							style={{ marginLeft: '1rem' }}
-							src={greenMoney}
-							alt=''
-						/>
 					</div>
 					<p className={s.aboutHeader}>Описание:</p>
 					<p className={s.aboutText}>{This.description}</p>

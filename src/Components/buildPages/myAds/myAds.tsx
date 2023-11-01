@@ -30,7 +30,7 @@ const myAds = () => {
 	const [isArchive, setIsArchive] = useState(false)
 	const [Action, setAction] = useState('exit_archive')
 	const [ThisId, setThisId] = useState(1)
-
+const [reload, setReload] = useState(false)
 	useEffect(() => {
 		function deletePost(id: number) {
 			fetch(
@@ -51,7 +51,7 @@ const myAds = () => {
 				.then((response) => response.json())
 				.then((data) => {
 					console.log(data)
-					setPosts(undefined)
+					setReload(!reload)
 				})
 				.catch((error) => {
 					console.error('Ошибка:', error)
@@ -75,7 +75,7 @@ const myAds = () => {
 			.catch((error) => {
 				console.error('Ошибка:', error)
 			})
-	}, [])
+	}, [reload])
 	useEffect(() => {
 		console.log(posts)
 	}, [posts])
@@ -105,7 +105,7 @@ const myAds = () => {
 					<NavLink to={'/defence/'}>
 						<p className={s.textContent}>Защита профиля</p>
 					</NavLink>
-					<NavLink to={'/settings/'}>
+					<NavLink to={'/profile/'}>
 						<p className={s.textContent}>Настройки</p>
 					</NavLink>
 				</div>
