@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import greenMoney from '../../../assets/greenmoney.svg'
 
-
 import s from './NewCard.module.css'
 import Reactdropzone from './photos'
+import Slider from 'react-slick'
 
 interface InewCardProps {
 	category: string
@@ -145,22 +145,12 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 					<label htmlFor='setPhoto'>
 						<div className={s.photoSectionContainer}>
 							<div className={`${s.photo} ${s.photoContainer}`}>
-								<img
-									className={s.photoClose}
-									src={
-										photoStates && photoStates.length > 0
-											? URL.createObjectURL(
-													photoStates[0]
-											  )
-											: undefined
-									}
-									alt=''
-								/>
+								<Slider images={photoStates}/>
 							</div>
-									<p style={{marginTop:'2rem'}}>
-										Перетащите свой фото сюда или нажмите и
-										выберите их через файловую систему
-									</p>
+							<p style={{ marginTop: '2rem', width: '350px' }}>
+								Перетащите свой фото сюда или нажмите и выберите
+								их через файловую систему
+							</p>
 							<div className={s.addPhotoContainer}>
 								<div className={s.plusContainer}>
 									<Reactdropzone
@@ -168,7 +158,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 									/>
 								</div>
 							</div>
-							<p>
+							<p style={{ width: '350px' }}>
 								Качественные фото с чистым фоном - залог высоких
 								продаж
 							</p>

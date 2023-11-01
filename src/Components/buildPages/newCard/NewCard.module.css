@@ -120,15 +120,15 @@ width: 225px;
     border-radius: 6px;
 }
 .photoSectionContainer{
-	display: flex;
+	display: flex;flex-direction: column;
 }
 .addPhotoContainer{
 	width: 295px;
 	height: 150px;
-	border-radius: 6px;
+	border-radius: 6px;display: flex;align-items: center;justify-content: center;
 	border: 1px solid #9090D8;
 	background: #F2F2FF;
-	margin-left: 20px;
+
 }
 .photoInput{
 	pointer-events: none;
