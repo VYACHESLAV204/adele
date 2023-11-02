@@ -43,9 +43,58 @@ export interface CardMod {
 	tariff: string
 	username: string
 }
+export interface cardSummary {
+	about_me: string
+	caption: string
+	city: string
+	category: string
+	contry_people: string
+	data_birthday: string
+	date: string
+	description: string
+	educationFields: {
+		name_universitet: string
+		universitet_why_jobs: string
+		years_stop_univer: string
+	}[]
+	email: string
+	gender: string
+	graphic_job: null
+	id_card: number
+	is_user: string
+	job_next_day: string
+	languageFields: { language: string; level_language: string }[]
+	path_file: string[]
+	phone: string
+	price: number
+	ready_togouthome: string
+	status_search: string
+	sub_category: string
+	telephone_two: null | string
+	togouthome: string
+	typework: string
+	username: string
+	workExp: {
+		description_jobs: string
+		every_time: boolean
+		name_company: string
+		start_work_time: string
+		stop_work_time: string
+		why_jobs: string
+	}[]
+	years_exp: string
+}
+export interface ISummary {
+	card_noads: cardSummary[]
+	has_next_noads: boolean
+	has_prev_noads: boolean
+	page_noads: number
+	status: boolean
+	total_page_noads: boolean
+}
 export interface ICatalogProps {
 	card_ads: CardAd[]
-	resume?: any[]
+	resume?: ISummary
 	card_noads: CardAd[]
 	has_next_ads: boolean
 	has_next_noads: boolean
@@ -56,6 +105,9 @@ export interface ICatalogProps {
 	categorys_index: string
 	page_noads: number
 	stasus: boolean
+	categoryForNewCard: string
+	underCategoryForNewCard: string
+
 	setPage: React.Dispatch<React.SetStateAction<number>>
 	sub_category_all: {
 		category: string
