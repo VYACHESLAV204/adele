@@ -26,7 +26,7 @@ const MainPage: FC<CardAdResponse> = ({
 	}, [])
 
 	const CardStyles = {
-		marginRight: '10px',
+		marginRight: '15px',
 	}
 	const CardsStyles = {
 		display: 'flex',
