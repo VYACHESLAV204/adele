@@ -1,7 +1,11 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-import { ICatalogProps, CardAdResponse } from './interfaces/Interfaces.js'
+import {
+	ICatalogProps,
+	CardAdResponse,
+	ISummary,
+} from './interfaces/Interfaces.js'
 import './App.css'
 import MainPage from './Components/buildPages/mainPage/MainPage.js'
 import CardDetails from './Components/buildPages/cardinner/cardDetails.js'
@@ -25,7 +29,7 @@ function App() {
 	const [isOpen, setIsOpen] = useState(false)
 	const [citys, setCitys] = useState([])
 	const [cardsArray, setCardsArray] = useState<ICatalogProps>()
-	const [resume, setResume] = useState()
+	const [resume, setResume] = useState<ISummary>()
 	const [cards, setCards] = useState<CardAdResponse>()
 	const [categoryForNewCard, setCategoryForNewCard] = useState('')
 	const [underCategoryForNewCard, setUnderCategoryForNewCard] = useState('')
@@ -103,7 +107,7 @@ function App() {
 				}),
 			})
 				.then((response) => response.json())
-				.then((data) => {
+				.then((data: ISummary) => {
 					setResume(data)
 				})
 				.catch((error) => {
@@ -146,7 +150,7 @@ function App() {
 								)
 							}
 						/>
-
+						<Route path='/worker/:id' element={<Worker card_noads={resume?.card_noads}/>} />
 						<Route
 							//Готово
 							path='/card/:id'
@@ -187,6 +191,10 @@ function App() {
 										page_ads={cardsArray.page_ads}
 										page_noads={cardsArray.page_noads}
 										stasus={cardsArray.stasus}
+										categoryForNewCard={categoryForNewCard}
+										underCategoryForNewCard={
+											underCategoryForNewCard
+										}
 										setCat={setCategoryForNewCard}
 										setSubCat={setUnderCategoryForNewCard}
 										sub_category_all={

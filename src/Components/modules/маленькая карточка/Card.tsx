@@ -1,43 +1,73 @@
 import { Link } from 'react-router-dom'
 import styles from './card.module.css'
 import { FC } from 'react'
-import { CardAd } from '../../../interfaces/Interfaces'
+import { CardAd, cardSummary } from '../../../interfaces/Interfaces'
 
 const Card: FC<{
 	cardsAd: CardAd[]
+	card_noads?: cardSummary[]
 	inlineStyles?: Record<string, string>
 	cardsStyles?: Record<string, string>
-}> = ({ cardsAd = [], inlineStyles, cardsStyles }) => {
+}> = ({ cardsAd = [], inlineStyles, cardsStyles, card_noads }) => {
 	return (
 		<div style={cardsStyles}>
-			{Array.isArray(cardsAd) &&
-				cardsAd?.map((item) => (
-					<Link
-						to={`/card/${item.id_card}`}
-						key={item.id_card}
-						style={inlineStyles}
-					>
-						<div
+			{card_noads
+				? Array.isArray(card_noads) &&
+				  card_noads?.map((item) => (
+						<Link
+							to={`/worker/${item.id_card}`}
+							key={item.id_card}
 							style={inlineStyles}
-							className={styles.MainCardDiv}
 						>
-							<div className={styles.CardImgDiv}>
-								<img
-									className={styles.IMG}
-									src={item.path_file[0]}
-									alt={item.description}
-								/>
+							<div
+								style={inlineStyles}
+								className={styles.MainCardDiv}
+							>
+								<div className={styles.CardImgDiv}>
+									<img
+										className={styles.IMG}
+										src={item.path_file[0]}
+										alt={item.description}
+									/>
+								</div>
+								<div className={styles.CardInfoDiv}>
+									<h3>{item.caption}</h3>
+									<p className={styles.CardInfoDivPrice}>
+										{item.description}
+									</p>
+									<p>{`${item.price} Р`}</p>
+								</div>
 							</div>
-							<div className={styles.CardInfoDiv}>
-								<h3>{item.caption}</h3>
-								<p className={styles.CardInfoDivPrice}>
-									{item.description}
-								</p>
-								<p>{`${item.price} Р`}</p>
+						</Link>
+				  ))
+				: Array.isArray(cardsAd) &&
+				  cardsAd?.map((item) => (
+						<Link
+							to={`/card/${item.id_card}`}
+							key={item.id_card}
+							style={inlineStyles}
+						>
+							<div
+								style={inlineStyles}
+								className={styles.MainCardDiv}
+							>
+								<div className={styles.CardImgDiv}>
+									<img
+										className={styles.IMG}
+										src={item.path_file[0]}
+										alt={item.description}
+									/>
+								</div>
+								<div className={styles.CardInfoDiv}>
+									<h3>{item.caption}</h3>
+									<p className={styles.CardInfoDivPrice}>
+										{item.description}
+									</p>
+									<p>{`${item.price} Р`}</p>
+								</div>
 							</div>
-						</div>
-					</Link>
-				))}
+						</Link>
+				  ))}
 		</div>
 	)
 }

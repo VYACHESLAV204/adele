@@ -9,10 +9,13 @@ import Pagination from '../../modules/pagination/Pagination'
 const Catalog: FC<ICatalogProps> = ({
 	card_ads,
 	page,
-	resume,card_noads,
+	resume,
+	card_noads,
 	setPage,
 	setCat,
 	setSubCat,
+	categoryForNewCard,
+	underCategoryForNewCard,
 	categorys_index,
 	sub_category_all,
 	total_pages_ads,
@@ -40,9 +43,13 @@ const Catalog: FC<ICatalogProps> = ({
 		styles.SixCat,
 		styles.SevenCat,
 	]
-	if (!resume) {
+	if (
+		categoryForNewCard === 'Работа' &&
+		underCategoryForNewCard === 'Ищу сотрудника'
+	) {
+		console.log('1')
 		return (
-			<div style={{}}>
+			<div>
 				<div
 					className={styles.sectionBoxNew}
 					style={{ display: 'flex', flexWrap: 'wrap' }}
@@ -59,6 +66,7 @@ const Catalog: FC<ICatalogProps> = ({
 						<Card
 							cardsStyles={CardStylesMob}
 							cardsAd={card_ads || []}
+							card_noads={resume?.card_noads}
 						/>
 					</div>
 
@@ -119,7 +127,10 @@ const Catalog: FC<ICatalogProps> = ({
 							className={styles.cardsMainDiv}
 							style={{ marginTop: 15 }}
 						>
-							<CardMain Cards={card_noads} />
+							<CardMain
+								Cards={card_noads}
+								card_noads={resume?.card_noads}
+							/>
 						</div>
 					</div>
 					<div
@@ -132,6 +143,7 @@ const Catalog: FC<ICatalogProps> = ({
 						<Card
 							cardsStyles={CardsStylesColumn}
 							cardsAd={card_ads}
+							card_noads={resume?.card_noads}
 						/>
 					</div>
 					<Pagination
@@ -142,7 +154,9 @@ const Catalog: FC<ICatalogProps> = ({
 				</div>
 			</div>
 		)
-	} else if (resume) {
+	} else {
+		console.log('2')
+
 		return (
 			<div style={{}}>
 				<div
