@@ -48,7 +48,7 @@ const CardDetails: FC<CardAdResponse> = ({
 				<div className={s.leftDiv}>
 					<Slider adaptiveHeight {...settings}>
 						{This.path_file.map((image, index) => (
-							<div
+							<div className={s.SliderStyle}
 								style={{
 									borderRadius: '15px',
 									width: '491px',
@@ -57,7 +57,7 @@ const CardDetails: FC<CardAdResponse> = ({
 								key={index}
 							>
 								<img
-									className={st.SliderImg}
+									className={s.SliderImg}
 									src={image}
 									alt={`Slide ${index}`}
 									style={{

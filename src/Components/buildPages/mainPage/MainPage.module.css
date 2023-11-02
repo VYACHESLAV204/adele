@@ -357,11 +357,13 @@
 @media (max-width: 430px) {
 
 	.AdCardsDivMob{
-		width: 91vw;
+		width: 84vw;
 		margin-top: 5.5rem;
+		margin-left: 1rem;
 	}
 	.MenuTexts{
 		margin-right: 0.9rem;
+		font-size: 17px;
 	}
 	.MenuCarierImg{
 		margin-left: 0;
@@ -378,5 +380,9 @@
 	.MenuWorkImg{
 		margin-left: 0.2rem;
 		margin-right: 0;
+	}
+	.H2SpecialText{
+		margin-left: 1rem;
+		font-size: 20px;
 	}
 }

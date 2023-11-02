@@ -61,6 +61,12 @@
 		width: 150px;
 		height: 170px;
 	}
+	.MainCardDiv{
+		width: 40vw;
+	}
+	.CardInfoDivPrice{
+		width: 40vw;
+	}
 }
 @media (max-width: 344px) {
 	.IMG {
