@@ -3,7 +3,6 @@ import { FC, useEffect } from 'react'
 import BuldingMaterials from '../../../assets/BuldingMaterials.png'
 import Stanki from '../../../assets/stanki.png'
 import Work from '../../../assets/Work.png'
-import Work2 from '../../../assets/Work.svg'
 import blocks from '../../../assets/blocks.png'
 import carier from '../../../assets/carier.png'
 import rituals from '../../../assets/rituals.png'
@@ -32,7 +31,6 @@ const MainPage: FC<CardAdResponse> = ({
 		display: 'flex',
 		flexWrap: 'wrap',
 		width: '100vw',
-		marginLeft: '1rem',
 	}
 	const CardsStylesColumn = {
 		display: 'flex',
@@ -134,7 +132,11 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Спецтехника')}
 							className={s.MenuSpecialEquipment}
 						>
-							<p className={`${s.MenuTexts} ${s.MenuSpecialText}`}>Спецтехника</p>
+							<p
+								className={`${s.MenuTexts} ${s.MenuSpecialText}`}
+							>
+								Спецтехника
+							</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuSpecialImg}`}
 								src={specialTequinick}
@@ -147,7 +149,9 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Работа')}
 							className={s.MenuWork}
 						>
-							<p className={`${s.MenuTexts} ${s.MenuWorkText}`}>Работа</p>
+							<p className={`${s.MenuTexts} ${s.MenuWorkText}`}>
+								Работа
+							</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuWorkImg}`}
 								src={Work}
@@ -160,7 +164,11 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Услуги')}
 							className={s.MenuServices}
 						>
-							<p className={`${s.MenuTexts} ${s.MenuServiceText}`}>Услуги</p>
+							<p
+								className={`${s.MenuTexts} ${s.MenuServiceText}`}
+							>
+								Услуги
+							</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuServiceImg}`}
 								src={serveces}
@@ -263,7 +271,11 @@ const MainPage: FC<CardAdResponse> = ({
 								className={s.MenuTools}
 							>
 								<p className={s.MenuTexts}>Инструменты</p>
-								<img className={`${s.MenuImg} ${s.MenuToolsImg}`} src={tools} alt='' />
+								<img
+									className={`${s.MenuImg} ${s.MenuToolsImg}`}
+									src={tools}
+									alt=''
+								/>
 							</div>
 						</NavLink>
 						<NavLink className={s.NavLink} to={'/catalog/'}>
@@ -287,7 +299,11 @@ const MainPage: FC<CardAdResponse> = ({
 								className={s.MenuWork}
 							>
 								<p className={s.MenuTexts}>Работа</p>
-								<img className={`${s.MenuImg} ${s.MenuWorkImg}`} src={Work} alt='' />
+								<img
+									className={`${s.MenuImg} ${s.MenuWorkImg}`}
+									src={Work}
+									alt=''
+								/>
 							</div>
 						</NavLink>
 						<NavLink className={s.NavLink} to={'/catalog/'}>

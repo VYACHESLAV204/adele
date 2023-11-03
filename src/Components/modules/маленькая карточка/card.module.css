@@ -18,6 +18,9 @@
 	flex-direction: column;
 	align-items: flex-start;
 }
+.ML {
+	margin-left: 0px;
+}
 .CardInfoDiv > h3 {
 	/* 	width: 156px; */
 	text-align: left;
@@ -56,15 +59,23 @@
 	width: 191px;
 	height: 177px;
 }
+@media (max-width: 1024px) {
+	.ML {
+		margin-left: 1rem;
+	}
+}
 @media (max-width: 430px) {
 	.IMG {
 		width: 150px;
 		height: 170px;
 	}
-	.MainCardDiv{
+	.ML {
+		margin-left: 1rem;
+	}
+	.MainCardDiv {
 		width: 40vw;
 	}
-	.CardInfoDivPrice{
+	.CardInfoDivPrice {
 		width: 40vw;
 	}
 }
@@ -72,5 +83,8 @@
 	.IMG {
 		width: 130px;
 		height: 150px;
+	}
+	.ML {
+		margin-left: 1rem;
 	}
 }

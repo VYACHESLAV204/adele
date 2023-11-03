@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import s from './cardDetails.module.css'
-import st from '../newCard/NewCard.module.css'
+
 import Slider from 'react-slick'
 import { CardAd, CardAdResponse } from '../../../interfaces/Interfaces'
 const CardDetails: FC<CardAdResponse> = ({

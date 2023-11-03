@@ -89,6 +89,7 @@
 }
 .description > textarea {
 	width: 805px;
+	resize: none;
 	height: 187px;
 	border-radius: 5px;
 	border: 1px solid #9090d8;
@@ -129,7 +130,10 @@
 	width: 600px;
 	object-fit: cover;
 }
-.SliderContainer{height: 300px;width: 500px;}
+.SliderContainer {
+	height: 300px;
+	width: 500px;
+}
 .addPhotoContainer {
 	width: 295px;
 	height: 150px;
@@ -277,7 +281,9 @@
 	.photoSectionContainer {
 		flex-direction: column;
 	}
-	.SliderContainer{width: 300px;}
+	.SliderContainer {
+		width: 300px;
+	}
 	.SliderImg {
 		height: 300px;
 		width: 300px;
@@ -321,5 +327,7 @@
 	.textMargin {
 		margin-top: 2rem;
 	}
-	.flexRow>p{width: 300px;}
+	.flexRow > p {
+		width: 300px;
+	}
 }

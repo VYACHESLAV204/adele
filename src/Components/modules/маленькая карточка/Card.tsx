@@ -10,7 +10,7 @@ const Card: FC<{
 	cardsStyles?: Record<string, string>
 }> = ({ cardsAd = [], inlineStyles, cardsStyles, card_noads }) => {
 	return (
-		<div style={cardsStyles}>
+		<div className={styles.ML} style={cardsStyles}>
 			{card_noads
 				? Array.isArray(card_noads) &&
 				  card_noads?.map((item) => (
@@ -27,7 +27,7 @@ const Card: FC<{
 									<img
 										className={styles.IMG}
 										src={item.path_file[0]}
-										alt={item.description}
+										alt={''}
 									/>
 								</div>
 								<div className={styles.CardInfoDiv}>
@@ -55,7 +55,7 @@ const Card: FC<{
 									<img
 										className={styles.IMG}
 										src={item.path_file[0]}
-										alt={item.description}
+										alt={''}
 									/>
 								</div>
 								<div className={styles.CardInfoDiv}>
