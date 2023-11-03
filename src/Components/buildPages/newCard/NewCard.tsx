@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import greenMoney from '../../../assets/greenmoney.svg'
-
+import st from '../summary/Summary.module.css'
 import s from './NewCard.module.css'
-import Reactdropzone from './photos'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -19,14 +18,8 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 	const [priceState, setPriceState] = useState('')
 	const [phoneState, setPhoneState] = useState('')
 	const [tariffState, setTariffState] = useState('')
-	// const [photoForSlider, setphotoForSlider] = useState<string[]>()
-	// Assuming you have 5 photo inputs, if not, adjust as needed
-	const [photoStates, setPhotoStates] = useState<File[]>([])
+	const [photoStates, setPhotoStates] = useState<File[] | null>(null)
 
-	// if (photoStates.length > 0) {
-	// 	const photoURLs = photoStates.map((file) => URL.createObjectURL(file))
-	// 	setphotoForSlider(photoURLs)
-	// }
 	const settings = {
 		dots: true,
 		vertical: true,
@@ -73,13 +66,10 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 		formData.append('phone', phoneState || '')
 		formData.append('tariff', tariffState || '')
 		formData.append('ads', 'False')
-		{
-			photoStates !== undefined &&
-				photoStates.forEach((state, i) => {
-					if (state) {
-						formData.append(`photo${i + 1}`, state)
-					}
-				})
+		if (photoStates !== null) {
+			for (let i = 0; i < photoStates.length; i++) {
+				formData.append(`photo${i + 1}`, photoStates[i])
+			}
 		}
 
 		const response = await fetch(
@@ -155,39 +145,97 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 					</h4>
 					<p style={{ textAlign: 'left' }}>Не более 5 фото</p>
 
-					<label htmlFor='setPhoto'>
-						<div className={s.photoSectionContainer}>
-							<div className={s.SliderContainer}>
-								<Slider adaptiveHeight {...settings}>
-									{photoStates.map((image, index) => (
-										<div key={index}>
-											<img
-												className={s.SliderImg}
-												src={URL.createObjectURL(image)}
-												alt={`Slide ${index}`}
-											/>
-										</div>
-									))}
-								</Slider>
-							</div>
+					<div className={s.photoSectionContainer}>
+						<div
+							style={{ marginRight: '20px',width:'180px' }} 
+							className={`${st.photo} ${st.photoContainer}`}
+						>
+							<Slider adaptiveHeight {...settings}>
+								{photoStates?.map((image, index) => (
+									<div
+										onDragOver={(e) => e.preventDefault()}
+										style={{
+											height: '179px',
+											width: '180px',
+										}}
+										key={index}
+									>
+										<img
+											onDragOver={(e) =>
+												e.preventDefault()
+											}
+											style={{
+												height: '179px',
+												width: '180px',
+												objectFit: 'cover',
+												borderRadius: '8px',
+											}}
+											src={URL.createObjectURL(image)}
+											alt={`Slide ${index}`}
+										/>
+									</div>
+								))}
+							</Slider>
+						</div>
 
-							<p style={{ marginTop: '2rem', width: '350px' }}>
-								Перетащите свой фото сюда или нажмите и выберите
-								их через файловую систему
+						<div
+							style={{
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'flex-start',
+							}}
+						>
+							<p
+								onDragOver={(e) => {
+									e.preventDefault()
+								}}
+								style={{
+									textAlign: 'center',
+									marginTop: '1rem',
+									width: '300px',
+								}}
+							>
+								{photoStates?.length
+									? `Нажмите, чтобы добавить новую фотографию, уже ${photoStates?.length} загружено`
+									: 'Нажмите или перетащите новую фотографию'}
 							</p>
-							<div className={s.addPhotoContainer}>
-								<div className={s.plusContainer}>
-									<Reactdropzone
-										setPhotoStates={setPhotoStates}
-									/>
-								</div>
+							<div
+								onDragOver={(e) => {
+									e.preventDefault()
+								}}
+								className={s.addPhotoContainer}
+							>
+								<input
+									multiple
+									id='photoInput1'
+									onDragOver={(e) => {
+										e.preventDefault()
+									}}
+									style={{
+										position: 'relative',
+										width: '280px',
+										height: '140px',
+										opacity: '0',
+									}}
+									onChange={(e) => {
+										if (
+											e.target.files instanceof FileList
+										) {
+											setPhotoStates(
+												Array.from(e.target.files)
+											)
+										}
+									}}
+									className={st.photoInput}
+									type='file'
+								/>
 							</div>
-							<p style={{ width: '350px' }}>
+							<p style={{ textAlign: 'center', width: '300px' }}>
 								Качественные фото с чистым фоном - залог высоких
 								продаж
 							</p>
 						</div>
-					</label>
+					</div>
 				</div>
 				<div className={`${s.textLeft} ${s.textMargin}`}>
 					<label className={s.labelProperty} htmlFor=''>

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import s from './Summary.module.css'
 import addNew from '../../../assets/addNew.svg'
 import greenMoney from '../../../assets/greenmoney.svg'
-import plus from '../../../assets/plus.svg'
+
 import 'react-widgets/styles.css'
 import DateInput from '../../modules/dateInput/DateInput'
 import Slider from 'react-slick'
@@ -29,6 +29,7 @@ export type SummaryFieldsType = {
 }
 
 const Summary = () => {
+	const [TotalH, setH] = useState<string>('653vh')
 	const [summaryFields, setSummaryFields] = useState<SummaryFieldsType>({
 		category: 'Работа',
 		subcategory: 'Ищу сотрудника',
@@ -56,8 +57,17 @@ const Summary = () => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 	}
+	function updateHeight(howmuch: number) {
+		const thisH = parseInt(TotalH)
+		const total = thisH + howmuch
+		console.log(total)
+
+		setH(`${total}vh`)
+	}
+
 	const [educationFields, setEducationFields] = useState([
 		{
+			years_start_univer: '',
 			years_stop_univer: '',
 			name_universitet: '',
 			universitet_why_jobs: '',
@@ -80,7 +90,10 @@ const Summary = () => {
 		},
 	])
 	const currentYear = new Date().getFullYear()
-	const years = Array.from({ length: 100 }, (_, i) => currentYear - i)
+	const years = Array.from(
+		{ length: currentYear + 21 - 1940 },
+		(_, i) => currentYear + 10 - i
+	)
 
 	const updateWorkExpFields = (
 		index: number,
@@ -163,7 +176,10 @@ const Summary = () => {
 
 		if (summaryFields.photos !== null) {
 			for (let i = 0; i < summaryFields.photos.length; i++) {
-				summaryToServer.append(`photos${i}`, summaryFields.photos[i])
+				summaryToServer.append(
+					`photos${i + 1}`,
+					summaryFields.photos[i]
+				)
 			}
 		}
 
@@ -201,7 +217,11 @@ const Summary = () => {
 			})
 	}
 	return (
-		<div className={s.summaryContainer}>
+		<div
+			onDragOver={(e) => e.preventDefault()}
+			style={{ height: TotalH }}
+			className={s.summaryContainer}
+		>
 			<h1 className={s.MainTitle}>Резюме</h1>
 			<div className={s.categoryContainer}>
 				<p className={s.categoryTitle}>Категория:</p>
@@ -548,8 +568,8 @@ const Summary = () => {
 							every_time: false,
 							description_jobs: '',
 						},
-					])
-					// setWorkPlaceCount([...workPlaceCount, 1])
+					]),
+						updateHeight(100)
 				}}
 			>
 				<img className={s.addNew} src={addNew} alt='' />
@@ -619,6 +639,33 @@ const Summary = () => {
 							</div>
 						</div>
 						<div className={s.workCategory}>
+							<p className={s.marginRight}>Год поступления</p>
+							<div className={s.inputContainer}>
+								<div>
+									<select
+										className={`${s.input} ${s.inputNewborn}`}
+										value={
+											educationFields[index]
+												.years_stop_univer
+										}
+										onChange={(e) =>
+											updateEducationFields(
+												index,
+												'years_start_univer',
+												e.target.value
+											)
+										}
+									>
+										{years.map((year, index) => (
+											<option key={index} value={year}>
+												{year}
+											</option>
+										))}
+									</select>
+								</div>
+							</div>
+						</div>
+						<div className={s.workCategory}>
 							<p
 								style={{ marginBottom: '2rem' }}
 								className={s.marginRight}
@@ -667,9 +714,10 @@ const Summary = () => {
 							years_stop_univer: '',
 							name_universitet: '',
 							universitet_why_jobs: '',
+							years_start_univer: '',
 						},
 					])
-					// setEducationFieldsCount([...educationFieldsCount, 1])
+					updateHeight(65)
 				}}
 			>
 				<img className={s.addNew} src={addNew} alt='' />
@@ -735,7 +783,8 @@ const Summary = () => {
 							language: '',
 							level_language: '',
 						},
-					])
+					]),
+						updateHeight(40)
 				}}
 			>
 				<img className={s.addNew} src={addNew} alt='' />
@@ -774,12 +823,19 @@ const Summary = () => {
 				<p style={{ textAlign: 'left', marginBottom: '1rem' }}>
 					Не более 5 фото
 				</p>
-				<div className={s.photoSectionContainer}>
-					<div className={`${s.photo} ${s.photoContainer}`}>
+				<div
+					onDragOver={(e) => e.preventDefault()}
+					className={s.photoSectionContainer}
+				>
+					<div
+						onDragOver={(e) => e.preventDefault()}
+						className={`${s.photo} ${s.photoContainer}`}
+					>
 						{summaryFields.photos !== null && (
 							<Slider adaptiveHeight {...settings}>
 								{summaryFields.photos.map((image, index) => (
 									<div
+										onDragOver={(e) => e.preventDefault()}
 										style={{
 											height: '179px',
 											width: '229px',
@@ -787,6 +843,9 @@ const Summary = () => {
 										key={index}
 									>
 										<img
+											onDragOver={(e) =>
+												e.preventDefault()
+											}
 											style={{
 												height: '179px',
 												width: '229px',
@@ -801,46 +860,71 @@ const Summary = () => {
 							</Slider>
 						)}
 					</div>
-					<input
-						multiple
-						id='photoInput'
-						style={{ display: 'none' }}
-						onChange={(e) => {
-							if (e.target.files instanceof FileList) {
-								updateSummaryFields(
-									'photos',
-									Array.from(e.target.files)
-								)
-							}
+					<div
+						style={{
+							display: 'flex',
+							flexDirection: 'column',
+							alignItems: 'center',
 						}}
-						className={s.photoInput}
-						type='file'
-					/>
-					<label htmlFor='photoInput'>
-						<div className={s.addPhotoContainer}>
-							<div className={s.plusContainer}>
-								<p
-									style={{
-										textAlign: 'center',
-										marginBottom: '1rem',
+					>
+						<p
+							onDragOver={(e) => {
+								e.preventDefault()
+							}}
+							style={{
+								textAlign: 'center',
+								marginBottom: '1rem',
+								width: '300px',
+							}}
+						>
+							{summaryFields.photos?.length
+								? `Нажмите, чтобы добавить новую фотографию, уже ${summaryFields.photos?.length} загружено`
+								: 'Нажмите или перетащите новую фотографию'}
+						</p>
+						<div
+							onDragOver={(e) => {
+								e.preventDefault()
+							}}
+							className={s.addPhotoContainer}
+						>
+							<div
+								onDragOver={(e) => {
+									e.preventDefault()
+								}}
+								className={s.plusContainer}
+							>
+								<input
+									multiple
+									id='photoInput1'
+									onDragOver={(e) => {
+										e.preventDefault()
 									}}
-								>
-									{summaryFields.photos?.length
-										? `Нажмите, чтобы добавить новую фотографию, уже ${summaryFields.photos?.length} загружено`
-										: 'Нажмите или перетащите новую фотографию'}
-								</p>
-								<img
-									className={s.plusPhoto}
-									src={plus}
-									alt=''
+									style={{
+										position: 'relative',
+										width: '280px',
+										height: '140px',
+										opacity: '0',
+									}}
+									onChange={(e) => {
+										if (
+											e.target.files instanceof FileList
+										) {
+											updateSummaryFields(
+												'photos',
+												Array.from(e.target.files)
+											)
+										}
+									}}
+									className={s.photoInput}
+									type='file'
 								/>
-								<p>
-									Качественные фото с чистым фоном - залог
-									высоких продаж
-								</p>
 							</div>
 						</div>
-					</label>
+						<p style={{ textAlign: 'center', width: '300px' }}>
+							Качественные фото с чистым фоном - залог высоких
+							продаж
+						</p>
+					</div>
 				</div>
 			</div>
 			<button
