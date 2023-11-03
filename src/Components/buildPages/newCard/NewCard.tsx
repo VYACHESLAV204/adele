@@ -143,7 +143,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 					<h4 className={`${s.textLeft} ${s.titleTextStyle}`}>
 						Фотографии
 					</h4>
-					<p style={{ textAlign: 'left' }}>Не более 5 фото</p>
+					<p className={s.marginMob} style={{ textAlign: 'left' }}>Не более 5 фото</p>
 
 					<div className={s.photoSectionContainer}>
 						<div
@@ -251,8 +251,8 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						<img className={s.marginLeft} src={greenMoney} alt='' />
 					</div>
 					<div>
-						<p>Контактные данные в объявлении</p>
-						<p>Телефон</p>
+						<p className={`${s.textLeft} ${s.titleTextStyle} ${s.phoneText}`}>Контактные данные в объявлении</p>
+						<p className={s.phoneText}>Телефон</p>
 						<input
 							className={s.inputPhone}
 							type='tel'
@@ -261,7 +261,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						/>
 					</div>
 					<div>
-						<h2 className={s.titleTextStyle}>
+						<h2 className={`${s.textLeft} ${s.titleTextStyle} ${s.phoneText}`}>
 							Выбор тарифа оплаты объявления
 						</h2>
 						<div>
@@ -325,7 +325,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 									></div>
 								</div>
 							</div>
-							<div className={s.flexRow}>
+							<div className={`${s.flexRow} ${s.margBot}`}>
 								<input
 									className={s.checkbox}
 									type='checkbox'
@@ -336,7 +336,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 									персональных данных
 								</p>
 							</div>
-							<div className={s.flexRow}>
+							<div className={`${s.flexRow} ${s.margBot}`}>
 								<input
 									className={s.checkbox}
 									type='checkbox'

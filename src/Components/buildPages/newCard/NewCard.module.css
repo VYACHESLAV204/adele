@@ -16,7 +16,8 @@
 .SelectCatDiv {
 	display: flex;
 	width: 100%;
-	height: 70px;
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 	align-items: center;
 	justify-content: space-between;
 }
@@ -124,6 +125,7 @@
 	display: flex;
 	flex-direction: row;align-items: center;
 	width: 500px;
+	margin-bottom: 3rem;
 }
 .SliderImg {
 	height: 300px;
@@ -165,6 +167,7 @@
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	margin-top: 15px;
 	padding-left: 10px;
+	margin-bottom: 3rem;
 }
 .marginLeft {
 	margin-left: 15px;
@@ -176,6 +179,9 @@
 .textMargin {
 	margin-top: 20px;
 }
+.phoneText{
+	margin-bottom: 2rem;
+}
 .inputPhone {
 	width: 210px;
 	height: 39px;
@@ -184,6 +190,7 @@
 	background: #f2f2ff;
 	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.05);
 	padding-left: 10px;
+	margin-bottom: 3rem;
 }
 .titleTextStyle {
 	color: #000;
@@ -233,7 +240,7 @@
 	display: inline-flex;
 	width: 80%;
 	margin-top: 25px;
-	margin-bottom: 25px;
+	margin-bottom: 4rem;
 }
 .priceNotActive {
 	background-color: #f2f2ff;
@@ -247,6 +254,9 @@
 }
 .H2Cat {
 	margin-top: 2rem;
+}
+.margBot{
+	margin-bottom: 2rem;
 }
 @media (max-width: 1025px) {
 	.MainDiv {
@@ -329,4 +339,17 @@
 	.flexRow > p {
 		width: 300px;
 	}
+	.SelectCatDiv{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	.marginMob{
+		margin-bottom: 2rem;
+	}
+}
+@media (max-width:360px) {
+	.photoSectionContainer{
+		align-items: flex-start
+	}
+	
 }
