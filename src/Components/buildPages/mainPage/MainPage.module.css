@@ -31,6 +31,7 @@
 	background-color: #F2F2FF;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+	padding-left: 0.2rem;
 }
 .MenuBlocks {
 	width: 194px;
@@ -137,6 +138,7 @@
 .MenuCarierImg{
 	border-radius: 0 5px 5px 0;
 	margin-left: 1.1rem;
+	
 }
 .MenuBlocksImg{
 	width: 60px;
@@ -144,7 +146,7 @@
 }
 .MenuWorkImg{
 	width: 55px;
-	margin-right: -0.4rem;
+	margin-top: 0.3rem;
 	border-radius: 0 5px 5px 0;
 }
 .MenuServiceImg{
@@ -157,6 +159,7 @@
 }
 .MenuMaterialImg{
 	width: 90.63px;
+	margin-left: 0.8rem;
     height: 67.859px;
 
 }
