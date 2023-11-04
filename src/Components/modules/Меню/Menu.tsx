@@ -839,7 +839,9 @@ const Menu: React.FC<MenuProps> = ({
 										>
 											<li
 												onClick={() => {
-													setUnderCategory('Новые инструменты'),
+													setUnderCategory(
+														'Новые инструменты'
+													),
 														setCategory(
 															'Инструменты'
 														)
@@ -861,7 +863,9 @@ const Menu: React.FC<MenuProps> = ({
 										>
 											<li
 												onClick={() => {
-													setUnderCategory('Б/У инструменты'),
+													setUnderCategory(
+														'Б/У инструменты'
+													),
 														setCategory(
 															'Инструменты'
 														)
@@ -1367,8 +1371,8 @@ const Menu: React.FC<MenuProps> = ({
 				style={{
 					all: 'unset',
 					position: 'relative',
-					top: '-501px',
-					left: '337px',
+					top: '-600px',
+					left: '340px',
 				}}
 				onClick={toggleMenu}
 			>
