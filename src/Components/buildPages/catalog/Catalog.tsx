@@ -74,55 +74,66 @@ const Catalog: FC<ICatalogProps> = ({
 						className={styles.catDivMain}
 						style={{ marginRight: 65 }}
 					>
-						<div className={styles.CatDiv}>
-							{sub_category_all?.map((Cat, index) => {
-								const styleClass =
-									styleClasses[index % styleClasses.length]
-								if (!Cat.mass) {
-									return (
-										<div
-											onClick={() => {
-												if (Cat.cat) {
-													setCat(Cat.cat)
-												} else {
-													setSubCat(Cat.category)
-												}
-											}}
-											key={Cat.id}
-											className={styleClass}
-										>
-											<p className={styles.CatText}>
-												{Cat.category}
-											</p>
-										</div>
-									)
-								} else if (Cat.mass) {
-									return (
-										<select
-											onChange={(e) => {
-												if (Cat.mass?.[0].cat) {
-													setCat(Cat.mass[0].cat)
-													setSubCat(e.target.value)
-												} else {
-													setSubCat(e.target.value)
-												}
-											}}
-											key={Cat.id}
-											className={styleClass}
-										>
-											{Cat.mass[0].name.map((name) => {
-												return (
-													<option value={name}>
-														{name}
-													</option>
-												)
-											})}
-										</select>
-									)
-								}
-							})}
-						</div>
-
+						{sub_category_all && (
+							<div className={styles.CatDiv}>
+								{sub_category_all?.map((Cat, index) => {
+									const styleClass =
+										styleClasses[
+											index % styleClasses.length
+										]
+									if (!Cat.mass) {
+										return (
+											<div
+												onClick={() => {
+													if (Cat.cat) {
+														setCat(Cat.cat)
+													} else {
+														setSubCat(Cat.category)
+													}
+												}}
+												key={Cat.id}
+												className={styleClass}
+											>
+												<p className={styles.CatText}>
+													{Cat.category.toUpperCase()}
+												</p>
+											</div>
+										)
+									} else if (Cat.mass) {
+										return (
+											<select
+												onChange={(e) => {
+													if (Cat.mass?.[0].cat) {
+														setCat(Cat.mass[0].cat)
+														setSubCat(
+															e.target.value
+														)
+													} else {
+														setSubCat(
+															e.target.value
+														)
+													}
+												}}
+												key={Cat.id}
+												className={styleClass}
+											>
+												{Cat.mass[0].name.map(
+													(name) => {
+														return (
+															<option
+																value={name}
+															>
+																{name}
+															</option>
+														)
+													}
+												)}
+											</select>
+										)
+									}
+								})}
+							</div>
+						)}
 						<div
 							className={styles.cardsMainDiv}
 							style={{ marginTop: 15 }}

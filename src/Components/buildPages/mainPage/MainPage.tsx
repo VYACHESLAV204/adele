@@ -1,7 +1,7 @@
 import Card from '../../modules/маленькая карточка/Card'
 import { FC, useEffect } from 'react'
 import BuldingMaterials from '../../../assets/BuldingMaterials.png'
-import Stanki from '../../../assets/stanki.png'
+import Stanki from '../../../assets/Mask group.png'
 import Work from '../../../assets/Work.png'
 import blocks from '../../../assets/blocks.png'
 import carier from '../../../assets/carier.png'
@@ -54,7 +54,7 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Карьер')}
 							className={s.MenuCarier}
 						>
-							<p className={s.MenuTexts}>Карьер</p>
+							<p className={s.MenuTexts}>КАРЬЕР</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuCarierImg}`}
 								src={carier}
@@ -67,7 +67,7 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Блоки')}
 							className={s.MenuBlocks}
 						>
-							<p className={s.MenuTexts}>Блоки</p>
+							<p className={s.MenuTexts}>БЛОКИ</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuBlocksImg}`}
 								src={blocks}
@@ -80,7 +80,7 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Стройматериалы')}
 							className={s.MenuBuildingMaterials}
 						>
-							<p className={s.MenuTexts}>Стройматериалы</p>
+							<p className={s.MenuTexts}>СТРОЙМАТЕРИАЛЫ</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuMaterialImg}`}
 								src={BuldingMaterials}
@@ -93,7 +93,7 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Ритуальные изделия')}
 							className={s.MenuRitualItems}
 						>
-							<p className={s.MenuTexts}>Ритуальные изделия</p>
+							<p className={s.MenuTexts}>РИТУАЛЬНЫЕ ИЗДЕЛИЯ</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuRitualsImg}`}
 								src={rituals}
@@ -106,7 +106,7 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Станки')}
 							className={s.MenuMachines}
 						>
-							<p className={s.MenuTexts}>Станки</p>
+							<p className={s.MenuTexts}>СТАНКИ</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuStankiImg}`}
 								src={Stanki}
@@ -119,7 +119,7 @@ const MainPage: FC<CardAdResponse> = ({
 							onClick={() => setCategory('Инструменты')}
 							className={s.MenuTools}
 						>
-							<p className={s.MenuTexts}>Инструменты</p>
+							<p className={s.MenuTexts}>ИНСТРУМЕНТЫ</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuToolsImg}`}
 								src={tools}
@@ -135,7 +135,7 @@ const MainPage: FC<CardAdResponse> = ({
 							<p
 								className={`${s.MenuTexts} ${s.MenuSpecialText}`}
 							>
-								Спецтехника
+								СПЕЦТЕХНИКА
 							</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuSpecialImg}`}
@@ -150,7 +150,7 @@ const MainPage: FC<CardAdResponse> = ({
 							className={s.MenuWork}
 						>
 							<p className={`${s.MenuTexts} ${s.MenuWorkText}`}>
-								Работа
+								РАБОТА
 							</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuWorkImg}`}
@@ -167,7 +167,7 @@ const MainPage: FC<CardAdResponse> = ({
 							<p
 								className={`${s.MenuTexts} ${s.MenuServiceText}`}
 							>
-								Услуги
+								УСЛУГИ
 							</p>
 							<img
 								className={`${s.MenuImg} ${s.MenuServiceImg}`}
@@ -190,7 +190,7 @@ const MainPage: FC<CardAdResponse> = ({
 								}}
 								className={s.MenuCarier}
 							>
-								<p className={s.MenuTexts}>Карьер</p>
+								<p className={s.MenuTexts}>КАРЬЕР</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuCarierImg}`}
 									src={carier}
@@ -204,7 +204,7 @@ const MainPage: FC<CardAdResponse> = ({
 								style={{ marginRight: '1rem' }}
 								className={s.MenuBlocks}
 							>
-								<p className={s.MenuTexts}>Блоки</p>
+								<p className={s.MenuTexts}>БЛОКИ</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuBlocksImg}`}
 									src={blocks}
@@ -218,7 +218,7 @@ const MainPage: FC<CardAdResponse> = ({
 								style={{ marginRight: '1rem' }}
 								className={s.MenuBuildingMaterials}
 							>
-								<p className={s.MenuTexts}>Стройматериалы</p>
+								<p className={s.MenuTexts}>СТРОЙМАТЕРИАЛЫ</p>
 								<img
 									className={s.MenuImg}
 									src={BuldingMaterials}
@@ -235,7 +235,7 @@ const MainPage: FC<CardAdResponse> = ({
 								className={s.MenuRitualItems}
 							>
 								<p className={s.MenuTexts}>
-									Ритуальные изделия
+									РИТУАЛЬНЫЕ ИЗДЕЛИЯ
 								</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuRitualsImg}`}
@@ -256,7 +256,7 @@ const MainPage: FC<CardAdResponse> = ({
 								}}
 								className={`${s.MenuMachines}`}
 							>
-								<p className={s.MenuTexts}>Станки</p>
+								<p className={s.MenuTexts}>СТАНКИ</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuStankiImg}`}
 									src={Stanki}
@@ -270,7 +270,7 @@ const MainPage: FC<CardAdResponse> = ({
 								style={{ marginRight: '1rem' }}
 								className={s.MenuTools}
 							>
-								<p className={s.MenuTexts}>Инструменты</p>
+								<p className={s.MenuTexts}>ИНСТРУМЕНТЫ</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuToolsImg}`}
 									src={tools}
@@ -284,7 +284,7 @@ const MainPage: FC<CardAdResponse> = ({
 								style={{ marginRight: '1rem' }}
 								className={s.MenuSpecialEquipment}
 							>
-								<p className={s.MenuTexts}>Спецтехника</p>
+								<p className={s.MenuTexts}>СПЕЦТЕХНИКА</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuSpecialImg}`}
 									src={specialTequinick}
@@ -298,7 +298,7 @@ const MainPage: FC<CardAdResponse> = ({
 								style={{ marginRight: '1rem' }}
 								className={s.MenuWork}
 							>
-								<p className={s.MenuTexts}>Работа</p>
+								<p className={s.MenuTexts}>РАБОТА</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuWorkImg}`}
 									src={Work}
@@ -312,7 +312,7 @@ const MainPage: FC<CardAdResponse> = ({
 								style={{ marginRight: '1rem' }}
 								className={s.MenuServices}
 							>
-								<p className={s.MenuTexts}>Услуги</p>
+								<p className={s.MenuTexts}>УСЛУГИ</p>
 								<img
 									className={`${s.MenuImg} ${s.MenuServiceImg}`}
 									src={serveces}

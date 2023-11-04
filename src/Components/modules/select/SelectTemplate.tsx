@@ -1,41 +1,25 @@
-// RegionSelect.tsx
+import { FC } from 'react'
+import TextField from '@mui/material/TextField'
 
-import Select from 'react-select'
-
-export type OptionType = { label: string; value: string }
-type RegionSelectProps = {
-	citys: { label: string; value: string }[]
-	style?: { width: string; marginLeft: string }
-	City: OptionType | undefined // updated this line
-	setCity: React.Dispatch<React.SetStateAction<OptionType | undefined>>
+import Autocomplete from '@mui/material/Autocomplete'
+interface City {
+	label: string
+	value: string
 }
-const RegionSelectTemplate: React.FC<RegionSelectProps> = ({
-	citys,
-	setCity,
-	style,
-	City,
-}) => {
-	const handleChange = (selectedOption: OptionType | null) => {
-		if (selectedOption !== null) {
-			setCity(selectedOption)
-		}
-	}
-
+export interface AutocompleteOption {
+	options: City[]
+	setCity?: React.Dispatch<React.SetStateAction<City>>
+}
+const SelectTemplate: FC<AutocompleteOption> = ({ options, setCity }) => {
 	return (
-		<Select
-			value={City}
-			options={citys}
-			onChange={handleChange}
-			defaultInputValue='Город'
-			styles={{
-				control: (base) => ({
-					...base,
-					marginLeft: style?.marginLeft || 10,
-					width: style?.width || 160,
-				}),
-			}}
+		<Autocomplete
+			disablePortal
+			id='combo-box-demo'
+			options={options}
+			sx={{ width: 200,height:50 }}
+			renderInput={(params) => <TextField {...params} label='Город' />}
 		/>
 	)
 }
 
-export default RegionSelectTemplate
+export default SelectTemplate

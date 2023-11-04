@@ -1,24 +1,28 @@
 import styles from './Header.module.css'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 import Menu from '../../modules/Меню/Menu'
 import logo from '../../../assets/logo.svg'
 import geoForHeader from '../../../assets/geoForHeader.svg'
 import HeaderMenu3Line from '../../../assets/HeaderMenu3Line.svg'
 import InputButton from '../../modules/Поиск в шапке/Search'
-import RegionSelectTemplate from '../../modules/select/SelectTemplate'
 import User from '../../../assets/solar_user-outline.svg'
 import Interface from '../../../assets/interface.svg'
-import { OptionType } from '../../modules/select/SelectTemplate'
+import SelectTemplate, {
+	AutocompleteOption,
+} from '../../modules/select/SelectTemplate'
 import { NavLink } from 'react-router-dom'
+
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void
 	setModalType: React.Dispatch<React.SetStateAction<'auth' | 'reg' | ''>>
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	citys: { label: string; value: string }[]
-	City: OptionType | undefined // updated this line
-	setCity: React.Dispatch<React.SetStateAction<OptionType | undefined>>
+	City: AutocompleteOption | undefined // updated this line
+	setCity: React.Dispatch<
+		React.SetStateAction<AutocompleteOption | undefined>
+	>
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -59,33 +63,26 @@ const Header: React.FC<HeaderProps> = ({
 		display: 'flex',
 	}
 	useEffect(() => {
-	  
-		
-	if(window.innerWidth <= 450){
-		setPcSearch(false)
-		setMobileSearch(true)
-	}
-	if(window.innerWidth >= 450){
-		setPcSearch(true)
-		setMobileSearch(false)
-	}
+		if (window.innerWidth <= 450) {
+			setPcSearch(false)
+			setMobileSearch(true)
+		}
+		if (window.innerWidth >= 450) {
+			setPcSearch(true)
+			setMobileSearch(false)
+		}
 	}, [window.innerWidth])
 	useEffect(() => {
-	  console.log(PcSearch,mobileSearch);
-	  
-	}, [PcSearch,mobileSearch])
-	
-	function RegionSelect() {
-		// Состояние для выбранного региона
+		console.log(PcSearch, mobileSearch)
+	}, [PcSearch, mobileSearch])
 
+	function RegionSelect1() {
+		// Состояние для выбранного региона
+		
 		return (
 			<div className={styles.RegionDiv}>
 				<img src={geoForHeader} alt='' />
-				<RegionSelectTemplate
-					City={City}
-					setCity={setCity}
-					citys={citys}
-				/>
+				<SelectTemplate options={citys} />
 			</div>
 		)
 	}
@@ -95,8 +92,8 @@ const Header: React.FC<HeaderProps> = ({
 			<NavLink to={'/'}>
 				<img className={styles.logo} src={logo} alt='Логотип' />
 			</NavLink>
-			{RegionSelect()}
-			<div 
+			{RegionSelect1()}
+			<div
 				onClick={(e) => {
 					e.preventDefault()
 					e.stopPropagation()
@@ -108,7 +105,7 @@ const Header: React.FC<HeaderProps> = ({
 				<button>
 					<img src={HeaderMenu3Line} alt='' />
 				</button>
-				<h2 style={{width:'120px'}}>Все категории</h2>
+				<h2 style={{ width: '120px' }}>Все категории</h2>
 				<Menu
 					NavOrNew={NavOrNew}
 					setCategory={setCategory}
@@ -118,7 +115,7 @@ const Header: React.FC<HeaderProps> = ({
 				></Menu>
 			</div>
 			<div className={styles.searchContainer}>
-				 {PcSearch?<InputButton styles={myStyles} />:<></>} 
+				{PcSearch ? <InputButton styles={myStyles} /> : <></>}
 			</div>
 			<div>
 				<button
@@ -154,7 +151,11 @@ const Header: React.FC<HeaderProps> = ({
 						<NavLink to={'/my-ads/'}>
 							<li className={styles.liItem}>Мой аккаунт</li>
 						</NavLink>
-						<li style={{cursor:'pointer'}} onClick={() => logout()} className={styles.liItem}>
+						<li
+							style={{ cursor: 'pointer' }}
+							onClick={() => logout()}
+							className={styles.liItem}
+						>
 							Выйти
 						</li>
 					</ul>
@@ -189,7 +190,6 @@ const Header: React.FC<HeaderProps> = ({
 					to={'/profile-mob/'}
 				>
 					<img src={User} alt='' />
-					
 				</NavLink>
 			) : (
 				<div
@@ -205,7 +205,7 @@ const Header: React.FC<HeaderProps> = ({
 			<div
 				className={`${styles.searchContainer} ${styles.searchContainerMob}`}
 			>
-				{mobileSearch?<InputButton styles={myStyles} />: <></>}
+				{mobileSearch ? <InputButton styles={myStyles} /> : <></>}
 			</div>
 			<div
 				onClick={(e) => {
