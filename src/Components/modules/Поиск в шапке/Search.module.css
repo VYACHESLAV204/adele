@@ -5,7 +5,7 @@
 	border: 1px solid #ccc;
 	width: 240px;
 	height: 40px;
-    border-radius: 5px 20px 20px 5px;
+	border-radius: 5px 20px 20px 5px;
 }
 .Input {
 	border: none;
@@ -24,22 +24,32 @@
 	width: 58px;
 	height: 46px;
 }
-.Input:focus-visible{outline:0px}
-@media (max-width:362px) {
-	.Input{
+.liDiv {
+	background-color: #f2f2ff;
+	color: #000;
+	width: 210px;
+}
+.liDiv:hover {
+	background-color: #5250c5;
+	color: #fff;
+}
+.Input:focus-visible {
+	outline: 0px;
+}
+@media (max-width: 362px) {
+	.Input {
 		margin-right: -35px;
 	}
-	.MainSearchDiv{
+	.MainSearchDiv {
 		width: 199px;
 	}
 }
 @media (max-width: 330px) {
-	.Input{
+	.Input {
 		width: 123px;
 		margin-right: -19px;
 	}
-	.MainSearchDiv{
+	.MainSearchDiv {
 		width: 168px;
 	}
-	
 }
