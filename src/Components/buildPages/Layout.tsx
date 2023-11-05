@@ -1,15 +1,15 @@
 import Footer from './footer/Footer'
 import Header from './Header/Header'
 import Reg from '../modules/авторизация и регистрация/Reg'
-import { OptionType } from '../modules/select/SelectTemplate'
+import { City } from '../modules/select/SelectTemplate'
 interface HeaderProps {
 	children?: React.ReactNode
 	citys: any[]
 	setModalType: (value: React.SetStateAction<'auth' | 'reg' | ''>) => void
 	setIsOpen: (value: React.SetStateAction<boolean>) => void
 	modalType: 'auth' | 'reg' | ''
-	City: OptionType | undefined // updated this line
-	setCity: React.Dispatch<React.SetStateAction<OptionType | undefined>>
+	City: City | null // updated this line
+	setCity: React.Dispatch<React.SetStateAction<City | null>>
 	isOpen: boolean
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void

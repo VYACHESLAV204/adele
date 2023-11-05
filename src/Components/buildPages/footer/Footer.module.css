@@ -3,11 +3,11 @@
 	margin-top: 80px;
 }
 .TexSupportDiv {
-    border-radius: 20px 20px 0px 0px;
+	border-radius: 20px 20px 0px 0px;
 	width: 278px;
 	height: 45px;
 	display: flex;
-    color: #fff;
+	color: #fff;
 	justify-content: center;
 	align-items: center;
 	background-color: #5250c5;
@@ -29,31 +29,30 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-    border-radius: 20px 20px 0px 0px;
+	border-radius: 20px 20px 0px 0px;
 }
 .EmailDiv {
-    border-radius: 20px 20px 0px 0px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 220px;
+	border-radius: 20px 20px 0px 0px;
+	width: 278px;
 	height: 45px;
 	border: 1px solid #9090d8;
 }
-.PhoneNum{
+.PhoneNum {
 	display: none;
 }
-.sectionBoxMob{
+.sectionBoxMob {
 	display: none;
-
 }
-@media (max-width: 1025px){
-	.FooterMainDiv{
+@media (max-width: 1025px) {
+	.FooterMainDiv {
 		justify-content: center;
 	}
 }
 @media (max-width: 430px) {
-	.PhoneNum{
+	.PhoneNum {
 		border-radius: 20px 20px 0px 0px;
 		display: flex;
 		justify-content: center;
@@ -67,23 +66,22 @@
 		margin-bottom: 1rem;
 		border-radius: 20px 20px 0px 0px;
 	}
-	.sectionBox{
+	.sectionBox {
 		display: none;
 	}
-	.phoneEmail{
+	.phoneEmail {
 		display: inline-flex;
 	}
-	.FooterMainDivMob{
+	.FooterMainDivMob {
 		margin-top: 9rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 	}
-	.TexSupportDiv{
+	.TexSupportDiv {
 		margin-right: 0;
 	}
-	.sectionBoxMob{
+	.sectionBoxMob {
 		display: block;
 	}
-	
 }

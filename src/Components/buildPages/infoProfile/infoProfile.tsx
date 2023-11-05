@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
 import s from './infoProfile.module.css'
 import { ProfileAndInfoProfileProps } from '../../../interfaces/Interfaces'
-import RegionSelectTemplate, {
-	OptionType,
-} from '../../modules/select/SelectTemplate'
+import RegionSelectTemplate, { City } from '../../modules/select/SelectTemplate'
 const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 	const [profileData, setProfileData] = useState({
 		email: '',
@@ -11,7 +9,7 @@ const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 		phone: '',
 		phone_two: '',
 	})
-	const [cityInput, setCityInput] = useState<OptionType>()
+	const [city, setCity] = useState<City | null>(null)
 	const [secondPhoneInput, setSecondPhoneInput] = useState('')
 	const [isSecondPhoneVisible, setIsSecondPhoneVisible] = useState(false)
 	const [reload, setReload] = useState(false)
@@ -28,10 +26,6 @@ const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 			.then((data) => setProfileData(data))
 	}, [reload])
 
-	useEffect(() => {
-		setCityInput({ label: profileData.city, value: profileData.city })
-	}, [profileData])
-
 	const handleSave = () => {
 		fetch(
 			`http://stoneworking.ru/api/v1/profile-settings-replace?jwt=${localStorage.getItem(
@@ -44,16 +38,13 @@ const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify({
-					city: cityInput?.value,
 					phone_two: secondPhoneInput,
 				}),
 			}
 		)
 			.then((response) => response.json())
 			.then((data) => setProfileData(data))
-			.then(() => 
-				setTimeout(() => setReload(!reload), 500)
-			)
+			.then(() => setTimeout(() => setReload(!reload), 500))
 	}
 
 	const handleAddPhone = () => {
@@ -113,10 +104,9 @@ const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 					<p className={s.textContent}>Город</p>
 
 					<RegionSelectTemplate
-						setCity={setCityInput}
-						style={{ width: '200px', marginLeft: '0px' }}
-						City={cityInput || { label: '', value: '' }}
-						citys={citys}
+						setCity={setCity}
+						City={city}
+						Citys={citys}
 					/>
 					<button className={s.btn} onClick={handleSave}>
 						Сохранить

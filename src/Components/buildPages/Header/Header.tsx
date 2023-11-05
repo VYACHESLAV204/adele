@@ -8,20 +8,18 @@ import HeaderMenu3Line from '../../../assets/HeaderMenu3Line.svg'
 import InputButton from '../../modules/Поиск в шапке/Search'
 import User from '../../../assets/solar_user-outline.svg'
 import Interface from '../../../assets/interface.svg'
-import SelectTemplate, {
-	AutocompleteOption,
-} from '../../modules/select/SelectTemplate'
 import { NavLink } from 'react-router-dom'
+import SelectTemplate, { City } from '../../modules/select/SelectTemplate'
 
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
 	setUnderCategory: (value: React.SetStateAction<string>) => void
 	setModalType: React.Dispatch<React.SetStateAction<'auth' | 'reg' | ''>>
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-	citys: { label: string; value: string }[]
-	City: AutocompleteOption | undefined // updated this line
+	citys: City[]
+	City: City |null
 	setCity: React.Dispatch<
-		React.SetStateAction<AutocompleteOption | undefined>
+		React.SetStateAction<City|null>
 	>
 }
 
@@ -78,11 +76,11 @@ const Header: React.FC<HeaderProps> = ({
 
 	function RegionSelect1() {
 		// Состояние для выбранного региона
-		
+
 		return (
 			<div className={styles.RegionDiv}>
 				<img src={geoForHeader} alt='' />
-				<SelectTemplate options={citys} />
+				<SelectTemplate City={City} setCity={setCity} Citys={citys} />
 			</div>
 		)
 	}

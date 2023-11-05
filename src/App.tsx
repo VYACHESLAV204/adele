@@ -21,7 +21,7 @@ import MyAds2 from './Components/buildPages/myAds/MyAds.tsx'
 import Worker from './Components/buildPages/worker/worker.js'
 import Moderation from './Components/buildPages/moderation/moderation.js'
 import Error401 from './Components/buildPages/401Error/401.js'
-import { OptionType } from './Components/modules/select/SelectTemplate.js'
+import { City } from './Components/modules/select/SelectTemplate.js'
 import ProfileMob from './Components/buildPages/profilePopupMob/ProfilePopupMob.js'
 
 function App() {
@@ -34,10 +34,7 @@ function App() {
 	const [categoryForNewCard, setCategoryForNewCard] = useState('')
 	const [underCategoryForNewCard, setUnderCategoryForNewCard] = useState('')
 	const [page, setPage] = useState(1)
-	const [city, setCity] = useState<OptionType | undefined>({
-		label: '',
-		value: '',
-	})
+	const [city, setCity] = useState<City | null>(null)
 	const isLoggin = localStorage.getItem('status')
 	useEffect(() => {
 		console.log(isLoggin)
@@ -150,7 +147,10 @@ function App() {
 								)
 							}
 						/>
-						<Route path='/worker/:id' element={<Worker card_noads={resume?.card_noads}/>} />
+						<Route
+							path='/worker/:id'
+							element={<Worker card_noads={resume?.card_noads} />}
+						/>
 						<Route
 							//Готово
 							path='/card/:id'

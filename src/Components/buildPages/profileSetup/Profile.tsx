@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import s from './Profile.module.css'
 import editPan from '../../../assets/editPan.svg'
-import RegionSelectTemplate, {
-	OptionType,
-} from '../../modules/select/SelectTemplate'
+import RegionSelectTemplate, { City } from '../../modules/select/SelectTemplate'
 import WorkMan from '../../../assets/hardWorkingMan.svg'
 interface ProfileProps {
-	citys: { label: string; value: string }[]
-	City: OptionType | undefined // updated this line
-	setCity: React.Dispatch<React.SetStateAction<OptionType | undefined>>
+	citys: City[]
+	City: City | null
+	setCity: React.Dispatch<React.SetStateAction<City | null>>
 }
 
 const Profile: React.FC<ProfileProps> = ({ citys }) => {
 	const [email, setEmail] = useState('')
 	const [name, setName] = useState('')
-	const [city, setCity] = useState<OptionType | undefined>({
+	const [city, setCity] = useState<City | null>({
 		label: '',
 		value: '',
 	})
@@ -90,7 +88,6 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 			})
 	}
 
-	const style = { width: '40vw', marginLeft: '0px' }
 	return (
 		<div className={s.mainDiv}>
 			<h2 className={s.H2Settings}>Настройки профиля</h2>
@@ -173,10 +170,9 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 					<div className={s.inputDivNameNCity}>
 						<label htmlFor=''>Город</label>
 						<RegionSelectTemplate
-							style={style}
 							City={city}
 							setCity={setCity}
-							citys={citys}
+							Citys={citys}
 						/>
 					</div>
 					<button className={s.Button}>Сохранить</button>
