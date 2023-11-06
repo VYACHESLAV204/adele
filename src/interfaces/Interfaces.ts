@@ -122,18 +122,19 @@ export interface ProfileAndInfoProfileProps {
 	citys: { label: string; value: string }[]
 }
 export interface iResult {
-	caption: string
-	summary: boolean
-	id_card: number
+	card_results: {
+		caption: string
+		summary: boolean
+		id_card: number
+	}[]
 }
 
 export interface Isearch {
-	// card_results: iResult[]
 	inputValue: string
 	setInputValue: React.Dispatch<React.SetStateAction<string>>
 	isOpen: boolean
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-	res: iResult[]
-	setRes: React.Dispatch<React.SetStateAction<iResult[]>>
+	res: iResult
+	setRes: React.Dispatch<React.SetStateAction<iResult>>
 	styles: React.CSSProperties
 }

@@ -37,9 +37,9 @@ function App() {
 	const [page, setPage] = useState(1)
 	const [city, setCity] = useState<City | null>(null)
 	const [inputValue, setInputValue] = useState('')
-	const [res, setRes] = useState<iResult[]>([
-		{ caption: ' ', summary: false, id_card: 1 },
-	])
+	const [res, setRes] = useState<iResult>({
+		card_results: [{ caption: ' ', summary: false, id_card: 1 }],
+	})
 	const [isOpenSearch, setIsOpenSearch] = useState(false)
 	const isLoggin = localStorage.getItem('status')
 	useEffect(() => {

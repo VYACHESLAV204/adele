@@ -29,7 +29,7 @@ const InputButton: React.FC<Isearch> = ({
 				body: JSON.stringify({ search_term: inputValue }),
 			})
 				.then((res) => res.json())
-				.then((data: iResult[]) => {
+				.then((data: iResult) => {
 					setRes(data)
 				})
 		}
@@ -65,7 +65,7 @@ const InputButton: React.FC<Isearch> = ({
 			<button className={s.Button}>
 				<img src={lens} className={s.Img}></img>
 			</button>
-			{res && isOpen && (
+			{res.card_results.length > 2 && isOpen && (
 				<div
 					style={{
 						height: '300px',
@@ -90,7 +90,7 @@ const InputButton: React.FC<Isearch> = ({
 							overflowY: 'auto',
 						}}
 					>
-						{res.map((item) => {
+						{res.card_results.map((item) => {
 							if (item.summary) {
 								return (
 									<div

@@ -18,8 +18,8 @@ interface HeaderProps {
 	setInputValue: React.Dispatch<React.SetStateAction<string>>
 	isOpenSearch: boolean
 	setIsOpenSearch: React.Dispatch<React.SetStateAction<boolean>>
-	res: iResult[]
-	setRes: React.Dispatch<React.SetStateAction<iResult[]>>
+	res: iResult
+	setRes: React.Dispatch<React.SetStateAction<iResult>>
 }
 const Layout: React.FC<HeaderProps> = ({
 	citys,
