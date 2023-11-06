@@ -67,6 +67,7 @@ const InputButton: React.FC<Isearch> = ({
 			</button>
 			{res.card_results.length > 2 && isOpen && (
 				<div
+					className={s.searchDropDown}
 					style={{
 						height: '300px',
 						width: '250px',

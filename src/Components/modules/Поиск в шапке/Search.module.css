@@ -41,7 +41,10 @@
 		margin-right: -35px;
 	}
 	.MainSearchDiv {
-		width: 199px;
+		width: 183px;
+	}
+	.searchDropDown{
+		left: -210px !important;
 	}
 }
 @media (max-width: 330px) {
