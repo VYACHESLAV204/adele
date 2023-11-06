@@ -66,10 +66,10 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 				method: 'POST',
 
 				headers: {
-					'Content-Type':
-						'multipart/form-data; boundary=<calculated when request is sent>',
-					Accept: '*/*',
-					'Access-control-Allow-origin': '*',
+					// 'Content-Type':
+					// 	'multipart/form-data; boundary=<calculated when request is sent>',
+					// Accept: '*/*',
+					// 'Access-control-Allow-origin': '*',
 				},
 				body: formData,
 			}
@@ -170,7 +170,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 					<div className={s.inputDivNameNCity}>
 						<label htmlFor=''>Город</label>
 						<RegionSelectTemplate
-						styles={{marginLeft:'0px',width:'495px'}}
+							styles={{ marginLeft: '0px', width: '495px' }}
 							City={city}
 							setCity={setCity}
 							Citys={citys}

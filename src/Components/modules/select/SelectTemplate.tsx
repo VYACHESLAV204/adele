@@ -11,11 +11,16 @@ interface selectCityProps {
 	Citys: City[]
 	City: City | null
 	setCity: React.Dispatch<React.SetStateAction<City | null>>
-	styles:React.CSSProperties
+	styles: React.CSSProperties
 }
 
 const useStyles = makeStyles({ autocomplete: { padding: '0px' } })
-const SelectTemplate: FC<selectCityProps> = ({ City, Citys, setCity,styles }) => {
+const SelectTemplate: FC<selectCityProps> = ({
+	City,
+	Citys,
+	setCity,
+	styles,
+}) => {
 	useEffect(() => {
 		if (City !== null) {
 			fetch(
