@@ -1,6 +1,5 @@
 import styles from './Header.module.css'
 import { useState, useEffect } from 'react'
-
 import Menu from '../../modules/Меню/Menu'
 import logo from '../../../assets/logo.svg'
 import geoForHeader from '../../../assets/geoForHeader.svg'
@@ -10,6 +9,7 @@ import User from '../../../assets/solar_user-outline.svg'
 import Interface from '../../../assets/interface.svg'
 import { NavLink } from 'react-router-dom'
 import SelectTemplate, { City } from '../../modules/select/SelectTemplate'
+import { iResult } from '../../../interfaces/Interfaces'
 
 type HeaderProps = {
 	setCategory: (value: React.SetStateAction<string>) => void
@@ -17,10 +17,14 @@ type HeaderProps = {
 	setModalType: React.Dispatch<React.SetStateAction<'auth' | 'reg' | ''>>
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 	citys: City[]
-	City: City |null
-	setCity: React.Dispatch<
-		React.SetStateAction<City|null>
-	>
+	City: City | null
+	setCity: React.Dispatch<React.SetStateAction<City | null>>
+	inputValue: string
+	setInputValue: React.Dispatch<React.SetStateAction<string>>
+	isOpenSearch: boolean
+	setIsOpenSearch: React.Dispatch<React.SetStateAction<boolean>>
+	res: iResult[]
+	setRes: React.Dispatch<React.SetStateAction<iResult[]>>
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -28,6 +32,12 @@ const Header: React.FC<HeaderProps> = ({
 	setIsOpen,
 	citys,
 	City,
+	inputValue,
+	setInputValue,
+	isOpenSearch,
+	setIsOpenSearch,
+	res,
+	setRes,
 	setCity,
 	setCategory,
 	setUnderCategory,
@@ -113,7 +123,19 @@ const Header: React.FC<HeaderProps> = ({
 				></Menu>
 			</div>
 			<div className={styles.searchContainer}>
-				{PcSearch ? <InputButton styles={myStyles} /> : <></>}
+				{PcSearch ? (
+					<InputButton
+						res={res}
+						setRes={setRes}
+						inputValue={inputValue}
+						setInputValue={setInputValue}
+						setIsOpen={setIsOpenSearch}
+						isOpen={isOpenSearch}
+						styles={myStyles}
+					/>
+				) : (
+					<></>
+				)}
 			</div>
 			<div>
 				<button
@@ -203,7 +225,19 @@ const Header: React.FC<HeaderProps> = ({
 			<div
 				className={`${styles.searchContainer} ${styles.searchContainerMob}`}
 			>
-				{mobileSearch ? <InputButton styles={myStyles} /> : <></>}
+				{mobileSearch ? (
+					<InputButton
+						res={res}
+						setRes={setRes}
+						inputValue={inputValue}
+						setInputValue={setInputValue}
+						setIsOpen={setIsOpenSearch}
+						isOpen={isOpenSearch}
+						styles={myStyles}
+					/>
+				) : (
+					<></>
+				)}
 			</div>
 			<div
 				onClick={(e) => {

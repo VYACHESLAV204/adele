@@ -123,12 +123,12 @@ export interface ProfileAndInfoProfileProps {
 }
 export interface iResult {
 	caption: string
-	summary?: boolean
+	summary: boolean
 	id_card: number
 }
 
 export interface Isearch {
-	card_results: iResult[]
+	// card_results: iResult[]
 	inputValue: string
 	setInputValue: React.Dispatch<React.SetStateAction<string>>
 	isOpen: boolean
@@ -136,16 +136,4 @@ export interface Isearch {
 	res: iResult[]
 	setRes: React.Dispatch<React.SetStateAction<iResult[]>>
 	styles: React.CSSProperties
-}
-interface HeaderProps {
-	children?: React.ReactNode
-	citys: any[]
-	setModalType: (value: React.SetStateAction<'auth' | 'reg' | ''>) => void
-	setIsOpen: (value: React.SetStateAction<boolean>) => void
-	modalType: 'auth' | 'reg' | ''
-	City: City | null // updated this line
-	setCity: React.Dispatch<React.SetStateAction<City | null>>
-	isOpen: boolean
-	setCategory: (value: React.SetStateAction<string>) => void
-	setUnderCategory: (value: React.SetStateAction<string>) => void
 }

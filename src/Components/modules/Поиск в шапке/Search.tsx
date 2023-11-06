@@ -6,7 +6,6 @@ import arrowImg from '../../../assets/Menu arrow.svg'
 import { iResult, Isearch } from '../../../interfaces/Interfaces'
 const InputButton: React.FC<Isearch> = ({
 	styles,
-	card_results,
 	inputValue,
 	setInputValue,
 	setIsOpen,
@@ -30,7 +29,9 @@ const InputButton: React.FC<Isearch> = ({
 				body: JSON.stringify({ search_term: inputValue }),
 			})
 				.then((res) => res.json())
-				.then((data: iResult[]) => setRes(data))
+				.then((data: iResult[]) => {
+					setRes(data)
+				})
 		}
 	}
 	useEffect(() => {

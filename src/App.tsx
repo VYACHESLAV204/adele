@@ -5,7 +5,7 @@ import {
 	ICatalogProps,
 	CardAdResponse,
 	ISummary,
-	Isearch,
+	iResult,
 } from './interfaces/Interfaces.js'
 import './App.css'
 import MainPage from './Components/buildPages/mainPage/MainPage.js'
@@ -37,7 +37,9 @@ function App() {
 	const [page, setPage] = useState(1)
 	const [city, setCity] = useState<City | null>(null)
 	const [inputValue, setInputValue] = useState('')
-	const [res, setRes] = useState<Isearch>()
+	const [res, setRes] = useState<iResult[]>([
+		{ caption: ' ', summary: false, id_card: 1 },
+	])
 	const [isOpenSearch, setIsOpenSearch] = useState(false)
 	const isLoggin = localStorage.getItem('status')
 	useEffect(() => {
@@ -129,7 +131,12 @@ function App() {
 					setModalType={setModalType}
 					setIsOpen={setIsOpen}
 					City={city}
-					isOpenSearch
+					inputValue={inputValue}
+					setInputValue={setInputValue}
+					setRes={setRes}
+					res={res}
+					isOpenSearch={isOpenSearch}
+					setIsOpenSearch={setIsOpenSearch}
 					setCity={setCity}
 					isOpen={isOpen}
 					modalType={modalType}
