@@ -11,10 +11,11 @@ interface selectCityProps {
 	Citys: City[]
 	City: City | null
 	setCity: React.Dispatch<React.SetStateAction<City | null>>
+	styles:React.CSSProperties
 }
 
 const useStyles = makeStyles({ autocomplete: { padding: '0px' } })
-const SelectTemplate: FC<selectCityProps> = ({ City, Citys, setCity }) => {
+const SelectTemplate: FC<selectCityProps> = ({ City, Citys, setCity,styles }) => {
 	useEffect(() => {
 		if (City !== null) {
 			fetch(
@@ -48,11 +49,11 @@ const SelectTemplate: FC<selectCityProps> = ({ City, Citys, setCity }) => {
 			<Autocomplete
 				value={City}
 				className={classes.autocomplete}
-				sx={{ width: '170px', marginLeft: '0.5rem' }}
+				sx={styles}
 				options={Citys}
 				filterOptions={filterOptions}
 				renderInput={(params) => (
-					<TextField {...params} label='Выберите город' />
+					<TextField {...params} label='Город' />
 				)}
 				size='small'
 				onChange={(_: any, newValue: City | null) => setCity(newValue)}

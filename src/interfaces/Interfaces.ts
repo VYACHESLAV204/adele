@@ -1,5 +1,6 @@
 export interface CardAdResponse {
 	status?: boolean
+	res?:iResult
 	card_ads_1: CardAd[]
 	card_ads_2: CardAd[]
 	card_no_ads_1: CardAd[]

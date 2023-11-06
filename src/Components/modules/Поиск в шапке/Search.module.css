@@ -47,9 +47,9 @@
 @media (max-width: 330px) {
 	.Input {
 		width: 123px;
-		margin-right: -19px;
+		margin-right: 3px;
 	}
 	.MainSearchDiv {
-		width: 168px;
+		width: 188px;margin-right: 0;
 	}
 }

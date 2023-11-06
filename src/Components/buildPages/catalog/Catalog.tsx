@@ -102,6 +102,11 @@ const Catalog: FC<ICatalogProps> = ({
 									} else if (Cat.mass) {
 										return (
 											<select
+												style={{
+													fontSize: '15px',
+													fontWeight: '500',
+													fontFamily: 'Vela Sans',
+												}}
 												onChange={(e) => {
 													if (Cat.mass?.[0].cat) {
 														setCat(Cat.mass[0].cat)
@@ -121,6 +126,14 @@ const Catalog: FC<ICatalogProps> = ({
 													(name) => {
 														return (
 															<option
+																style={{
+																	fontSize:
+																		'15px',
+																	fontWeight:
+																		'500',
+																	fontFamily:
+																		'Vela Sans',
+																}}
 																value={name}
 															>
 																{name}
@@ -211,13 +224,18 @@ const Catalog: FC<ICatalogProps> = ({
 											className={styleClass}
 										>
 											<p className={styles.CatText}>
-												{Cat.category}
+												{Cat.category.toUpperCase()}
 											</p>
 										</div>
 									)
 								} else if (Cat.mass) {
 									return (
 										<select
+											style={{
+												fontSize: '15px',
+												fontWeight: '500',
+												fontFamily: 'Vela Sans',
+											}}
 											onChange={(e) => {
 												if (Cat.mass?.[0].cat) {
 													setCat(Cat.mass[0].cat)
@@ -231,8 +249,16 @@ const Catalog: FC<ICatalogProps> = ({
 										>
 											{Cat.mass[0].name.map((name) => {
 												return (
-													<option value={name}>
-														{name}
+													<option
+														style={{
+															fontSize: '15px',
+															fontWeight: '500',
+															fontFamily:
+																'Vela Sans',
+														}}
+														value={name}
+													>
+														{name.toUpperCase()}
 													</option>
 												)
 											})}

@@ -4,24 +4,27 @@ import photo from '../../../assets/photoFromInnerCard.png'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import greenMoney from '../../../assets/greenmoney.svg'
-import { cardSummary } from '../../../interfaces/Interfaces'
+import { cardSummary, iResult } from '../../../interfaces/Interfaces'
 interface IWorkerProps {
 	card_noads?: cardSummary[]
+	res?: iResult
 }
-const worker: React.FC<IWorkerProps> = ({ card_noads }) => {
+const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 	const [showNumber, setShowNumber] = useState(false)
 	const [differenceInYears, setDifferenceInYears] = useState<number[]>([])
-	const [This, setThis] = useState<cardSummary>()
+	const [This, setThis] = useState<cardSummary|any>()
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
 	useEffect(() => {
-		const foundCard = card_noads?.find((card) => card.id_card === numberId)
+		const foundCard =
+			card_noads?.find((card) => card.id_card === numberId) ||
+			res?.card_results.find((card) => card.id_card === numberId)
 		if (foundCard) {
 			setThis(foundCard)
 		}
 	}, [card_noads, numberId])
 	useEffect(() => {
-		This?.workExp.forEach((item) => {
+		This?.workExp.forEach((item:any) => {
 			console.log(item.start_work_time, item.stop_work_time)
 
 			const date1 = moment(item.start_work_time, 'DD.MM.YYYY')
@@ -146,7 +149,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads }) => {
 				<h2 style={{ marginBottom: '2rem' }} className={s.mainTitle}>
 					Опыт работы ({This.years_exp})
 				</h2>
-				{This.workExp.map((item, index) => {
+				{This.workExp.map((item:any, index:number) => {
 					return (
 						<div className={`${s.thirdSection} ${s.colorPurple}`}>
 							<div className={s.firstLine}>
@@ -194,7 +197,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads }) => {
 					)
 				})}
 
-				{This.workExp.map((it, index) => {
+				{This.workExp.map((it:any, index:number) => {
 					return (
 						<div
 							className={`${s.thirdSectionMob} ${s.colorPurple}`}
@@ -267,7 +270,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads }) => {
 				>
 					Образование
 				</h2>
-				{This.educationFields.map((it) => {
+				{This.educationFields.map((it:any) => {
 					return (
 						<div className={`${s.fourSection} ${s.colorPurple}`}>
 							<div className={s.firstLine}>
@@ -345,7 +348,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads }) => {
 				</div>
 				<div className={s.fiveSection}>
 					<h2 className={s.mainTitle}>Знания языков</h2>
-					{This.languageFields.map((la) => {
+					{This.languageFields.map((la:any) => {
 						return (
 							<div className={s.inlineFlexBox}>
 								<h2 className={s.mainTitle}>Название языка</h2>

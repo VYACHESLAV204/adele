@@ -161,7 +161,12 @@ function App() {
 						/>
 						<Route
 							path='/worker/:id'
-							element={<Worker card_noads={resume?.card_noads} />}
+							element={
+								<Worker
+									res={res}
+									card_noads={resume?.card_noads}
+								/>
+							}
 						/>
 						<Route
 							//Готово
@@ -170,6 +175,7 @@ function App() {
 								cards && (
 									<CardDetails
 										card_ads_1={cards.card_ads_1 || []}
+										res={res}
 										card_ads_2={cards.card_ads_2 || []}
 										card_no_ads_1={
 											cards.card_no_ads_1 || []

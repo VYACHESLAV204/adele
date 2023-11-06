@@ -170,6 +170,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 					<div className={s.inputDivNameNCity}>
 						<label htmlFor=''>Город</label>
 						<RegionSelectTemplate
+						styles={{marginLeft:'0px',width:'495px'}}
 							City={city}
 							setCity={setCity}
 							Citys={citys}

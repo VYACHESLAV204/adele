@@ -90,7 +90,12 @@ const Header: React.FC<HeaderProps> = ({
 		return (
 			<div className={styles.RegionDiv}>
 				<img src={geoForHeader} alt='' />
-				<SelectTemplate City={City} setCity={setCity} Citys={citys} />
+				<SelectTemplate
+					styles={{ marginLeft: '0.5rem', width: '160px' }}
+					City={City}
+					setCity={setCity}
+					Citys={citys}
+				/>
 			</div>
 		)
 	}

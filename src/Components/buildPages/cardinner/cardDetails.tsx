@@ -9,10 +9,11 @@ const CardDetails: FC<CardAdResponse> = ({
 	card_ads_2,
 	card_ads,
 	card_noads,
+	res,
 	card_no_ads_1,
 	card_no_ads_2,
 }) => {
-	const [This, setThis] = useState<CardAd>()
+	const [This, setThis] = useState<CardAd|any>()
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
 	const settings = {
@@ -32,7 +33,8 @@ const CardDetails: FC<CardAdResponse> = ({
 			card_ads_1.find((card) => card.id_card === numberId) ||
 			card_ads_2.find((card) => card.id_card === numberId) ||
 			card_no_ads_1.find((card) => card.id_card === numberId) ||
-			card_no_ads_2.find((card) => card.id_card === numberId)
+			card_no_ads_2.find((card) => card.id_card === numberId) ||
+			res?.card_results.find((card) => card.id_card === numberId)
 		if (foundCard) {
 			setThis(foundCard)
 		}
@@ -47,8 +49,9 @@ const CardDetails: FC<CardAdResponse> = ({
 			<div className={s.mainDiv}>
 				<div className={s.leftDiv}>
 					<Slider adaptiveHeight {...settings}>
-						{This.path_file.map((image, index) => (
-							<div className={s.SliderStyle}
+						{This.path_file.map((image:any, index:number) => (
+							<div
+								className={s.SliderStyle}
 								style={{
 									borderRadius: '15px',
 									width: '491px',

@@ -101,7 +101,7 @@ const InputButton: React.FC<Isearch> = ({
 									>
 										<NavLink
 											key={item.id_card}
-											to={`/worker/:id${item.id_card}`}
+											to={`/worker/${item.id_card}`}
 										>
 											<li>{item.caption}</li>
 										</NavLink>
@@ -131,7 +131,7 @@ const InputButton: React.FC<Isearch> = ({
 												overflow: 'hidden',
 												marginRight: '20px',
 											}}
-											to={`/card/:id${item.id_card}`}
+											to={`/card/${item.id_card}`}
 										>
 											<li
 												style={{

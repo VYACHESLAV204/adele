@@ -107,6 +107,7 @@ const InfoProfile: React.FC<ProfileAndInfoProfileProps> = ({ citys }) => {
 						setCity={setCity}
 						City={city}
 						Citys={citys}
+						styles={{marginLeft:'0px',width:'296px'}}
 					/>
 					<button className={s.btn} onClick={handleSave}>
 						Сохранить
