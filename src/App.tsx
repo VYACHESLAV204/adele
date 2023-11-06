@@ -5,6 +5,7 @@ import {
 	ICatalogProps,
 	CardAdResponse,
 	ISummary,
+	Isearch,
 } from './interfaces/Interfaces.js'
 import './App.css'
 import MainPage from './Components/buildPages/mainPage/MainPage.js'
@@ -35,6 +36,9 @@ function App() {
 	const [underCategoryForNewCard, setUnderCategoryForNewCard] = useState('')
 	const [page, setPage] = useState(1)
 	const [city, setCity] = useState<City | null>(null)
+	const [inputValue, setInputValue] = useState('')
+	const [res, setRes] = useState<Isearch>()
+	const [isOpenSearch, setIsOpenSearch] = useState(false)
 	const isLoggin = localStorage.getItem('status')
 	useEffect(() => {
 		console.log(isLoggin)
@@ -125,6 +129,7 @@ function App() {
 					setModalType={setModalType}
 					setIsOpen={setIsOpen}
 					City={city}
+					isOpenSearch
 					setCity={setCity}
 					isOpen={isOpen}
 					modalType={modalType}

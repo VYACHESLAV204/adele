@@ -3,16 +3,17 @@ import s from './Search.module.css'
 import lens from '../../../assets/lens.svg'
 import { NavLink } from 'react-router-dom'
 import arrowImg from '../../../assets/Menu arrow.svg'
-interface MyComponentProps {
-	styles: React.CSSProperties
-}
-interface Isearch {
-	card_results: { caption: string; summary?: boolean; id_card: number }[]
-}
-const InputButton: React.FC<MyComponentProps> = ({ styles }) => {
-	const [inputValue, setInputValue] = useState('')
-	const [res, setRes] = useState<Isearch>()
-
+import { iResult, Isearch } from '../../../interfaces/Interfaces'
+const InputButton: React.FC<Isearch> = ({
+	styles,
+	card_results,
+	inputValue,
+	setInputValue,
+	setIsOpen,
+	res,
+	setRes,
+	isOpen,
+}) => {
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setInputValue(event.target.value)
 	}
@@ -29,7 +30,7 @@ const InputButton: React.FC<MyComponentProps> = ({ styles }) => {
 				body: JSON.stringify({ search_term: inputValue }),
 			})
 				.then((res) => res.json())
-				.then((data: Isearch) => setRes(data))
+				.then((data: iResult[]) => setRes(data))
 		}
 	}
 	useEffect(() => {
@@ -48,7 +49,11 @@ const InputButton: React.FC<MyComponentProps> = ({ styles }) => {
 		setTimer(newTimer)
 	}, [inputValue])
 	return (
-		<div style={styles} className={s.MainSearchDiv}>
+		<div
+			onClick={() => setIsOpen(!isOpen)}
+			style={styles}
+			className={s.MainSearchDiv}
+		>
 			<input
 				type='text'
 				value={inputValue}
@@ -59,25 +64,32 @@ const InputButton: React.FC<MyComponentProps> = ({ styles }) => {
 			<button className={s.Button}>
 				<img src={lens} className={s.Img}></img>
 			</button>
-			{res && (
+			{res && isOpen && (
 				<div
 					style={{
 						height: '300px',
 						width: '250px',
 						position: 'relative',
-						left: '-262px',
-						top: '160px',
+						left: '-250px',
+						top: '178px',
+						border: '2px solid #9090d8',
+						borderRadius: '4px',
+						backgroundColor: '#fff',
 					}}
 				>
 					<ul
 						style={{
-							width: '300px',
+							margin: '0px',
+							padding: '10px 10px 10px 10px',
+							width: '230px',
+							height: '280px',
 							display: 'flex',
 							flexDirection: 'column',
-							alignItems: 'flex-start',
+							alignItems: 'center',
+							overflowY: 'auto',
 						}}
 					>
-						{res.card_results.map((item) => {
+						{res.map((item) => {
 							if (item.summary) {
 								return (
 									<div
