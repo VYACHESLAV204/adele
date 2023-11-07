@@ -1325,8 +1325,8 @@ const Menu: React.FC<MenuProps> = ({
 				style={{
 					all: 'unset',
 					position: 'relative',
-					top: '-600px',
-					left: '340px',
+					top: '-609px',
+					left: '287px',
 				}}
 				onClick={toggleMenu}
 			>
