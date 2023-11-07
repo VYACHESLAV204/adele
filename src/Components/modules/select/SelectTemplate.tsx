@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect,useState } from 'react'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import { makeStyles } from '@mui/styles'
@@ -21,6 +21,15 @@ const SelectTemplate: FC<selectCityProps> = ({
 	setCity,
 	styles,
 }) => {
+	const [defaultCity, setDefailtCity] = useState<City>()
+	const updateSummaryFields = (
+		key: keyof City,
+		value: string 
+	) => {
+		setDefailtCity((prevState) => ({
+			...prevState,
+			[key]: value,
+		}))}
 	useEffect(() => {
 		if (City !== null) {
 			fetch(
@@ -37,6 +46,8 @@ const SelectTemplate: FC<selectCityProps> = ({
 					}),
 				}
 			)
+			localStorage.setItem('defaultCityLabel', City.label)
+			localStorage.setItem('defaultCityValue', City.value)
 		}
 	}, [City])
 
@@ -48,10 +59,16 @@ const SelectTemplate: FC<selectCityProps> = ({
 			option.label.toLowerCase().includes(inputValue.toLowerCase())
 		)
 	}
+	useEffect(() => {
+	setDefailtCity({...prevValue, })
+
+	}, [])
+	
 	const classes = useStyles()
 	return (
 		<>
 			<Autocomplete
+				defaultValue={defaultCity}
 				value={City}
 				className={classes.autocomplete}
 				sx={styles}
