@@ -234,7 +234,7 @@ const Menu: React.FC<MenuProps> = ({
 											<li
 												onClick={() => {
 													setUnderCategory(
-														'Покупают новое'
+														'Покупают'
 													),
 														setCategory('Блоки')
 													setBurgerIsOpen(
@@ -242,7 +242,7 @@ const Menu: React.FC<MenuProps> = ({
 													)
 												}}
 											>
-												Покупают новое
+												Покупают
 											</li>
 										</NavLink>
 										<NavLink
@@ -255,60 +255,14 @@ const Menu: React.FC<MenuProps> = ({
 										>
 											<li
 												onClick={() => {
-													setUnderCategory(
-														'Покупают Б/У'
-													),
+													setUnderCategory('Продают'),
 														setCategory('Блоки')
 													setBurgerIsOpen(
 														!BurgerisOpen
 													)
 												}}
 											>
-												Покупают Б/У
-											</li>
-										</NavLink>
-										<NavLink
-											className={s.Link}
-											to={
-												NavOrNew
-													? '/new-card/'
-													: '/catalog/'
-											}
-										>
-											<li
-												onClick={() => {
-													setUnderCategory(
-														'Продают новое'
-													),
-														setCategory('Блоки')
-													setBurgerIsOpen(
-														!BurgerisOpen
-													)
-												}}
-											>
-												Продают новое
-											</li>
-										</NavLink>
-										<NavLink
-											className={s.Link}
-											to={
-												NavOrNew
-													? '/new-card/'
-													: '/catalog/'
-											}
-										>
-											<li
-												onClick={() => {
-													setUnderCategory(
-														'Продают Б/У'
-													),
-														setCategory('Блоки')
-													setBurgerIsOpen(
-														!BurgerisOpen
-													)
-												}}
-											>
-												Продают Б/У
+												Продают
 											</li>
 										</NavLink>
 									</ul>

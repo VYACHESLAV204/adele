@@ -26,9 +26,10 @@
 	text-align: left;
 	color: #1c1c85;
 	font-family: Vela Sans;
-	font-size: 15px;
+	font-size: 15px;height: 25px;overflow: hidden;
 	font-style: normal;
 	font-weight: 600;
+	
 	line-height: normal;
 	margin: 0px 0px 8px 0px;
 }
@@ -39,6 +40,7 @@
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 700;
+	height: 40px;
 	line-height: normal;
 	white-space: normal;
 	overflow: hidden;

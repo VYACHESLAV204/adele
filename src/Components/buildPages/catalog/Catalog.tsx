@@ -1,5 +1,5 @@
 import { ICatalogProps } from '../../../interfaces/Interfaces'
-import { FC } from 'react'
+import { FC, useState, useEffect } from 'react'
 import CardMain from '../../modules/большая карточка/CardMain'
 import Card from '../../modules/маленькая карточка/Card'
 import ColumnCardsStyles from '../mainPage/MainPage.module.css'
@@ -18,7 +18,7 @@ const Catalog: FC<ICatalogProps> = ({
 	underCategoryForNewCard,
 	categorys_index,
 	sub_category_all,
-	total_pages_ads,
+	total_pages_noads,
 }) => {
 	const CardStylesMob = {
 		display: 'flex',
@@ -32,7 +32,6 @@ const Catalog: FC<ICatalogProps> = ({
 		flexDirection: 'column',
 		flexWrap: 'wrap',
 	}
-	console.log(sub_category_all)
 
 	const styleClasses = [
 		styles.OneCat,
@@ -157,6 +156,7 @@ const Catalog: FC<ICatalogProps> = ({
 							/>
 						</div>
 					</div>
+
 					<div
 						style={{ marginTop: -50 }}
 						className={ColumnCardsStyles.AdCardsDiv}
@@ -173,7 +173,7 @@ const Catalog: FC<ICatalogProps> = ({
 					<Pagination
 						currentPage={page}
 						setCurrentPage={setPage}
-						totalPages={total_pages_ads}
+						totalPages={total_pages_noads}
 					/>
 				</div>
 			</div>
@@ -290,7 +290,7 @@ const Catalog: FC<ICatalogProps> = ({
 					<Pagination
 						currentPage={page}
 						setCurrentPage={setPage}
-						totalPages={total_pages_ads}
+						totalPages={total_pages_noads}
 					/>
 				</div>
 			</div>

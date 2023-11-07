@@ -4,4 +4,13 @@
 	box-sizing: border-box;
 	text-align: center;
 }
-a{color: inherit;text-decoration: none;}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+.footerFix {
+	min-height: 95vh;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+}

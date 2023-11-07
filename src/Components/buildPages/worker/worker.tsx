@@ -12,7 +12,7 @@ interface IWorkerProps {
 const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 	const [showNumber, setShowNumber] = useState(false)
 	const [differenceInYears, setDifferenceInYears] = useState<number[]>([])
-	const [This, setThis] = useState<cardSummary|any>()
+	const [This, setThis] = useState<cardSummary | any>()
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
 	useEffect(() => {
@@ -24,7 +24,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 		}
 	}, [card_noads, numberId])
 	useEffect(() => {
-		This?.workExp.forEach((item:any) => {
+		This?.workExp.forEach((item: any) => {
 			console.log(item.start_work_time, item.stop_work_time)
 
 			const date1 = moment(item.start_work_time, 'DD.MM.YYYY')
@@ -36,6 +36,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 			])
 		})
 	}, [This])
+	console.log(This)
 
 	useEffect(() => {
 		console.log(differenceInYears)
@@ -44,7 +45,11 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 		return (
 			<div className={s.sectionContainer}>
 				<div className={s.firstSection}>
-					<img className={s.userPhoto} src={photo} alt='' />
+					<img
+						className={s.userPhoto}
+						src={This.path_file[0]}
+						alt=''
+					/>
 					<div className={s.textContentBox}>
 						<div className={s.inlineFlexBox}>
 							<h1
@@ -149,7 +154,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 				<h2 style={{ marginBottom: '2rem' }} className={s.mainTitle}>
 					Опыт работы ({This.years_exp})
 				</h2>
-				{This.workExp.map((item:any, index:number) => {
+				{This.workExp.map((item: any, index: number) => {
 					return (
 						<div className={`${s.thirdSection} ${s.colorPurple}`}>
 							<div className={s.firstLine}>
@@ -197,7 +202,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 					)
 				})}
 
-				{This.workExp.map((it:any, index:number) => {
+				{This.workExp.map((it: any, index: number) => {
 					return (
 						<div
 							className={`${s.thirdSectionMob} ${s.colorPurple}`}
@@ -270,7 +275,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 				>
 					Образование
 				</h2>
-				{This.educationFields.map((it:any) => {
+				{This.educationFields.map((it: any) => {
 					return (
 						<div className={`${s.fourSection} ${s.colorPurple}`}>
 							<div className={s.firstLine}>
@@ -309,46 +314,68 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 						</div>
 					)
 				})}
-				<div className={`${s.fourSectionMob} ${s.colorPurple}`}>
-					<h2 className={s.mainTitle}>ООО ХОУМ СТРОЙ</h2>
-					<div className={s.firstLine}>
-						<div className={`${s.inlineFlexBox} ${s.spaceAround}`}>
-							<h2
-								className={`${s.secondTitle} ${s.weight} ${s.marginZero} ${s.marginRight}`}
-							>
-								Должность
+				{This.educationFields.map((it: any) => {
+					return (
+						<div className={`${s.fourSectionMob} ${s.colorPurple}`}>
+							<h2 className={s.mainTitle}>
+								{it.name_universitet}
 							</h2>
-							<p
-								className={`${s.secondTitle} ${s.marginZero} ${s.marginRight}`}
-							>
-								Каменщик
-							</p>
+							<div className={s.firstLine}>
+								<div
+									className={`${s.inlineFlexBox} ${s.spaceAround}`}
+								>
+									<h2
+										className={`${s.secondTitle} ${s.weight} ${s.marginZero} ${s.marginRight}`}
+									>
+										Специальность
+									</h2>
+									<p
+										className={`${s.secondTitle} ${s.marginZero} ${s.marginRight}`}
+									>
+										{it.universitet_why_jobs}
+									</p>
+								</div>
+								<div
+									className={`${s.inlineFlexBox} ${s.spaceAround}`}
+								>
+									<h2 className={s.mainTitle}>Срок работы</h2>
+									<h2
+										className={`${s.secondTitle} ${s.marginZero}`}
+									>
+										2 года
+									</h2>
+								</div>
+							</div>
+							<div className={s.secondLine}>
+								<div
+									className={`${s.inlineFlexBox} ${s.spaceAround}`}
+								>
+									<h2 className={s.mainTitle}>
+										Начало работы
+									</h2>
+									<h2
+										className={`${s.secondTitle} ${s.marginZero}`}
+									>
+										{it?.years_start_univer}
+									</h2>
+								</div>
+								<div className={s.workTime}>
+									<h2 className={s.mainTitle}>
+										Окончание работы
+									</h2>
+									<h2
+										className={`${s.secondTitle} ${s.marginZero}`}
+									>
+										{it.years_stop_univer}
+									</h2>
+								</div>
+							</div>
 						</div>
-						<div className={`${s.inlineFlexBox} ${s.spaceAround}`}>
-							<h2 className={s.mainTitle}>Срок работы</h2>
-							<h2 className={`${s.secondTitle} ${s.marginZero}`}>
-								2 года
-							</h2>
-						</div>
-					</div>
-					<div className={s.secondLine}>
-						<div className={`${s.inlineFlexBox} ${s.spaceAround}`}>
-							<h2 className={s.mainTitle}>Начало работы</h2>
-							<h2 className={`${s.secondTitle} ${s.marginZero}`}>
-								01.01.2012
-							</h2>
-						</div>
-						<div className={s.workTime}>
-							<h2 className={s.mainTitle}>Окончание работы</h2>
-							<h2 className={`${s.secondTitle} ${s.marginZero}`}>
-								01.01.23
-							</h2>
-						</div>
-					</div>
-				</div>
+					)
+				})}
 				<div className={s.fiveSection}>
 					<h2 className={s.mainTitle}>Знания языков</h2>
-					{This.languageFields.map((la:any) => {
+					{This.languageFields.map((la: any) => {
 						return (
 							<div className={s.inlineFlexBox}>
 								<h2 className={s.mainTitle}>Название языка</h2>

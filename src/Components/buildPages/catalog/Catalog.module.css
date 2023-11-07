@@ -15,8 +15,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	width: 862px;
-	height: 132px;
 }
+
 .OneCat {
 	border-radius: 8px;
 	margin-bottom: 20px;
@@ -125,95 +125,94 @@
 	font-weight: 500;
 	line-height: normal;
 }
-.AdCardsDiv{
+.AdCardsDiv {
 	max-height: 147vh;
 }
 @media (max-width: 1025px) {
-	.H2NameOfCategory{
+	.H2NameOfCategory {
 		margin-left: 1rem;
 	}
-	.AdCardsDivMob{
+	.AdCardsDivMob {
 		margin-left: 1rem;
 	}
-	.CatDiv{
+	.CatDiv {
 		margin-left: 1rem;
 	}
-	.cardsMainDiv{
+	.cardsMainDiv {
 		margin-left: 1rem;
 	}
-	.sectionBoxNew{
+	.sectionBoxNew {
 		display: flex;
 	}
 }
 @media (max-width: 769px) {
-	.CatDiv{
+	.CatDiv {
 		gap: 20px;
-    	width: 100vw;
-    	margin-bottom: 9rem;
+		width: 100vw;
+		margin-bottom: 9rem;
 	}
-	.AdCardsDivMob{
+	.AdCardsDivMob {
 		width: 90vw;
 		margin-left: 0;
 	}
-	.sectionBoxNew{
+	.sectionBoxNew {
 		width: 100vw;
 	}
-	.H2NameOfCategory{
+	.H2NameOfCategory {
 		margin-left: 0;
 	}
-	.CatDiv{
+	.CatDiv {
 		margin-left: 0;
 	}
-	.cardsMainDiv{
+	.cardsMainDiv {
 		margin-left: 0;
 	}
 }
 @media (max-width: 430px) {
-	.CatDiv{
+	.CatDiv {
 		margin-bottom: 5rem;
 	}
-	.H2NameOfCategory{
-		margin-top: 2rem;;
+	.H2NameOfCategory {
+		margin-top: 2rem;
 	}
-	.AdCardsDivMob{
+	.AdCardsDivMob {
 		margin-top: 0;
 	}
-	.cardsMainDiv{
+	.cardsMainDiv {
 		margin-top: 7rem !important;
 	}
-	.OneCat{
+	.OneCat {
 		margin-right: 0;
 		width: 45%;
 		margin-bottom: 0;
-		
 	}
-	.TwoCat{
+	.TwoCat {
 		margin-right: 0;
 		width: 45%;
 	}
-	.ThreeCat{
+	.ThreeCat {
 		margin-right: 0;
 		width: 45%;
 	}
-	.FourCat{
+	.FourCat {
 		margin-right: 0;
 		width: 45%;
 	}
-	.FiveCat{
+	.FiveCat {
 		margin-right: 0;
 		width: 45%;
 	}
-	.SixCat{
+	.SixCat {
 		margin-right: 0;
 		width: 45%;
 	}
-	.SevenCat{
+	.SevenCat {
 		margin-right: 0;
 		width: 45%;
 	}
-	.CatDiv{
+	.CatDiv {
 		gap: 1rem;
 		justify-content: center;
-	    margin-bottom: 12rem;
-}
+		margin-bottom: 12rem;
 	}
+}

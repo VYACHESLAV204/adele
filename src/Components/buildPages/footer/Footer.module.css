@@ -2,6 +2,12 @@
 	display: flex;
 	margin-top: 80px;
 }
+.Footer {
+	min-height: 139vh;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
 .TexSupportDiv {
 	border-radius: 20px 20px 0px 0px;
 	width: 278px;
@@ -52,6 +58,7 @@
 	}
 }
 @media (max-width: 430px) {
+	.Footer{justify-content: center;}
 	.PhoneNum {
 		border-radius: 20px 20px 0px 0px;
 		display: flex;

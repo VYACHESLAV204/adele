@@ -170,6 +170,7 @@ li {
 .userLogin {
 	text-align: center;
 	font-family: Vela Sans;
+	cursor: pointer;
 	font-size: 17px;
 	font-style: normal;
 	font-weight: 600;

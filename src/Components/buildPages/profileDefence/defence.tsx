@@ -22,13 +22,15 @@ const Defence = () => {
 				}
 			).then((response) => {
 				if (response.ok) {
-					alert('Password has been changed!')
+					alert('Пароль успешно изменён')
 				} else {
-					alert('An error occurred')
+					alert('Произошла ошибка')
 				}
 			})
 		} else {
-			alert('Please complete all fields')
+			alert(
+				'Пожалуйста заполните все поля и проверьте, что старый пароль верен'
+			)
 		}
 	}
 

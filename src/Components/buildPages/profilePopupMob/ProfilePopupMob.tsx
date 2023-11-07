@@ -19,7 +19,7 @@ const ProfilePopupMob = () => {
 						<p className={s.textContent}>Резюме</p>
 					</NavLink>
 					<div className={s.line}></div>
-					<p className={s.textContent}>Платные услуги</p>
+					<p className={s.textContent}>Оплата объявлений</p>
 					<NavLink to={'/info-profile/'}>
 						<p className={s.textContent}>Управление профилем</p>
 					</NavLink>

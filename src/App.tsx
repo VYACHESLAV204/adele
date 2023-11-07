@@ -125,7 +125,7 @@ function App() {
 
 	return (
 		<Router>
-			<div>
+			<div className='footerFix'>
 				<Layout
 					citys={citys}
 					setModalType={setModalType}

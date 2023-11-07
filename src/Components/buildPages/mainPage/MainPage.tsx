@@ -1,7 +1,7 @@
 import Card from '../../modules/маленькая карточка/Card'
 import { FC, useEffect } from 'react'
 import BuldingMaterials from '../../../assets/BuldingMaterials.png'
-import Stanki from '../../../assets/Mask group.png'
+import Stanki from '../../../assets/Stanki.png'
 import Work from '../../../assets/Work.png'
 import blocks from '../../../assets/blocks.png'
 import carier from '../../../assets/carier.png'
