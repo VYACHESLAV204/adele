@@ -20,10 +20,11 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 		name_profile: '',
 		phone: '',
 		password: '',
+		isPasswordShown: false,
 		inn: 'None',
 	})
 
-	function updateField(fieldName: string, newValue: string | number) {
+	function updateField(fieldName: string, newValue: string | number | boolean) {
 		setState((prevState) => ({ ...prevState, [fieldName]: newValue }))
 	}
 	function SendData() {
@@ -84,15 +85,29 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 						required
 						onChange={(e) => updateField('phone', e.target.value)}
 					/>
-					<input
-						className={styles.InputEmail}
-						type='password'
-						placeholder='Пароль'
-						required
-						onChange={(e) =>
-							updateField('password', e.target.value)
-						}
-					/>
+					{/* show password label */}
+					<div className="password-input">
+						<input
+							className={styles.InputEmail}
+							type={state.isPasswordShown ? 'text' :'password'}
+							placeholder='Пароль'
+							required
+							onChange={(e) =>
+								updateField('password', e.target.value)
+							}
+						/>
+						<div className={styles.PasswordInputShowBtn}>
+							<label htmlFor="show-password">Показать пароль</label>
+							<input
+								className={styles.ShowPasswordCheckbox}
+								type="checkbox"
+								name="show-password"
+								id=""
+								checked={state.isPasswordShown}
+								onChange={(e) => 
+									updateField('isPasswordShown', e.target.checked)} />
+						</div>
+					</div>
 					{props.isLegalEntity === 'Юридическое лицо' && (
 						<input
 							required

@@ -68,6 +68,21 @@
 .InputEmail::-webkit-inner-spin-button {
 -webkit-appearance: none;
 }
+.PasswordInputShowBtn {
+	text-align: left;
+}
+
+/* .ShowPasswordCheckbox {
+	display:none;
+}
+
+.ShowPasswordCheckbox + label {
+	background: url("./../../../assets/mdi_hide-outline.svg") 1 1;
+	height: 30px;
+	width: 30px;
+	display:inline-block;
+	padding: 0 0 0 0px;
+} */
 .TypeSelect {
 	width: 75%;
 	height: 62px;
