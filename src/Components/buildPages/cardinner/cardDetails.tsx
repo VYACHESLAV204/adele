@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { ParsedDescription } from './descriptionParser'
 import s from './cardDetails.module.css'
 
 import Slider from 'react-slick'
@@ -79,7 +80,10 @@ const CardDetails: FC<CardAdResponse> = ({
 						<p className={s.price}>{This.price}</p>
 					</div>
 					<p className={s.aboutHeader}>Описание:</p>
-					<p className={s.aboutText}>{This.description}</p>
+					{/* добавил разделение текста на абзацы */}
+					<p className={s.aboutText}>
+						{<ParsedDescription description={This.description} />}
+					</p>
 					<p className={s.organization}>{This.username}</p>
 					<div
 						onClick={() => setShowNumber(!showNumber)}
