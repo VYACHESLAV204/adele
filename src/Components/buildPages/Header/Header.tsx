@@ -142,26 +142,20 @@ const Header: React.FC<HeaderProps> = ({
 					<></>
 				)}
 			</div>
-			<div>
-				<button
-					onClick={(e) => {
-						e.preventDefault()
-						e.stopPropagation()
-						setNavOrNew(true)
-						setBurgerisOpen(!BurgerisOpen)
-					}}
-					className={styles.NewAdd}
-				>
-					Разместить обьявление
-				</button>
-				<Menu
+			<NavLink to={'/new-card/'}>
+				<div>
+					<button className={styles.NewAdd}>
+						Разместить обьявление
+					</button>
+					{/* <Menu
 					NavOrNew={NavOrNew}
 					setCategory={setCategory}
 					setUnderCategory={setUnderCategory}
 					BurgerisOpen={BurgerisOpen}
 					setBurgerIsOpen={setBurgerisOpen}
-				></Menu>
-			</div>
+				></Menu> */}
+				</div>
+			</NavLink>
 			{isLoggin ? (
 				<div className={styles.userNameMob}>
 					<h1

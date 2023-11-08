@@ -233,16 +233,7 @@ function App() {
 						<Route
 							// Диме
 							path='/new-card/'
-							element={
-								isLoggin ? (
-									<NewCard
-										category={categoryForNewCard}
-										underCategory={underCategoryForNewCard}
-									/>
-								) : (
-									<Error401 />
-								)
-							}
+							element={isLoggin ? <NewCard /> : <Error401 />}
 						/>
 
 						<Route

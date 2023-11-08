@@ -5,20 +5,29 @@ import s from './NewCard.module.css'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-interface InewCardProps {
-	category: string
-	underCategory: string
+import { Autocomplete, TextField } from '@mui/material'
+interface categorys {
+	data: {
+		categorys: string
+		sub_category: string[]
+	}[]
 }
 
-const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
-	const [categoryState, setCategoryState] = useState(category)
-	const [underCategoryState, setUnderCategoryState] = useState(underCategory)
+const NewCard: React.FC = ({}) => {
+	const [categoryState, setCategoryState] = useState<string>()
+	const [categorysArray, setCategorysArray] = useState<categorys>()
+	const [underCategoryState, setUnderCategoryState] = useState()
 	const [titleState, setTitleState] = useState('')
 	const [descriptionState, setDescriptionState] = useState('')
 	const [priceState, setPriceState] = useState('')
 	const [phoneState, setPhoneState] = useState('')
 	const [tariffState, setTariffState] = useState('')
 	const [photoStates, setPhotoStates] = useState<File[] | null>(null)
+	useEffect(() => {
+		fetch(`http://stoneworking.ru/api/v1/category-data`)
+			.then((res) => res.json())
+			.then((data) => setCategorysArray(data))
+	}, [])
 
 	const settings = {
 		dots: true,
@@ -29,21 +38,10 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 		slidesToScroll: 1,
 	}
 	useEffect(() => {
-		console.log(category)
-		console.log(underCategory)
-		console.log(
-			categoryState,
-			underCategoryState,
-			titleState,
-			descriptionState,
-			priceState,
-			phoneState,
-			tariffState,
-			phoneState
-		)
+		console.log(categorysArray)
 	}, [
-		category,
-		underCategory,
+		categorysArray,
+
 		categoryState,
 		underCategoryState,
 		titleState,
@@ -58,8 +56,8 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 		e.preventDefault()
 
 		const formData = new FormData()
-		formData.append('category', category || '')
-		formData.append('subcategory', underCategory || '')
+		formData.append('category', categoryState || '')
+		formData.append('subcategory', underCategoryState || '')
 		formData.append('caption', titleState || '')
 		formData.append('description', descriptionState || '')
 		formData.append('price', priceState || '')
@@ -89,7 +87,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 			)
 		console.log(data)
 	}
-
+	const cat = categorysArray
 	return (
 		<div className={s.MainDiv}>
 			<h2 className={s.H2Cat}>Категория</h2>
@@ -99,16 +97,18 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 					<label htmlFor='Category'>
 						Выберите категорию объявления:
 					</label>
-					<input
-						type='text'
-						id='Category'
-						value={category}
-						placeholder={category}
-						onChange={(e) => setCategoryState(e.target.value)}
+					<Autocomplete
+						options={categorysArray || []}
+						renderInput={(params) => (
+							<TextField {...params} label='Category' />
+						)}
+						onChange={(e, newValue) =>
+							setCategoryState(newValue || '')
+						}
 					/>
 				</div>
 				<div className={s.SelectCatDiv}>
-					<label htmlFor='underCategory'>
+					{/* <label htmlFor='underCategory'>
 						Выберите подкатегорию обьявления:
 					</label>
 					<input
@@ -117,7 +117,7 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						value={underCategory}
 						placeholder={underCategory}
 						onChange={(e) => setUnderCategoryState(e.target.value)}
-					/>
+					/> */}
 				</div>
 				<div className={s.setTitle}>
 					<label htmlFor='title'>Заголовок объявления:</label>
@@ -143,11 +143,13 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 					<h4 className={`${s.textLeft} ${s.titleTextStyle}`}>
 						Фотографии
 					</h4>
-					<p className={s.marginMob} style={{ textAlign: 'left' }}>Не более 5 фото</p>
+					<p className={s.marginMob} style={{ textAlign: 'left' }}>
+						Не более 5 фото
+					</p>
 
 					<div className={s.photoSectionContainer}>
 						<div
-							style={{ marginRight: '20px',width:'180px' }} 
+							style={{ marginRight: '20px', width: '180px' }}
 							className={`${st.photo} ${st.photoContainer}`}
 						>
 							<Slider adaptiveHeight {...settings}>
@@ -251,7 +253,11 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						<img className={s.marginLeft} src={greenMoney} alt='' />
 					</div>
 					<div>
-						<p className={`${s.textLeft} ${s.titleTextStyle} ${s.phoneText}`}>Контактные данные в объявлении</p>
+						<p
+							className={`${s.textLeft} ${s.titleTextStyle} ${s.phoneText}`}
+						>
+							Контактные данные в объявлении
+						</p>
 						<p className={s.phoneText}>Телефон</p>
 						<input
 							className={s.inputPhone}
@@ -261,7 +267,9 @@ const NewCard: React.FC<InewCardProps> = ({ category, underCategory }) => {
 						/>
 					</div>
 					<div>
-						<h2 className={`${s.textLeft} ${s.titleTextStyle} ${s.phoneText}`}>
+						<h2
+							className={`${s.textLeft} ${s.titleTextStyle} ${s.phoneText}`}
+						>
 							Выбор тарифа оплаты объявления
 						</h2>
 						<div>
