@@ -63,6 +63,11 @@
 	padding-left: 10px;
 	margin-bottom: 1rem;
 }
+/* убрал счётчик для поля номера в форме регистрации  */
+.InputEmail::-webkit-outer-spin-button,
+.InputEmail::-webkit-inner-spin-button {
+-webkit-appearance: none;
+}
 .TypeSelect {
 	width: 75%;
 	height: 62px;
