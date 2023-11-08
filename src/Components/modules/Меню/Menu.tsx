@@ -362,16 +362,14 @@ const Menu: React.FC<MenuProps> = ({
 									>
 										<li
 											onClick={() => {
-												setUnderCategory(
-													'Покупают новое'
-												),
+												setUnderCategory('Покупают'),
 													setCategory(
 														'Стройматериалы'
 													)
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
-											Покупают новое
+											Покупают
 										</li>
 									</NavLink>
 									<NavLink
@@ -384,58 +382,14 @@ const Menu: React.FC<MenuProps> = ({
 									>
 										<li
 											onClick={() => {
-												setUnderCategory(
-													'Покупают Б/У'
-												),
+												setUnderCategory('Продают'),
 													setCategory(
 														'Стройматериалы'
 													)
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
-											Покупают Б/У
-										</li>
-									</NavLink>
-									<NavLink
-										className={s.Link}
-										to={
-											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
-										}
-									>
-										<li
-											onClick={() => {
-												setUnderCategory(
-													'Продают новое'
-												),
-													setCategory(
-														'Стройматериалы'
-													)
-												setBurgerIsOpen(!BurgerisOpen)
-											}}
-										>
-											Продают новое
-										</li>
-									</NavLink>
-									<NavLink
-										className={s.Link}
-										to={
-											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
-										}
-									>
-										<li
-											onClick={() => {
-												setUnderCategory('Продают Б/У'),
-													setCategory(
-														'Стройматериалы'
-													)
-												setBurgerIsOpen(!BurgerisOpen)
-											}}
-										>
-											Продают Б/У
+											Продают
 										</li>
 									</NavLink>
 								</ul>
@@ -675,13 +629,34 @@ const Menu: React.FC<MenuProps> = ({
 										<li
 											onClick={() => {
 												setUnderCategory(
-													'Новое для карьера'
+													'Для карьера'
 												),
 													setCategory('Станки')
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
-											Новое для карьера
+											Для карьера
+										</li>
+									</NavLink>
+									
+									<NavLink
+										className={s.Link}
+										to={
+											NavOrNew
+												? '/new-card/'
+												: '/catalog/'
+										}
+									>
+										<li
+											onClick={() => {
+												setUnderCategory(
+													'Для производства'
+												),
+													setCategory('Станки')
+												setBurgerIsOpen(!BurgerisOpen)
+											}}
+										>
+											Для производства
 										</li>
 									</NavLink>
 									<NavLink
@@ -695,13 +670,13 @@ const Menu: React.FC<MenuProps> = ({
 										<li
 											onClick={() => {
 												setUnderCategory(
-													'Б/У для карьера'
+													''
 												),
-													setCategory('Станки')
+													setCategory('Инструменты')
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
-											Б/У для карьера
+											Инструменты
 										</li>
 									</NavLink>
 									<NavLink
@@ -715,33 +690,13 @@ const Menu: React.FC<MenuProps> = ({
 										<li
 											onClick={() => {
 												setUnderCategory(
-													'Новое для производства'
+													''
 												),
-													setCategory('Станки')
+													setCategory('Спецтехника')
 												setBurgerIsOpen(!BurgerisOpen)
 											}}
 										>
-											Новое для производства
-										</li>
-									</NavLink>
-									<NavLink
-										className={s.Link}
-										to={
-											NavOrNew
-												? '/new-card/'
-												: '/catalog/'
-										}
-									>
-										<li
-											onClick={() => {
-												setUnderCategory(
-													'Б/У для производства'
-												),
-													setCategory('Станки')
-												setBurgerIsOpen(!BurgerisOpen)
-											}}
-										>
-											Б/У для производства
+											Спецтехника
 										</li>
 									</NavLink>
 								</ul>
@@ -783,54 +738,6 @@ const Menu: React.FC<MenuProps> = ({
 												: s.InnerLiHidden
 										}
 									>
-										<NavLink
-											className={s.Link}
-											to={
-												NavOrNew
-													? '/new-card/'
-													: '/catalog/'
-											}
-										>
-											<li
-												onClick={() => {
-													setUnderCategory(
-														'Новые инструменты'
-													),
-														setCategory(
-															'Инструменты'
-														)
-													setBurgerIsOpen(
-														!BurgerisOpen
-													)
-												}}
-											>
-												Новые инструменты
-											</li>
-										</NavLink>
-										<NavLink
-											className={s.Link}
-											to={
-												NavOrNew
-													? '/new-card/'
-													: '/catalog/'
-											}
-										>
-											<li
-												onClick={() => {
-													setUnderCategory(
-														'Б/У инструменты'
-													),
-														setCategory(
-															'Инструменты'
-														)
-													setBurgerIsOpen(
-														!BurgerisOpen
-													)
-												}}
-											>
-												Б/У инструменты
-											</li>
-										</NavLink>
 										<NavLink
 											className={s.Link}
 											to={

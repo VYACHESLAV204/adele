@@ -146,6 +146,8 @@
 	display: none;
 }
 .InnerLiVisible {
+	height: 500px;
+
 	visibility: visible;
 	opacity: 1;
 	list-style-type: none;
