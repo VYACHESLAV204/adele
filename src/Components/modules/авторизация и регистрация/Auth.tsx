@@ -9,6 +9,7 @@ interface ModalProps {
 const Auth: React.FC<ModalProps> = (props) => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
+	const [isPasswordShown, setIsPasswordShown] = useState(false)
 
 	const onSubmit = async (e: FormEvent) => {
 		e.preventDefault()
@@ -47,15 +48,21 @@ const Auth: React.FC<ModalProps> = (props) => {
 						placeholder='Электронная почта'
 						required
 					/>
-
-					<input
-						onChange={(e) => setPassword(e.target.value)}
-						className={styles.InputEmail}
-						type='password'
-						name='password'
-						placeholder='Пароль'
-						required
-					/>
+					<div className={styles.PasswordInput}>
+						<input
+							onChange={(e) => setPassword(e.target.value)}
+							className={styles.InputEmail}
+							type={isPasswordShown ? 'text' :'password'}
+							name='password'
+							placeholder='Пароль'
+							required
+						/>
+						<div
+								className={`${styles.Eye} ${isPasswordShown && styles.EyeHidden}`}
+								onClick={() => 
+									setIsPasswordShown(!isPasswordShown)} 
+							/>
+						</div>
 					<button className={styles.Continue}>Продолжить</button>
 				</form>
 			</div>

@@ -86,7 +86,7 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 						onChange={(e) => updateField('phone', e.target.value)}
 					/>
 					{/* show password label */}
-					<div className="password-input">
+					<div className={styles.PasswordInput}>
 						<input
 							className={styles.InputEmail}
 							type={state.isPasswordShown ? 'text' :'password'}
@@ -96,17 +96,11 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 								updateField('password', e.target.value)
 							}
 						/>
-						<div className={styles.PasswordInputShowBtn}>
-							<label htmlFor="show-password">Показать пароль</label>
-							<input
-								className={styles.ShowPasswordCheckbox}
-								type="checkbox"
-								name="show-password"
-								id=""
-								checked={state.isPasswordShown}
-								onChange={(e) => 
-									updateField('isPasswordShown', e.target.checked)} />
-						</div>
+						<div
+							className={`${styles.Eye} ${state.isPasswordShown && styles.EyeHidden}`}
+							onClick={() => 
+								updateField('isPasswordShown', !state.isPasswordShown)} 
+						/>
 					</div>
 					{props.isLegalEntity === 'Юридическое лицо' && (
 						<input
