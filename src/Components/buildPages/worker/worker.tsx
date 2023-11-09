@@ -1,6 +1,5 @@
 import s from './worker.module.css'
 import moment from 'moment'
-import photo from '../../../assets/photoFromInnerCard.png'
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import greenMoney from '../../../assets/greenmoney.svg'

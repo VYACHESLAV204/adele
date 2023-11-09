@@ -1,5 +1,5 @@
 import { ICatalogProps } from '../../../interfaces/Interfaces'
-import { FC, useState, useEffect } from 'react'
+import { FC } from 'react'
 import CardMain from '../../modules/большая карточка/CardMain'
 import Card from '../../modules/маленькая карточка/Card'
 import ColumnCardsStyles from '../mainPage/MainPage.module.css'

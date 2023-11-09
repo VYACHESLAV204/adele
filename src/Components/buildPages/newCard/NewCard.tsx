@@ -97,7 +97,7 @@ const NewCard: React.FC = ({}) => {
 						Выберите категорию объявления:
 					</label>
 					<Autocomplete
-						options={categorysArray?.data}
+						options={categorysArray?.data || []}
 						renderInput={(params) => (
 							<TextField {...params} label='Выберите категорию' />
 						)}
