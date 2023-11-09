@@ -72,6 +72,22 @@
 	line-height: normal;
 	text-align: left;
 }
+.inputPlusImg {
+	position: relative;
+	width: 50px;
+	top: -60px;
+	height: 50px;
+
+}
+.inputFileContainer {
+	box-sizing: border-box;
+	padding-left: 302px;
+	height: 300px;
+	width: 300px;
+	position: relative;
+	overflow: hidden;
+}
+
 .description {
 	display: flex;
 	flex-direction: column;
@@ -123,7 +139,8 @@
 }
 .photoSectionContainer {
 	display: flex;
-	flex-direction: row;align-items: center;
+	flex-direction: row;
+	align-items: center;
 	width: 500px;
 	margin-bottom: 3rem;
 }
@@ -143,6 +160,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: absolute;
 	border: 1px solid #9090d8;
 	background: #f2f2ff;
 }
@@ -179,7 +197,7 @@
 .textMargin {
 	margin-top: 20px;
 }
-.phoneText{
+.phoneText {
 	margin-bottom: 2rem;
 }
 .inputPhone {
@@ -195,7 +213,7 @@
 /* убрал счётчик для поля номера в форме регистрации  */
 .inputPhone::-webkit-outer-spin-button,
 .inputPhone::-webkit-inner-spin-button {
--webkit-appearance: none;
+	-webkit-appearance: none;
 }
 .titleTextStyle {
 	color: #000;
@@ -260,7 +278,7 @@
 .H2Cat {
 	margin-top: 2rem;
 }
-.margBot{
+.margBot {
 	margin-bottom: 2rem;
 }
 @media (max-width: 1025px) {
@@ -344,17 +362,16 @@
 	.flexRow > p {
 		width: 300px;
 	}
-	.SelectCatDiv{
+	.SelectCatDiv {
 		margin-top: 1rem;
 		margin-bottom: 1rem;
 	}
-	.marginMob{
+	.marginMob {
 		margin-bottom: 2rem;
 	}
 }
-@media (max-width:360px) {
-	.photoSectionContainer{
-		align-items: flex-start
+@media (max-width: 360px) {
+	.photoSectionContainer {
+		align-items: flex-start;
 	}
-	
 }

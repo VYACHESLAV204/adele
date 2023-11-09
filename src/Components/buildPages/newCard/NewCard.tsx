@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import greenMoney from '../../../assets/greenmoney.svg'
 import st from '../summary/Summary.module.css'
+import Plus from '../../../assets/plus.svg'
 import s from './NewCard.module.css'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Autocomplete, TextField } from '@mui/material'
+
 interface categorys {
-	data: {
-		categorys: string
-		sub_category: string[]
-	}[]
+	data: string[]
 }
 
 const NewCard: React.FC = ({}) => {
 	const [categoryState, setCategoryState] = useState<string>()
 	const [categorysArray, setCategorysArray] = useState<categorys>()
-	const [underCategoryState, setUnderCategoryState] = useState()
+	const [subCategorysArray, setSubCategorysArray] = useState<categorys>()
+	const [underCategoryState, setUnderCategoryState] = useState<string>()
 	const [titleState, setTitleState] = useState('')
 	const [descriptionState, setDescriptionState] = useState('')
 	const [priceState, setPriceState] = useState('')
@@ -29,6 +29,19 @@ const NewCard: React.FC = ({}) => {
 			.then((data) => setCategorysArray(data))
 	}, [])
 
+	useEffect(() => {
+		fetch(`http://stoneworking.ru/api/v1/category-data`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({
+				category: categoryState,
+			}),
+		})
+			.then((res) => res.json())
+			.then((data) => setSubCategorysArray(data))
+	}, [categoryState])
 	const settings = {
 		dots: true,
 		vertical: true,
@@ -37,20 +50,6 @@ const NewCard: React.FC = ({}) => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 	}
-	useEffect(() => {
-		console.log(categorysArray)
-	}, [
-		categorysArray,
-
-		categoryState,
-		underCategoryState,
-		titleState,
-		descriptionState,
-		priceState,
-		phoneState,
-		tariffState,
-		phoneState,
-	])
 
 	const submitForm = async (e: React.FormEvent) => {
 		e.preventDefault()
@@ -87,7 +86,7 @@ const NewCard: React.FC = ({}) => {
 			)
 		console.log(data)
 	}
-	const cat = categorysArray
+
 	return (
 		<div className={s.MainDiv}>
 			<h2 className={s.H2Cat}>Категория</h2>
@@ -98,26 +97,35 @@ const NewCard: React.FC = ({}) => {
 						Выберите категорию объявления:
 					</label>
 					<Autocomplete
-						options={categorysArray || []}
+						options={categorysArray?.data}
 						renderInput={(params) => (
-							<TextField {...params} label='Category' />
+							<TextField {...params} label='Выберите категорию' />
 						)}
-						onChange={(e, newValue) =>
+						sx={{ width: '250px', marginLeft: '1.2rem' }}
+						onChange={(_, newValue) =>
 							setCategoryState(newValue || '')
 						}
 					/>
 				</div>
 				<div className={s.SelectCatDiv}>
-					{/* <label htmlFor='underCategory'>
+					<label htmlFor='underCategory'>
 						Выберите подкатегорию обьявления:
 					</label>
-					<input
-						type='text'
-						id='underCategory'
-						value={underCategory}
-						placeholder={underCategory}
-						onChange={(e) => setUnderCategoryState(e.target.value)}
-					/> */}
+					{subCategorysArray && (
+						<Autocomplete
+							options={subCategorysArray?.data}
+							renderInput={(params) => (
+								<TextField
+									{...params}
+									label='Выберите подкатегорию'
+								/>
+							)}
+							sx={{ width: '250px', marginLeft: '1.2rem' }}
+							onChange={(_, newValue) =>
+								setUnderCategoryState(newValue || '')
+							}
+						/>
+					)}
 				</div>
 				<div className={s.setTitle}>
 					<label htmlFor='title'>Заголовок объявления:</label>
@@ -213,12 +221,6 @@ const NewCard: React.FC = ({}) => {
 									onDragOver={(e) => {
 										e.preventDefault()
 									}}
-									style={{
-										position: 'relative',
-										width: '280px',
-										height: '140px',
-										opacity: '0',
-									}}
 									onChange={(e) => {
 										if (
 											e.target.files instanceof FileList
@@ -228,8 +230,13 @@ const NewCard: React.FC = ({}) => {
 											)
 										}
 									}}
-									className={st.photoInput}
+									className={s.inputFileContainer}
 									type='file'
+								/>
+								<img
+									src={Plus}
+									className={s.inputPlusImg}
+									alt=''
 								/>
 							</div>
 							<p style={{ textAlign: 'center', width: '300px' }}>
