@@ -646,7 +646,7 @@ const Summary = () => {
 										className={`${s.input} ${s.inputNewborn}`}
 										value={
 											educationFields[index]
-												.years_stop_univer
+												.years_start_univer
 										}
 										onChange={(e) =>
 											updateEducationFields(
