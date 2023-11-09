@@ -55,6 +55,7 @@ const Layout: React.FC<HeaderProps> = ({
 				citys={citys}
 				setCategory={setCategory}
 				setUnderCategory={setUnderCategory}
+				isOpen={isOpen}
 			/>
 
 			<Reg

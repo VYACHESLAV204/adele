@@ -16,6 +16,7 @@ type HeaderProps = {
 	setUnderCategory: (value: React.SetStateAction<string>) => void
 	setModalType: React.Dispatch<React.SetStateAction<'auth' | 'reg' | ''>>
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
+	isOpen: boolean
 	citys: City[]
 	City: City | null
 	setCity: React.Dispatch<React.SetStateAction<City | null>>
@@ -30,6 +31,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({
 	setModalType,
 	setIsOpen,
+	isOpen,
 	citys,
 	City,
 	inputValue,
@@ -45,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
 	const [BurgerisOpen, setBurgerisOpen] = useState(false)
 	const [NavOrNew, setNavOrNew] = useState(false)
 	const headerUsername = localStorage.getItem('username')
-	const isLoggin = localStorage.getItem('status')
+	const [isLoggin, setIsLogin] = useState(!!localStorage.getItem('status'))
 	const [mobileSearch, setMobileSearch] = useState(false)
 	const [PcSearch, setPcSearch] = useState(true)
 	const [MenuUser, setMenuUser] = useState(false)
@@ -62,9 +64,10 @@ const Header: React.FC<HeaderProps> = ({
 			}
 		)
 			.then((res) => console.log(res))
+			.then(() => setIsLogin(false))
 			.then(() => {
 				localStorage.removeItem('token'),
-					localStorage.removeItem('status')
+					localStorage.setItem('status', '')
 			})
 	}
 	const myStyles: React.CSSProperties = {
@@ -83,6 +86,9 @@ const Header: React.FC<HeaderProps> = ({
 	useEffect(() => {
 		console.log(PcSearch, mobileSearch)
 	}, [PcSearch, mobileSearch])
+	useEffect(() => {
+		setIsLogin(!!localStorage.getItem('status'))
+	}, [isOpen])
 
 	function RegionSelect1() {
 		// Состояние для выбранного региона
