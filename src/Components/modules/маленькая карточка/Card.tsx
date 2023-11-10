@@ -13,7 +13,7 @@ const Card: FC<{
 		<div className={styles.ML} style={cardsStyles}>
 			{card_noads
 				? Array.isArray(card_noads) &&
-				  card_noads?.map((item) => (
+				  card_noads?.slice(0,4).map((item) => (
 						<Link
 							to={`/worker/${item.id_card}`}
 							key={item.id_card}
@@ -41,7 +41,7 @@ const Card: FC<{
 						</Link>
 				  ))
 				: Array.isArray(cardsAd) &&
-				  cardsAd?.map((item) => (
+				  cardsAd?.slice(0,4).map((item) => (
 						<Link
 							to={`/card/${item.id_card}`}
 							key={item.id_card}
