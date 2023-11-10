@@ -122,7 +122,7 @@ const Catalog: FC<ICatalogProps> = ({
 												className={styleClass}
 											>
 												{Cat.mass[0].name.map(
-													(name) => {
+													(name, ind) => {
 														return (
 															<option
 																style={{
@@ -134,6 +134,7 @@ const Catalog: FC<ICatalogProps> = ({
 																		'Vela Sans',
 																}}
 																value={name}
+																key={ind}
 															>
 																{name}
 															</option>
@@ -260,7 +261,7 @@ const Catalog: FC<ICatalogProps> = ({
 													>
 														ФИЛЬТР
 													</option>
-											{Cat.mass[0].name.map((name) => {
+											{Cat.mass[0].name.map((name, ind) => {
 												return (
 													<option
 														style={{
@@ -270,6 +271,7 @@ const Catalog: FC<ICatalogProps> = ({
 																'Vela Sans',
 														}}
 														value={name}
+														key={ind}
 													>
 														{name.toUpperCase()}
 													</option>
