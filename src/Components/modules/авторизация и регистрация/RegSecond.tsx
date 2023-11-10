@@ -8,7 +8,11 @@ type RegPropsSecond = {
 }
 export const RegSecond = (props: RegPropsSecond) => {
 	const [pass, setPass] = useState('')
-	function CheakPass() {
+	function checkPass() {
+		//валидирует только наличие
+		if (pass.trim().length === 0) {
+			return;
+		}
 		fetch('http://stoneworking.ru/api/v1/check-code', {
 			method: 'POST',
 			headers: {
@@ -40,7 +44,7 @@ export const RegSecond = (props: RegPropsSecond) => {
 						placeholder='Введите пароль из письма'
 					/>
 					<button
-						onClick={() => CheakPass()}
+						onClick={() => checkPass()}
 						className={styles.Continue}
 					>
 						Продолжить

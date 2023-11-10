@@ -28,6 +28,11 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 		setState((prevState) => ({ ...prevState, [fieldName]: newValue }))
 	}
 	function SendData() {
+		if (state.name_profile.trim().length === 0
+			|| state.phone.trim().length
+			|| state.password.trim().length === 0) {
+				return;
+		}
 		fetch('http://stoneworking.ru/api/v1/last-check-in', {
 			method: 'POST',
 			headers: {

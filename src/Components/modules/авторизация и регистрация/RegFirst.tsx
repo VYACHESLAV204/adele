@@ -7,6 +7,10 @@ type RegPropsFirst = {
 }
 const RegFirst = (props: RegPropsFirst) => {
 	function SendMail() {
+		//валидирует только наличие
+		if (props.email.trim().length === 0) {
+			return;
+		}
 		fetch('http://stoneworking.ru/api/v1/send-mail', {
 			method: 'POST',
 			headers: {
