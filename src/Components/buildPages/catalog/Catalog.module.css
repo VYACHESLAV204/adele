@@ -74,6 +74,7 @@
 	justify-content: center;
 	align-items: center;
 }
+
 .FiveCat {
 	border-radius: 8px;
 	border: 1px solid #9090d8;
@@ -116,6 +117,14 @@
 	justify-content: center;
 	align-items: center;
 }
+.CenteredSelect {
+	text-align-last: center;
+}
+
+.CenteredSelect option {
+	text-align: center;
+}
+
 .CatText {
 	color: #000;
 	text-align: center;

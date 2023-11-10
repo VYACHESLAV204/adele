@@ -245,8 +245,21 @@ const Catalog: FC<ICatalogProps> = ({
 												}
 											}}
 											key={Cat.id}
-											className={styleClass}
+											className={`${styleClass} ${styles.CenteredSelect}`}
+											defaultValue='empty'
 										>
+											<option
+														style={{
+															fontSize: '15px',
+															fontWeight: '500',
+															fontFamily:
+																'Vela Sans',
+														}}
+														value='empty'
+														disabled
+													>
+														ФИЛЬТР
+													</option>
 											{Cat.mass[0].name.map((name) => {
 												return (
 													<option
