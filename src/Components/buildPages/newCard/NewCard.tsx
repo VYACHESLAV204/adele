@@ -3,6 +3,7 @@ import greenMoney from '../../../assets/greenmoney.svg'
 import st from '../summary/Summary.module.css'
 import Plus from '../../../assets/plus.svg'
 import s from './NewCard.module.css'
+import style from '../summary/Summary.module.css'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -37,17 +38,19 @@ const NewCard: React.FC = ({}) => {
 	}, [])
 
 	useEffect(() => {
-		fetch(`http://stoneworking.ru/api/v1/category-data`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				category: categoryState,
-			}),
-		})
-			.then((res) => res.json())
-			.then((data: Category) => setSubCategorysArray(data))
+		if (categoryState) {
+			fetch(`http://stoneworking.ru/api/v1/category-data`, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					category: categoryState,
+				}),
+			})
+				.then((res) => res.json())
+				.then((data: Category) => setSubCategorysArray(data))
+		}
 	}, [categoryState])
 	const settings = {
 		dots: true,
@@ -57,6 +60,7 @@ const NewCard: React.FC = ({}) => {
 		slidesToShow: 1,
 		slidesToScroll: 1,
 	}
+	console.log({ underCategoryState })
 
 	const submitForm = async (e: React.FormEvent) => {
 		e.preventDefault()
@@ -112,17 +116,19 @@ const NewCard: React.FC = ({}) => {
 						sx={{ width: '250px', marginLeft: '1.2rem' }}
 						onChange={(_, newValue) => {
 							if (typeof newValue === 'string') {
-								console.log(newValue)
+								setCategoryState(newValue)
 							} else if (newValue && 'catName' in newValue) {
-								console.log(newValue)
+								setCategoryState(newValue.catName)
 							} else {
-								console.log(newValue)
 								setCategoryState('')
 							}
 						}}
 					/>
 				</div>
-				<div className={s.SelectCatDiv}>
+				<div
+					style={{ marginBottom: '2rem' }}
+					className={s.SelectCatDiv}
+				>
 					<label htmlFor='underCategory'>
 						Выберите подкатегорию обьявления:
 					</label>
@@ -168,41 +174,48 @@ const NewCard: React.FC = ({}) => {
 								newValue: string | CatObject | null
 							) => {
 								if (typeof newValue === 'string') {
+									setShowNewOldButtons(false)
 									setUnderCategoryState(newValue)
 								} else if (
 									typeof newValue === 'object' &&
 									newValue !== null
 								) {
+									setShowNewOldButtons(true)
 									setUnderCategoryState(newValue.catName)
 								}
 							}}
 						/>
 					)}
-					<div className={s.genderContainer}>
-						<p className={s.marginRight}>Пол</p>
-						<button
+				</div>
+				{ShowNewOldButtons && (
+					<div
+						style={{ marginTop: '1.4rem', marginBottom: '2rem' }}
+						className={style.genderContainer}
+					>
+						<p className={style.marginRight}>Состояние</p>
+						<div
 							className={
 								newOld === 'true'
-									? s.genderBtn
-									: `${s.genderBtn} ${s.genderUnactive}`
+									? style.genderBtn
+									: `${style.genderBtn} ${style.genderUnactive}`
 							}
 							onClick={() => setNewOld('true')}
 						>
 							Новое
-						</button>
+						</div>
 
-						<button
+						<div
 							className={
 								newOld === 'false'
-									? s.genderBtn
-									: `${s.genderBtn} ${s.genderUnactive}`
+									? style.genderBtn
+									: `${style.genderBtn} ${style.genderUnactive}`
 							}
 							onClick={() => setNewOld('false')}
 						>
 							Б/У
-						</button>
+						</div>
 					</div>
-				</div>
+				)}
 				<div className={s.setTitle}>
 					<label htmlFor='title'>Заголовок объявления:</label>
 					<input
