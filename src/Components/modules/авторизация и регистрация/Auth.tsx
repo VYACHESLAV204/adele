@@ -29,9 +29,11 @@ const Auth: React.FC<ModalProps> = (props) => {
 				localStorage.setItem('status', data.status)
 				localStorage.setItem('username', data.username)
 				props.closeModal()
+			}else if(data.error){
+				alert(data.error)
 			}
-		} catch (error) {
-			console.error(error) // Here you can handle the error
+		} catch(error) {
+			alert(error)
 		}
 	}
 

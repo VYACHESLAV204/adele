@@ -9,6 +9,13 @@ interface ICardMainProps {
 }
 const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 	const [showNumber, setShowNumber] = useState(false)
+
+	const shortenDescription = (text: String) => {
+		if (text.length <= 200) {
+			return text;
+		}
+		return text.slice(0, 200) + "...";
+	}
 	if (card_noads) {
 		return card_noads.map((card) => (
 			<div key={card.id_card} className={s.mainDiv}>
@@ -66,7 +73,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 						<span> Р</span>
 					</p>
 					<p className={s.AboutHeader}>Описание:</p>
-					<p className={s.AboutText}>{card.description}</p>
+					<p className={s.AboutText}>{shortenDescription(card.description)}</p>
 					<p className={s.Organization}>{card.username}</p>
 					<ShowNumberBtn phone={card.phone} btnClass={s.PhoneNumberDiv} />
 					<p className={s.City}>
