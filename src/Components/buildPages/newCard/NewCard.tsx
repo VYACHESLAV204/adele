@@ -113,11 +113,10 @@ const NewCard: React.FC = ({}) => {
 						onChange={(_, newValue) => {
 							if (typeof newValue === 'string') {
 								console.log(newValue)
-								setCategoryState(newValue)
 							} else if (newValue && 'catName' in newValue) {
 								console.log(newValue)
-								setCategoryState(newValue.catName)
 							} else {
+								console.log(newValue)
 								setCategoryState('')
 							}
 						}}
