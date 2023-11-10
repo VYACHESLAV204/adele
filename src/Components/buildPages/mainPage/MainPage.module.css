@@ -144,8 +144,8 @@
 }
 .MenuWorkImg {
 	width: 55px;
-	margin-top: 0.3rem;
 	border-radius: 0 5px 5px 0;
+	margin-left: 0.7rem;
 }
 .MenuServiceImg {
 	width: 90px;
@@ -157,19 +157,19 @@
 }
 .MenuMaterialImg {
 	width: 90.63px;
-	margin-left: 0.8rem;
+	margin-left: 1.6rem;
 	height: 67.859px;
 }
 .MenuStankiImg {
-	width: 37.643px;
+	width: 65px;
 	height: 51.81px;
 }
 .MenuSpecialImg {
 	width: 68px;
-	margin-right: -0.4rem;
+	margin-right: 0.1rem;
 }
 .MenuToolsImg {
-	margin-right: -0.3rem;
+	margin-right: -0.2rem;
 	height: 57px;
 	border-radius: 0 5px 5px 0;
 }
@@ -178,9 +178,10 @@
 	font-family: Vela Sans;
 	font-size: 15px;
 	font-style: normal;
-	font-weight: 600;
+	font-weight: 700;
 	line-height: normal;
 	width: 50%;
+	margin-left: 0.3rem;
 }
 .H2SpecialText {
 	display: flex;
@@ -366,21 +367,30 @@
 	.MenuCarierImg {
 		margin-left: 0;
 	}
-	.MenuToolsImg {
-		margin-left: -1.2rem;
-	}
 	.MenuSpecialEquipment {
-		width: 182px;
+		width: 227px;
 	}
 	.MenuSpecialImg {
 		margin-right: 0.3rem;
 	}
 	.MenuWorkImg {
-		margin-left: 0.2rem;
+		margin-left: -0.2rem;
 		margin-right: 0;
 	}
 	.H2SpecialText {
 		margin-left: 1rem;
 		font-size: 20px;
+	}
+	.MenuTools{
+		width: 230px;
+	}
+	.MenuBuildingMaterials{
+		width: 271px;
+	}
+	.MenuMachines{
+		width: 172px;
+	}
+	.MenuStankiImg{
+		width: 76px;
 	}
 }

@@ -3,15 +3,14 @@
 	align-items: center;
 	background-color: #fff;
 	border: 1px solid #ccc;
-	width: 240px;
+	width: 200px;
 	height: 40px;
 	border-radius: 5px 20px 20px 5px;
 }
 .Input {
 	border: none;
-	margin-right: 23px;
-
-	width: 180px;
+	margin-right: 0;
+	width: 135px;
 	height: 32px;
 }
 .Button {
