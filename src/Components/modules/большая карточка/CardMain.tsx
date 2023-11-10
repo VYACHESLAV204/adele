@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import s from './cardMain.module.css'
 import { CardAd, cardSummary } from '../../../interfaces/Interfaces'
 import { NavLink } from 'react-router-dom'
+import ShowNumberBtn from '../../showNumberBtn'
 interface ICardMainProps {
 	Cards: CardAd[]
 	card_noads?: cardSummary[]
@@ -67,16 +68,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 					<p className={s.AboutHeader}>Описание:</p>
 					<p className={s.AboutText}>{card.description}</p>
 					<p className={s.Organization}>{card.username}</p>
-					<div
-						onClick={() => setShowNumber(!showNumber)}
-						className={s.PhoneNumberDiv}
-					>
-						{showNumber ? (
-							<p>{card.phone}</p>
-						) : (
-							<p>Показать телефон</p>
-						)}{' '}
-					</div>
+					<ShowNumberBtn phone={card.phone} btnClass={s.PhoneNumberDiv} />
 					<p className={s.City}>
 						<span className={s.CitySpan}>Город: </span>
 						{card.city}
