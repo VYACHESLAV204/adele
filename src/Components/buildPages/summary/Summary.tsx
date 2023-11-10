@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import s from './Summary.module.css'
 import addNew from '../../../assets/addNew.svg'
 import greenMoney from '../../../assets/greenmoney.svg'
-
+import plus from '../../../assets/plus.svg'
 import 'react-widgets/styles.css'
 import DateInput from '../../modules/dateInput/DateInput'
 import Slider from 'react-slick'
@@ -646,7 +646,7 @@ const Summary = () => {
 										className={`${s.input} ${s.inputNewborn}`}
 										value={
 											educationFields[index]
-												.years_stop_univer
+												.years_start_univer
 										}
 										onChange={(e) =>
 											updateEducationFields(
@@ -696,7 +696,7 @@ const Summary = () => {
 									</select>
 								</div>
 								<p className={s.inputAbout}>
-									Если вы ещё учитесь год - предполагаемого
+									Если вы ещё учитесь - год предполагаемого
 									окончания
 								</p>
 							</div>
@@ -864,7 +864,7 @@ const Summary = () => {
 						style={{
 							display: 'flex',
 							flexDirection: 'column',
-							alignItems: 'center',
+							alignItems: 'flex-end',
 						}}
 					>
 						<p
@@ -878,8 +878,8 @@ const Summary = () => {
 							}}
 						>
 							{summaryFields.photos?.length
-								? `Нажмите, чтобы добавить новую фотографию, уже ${summaryFields.photos?.length} загружено`
-								: 'Нажмите или перетащите новую фотографию'}
+								? `Нажмите или перетащите новую фотографию в окно ниже, уже ${summaryFields.photos?.length} загружено`
+								: 'Нажмите или перетащите новую фотографию в окно ниже:'}
 						</p>
 						<div
 							onDragOver={(e) => {
@@ -901,8 +901,8 @@ const Summary = () => {
 									}}
 									style={{
 										position: 'relative',
-										width: '280px',
-										height: '140px',
+										width: '290px',
+										height: '182px',
 										opacity: '0',
 									}}
 									onChange={(e) => {
@@ -917,6 +917,14 @@ const Summary = () => {
 									}}
 									className={s.photoInput}
 									type='file'
+								/>
+								<img
+									src={plus}
+									style={{
+										position: 'relative',
+										top: '-85px',
+									}}
+									alt=''
 								/>
 							</div>
 						</div>

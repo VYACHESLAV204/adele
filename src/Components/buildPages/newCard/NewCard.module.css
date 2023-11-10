@@ -74,10 +74,9 @@
 }
 .inputPlusImg {
 	position: relative;
-	width: 50px;
-	top: -60px;
-	height: 50px;
-
+	width: 30px;
+	top: -235px;
+	height: 30px;
 }
 .inputFileContainer {
 	box-sizing: border-box;
@@ -157,10 +156,8 @@
 	width: 295px;
 	height: 150px;
 	border-radius: 6px;
-	display: flex;
 	align-items: center;
 	justify-content: center;
-	position: absolute;
 	border: 1px solid #9090d8;
 	background: #f2f2ff;
 }
@@ -293,12 +290,7 @@
 	.description > textarea {
 		width: 85vw;
 	}
-	.addPhotoContainer {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
-	}
+
 	.addPhotoText {
 		text-align: center;
 	}

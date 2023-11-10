@@ -15,7 +15,7 @@ const CardDetails: FC<CardAdResponse> = ({
 	card_no_ads_1,
 	card_no_ads_2,
 }) => {
-	const [This, setThis] = useState<CardAd|any>()
+	const [This, setThis] = useState<CardAd | any>()
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
 	const settings = {
@@ -51,7 +51,7 @@ const CardDetails: FC<CardAdResponse> = ({
 			<div className={s.mainDiv}>
 				<div className={s.leftDiv}>
 					<Slider adaptiveHeight {...settings}>
-						{This.path_file.map((image:any, index:number) => (
+						{This.path_file.map((image: any, index: number) => (
 							<div
 								className={s.SliderStyle}
 								style={{
@@ -87,10 +87,12 @@ const CardDetails: FC<CardAdResponse> = ({
 					</p>
 					<p className={s.organization}>{This.username}</p>
 					<ShowNumberBtn phone={This.phone} btnClass={s.PhoneNumberDiv} />
-					<p className={s.City}>
-						<span className={s.CitySpan}>Город:</span>
-						{This.city}
-					</p>
+					{This.city && (
+						<p className={s.City}>
+							<span className={s.CitySpan}>Город:</span>
+							{This.city}
+						</p>
+					)}
 				</div>
 			</div>
 		)
