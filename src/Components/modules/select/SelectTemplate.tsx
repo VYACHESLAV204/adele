@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useState } from 'react'
 import TextField from '@mui/material/TextField'
 import Autocomplete from '@mui/material/Autocomplete'
 import { makeStyles } from '@mui/styles'
@@ -6,7 +6,10 @@ export interface City {
 	label: string
 	value: string
 }
-
+interface defaultCity {
+	city: string
+	status: boolean
+}
 interface selectCityProps {
 	Citys: City[]
 	City: City | null
@@ -21,8 +24,9 @@ const SelectTemplate: FC<selectCityProps> = ({
 	setCity,
 	styles,
 }) => {
+	const [DefaultCity, setDefaultCity] = useState<City>()
 	useEffect(() => {
-		if (City !== null) {
+		if (City?.label) {
 			fetch(
 				`http://stoneworking.ru/api/v1/replace_city?jwt=${localStorage.getItem(
 					'token'
@@ -37,8 +41,6 @@ const SelectTemplate: FC<selectCityProps> = ({
 					}),
 				}
 			)
-			localStorage.setItem('defaultCityLabel', City.label)
-			localStorage.setItem('defaultCityValue', City.value)
 		}
 	}, [City])
 
@@ -50,22 +52,40 @@ const SelectTemplate: FC<selectCityProps> = ({
 			option.label.toLowerCase().includes(inputValue.toLowerCase())
 		)
 	}
+	useEffect(() => {
+		fetch(
+			`http://stoneworking.ru/api/v1/city-get-user?jwt=${localStorage.getItem(
+				'token'
+			)}`
+		)
+			.then((res) => res.json())
+			.then((data: defaultCity) => generateObj(data.city))
+	}, [])
+	function generateObj(label: string) {
+		const DefaulCity = { label: label, value: label }
+		setDefaultCity(DefaulCity)
+	}
+	console.log({ DefaultCity })
 
 	const classes = useStyles()
 	return (
 		<>
-			<Autocomplete
-				value={City}
-				className={classes.autocomplete}
-				sx={styles}
-				options={Citys}
-				filterOptions={filterOptions}
-				renderInput={(params) => (
-					<TextField {...params} label='Город' />
-				)}
-				size='small'
-				onChange={(_: any, newValue: City | null) => setCity(newValue)}
-			></Autocomplete>
+			{DefaultCity && (
+				<Autocomplete
+					value={City}
+					className={classes.autocomplete}
+					sx={styles}
+					options={Citys}
+					filterOptions={filterOptions}
+					renderInput={(params) => (
+						<TextField {...params} label={DefaultCity.value} />
+					)}
+					size='small'
+					onChange={(_: any, newValue: City | null) =>
+						setCity(newValue)
+					}
+				/>
+			)}
 		</>
 	)
 }
