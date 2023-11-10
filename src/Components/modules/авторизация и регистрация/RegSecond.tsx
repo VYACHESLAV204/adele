@@ -11,7 +11,7 @@ export const RegSecond = (props: RegPropsSecond) => {
 	function checkPass() {
 		//валидирует только наличие
 		if (pass.trim().length === 0) {
-			return;
+			return
 		}
 		fetch('http://stoneworking.ru/api/v1/check-code', {
 			method: 'POST',
@@ -20,7 +20,13 @@ export const RegSecond = (props: RegPropsSecond) => {
 			},
 			body: JSON.stringify({ email: props.email, code: pass }),
 		})
-			.then(() => props.setStage(props.stage + 1))
+			.then((res) => res.json())
+			.then((data) => {
+				if (!data.error) {
+					props.setStage(props.stage + 1)
+				}
+			})
+
 			.catch((Error) => alert(Error))
 	}
 	return (
