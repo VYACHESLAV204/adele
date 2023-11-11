@@ -8,6 +8,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Autocomplete, TextField } from '@mui/material'
+import "./slider.css"
 interface CatObject {
 	catName: string
 	newOld: boolean
@@ -30,7 +31,8 @@ const NewCard: React.FC = ({}) => {
 	const [priceState, setPriceState] = useState('')
 	const [phoneState, setPhoneState] = useState('')
 	const [tariffState, setTariffState] = useState('')
-	const [photoStates, setPhotoStates] = useState<File[] | null>(null)
+	// const [photoStates, setPhotoStates] = useState<File[] | null>(null)
+	const [photoStates, setPhotoStates] = useState<File[]>([])
 	useEffect(() => {
 		fetch(`http://stoneworking.ru/api/v1/category-data`)
 			.then((res) => res.json())
@@ -59,7 +61,19 @@ const NewCard: React.FC = ({}) => {
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		horizontal: true,
+		nextArrow: (
+			<div>
+			  <div className="next-slick-arrow"> ▶</div>
+			</div>
+		  ),
+		  prevArrow: (
+			<div>
+			  <div className="prev-slick-arrow">◀ </div>
+			</div>
+		  ),
 	}
+
 	console.log({ underCategoryState })
 
 	const submitForm = async (e: React.FormEvent) => {
@@ -296,7 +310,7 @@ const NewCard: React.FC = ({}) => {
 								}}
 							>
 								{photoStates?.length
-									? `Нажмите или перетащите новую фотографию в окно ниже, уже ${phoneState.length} загружено`
+									? `Нажмите или перетащите новую фотографию в окно ниже, уже ${photoStates.length} ${photoStates.length === 1 ? "загружена" : "загружено"}`
 									: 'Нажмите или перетащите новую фотографию в окно ниже:'}
 							</p>
 							<div
@@ -316,7 +330,7 @@ const NewCard: React.FC = ({}) => {
 											e.target.files instanceof FileList
 										) {
 											setPhotoStates(
-												Array.from(e.target.files)
+												[...Array.from(e.target.files), ...photoStates]
 											)
 										}
 									}}
