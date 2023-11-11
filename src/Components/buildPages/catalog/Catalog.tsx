@@ -247,9 +247,9 @@ const Catalog: FC<ICatalogProps> = ({
 											<SelectOption 
 												value='empty'
 												key={0}
-												text='ФИЛЬТР'
+												text={Cat.mass[0].name[0].toUpperCase()}
 												disabled={true}
-												className={styles.SelectOption}
+												className={`${styles.SelectOptionHidden} ${styles.SelectOption}`}
 											/>
 											{Cat.mass[0].name.map((name, ind) => {
 												return (

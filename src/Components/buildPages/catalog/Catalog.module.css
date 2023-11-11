@@ -21,6 +21,9 @@
 	font-weight: 500;
 	font-family: 'Vela Sans';
 }
+.SelectOptionHidden {
+	display: none;
+}
 .OneCat {
 	border-radius: 8px;
 	margin-bottom: 20px;
