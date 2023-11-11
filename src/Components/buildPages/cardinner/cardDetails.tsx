@@ -5,7 +5,7 @@ import s from './cardDetails.module.css'
 
 import Slider from 'react-slick'
 import { CardAd, CardAdResponse } from '../../../interfaces/Interfaces'
-import ShowNumberBtn from '../../showNumberBtn'
+import ShowNumberBtn from '../../ShowNumberBtn'
 const CardDetails: FC<CardAdResponse> = ({
 	card_ads_1,
 	card_ads_2,
@@ -45,7 +45,6 @@ const CardDetails: FC<CardAdResponse> = ({
 		console.log(This)
 	}, [This])
 
-	const [showNumber, setShowNumber] = useState(false)
 	if (This) {
 		return (
 			<div className={s.mainDiv}>
@@ -86,7 +85,10 @@ const CardDetails: FC<CardAdResponse> = ({
 						{<ParsedDescription description={This.description} />}
 					</p>
 					<p className={s.organization}>{This.username}</p>
-					<ShowNumberBtn phone={This.phone} btnClass={s.PhoneNumberDiv} />
+					<ShowNumberBtn
+						phone={This.phone}
+						btnClass={s.PhoneNumberDiv}
+					/>
 					{This.city && (
 						<p className={s.City}>
 							<span className={s.CitySpan}>Город:</span>

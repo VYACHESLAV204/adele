@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import s from './cardMain.module.css'
 import { CardAd, cardSummary } from '../../../interfaces/Interfaces'
 import { NavLink } from 'react-router-dom'
-import ShowNumberBtn from '../../showNumberBtn'
+import ShowNumberBtn from '../../ShowNumberBtn'
 interface ICardMainProps {
 	Cards: CardAd[]
 	card_noads?: cardSummary[]
