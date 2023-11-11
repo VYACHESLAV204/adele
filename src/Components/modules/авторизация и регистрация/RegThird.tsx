@@ -29,7 +29,7 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 	}
 	function SendData() {
 		if (state.name_profile.trim().length === 0
-			|| state.phone.trim().length
+			|| state.phone.trim().length === 0
 			|| state.password.trim().length === 0) {
 				return;
 		}

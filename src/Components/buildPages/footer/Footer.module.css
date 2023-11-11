@@ -1,11 +1,13 @@
 .FooterMainDiv {
 	display: flex;
 	margin-top: 80px;
+	align-items: flex-end;
 }
 .Footer {
 	min-height: 145vh;
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
+	flex-direction: column;
 	align-content: space-between;
 }
 .TexSupportDiv {
@@ -51,6 +53,11 @@
 }
 .sectionBoxMob {
 	display: none;
+}
+
+.sectionBox {
+	position: absolute;
+	bottom: 0;
 }
 @media (max-width: 1025px) {
 	.FooterMainDiv {

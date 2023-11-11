@@ -13,7 +13,6 @@ const Auth: React.FC<ModalProps> = (props) => {
 
 	const onSubmit = async (e: FormEvent) => {
 		e.preventDefault()
-
 		try {
 			const response = await fetch(
 				'http://stoneworking.ru/api/v1/login',
@@ -65,7 +64,7 @@ const Auth: React.FC<ModalProps> = (props) => {
 									setIsPasswordShown(!isPasswordShown)} 
 							/>
 						</div>
-					<button className={styles.Continue}>Продолжить</button>
+					<button className={styles.Continue} type='submit' >Продолжить</button>
 				</form>
 			</div>
 			<div className={styles.line}></div>

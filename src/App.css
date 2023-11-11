@@ -11,6 +11,6 @@ a {
 .footerFix {
 	min-height: 95vh;
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	align-content: space-between;
 }

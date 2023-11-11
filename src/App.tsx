@@ -24,6 +24,7 @@ import Moderation from './Components/buildPages/moderation/moderation.js'
 import Error401 from './Components/buildPages/401Error/401.js'
 import { City } from './Components/modules/select/SelectTemplate.js'
 import ProfileMob from './Components/buildPages/profilePopupMob/ProfilePopupMob.js'
+import ContactDetails from './Components/buildPages/footer/ContactDetail.tsx'
 
 function App() {
 	const [modalType, setModalType] = useState<'auth' | 'reg' | ''>('')
@@ -299,6 +300,7 @@ function App() {
 					</Routes>
 				</Layout>
 			</div>
+			<ContactDetails />
 		</Router>
 	)
 }

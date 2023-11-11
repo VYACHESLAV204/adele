@@ -79,7 +79,7 @@ p{
     margin-bottom: 3rem;
 }
 .sectionBox{
-    display: flex;
+    display: none;
     flex-direction: row;
     height: 35vh;
 }
