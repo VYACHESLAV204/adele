@@ -68,15 +68,21 @@ p{
 .cardItem{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-   
+   justify-content: space-between;
     margin-top: 1.5rem;
     margin-bottom: 3.5rem;
+
+	/* width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-bottom: 2rem; */
 }
 
 .cardPhoto{
     width: 316px;
     height: 323px;
+	flex-shrink: 0;
 }
 
 .priceBox{
@@ -91,6 +97,8 @@ p{
     align-items: flex-start;
     justify-content: space-evenly;
     margin-left: 2.5rem;
+    margin-right: 1rem;
+	flex-grow: 1;
 }
 .priceTitle{
     font-size: 25px;
