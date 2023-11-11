@@ -61,6 +61,8 @@ p {
 }
 .textContent {
 	text-align: left;
+	/* добавил отступы между номерами */
+	margin-bottom: 1em;
 }
 .phoneConteiner {
 	display: inline-flex;
