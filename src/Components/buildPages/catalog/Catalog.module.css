@@ -16,7 +16,11 @@
 	flex-wrap: wrap;
 	width: 862px;
 }
-
+.SelectOption {
+	font-size: '15px';
+	font-weight: 500;
+	font-family: 'Vela Sans';
+}
 .OneCat {
 	border-radius: 8px;
 	margin-bottom: 20px;

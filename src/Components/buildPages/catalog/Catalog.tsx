@@ -5,6 +5,7 @@ import Card from '../../modules/маленькая карточка/Card'
 import ColumnCardsStyles from '../mainPage/MainPage.module.css'
 import styles from './Catalog.module.css'
 import Pagination from '../../modules/pagination/Pagination'
+import SelectOption from './SelectOption'
 
 const Catalog: FC<ICatalogProps> = ({
 	card_ads,
@@ -125,20 +126,13 @@ const Catalog: FC<ICatalogProps> = ({
 												{Cat.mass[0].name.map(
 													(name, ind) => {
 														return (
-															<option
-																style={{
-																	fontSize:
-																		'15px',
-																	fontWeight:
-																		'500',
-																	fontFamily:
-																		'Vela Sans',
-																}}
+															<SelectOption 
 																value={name}
 																key={ind}
-															>
-																{name}
-															</option>
+																text={name}
+																className={styles.SelectOption}
+																disabled={false}
+															/>
 														)
 													}
 												)}
@@ -184,7 +178,7 @@ const Catalog: FC<ICatalogProps> = ({
 		console.log('2')
 
 		return (
-			<div style={{}}>
+			<div>
 				<div
 					className={styles.sectionBoxNew}
 					style={{ display: 'flex', flexWrap: 'wrap' }}
@@ -250,32 +244,22 @@ const Catalog: FC<ICatalogProps> = ({
 											className={`${styleClass} ${styles.CenteredSelect}`}
 											defaultValue='empty'
 										>
-											<option
-														style={{
-															fontSize: '15px',
-															fontWeight: '500',
-															fontFamily:
-																'Vela Sans',
-														}}
-														value='empty'
-														disabled
-													>
-														ФИЛЬТР
-													</option>
+											<SelectOption 
+												value='empty'
+												key={0}
+												text='ФИЛЬТР'
+												disabled={true}
+												className={styles.SelectOption}
+											/>
 											{Cat.mass[0].name.map((name, ind) => {
 												return (
-													<option
-														style={{
-															fontSize: '15px',
-															fontWeight: '500',
-															fontFamily:
-																'Vela Sans',
-														}}
+													<SelectOption
 														value={name}
 														key={ind}
-													>
-														{name.toUpperCase()}
-													</option>
+														text={name.toUpperCase()}
+														className={styles.SelectOption}
+														disabled={false}
+													/>
 												)
 											})}
 										</select>
