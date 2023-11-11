@@ -88,6 +88,7 @@ const Catalog: FC<ICatalogProps> = ({
 														setCat(Cat.cat)
 													} else {
 														setSubCat(Cat.category)
+													
 													}
 												}}
 												key={Cat.id}
