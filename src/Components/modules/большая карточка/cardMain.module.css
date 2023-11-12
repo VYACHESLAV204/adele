@@ -126,6 +126,7 @@
 	}
 	.mainDiv{
 		width: 100vw;
+		margin-bottom: 80px;
 	}
 	.rightDiv{
 		width: 65vw;
