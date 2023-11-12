@@ -165,7 +165,7 @@
 	.CatDiv {
 		gap: 20px;
 		width: 100vw;
-		margin-bottom: 9rem;
+		margin-bottom: 5rem;
 	}
 	.AdCardsDivMob {
 		width: 90vw;
@@ -229,6 +229,6 @@
 	.CatDiv {
 		gap: 1rem;
 		justify-content: center;
-		margin-bottom: 12rem;
+		/* margin-bottom: 12rem; */
 	}
 }

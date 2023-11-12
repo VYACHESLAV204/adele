@@ -18,6 +18,7 @@ body {
 	min-width: 320px;
 	min-height: 100vh;
 	position: relative;
+	padding-bottom: 60px;
 }
 .mainTitle {
 	font-size: 24px;
