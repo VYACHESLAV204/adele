@@ -65,6 +65,7 @@
 	margin-top: 0;
 	text-align: left;
 	margin-bottom: 5px;
+	overflow: hidden;
 }
 .Organization {
 	color: #000;
@@ -86,6 +87,7 @@
 	margin-bottom: 13px;
 	border-radius: 5px;
 	background-color: #5250c5;
+	flex-shrink: 0;
 }
 .PhoneNumberDiv > p {
 	color: #fff;
@@ -119,11 +121,17 @@
 	object-fit: cover;
 }
 @media (max-width:769px) {
+	.H2Name {
+		margin-top: 0;
+	}
 	.mainDiv{
 		width: 100vw;
 	}
 	.rightDiv{
 		width: 65vw;
+	}
+	.AboutText {
+		max-height: 40px;
 	}
 	
 }
@@ -144,5 +152,8 @@
 	}
 	.rightDiv{
 		margin-left: 1rem;
+	}
+	.AboutText {
+		max-height:max-content;
 	}
 }
