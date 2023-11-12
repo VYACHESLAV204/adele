@@ -56,3 +56,14 @@
     margin-top: 2rem;
 
 }
+.newCardBtn{
+    color: #fff;
+    width: 196px;
+    height: 51px;
+    border-radius: 5px;
+    background-color: #5250c5;
+    box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+    font-size: 15px;
+    border: 0;
+    margin-top: 1rem;
+}

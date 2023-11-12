@@ -29,6 +29,7 @@ const ProfilePopupMob = () => {
 					<NavLink to={'/profile/'}>
 						<p className={s.textContent}>Настройки</p>
 					</NavLink>
+					<button className={s.newCardBtn}>Разместить объявление</button>
 				</div>
 			</div>
 		</div>

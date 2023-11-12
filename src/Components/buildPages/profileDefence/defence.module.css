@@ -62,4 +62,7 @@ p{
     .mainTitle{
         margin-top: 5rem;
     }
+    .pageContainer{
+        margin-left: 2rem;
+    }
 }

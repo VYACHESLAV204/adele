@@ -235,6 +235,9 @@ p {
 	.textInCard {
 		margin-bottom: 2rem;
 	}
+	.sectionContainer{
+		justify-content: center;
+	}
 }
 @media (max-width: 425px) {
 	.btnBox {
@@ -245,11 +248,16 @@ p {
 		margin-left: 0.2rem;
 	}
 	.btn {
-		width: 45vw;
+		    width: 160px;
+				font-weight: 600;
+				text-transform: uppercase;
 	}
 }
 @media (max-width: 350px) {
 	.mainTitle {
 		font-size: 20px;
+	}
+	.btn{
+		width: 145px;
 	}
 }
