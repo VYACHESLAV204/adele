@@ -3,7 +3,7 @@
 	align-items: flex-end;
 }
 .Footer {
-	min-height: 120vh;
+	/* min-height: 120vh; */
 	display: flex;
 	/* flex-wrap: wrap; */
 	flex-direction: column;
@@ -86,7 +86,6 @@
 		display: inline-flex;
 	}
 	.FooterMainDivMob {
-		margin-top: 9rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
