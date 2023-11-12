@@ -14,6 +14,7 @@ const Catalog: FC<ICatalogProps> = ({
 	card_noads,
 	setPage,
 	setCat,
+	setCreateNewOld,
 	setSubCat,
 	categoryForNewCard,
 	underCategoryForNewCard,
@@ -33,7 +34,6 @@ const Catalog: FC<ICatalogProps> = ({
 		flexDirection: 'column',
 		flexWrap: 'wrap',
 	}
-
 	const styleClasses = [
 		styles.OneCat,
 		styles.TwoCat,
@@ -89,7 +89,6 @@ const Catalog: FC<ICatalogProps> = ({
 														setCat(Cat.cat)
 													} else {
 														setSubCat(Cat.category)
-													
 													}
 												}}
 												key={Cat.id}
@@ -126,11 +125,13 @@ const Catalog: FC<ICatalogProps> = ({
 												{Cat.mass[0].name.map(
 													(name, ind) => {
 														return (
-															<SelectOption 
+															<SelectOption
 																value={name}
 																key={ind}
 																text={name}
-																className={styles.SelectOption}
+																className={
+																	styles.SelectOption
+																}
 																disabled={false}
 															/>
 														)
@@ -214,6 +215,7 @@ const Catalog: FC<ICatalogProps> = ({
 													setCat(Cat.cat)
 												} else {
 													setSubCat(Cat.category)
+													setCreateNewOld('')
 												}
 											}}
 											key={Cat.id}
@@ -236,32 +238,43 @@ const Catalog: FC<ICatalogProps> = ({
 												if (Cat.mass?.[0].cat) {
 													setCat(Cat.mass[0].cat)
 													setSubCat(e.target.value)
-												} else {
-													setSubCat(e.target.value)
+												} else if (
+													Cat.mass?.[0].name[0]
+												) {
+													setSubCat(
+														Cat.mass?.[0].name[0]
+													)
+													setCreateNewOld(
+														e.target.value
+													)
 												}
 											}}
 											key={Cat.id}
 											className={`${styleClass} ${styles.CenteredSelect}`}
 											defaultValue='empty'
 										>
-											<SelectOption 
+											<SelectOption
 												value='empty'
 												key={0}
 												text={Cat.mass[0].name[0].toUpperCase()}
 												disabled={true}
 												className={`${styles.SelectOptionHidden} ${styles.SelectOption}`}
 											/>
-											{Cat.mass[0].name.map((name, ind) => {
-												return (
-													<SelectOption
-														value={name}
-														key={ind}
-														text={name.toUpperCase()}
-														className={styles.SelectOption}
-														disabled={false}
-													/>
-												)
-											})}
+											{Cat.mass[0].name.map(
+												(name, ind) => {
+													return (
+														<SelectOption
+															value={name}
+															key={ind}
+															text={name.toUpperCase()}
+															className={
+																styles.SelectOption
+															}
+															disabled={false}
+														/>
+													)
+												}
+											)}
 										</select>
 									)
 								}

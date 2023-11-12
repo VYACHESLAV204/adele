@@ -153,13 +153,13 @@ const Header: React.FC<HeaderProps> = ({
 					<button className={styles.NewAdd}>
 						Разместить обьявление
 					</button>
-					{/* <Menu
-					NavOrNew={NavOrNew}
-					setCategory={setCategory}
-					setUnderCategory={setUnderCategory}
-					BurgerisOpen={BurgerisOpen}
-					setBurgerIsOpen={setBurgerisOpen}
-				></Menu> */}
+					<Menu
+						NavOrNew={NavOrNew}
+						setCategory={setCategory}
+						setUnderCategory={setUnderCategory}
+						BurgerisOpen={BurgerisOpen}
+						setBurgerIsOpen={setBurgerisOpen}
+					></Menu>
 				</div>
 			</NavLink>
 			{isLoggin ? (
