@@ -250,6 +250,7 @@
 	flex-direction: row-reverse;
 	justify-content: space-around;
 	margin-right: 15px;
+	padding: 10px;
 }
 .priceElipse {
 	margin-top: 15px;

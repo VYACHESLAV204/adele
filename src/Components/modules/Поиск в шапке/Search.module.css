@@ -6,6 +6,7 @@
 	width: 200px;
 	height: 40px;
 	border-radius: 5px 20px 20px 5px;
+	position: relative;
 }
 .Input {
 	border: none;
@@ -18,6 +19,8 @@
 	border: 0px;
 	background: none;
 	height: 40px;
+	position: absolute;
+	right: 0;
 }
 .Img {
 	width: 58px;
