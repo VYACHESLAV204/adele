@@ -172,7 +172,7 @@ p {
 }
 .firstLine {
 	display: flex;
-	margin-top: 6rem;
+	margin-top: 5rem;
 }
 .profileBtn {
 	display: none;
