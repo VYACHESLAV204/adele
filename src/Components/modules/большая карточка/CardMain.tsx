@@ -3,6 +3,7 @@ import s from './cardMain.module.css'
 import { CardAd, cardSummary } from '../../../interfaces/Interfaces'
 import { NavLink } from 'react-router-dom'
 import ShowNumberBtn from '../../ShowNumberBtn'
+import { ParsedDescription } from '../../buildPages/cardinner/descriptionParser'
 interface ICardMainProps {
 	Cards: CardAd[]
 	card_noads?: cardSummary[]
@@ -10,7 +11,7 @@ interface ICardMainProps {
 const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 	const [showNumber, setShowNumber] = useState(false)
 
-	const shortenDescription = (text: String) => {
+	const shortenDescription = (text: string) => {
 		if (text.length <= 200) {
 			return text;
 		}
@@ -73,7 +74,9 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 						<span> Р</span>
 					</p>
 					<p className={s.AboutHeader}>Описание:</p>
-					<p className={s.AboutText}>{shortenDescription(card.description)}</p>
+					<ParsedDescription description={shortenDescription(card.description)} className={s.AboutText}/>
+
+					{/* <p className={s.AboutText}>{shortenDescription(card.description)}</p> */}
 					<p className={s.Organization}>{card.username}</p>
 					<ShowNumberBtn phone={card.phone} btnClass={s.PhoneNumberDiv} />
 					<p className={s.City}>

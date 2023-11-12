@@ -3,7 +3,6 @@ import Header from './Header/Header'
 import Reg from '../modules/авторизация и регистрация/Reg'
 import { City } from '../modules/select/SelectTemplate'
 import { iResult } from '../../interfaces/Interfaces'
-import ContactDetails from './footer/ContactDetail'
 interface HeaderProps {
 	children?: React.ReactNode
 	citys: any[]

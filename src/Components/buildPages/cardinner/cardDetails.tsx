@@ -82,7 +82,7 @@ const CardDetails: FC<CardAdResponse> = ({
 					<p className={s.aboutHeader}>Описание:</p>
 					{/* добавил разделение текста на абзацы */}
 					<p className={s.aboutText}>
-						{<ParsedDescription description={This.description} />}
+						{<ParsedDescription description={This.description} className=''/>}
 					</p>
 					<p className={s.organization}>{This.username}</p>
 					<ShowNumberBtn
