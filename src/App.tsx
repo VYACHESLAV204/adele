@@ -42,10 +42,8 @@ function App() {
 		card_results: [{ caption: ' ', summary: false, id_card: 1 }],
 	})
 	const [isOpenSearch, setIsOpenSearch] = useState(false)
+	const [createNewOld, setCreateNewOld] = useState<string>('')
 	const isLoggin = localStorage.getItem('status')
-	useEffect(() => {
-		console.log(isLoggin)
-	}, [])
 
 	useEffect(() => {
 		fetch('http://stoneworking.ru/api/v1/citys')
@@ -70,7 +68,20 @@ function App() {
 		// Вставляем элемент <meta> в <head>
 		head.appendChild(metaTag)
 	}, [])
+	console.log({ categoryForNewCard })
+	console.log({ underCategoryForNewCard })
 	useEffect(() => {
+		let newOld
+
+		if (createNewOld.includes('Новое')) {
+			newOld = true
+		} else if (createNewOld.includes('Б/У')) {
+			newOld = false
+		} else {
+			newOld = null
+		}
+		console.log(newOld)
+
 		fetch('http://stoneworking.ru/api/v1/index-category', {
 			method: 'POST',
 			headers: {
@@ -84,6 +95,7 @@ function App() {
 						? underCategoryForNewCard
 						: null,
 				page: page,
+				new_old: newOld,
 			}),
 		})
 			.then((response) => response.json())
@@ -93,7 +105,7 @@ function App() {
 			.catch((error) => {
 				console.error('Ошибка:', error)
 			})
-	}, [categoryForNewCard, underCategoryForNewCard, page])
+	}, [categoryForNewCard, underCategoryForNewCard, page, createNewOld])
 	useEffect(() => {
 		if (
 			categoryForNewCard === 'Работа' &&
@@ -119,10 +131,6 @@ function App() {
 				})
 		}
 	}, [categoryForNewCard, underCategoryForNewCard, page])
-
-	useEffect(() => {
-		console.log(cardsArray)
-	}, [cardsArray])
 
 	return (
 		<Router>
@@ -196,6 +204,7 @@ function App() {
 							element={
 								cardsArray && (
 									<Catalog
+										setCreateNewOld={setCreateNewOld}
 										card_ads={cardsArray.card_ads}
 										card_noads={cardsArray.card_noads}
 										has_next_ads={cardsArray.has_next_ads}

@@ -1,6 +1,6 @@
 export interface CardAdResponse {
 	status?: boolean
-	res?:iResult
+	res?: iResult
 	card_ads_1: CardAd[]
 	card_ads_2: CardAd[]
 	card_no_ads_1: CardAd[]
@@ -108,6 +108,7 @@ export interface ICatalogProps {
 	stasus: boolean
 	categoryForNewCard: string
 	underCategoryForNewCard: string
+	setCreateNewOld: React.Dispatch<React.SetStateAction<string>>
 
 	setPage: React.Dispatch<React.SetStateAction<number>>
 	sub_category_all: {
