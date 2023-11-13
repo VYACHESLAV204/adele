@@ -1229,12 +1229,12 @@ const Menu: React.FC<MenuProps> = ({
 			</div>
 			<button
 				className={s.btnProperty}
-				style={{
-					all: 'unset',
-					position: 'relative',
-					top: '-609px',
-					left: '287px',
-				}}
+				// style={{
+				// 	all: 'unset',
+				// 	position: 'relative',
+				// 	top: '-609px',
+				// 	left: '287px',
+				// }}
 				onClick={toggleMenu}
 			>
 				<img className={s.closeIcon} src={closeIcon} alt='' />

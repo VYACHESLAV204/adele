@@ -188,6 +188,19 @@
 	width: 20px;
 	height: 20px;
 }
+
+.btnProperty {
+	position: absolute;
+	border: none;
+	right: 1%;
+	top: 1%;
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	background-color: #9090d8;
+	opacity: 70%;
+	z-index: 2;
+}
 @media (max-width: 1024px) {
 	.menuWrapperActive {
 		left: 226px;
