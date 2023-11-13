@@ -250,7 +250,7 @@
 		justify-content: center;
 		flex-direction: column;
 		width: 100vw;
-		padding: 70px 0px 0px 0px;
+		height: auto;
 	}
 	.MainDiv {
 		margin-bottom: -1rem;
@@ -277,6 +277,7 @@
 		border: 1px solid #9090d8;
 		background: #f2f2ff;
 	}
+	.InnerLiVisible{height: auto;}
 	.btn {
 		background-color: #fff;
 		border: #fff;
