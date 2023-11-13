@@ -91,7 +91,7 @@ const CardDetails: FC<CardAdResponse> = ({
 					/>
 					{This.city && (
 						<p className={s.City}>
-							<span className={s.CitySpan}>Город:</span>
+							<span className={s.CitySpan}>{This.city ? 'Город: ' : ''}</span>
 							{This.city}
 						</p>
 					)}
