@@ -45,6 +45,36 @@ function App() {
 	const [createNewOld, setCreateNewOld] = useState<string>('')
 	const isLoggin = localStorage.getItem('status')
 
+	// useEffect(() => {
+	// 	const handleOrientationChange = () => {
+	// 	  // Perform actions or adjustments to the viewport here
+	// 	  // For example, you might want to reset the viewport meta tag
+	// 	  resetViewport();
+	// 	};
+	
+	// 	const resetViewport = () => {
+	// 	  // Resetting the viewport meta tag
+	// 	  const viewportMetaTag = document.querySelector('meta[name="viewport"]');
+	// 	  if (viewportMetaTag) {
+	// 		viewportMetaTag.parentNode?.removeChild(viewportMetaTag);
+	// 	  }
+	
+	// 	  const newViewportMetaTag = document.createElement('meta');
+	// 	  newViewportMetaTag.name = 'viewport';
+	// 	  newViewportMetaTag.content = 'width=device-width, initial-scale=1.0';
+	
+	// 	  document.head.appendChild(newViewportMetaTag);
+	// 	};
+	
+	// 	// Attach the event listener
+	// 	window.addEventListener('orientationchange', handleOrientationChange);
+	
+	// 	// Cleanup the event listener on component unmount
+	// 	return () => {
+	// 	  window.removeEventListener('orientationchange', handleOrientationChange);
+	// 	};
+	//   }, []);
+	
 	useEffect(() => {
 		fetch('http://stoneworking.ru/api/v1/citys')
 			.then((response) => response.json())

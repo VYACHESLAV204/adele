@@ -256,6 +256,7 @@
 	}
 	.MainDiv {
 		margin-bottom: -1rem;
+		overflow-x: hidden;
 	}
 	.btnProperty {
 		left: 85%;

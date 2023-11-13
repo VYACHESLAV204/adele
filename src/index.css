@@ -20,6 +20,12 @@ body {
 	position: relative;
 	padding-bottom: 120px;
 }
+
+/* @media (orientation: landscape) {
+	body {
+		display: none;
+	}
+} */
 .mainTitle {
 	font-size: 24px;
 	font-style: normal;
