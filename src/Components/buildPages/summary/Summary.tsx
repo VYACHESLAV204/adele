@@ -219,7 +219,7 @@ const Summary = () => {
 	return (
 		<div
 			onDragOver={(e) => e.preventDefault()}
-			style={{ height: TotalH }}
+			// style={{ height: TotalH }}
 			className={s.summaryContainer}
 		>
 			<h1 className={s.MainTitle}>Резюме</h1>
@@ -491,50 +491,55 @@ const Summary = () => {
 							/>
 						</div>
 						<div className={s.dateNewborn}>
-							<p className={s.marginRight}>Начало работы</p>
-							<input
-								className={`${s.input} ${s.inputNewborn}`}
-								type='text'
-								value={workExp[index].start_work_time}
-								onChange={(e) =>
-									updateWorkExpFields(
-										index,
-										'start_work_time',
-										e.target.value
-									)
-								}
-							/>
-							<p className={s.marginRight}>Окончание работы</p>
-							<input
-								className={`${s.input} ${s.inputNewborn2}`}
-								type='text'
-								value={workExp[index].stop_work_time}
-								onChange={(e) =>
-									updateWorkExpFields(
-										index,
-										'stop_work_time',
-										e.target.value
-									)
-								} // Используйте соответствующее свойство для каждого input
-							/>
-							<div className={s.checkboxBox}>
+							<div>
+								<p className={s.marginRight}>Начало работы</p>
 								<input
-									className={s.checkboxItem}
-									type='checkbox'
-									checked={workExp[index].every_time}
+									className={`${s.input} ${s.inputNewborn}`}
+									type='text'
+									value={workExp[index].start_work_time}
 									onChange={(e) =>
 										updateWorkExpFields(
 											index,
-											'every_time',
-											e.target.checked
+											'start_work_time',
+											e.target.value
 										)
 									}
-									// Используйте соответствующее свойство для каждого input
 								/>
-								<p className={s.checkboxText}>
-									По настоящее время
-								</p>
 							</div>
+							<div>
+								<p className={s.marginRight}>Окончание работы</p>
+								<input
+									className={`${s.input} ${s.inputNewborn2}`}
+									type='text'
+									value={workExp[index].stop_work_time}
+									onChange={(e) =>
+										updateWorkExpFields(
+											index,
+											'stop_work_time',
+											e.target.value
+										)
+									} // Используйте соответствующее свойство для каждого input
+								/>
+								<div className={s.checkboxBox}>
+									<input
+										className={s.checkboxItem}
+										type='checkbox'
+										checked={workExp[index].every_time}
+										onChange={(e) =>
+											updateWorkExpFields(
+												index,
+												'every_time',
+												e.target.checked
+											)
+										}
+										// Используйте соответствующее свойство для каждого input
+									/>
+									<p className={s.checkboxText}>
+										По настоящее время
+									</p>
+								</div>
+							</div>
+							
 						</div>
 						<div className={s.aboutDesc}>
 							<p className={s.marginRight}>Описание работы</p>
