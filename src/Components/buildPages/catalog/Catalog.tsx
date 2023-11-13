@@ -103,8 +103,6 @@ const Catalog: FC<ICatalogProps> = ({
 										return (
 											<select
 												style={{
-													fontSize: '15px',
-													fontWeight: '500',
 													fontFamily: 'Vela Sans',
 												}}
 												onChange={(e) => {
@@ -230,8 +228,6 @@ const Catalog: FC<ICatalogProps> = ({
 									return (
 										<select
 											style={{
-												fontSize: '15px',
-												fontWeight: '500',
 												fontFamily: 'Vela Sans',
 											}}
 											onChange={(e) => {
