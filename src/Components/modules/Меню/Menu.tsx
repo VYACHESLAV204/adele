@@ -81,7 +81,7 @@ const Menu: React.FC<MenuProps> = ({
 
 	return (
 		<div
-			onClick={(e) => e.stopPropagation()}
+		
 			className={BurgerisOpen ? s.menuWrapperActive : s.menuWrapper}
 		>
 			<div className={s.MainDiv}>

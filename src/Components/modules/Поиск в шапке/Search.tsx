@@ -72,7 +72,7 @@ const InputButton: React.FC<Isearch> = ({
 						height: '300px',
 						width: '250px',
 						position: 'relative',
-						left: '-250px',
+						left: '-160px',
 						top: '178px',
 						border: '2px solid #9090d8',
 						borderRadius: '4px',

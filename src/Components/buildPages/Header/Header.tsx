@@ -148,20 +148,20 @@ const Header: React.FC<HeaderProps> = ({
 					<></>
 				)}
 			</div>
-			<NavLink to={'/new-card/'}>
-				<div>
+			<div>
+				<NavLink to={'/new-card/'}>
 					<button className={styles.NewAdd}>
 						Разместить обьявление
 					</button>
-					<Menu
-						NavOrNew={NavOrNew}
-						setCategory={setCategory}
-						setUnderCategory={setUnderCategory}
-						BurgerisOpen={BurgerisOpen}
-						setBurgerIsOpen={setBurgerisOpen}
-					></Menu>
-				</div>
-			</NavLink>
+				</NavLink>
+				<Menu
+					NavOrNew={NavOrNew}
+					setCategory={setCategory}
+					setUnderCategory={setUnderCategory}
+					BurgerisOpen={BurgerisOpen}
+					setBurgerIsOpen={setBurgerisOpen}
+				></Menu>
+			</div>
 			{isLoggin ? (
 				<div className={styles.userNameMob}>
 					<h1
