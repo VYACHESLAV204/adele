@@ -9,6 +9,14 @@ const Card: FC<{
 	inlineStyles?: Record<string, string>
 	cardsStyles?: Record<string, string>
 }> = ({ cardsAd = [], inlineStyles, cardsStyles, card_noads }) => {
+
+	const shortenDescription = (text: string) => {
+		if (text.length <= 40) {
+			return text;
+		}
+		return text.slice(0, 40) + "...";
+	}
+
 	return (
 		<div className={styles.ML} style={cardsStyles}>
 			{card_noads
@@ -33,7 +41,7 @@ const Card: FC<{
 								<div className={styles.CardInfoDiv}>
 									<h3>{item.caption}</h3>
 									<p className={styles.CardInfoDivPrice}>
-										{item.description}
+										{shortenDescription(item.description)}
 									</p>
 									<p>{`${item.price} Р`}</p>
 								</div>
@@ -61,7 +69,7 @@ const Card: FC<{
 								<div className={styles.CardInfoDiv}>
 									<h3>{item.caption}</h3>
 									<p className={styles.CardInfoDivPrice}>
-										{item.description}
+										{shortenDescription(item.description)}
 									</p>
 									<p>{`${item.price} Р`}</p>
 								</div>

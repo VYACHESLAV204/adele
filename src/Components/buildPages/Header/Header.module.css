@@ -205,6 +205,8 @@ li {
 	}
 	.MainDiv {
 		justify-content: center;
+		padding: 10px;
+
 	}
 	.signInIpDiv {
 		margin-right: 25px;
@@ -226,9 +228,9 @@ li {
 }
 @media (max-width: 430px) {
 	.MainDiv {
-		width: 98%;
+		/* width: 98%; */
 		flex-wrap: wrap;
-		justify-content: space-evenly;
+		justify-content: space-between;
 	}
 	.searchContainer {
 		display: none;
@@ -238,6 +240,7 @@ li {
 		justify-content: center;
 		align-items: center;
 		padding: 10px;
+		padding-left: 0;
 	}
 	.LinkToProfileMob {
 		display: block;

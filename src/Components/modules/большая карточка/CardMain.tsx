@@ -49,7 +49,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 						)}{' '}
 					</div>
 					<p className={s.City}>
-						<span className={s.CitySpan}>Город: </span>
+						<span className={s.CitySpan}>{card.city ? 'Город: ' : ''}</span>
 						{card.city}
 					</p>
 				</div>
@@ -81,7 +81,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 					<p className={s.Organization}>{card.username}</p>
 					<ShowNumberBtn phone={card.phone} btnClass={s.PhoneNumberDiv} />
 					<p className={s.City}>
-						<span className={s.CitySpan}>Город: </span>
+						<span className={s.CitySpan}>{card.city ? 'Город: ' : ''}</span>
 						{card.city}
 					</p>
 				</div>

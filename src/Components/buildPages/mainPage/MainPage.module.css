@@ -232,14 +232,15 @@
 	line-height: normal;
 }
 .AdCardsDiv {
+	/* padding: 10px; */
 	margin-top: 60px;
 	width: 271px;
 	max-height: 180vh;
-	min-height: 135vh;
+	min-height: 10rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-evenly;
+	justify-content: center;
 	border-radius: 15px;
 	border: 2px solid #9090d8;
 	background-color: #f2f2ff;
@@ -266,6 +267,15 @@
 }
 .menuBoxMob {
 	display: none;
+}
+@media (max-width: 1220px) {
+	.AdCardsDiv {
+		display: none;
+	}
+	.AdCardsDivMob {
+		display: block;
+		width: 90%;
+	}
 }
 @media (max-width: 1025px) {
 	.AdCardsDiv {
@@ -306,6 +316,9 @@
 		scroll-padding: 24px;
 		gap: 17px;
 		flex-basis: 100%;
+	}
+	.menuBoxMob::-webkit-scrollbar {
+		display: none;
 	}
 	.firstLine {
 		display: flex;
