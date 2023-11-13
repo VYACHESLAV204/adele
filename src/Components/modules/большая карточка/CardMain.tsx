@@ -13,9 +13,9 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 
 	const shortenDescription = (text: string) => {
 		if (text.length <= 200) {
-			return text;
+			return text
 		}
-		return text.slice(0, 200) + "...";
+		return text.slice(0, 200) + '...'
 	}
 	if (card_noads) {
 		return card_noads.map((card) => (
@@ -43,13 +43,17 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 						className={s.PhoneNumberDiv}
 					>
 						{showNumber ? (
-							<p>{card.phone}</p>
+							<p style={{ cursor: 'pointer' }}>{card.phone}</p>
 						) : (
-							<p>Показать телефон</p>
+							<p style={{ cursor: 'pointer' }}>
+								Показать телефон
+							</p>
 						)}{' '}
 					</div>
 					<p className={s.City}>
-						<span className={s.CitySpan}>{card.city ? 'Город: ' : ''}</span>
+						<span className={s.CitySpan}>
+							{card.city ? 'Город: ' : ''}
+						</span>
 						{card.city}
 					</p>
 				</div>
@@ -72,16 +76,23 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 					<p className={s.Price}>
 						{card.price}
 						<span>{card.price.length > 0 ? 'Р' : ''}</span>
-
 					</p>
 					<p className={s.AboutHeader}>Описание:</p>
-					<ParsedDescription description={shortenDescription(card.description)} className={s.AboutText}/>
+					<ParsedDescription
+						description={shortenDescription(card.description)}
+						className={s.AboutText}
+					/>
 
 					{/* <p className={s.AboutText}>{shortenDescription(card.description)}</p> */}
 					<p className={s.Organization}>{card.username}</p>
-					<ShowNumberBtn phone={card.phone} btnClass={s.PhoneNumberDiv} />
+					<ShowNumberBtn
+						phone={card.phone}
+						btnClass={s.PhoneNumberDiv}
+					/>
 					<p className={s.City}>
-						<span className={s.CitySpan}>{card.city ? 'Город: ' : ''}</span>
+						<span className={s.CitySpan}>
+							{card.city ? 'Город: ' : ''}
+						</span>
 						{card.city}
 					</p>
 				</div>

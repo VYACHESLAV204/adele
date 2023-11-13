@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import s from './Profile.module.css'
 import editPan from '../../../assets/editPan.svg'
 import RegionSelectTemplate, { City } from '../../modules/select/SelectTemplate'
-import WorkMan from '../../../assets/hardWorkingMan.svg'
+import WorkMan from '../../../assets/phototool.png'
 interface ProfileProps {
 	citys: City[]
 	City: City | null
@@ -18,6 +18,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 	})
 	const [photo, setPhoto] = useState<File>()
 	const [photo_get, setPhoto_get] = useState('')
+	const [ThisPhoto, setThisPhoto] = useState<string | undefined>('')
 
 	useEffect(() => {
 		fetch(
@@ -66,10 +67,10 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 				method: 'POST',
 
 				headers: {
-					// 'Content-Type':
-					// 	'multipart/form-data; boundary=<calculated when request is sent>',
-					// Accept: '*/*',
-					// 'Access-control-Allow-origin': '*',
+					'Content-Type':
+						'multipart/form-data; boundary=<calculated when request is sent>',
+					Accept: '*/*',
+					'Access-control-Allow-origin': '*',
 				},
 				body: formData,
 			}
@@ -87,6 +88,16 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 				console.error('Error when trying to send data', error)
 			})
 	}
+
+	useEffect(() => {
+		if (photo) {
+			setThisPhoto(URL.createObjectURL(photo))
+		} else if (photo_get) {
+			setThisPhoto(photo_get)
+		} else {
+			setThisPhoto(WorkMan)
+		}
+	}, [photo, photo_get])
 
 	return (
 		<div className={s.mainDiv}>
@@ -136,14 +147,7 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 					/>
 
 					<div className={s.photoContainer}>
-						<img
-							className={s.ManPhotoImg}
-							src={
-								photo_get ||
-								(photo ? URL.createObjectURL(photo) : WorkMan)
-							}
-							alt=''
-						/>
+						<img className={s.ManPhotoImg} src={ThisPhoto} alt='' />
 						<label
 							className={s.labelForPhoto}
 							htmlFor='ProfilePhoto'
@@ -176,7 +180,12 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 							Citys={citys}
 						/>
 					</div>
-					<button className={s.Button}>Сохранить</button>
+					<button
+						onClick={(e) => handleFormSubmit(e)}
+						className={s.Button}
+					>
+						Сохранить
+					</button>
 				</div>
 			</div>
 		</div>
