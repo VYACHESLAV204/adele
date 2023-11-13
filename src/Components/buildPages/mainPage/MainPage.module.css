@@ -45,7 +45,7 @@
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
 }
 .MenuBuildingMaterials {
-	width: 229px;
+	/* width: 229px; */
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -55,6 +55,7 @@
 	background-color: #f2f2ff;
 	border: 1px solid #9090d8;
 	box-shadow: 0px 4px 10px 0px rgba(85, 85, 218, 0.03);
+	gap: 5px;
 }
 .MenuRitualItems {
 	width: 209px;
@@ -94,8 +95,9 @@
 }
 
 .MenuSpecialEquipment {
-	width: 172px;
+	/* width: 172px; */
 	display: flex;
+	gap: 5px;
 	justify-content: space-around;
 	align-items: center;
 	height: 56px;
@@ -107,7 +109,7 @@
 }
 
 .MenuWork {
-	width: 141px;
+	width: 135px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -381,7 +383,7 @@
 		margin-left: 0;
 	}
 	.MenuSpecialEquipment {
-		width: 227px;
+		/* width: 227px; */
 	}
 	.MenuSpecialImg {
 		margin-right: 0.3rem;
