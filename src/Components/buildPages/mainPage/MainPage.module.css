@@ -307,6 +307,9 @@
 		gap: 17px;
 		flex-basis: 100%;
 	}
+	.menuBoxMob::-webkit-scrollbar {
+		display: none;
+	}
 	.firstLine {
 		display: flex;
 		flex-direction: row;

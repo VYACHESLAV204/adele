@@ -163,10 +163,11 @@
 		margin-left: 1rem;
 	}
 	.AdCardsDivMob {
-		margin-left: 1rem;
+		margin-left: 10px;
 	}
 	.CatDiv {
-		margin-left: 1rem;
+		margin-left: 10px;
+		justify-content: space-evenly;
 	}
 	.cardsMainDiv {
 		margin-left: 1rem;
@@ -182,17 +183,19 @@
 		margin-bottom: 5rem;
 	}
 	.AdCardsDivMob {
-		width: 90vw;
-		margin-left: 0;
+		/* width: 90vw; */
+		/* margin-left: 0; */
 	}
 	.sectionBoxNew {
 		width: 100vw;
 	}
 	.H2NameOfCategory {
 		margin-left: 0;
+		padding-left: 10px;
+
 	}
 	.CatDiv {
-		margin-left: 0;
+		margin-left: 10px;
 	}
 	.cardsMainDiv {
 		margin-left: 0;
@@ -257,6 +260,7 @@
 	.CatDiv {
 		gap: 1rem;
 		justify-content: center;
+		margin-left: 0;
 		/* margin-bottom: 12rem; */
 	}
 }
