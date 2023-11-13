@@ -191,20 +191,22 @@
 
 .btnProperty {
 	position: absolute;
-	border: none;
-	right: 1%;
-	top: 1%;
+	border: 1px solid white;
+	left: -4%;
+	top: -4px;
 	border-radius: 50%;
-	height: 50px;
-	width: 50px;
-	background-color: #9090d8;
-	opacity: 70%;
+	height: 40px;
+	width: 40px;
+	background-color: #5250c5;
 	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 @media (max-width: 1024px) {
 	.menuWrapperActive {
 		left: 226px;
-		top: 45px;
+		/* top: 45px; */
 	}
 	.submenuActive {
 		top: 58px;
@@ -214,7 +216,7 @@
 @media (max-width: 769px) {
 	.menuWrapperActive {
 		left: 91px;
-		top: 45px;
+		/* top: 45px; */
 	}
 	.submenuActive {
 		top: 55px;
@@ -256,9 +258,13 @@
 		margin-bottom: -1rem;
 	}
 	.btnProperty {
-		margin-top: 1rem;
-		border: none;
-		background-color: #fff;
+		left: 83%;
+		right: 0;
+		top: 1%
+		/* margin-top: 1rem; */
+		/* border: none; */
+
+		/* background-color: #fff; */
 	}
 	.titleMenuItem {
 		font-size: 18px;
@@ -286,7 +292,7 @@
 	}
 	.closeIcon {
 		display: block;
-		position: absolute;
+		/* position: absolute; */
 		left: 23.5rem;
 		top: 1rem;
 	}
