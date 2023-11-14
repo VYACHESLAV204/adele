@@ -1,8 +1,40 @@
 import s from './ProfilePopupMob.module.css'
 import photo from '../../../assets/photoFromInnerCard.png'
 import { NavLink } from 'react-router-dom'
+import { useState } from 'react';
 
 const ProfilePopupMob = () => {
+	const name = localStorage.getItem('username');
+	const [isLoggin, setIsLogin] = useState(!!localStorage.getItem('status'))
+
+	const [reloadCount, setReloadCount] = useState(0);
+
+	const handleReload = () => {
+		setReloadCount(reloadCount + 1);
+		window.location.reload();
+	};
+
+	function logout() {
+		fetch(
+			`http://stoneworking.ru/api/v1/logout?jwt=${localStorage.getItem(
+				'token'
+			)}`,
+			{
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			}
+		)
+			.then((res) => console.log(res))
+			.then(() => setIsLogin(false))
+			.then(() => {
+				localStorage.removeItem('token'),
+					localStorage.setItem('status', '')
+			})
+			.then(() => handleReload())
+	}
+
 	return (
 		<div className={s.sectionContainer}>
 			<div className={s.leftWrapper}>
@@ -10,7 +42,7 @@ const ProfilePopupMob = () => {
 					<img className={s.imageItem} src={photo} alt='' />
 				</div>
 				<div className={s.textContainer}>
-					<h2 className={s.userName}>Имя пользователя</h2>
+					<h2 className={s.userName}>{name}</h2>
 					<div className={s.line}></div>
 					<NavLink to={'/my-ads/'}>
 						<p className={s.textContent}>Мои объявления</p>
@@ -29,6 +61,7 @@ const ProfilePopupMob = () => {
 					<NavLink to={'/profile/'}>
 						<p className={s.textContent}>Настройки</p>
 					</NavLink>
+					<p className={s.textContent} onClick={logout}>Выйти </p>
 					<a href="/new-card/">
 					<button className={s.newCardBtn}>Разместить объявление</button>
 					</a>
