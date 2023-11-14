@@ -41,8 +41,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-Size: 15px;
-	font-Weight: 500;
+	font-size: 15px;
+	font-weight: 500;
 }
 .TwoCat {
 	border-radius: 8px;
@@ -57,8 +57,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-Size: 15px;
-	font-Weight: 500;
+	font-size: 15px;
+	font-weight: 500;
 }
 .ThreeCat {
 	border-radius: 8px;
@@ -73,8 +73,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-Size: 15px;
-	font-Weight: 500;
+	font-size: 15px;
+	font-weight: 500;
 }
 .FourCat {
 	border-radius: 8px;
@@ -89,8 +89,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-Size: 15px;
-	font-Weight: 500;
+	font-size: 15px;
+	font-weight: 500;
 }
 
 .FiveCat {
@@ -106,8 +106,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-Size: 15px;
-	font-Weight: 500;
+	font-size: 15px;
+	font-weight: 500;
 }
 .SixCat {
 	border-radius: 8px;
@@ -122,8 +122,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-Size: 15px;
-	font-Weight: 500;
+	font-size: 15px;
+	font-weight: 500;
 }
 .SevenCat {
 	border-radius: 8px;
@@ -138,8 +138,24 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-Size: 15px;
-	font-Weight: 500;
+	font-size: 15px;
+	font-weight: 500;
+}
+.EightCat {
+	border-radius: 8px;
+	border: 1px solid #9090d8;
+	background-color: #f2f2ff;
+	box-shadow: 0px 4px 7px 0px rgba(99, 99, 151, 0.15);
+margin-left: 3px;
+	width: 196px;
+	height: 56px;
+	flex-shrink: 0;
+	margin-right: 34px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	font-weight: 500;
 }
 .CenteredSelect {
 	text-align-last: center;
@@ -195,7 +211,6 @@
 	.H2NameOfCategory {
 		margin-left: 0;
 		padding-left: 10px;
-
 	}
 	.CatDiv {
 		margin-left: 10px;
@@ -222,43 +237,43 @@
 		width: 45%;
 		margin-bottom: 0;
 		font-size: 11.5px;
-		font-Weight: 800;
+		font-weight: 800;
 	}
 	.TwoCat {
 		margin-right: 0;
 		width: 45%;
 		font-size: 11.5px;
-		font-Weight: 800;
+		font-weight: 800;
 	}
 	.ThreeCat {
 		margin-right: 0;
 		width: 45%;
 		font-size: 11.5px;
-		font-Weight: 800;
+		font-weight: 800;
 	}
 	.FourCat {
 		margin-right: 0;
 		width: 45%;
 		font-size: 11.5px;
-		font-Weight: 800;
+		font-weight: 800;
 	}
 	.FiveCat {
 		margin-right: 0;
 		width: 45%;
 		font-size: 11.5px;
-		font-Weight: 800;
+		font-weight: 800;
 	}
 	.SixCat {
 		margin-right: 0;
 		width: 45%;
 		font-size: 11.5px;
-		font-Weight: 800;
+		font-weight: 800;
 	}
 	.SevenCat {
 		margin-right: 0;
 		width: 45%;
 		font-size: 11.5px;
-		font-Weight: 800;
+		font-weight: 800;
 	}
 	.CatDiv {
 		gap: 1rem;

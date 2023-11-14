@@ -139,14 +139,14 @@ const myAds = () => {
 							onClick={() => setIsArchive(false)}
 							className={`${s.btn} ${s.secondBtn}`}
 						>
-							Ждут действий
+							Отправлены на модерацию
 						</button>
 					) : (
 						<button
 							onClick={() => setIsArchive(false)}
 							className={s.btn}
 						>
-							Ждут действий
+							Отправлены на модерацию
 						</button>
 					)}
 					{isArchive ? (
@@ -168,6 +168,8 @@ const myAds = () => {
 				<div className={s.cardBox}>
 					{isArchive
 						? posts?.my_posts_none.map((item) => {
+							console.log('kmoaskdosa');
+							
 								return (
 									<div
 										key={item.id_card}
@@ -287,6 +289,7 @@ const myAds = () => {
 								)
 						  })}
 				</div>
+				{isArchive?<h3>Ваши неопубликованные объявления</h3>:<h3>Cкоро ваше объявление опубликуют</h3>}
 			</div>
 		</div>
 	)
