@@ -1,6 +1,6 @@
+import { useNavigate } from 'react-router-dom'
 import styles from './Reg.module.css'
 import React, { useState, FormEvent } from 'react'
-
 
 interface ModalProps {
 	closeModal: () => void
@@ -10,7 +10,7 @@ const Auth: React.FC<ModalProps> = (props) => {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const [isPasswordShown, setIsPasswordShown] = useState(false)
-
+	const navigate = useNavigate() // Get the history instance
 	const onSubmit = async (e: FormEvent) => {
 		e.preventDefault()
 		try {
@@ -27,11 +27,12 @@ const Auth: React.FC<ModalProps> = (props) => {
 				localStorage.setItem('token', data.token)
 				localStorage.setItem('status', data.status)
 				localStorage.setItem('username', data.username)
+				navigate('/')
 				props.closeModal()
-			}else if(data.error){
+			} else if (data.error) {
 				alert(data.error)
 			}
-		} catch(error) {
+		} catch (error) {
 			alert(error)
 		}
 	}
@@ -53,18 +54,21 @@ const Auth: React.FC<ModalProps> = (props) => {
 						<input
 							onChange={(e) => setPassword(e.target.value)}
 							className={styles.InputEmail}
-							type={isPasswordShown ? 'text' :'password'}
+							type={isPasswordShown ? 'text' : 'password'}
 							name='password'
 							placeholder='Пароль'
 							required
 						/>
 						<div
-								className={`${styles.Eye} ${isPasswordShown && styles.EyeHidden}`}
-								onClick={() => 
-									setIsPasswordShown(!isPasswordShown)} 
-							/>
-						</div>
-					<button className={styles.Continue} type='submit' >Продолжить</button>
+							className={`${styles.Eye} ${
+								isPasswordShown && styles.EyeHidden
+							}`}
+							onClick={() => setIsPasswordShown(!isPasswordShown)}
+						/>
+					</div>
+					<button className={styles.Continue} type='submit'>
+						Продолжить
+					</button>
 				</form>
 			</div>
 			<div className={styles.line}></div>
