@@ -925,14 +925,6 @@ const Summary = () => {
 									type='file'
 								>
 								</input>
-								{/* <img
-									src={plus}
-									style={{
-										position: 'relative',
-										top: '-85px',
-									}}
-									alt=''
-								/> */}
 							</div>
 						</div>
 						<p style={{ textAlign: 'center', width: '300px' }}>

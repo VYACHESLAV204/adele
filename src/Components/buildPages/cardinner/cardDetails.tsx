@@ -18,6 +18,17 @@ const CardDetails: FC<CardAdResponse> = ({
 	const [This, setThis] = useState<CardAd | any>()
 	const { id } = useParams<{ id: string }>() // Keep it as string
 	const numberId = Number(id) // convert string id to numaric id
+	const parsePrice = (price: string) => {
+		const readyToParseString = price.toString().split('').filter((char) => char !== ' ').join('')
+		return readyToParseString
+			.split('')
+			.reverse()
+			.join('')
+			.match(/.{1,3}/g)
+			?.reverse()
+			.map((el) => el.split('').reverse().join(''))
+			.join(' ')
+	}
 	const settings = {
 		dots: true,
 		vertical: true,
@@ -77,10 +88,9 @@ const CardDetails: FC<CardAdResponse> = ({
 				<div className={s.rightDiv}>
 					<h2 className={s.H2Name}>{This.caption}</h2>
 					<div className={s.priceBox}>
-						<p className={s.price}>{This.price ? This.price : 'Цена не указана'}</p>
+						<p className={s.price}>{This.price ? `${parsePrice(This.price)}Р` : 'Цена не указана'}</p>
 					</div>
 					<p className={s.aboutHeader}>Описание:</p>
-					{/* добавил разделение текста на абзацы */}
 					<p className={s.aboutText}>
 						{<ParsedDescription description={This.description} className=''/>}
 					</p>

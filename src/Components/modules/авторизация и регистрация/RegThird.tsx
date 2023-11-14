@@ -90,7 +90,6 @@ const RegThird: React.FC<RegPropsThird> = (props) => {
 						required
 						onChange={(e) => updateField('phone', e.target.value)}
 					/>
-					{/* show password label */}
 					<div className={styles.PasswordInput}>
 						<input
 							className={styles.InputEmail}

@@ -206,7 +206,6 @@
 @media (max-width: 1024px) {
 	.menuWrapperActive {
 		left: 226px;
-		/* top: 45px; */
 	}
 	.submenuActive {
 		top: 58px;
@@ -216,7 +215,6 @@
 @media (max-width: 769px) {
 	.menuWrapperActive {
 		left: 91px;
-		/* top: 45px; */
 	}
 	.submenuActive {
 		top: 55px;
@@ -261,10 +259,6 @@
 	.btnProperty {
 		left: 83%;
 		top: 1%
-		/* margin-top: 1rem; */
-		/* border: none; */
-
-		/* background-color: #fff; */
 	}
 	.titleMenuItem {
 		font-size: 18px;
@@ -292,7 +286,6 @@
 	}
 	.closeIcon {
 		display: block;
-		/* position: absolute; */
 		left: 23.5rem;
 		top: 1rem;
 	}

@@ -343,11 +343,6 @@ const NewCard: React.FC = ({}) => {
 									className={s.inputFileContainer}
 									type='file'
 								/>
-								{/* <img
-									src={Plus}
-									className={s.inputPlusImg}
-									alt=''
-								/> */}
 							</div>
 							<p style={{ textAlign: 'center', width: '300px' }}>
 								Качественные фото с чистым фоном - залог высоких

@@ -21,8 +21,6 @@
 .SelectCatDiv {
 	display: flex;
 	width: 100%;
-	/* margin-top: 3rem;
-	margin-bottom: 3rem; */
 	align-items: center;
 	justify-content: flex-start;
 }
@@ -106,8 +104,6 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-	/* margin-top: 36px;
-	margin-bottom: 36px; */
 }
 .description > textarea {
 	width: 805px;
@@ -146,7 +142,6 @@
 	display: flex;
 	align-items: center;
 	row-gap: 30px;
-	/* width: 500px; */
 	margin-bottom: 3rem;
 	justify-content: space-around;
 }
@@ -215,7 +210,6 @@
 	padding-left: 10px;
 	margin-bottom: 3rem;
 }
-/* убрал счётчик для поля номера в форме регистрации  */
 .inputPhone::-webkit-outer-spin-button,
 .inputPhone::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -344,8 +338,6 @@
 	.SelectCatDiv > label {
 		font-size: 15px;
 		text-align: left;
-		/* margin-top: 1rem;
-		margin-bottom: 1rem; */
 	}
 	.setTitle > input {
 		font-size: 15px;
@@ -365,10 +357,6 @@
 	}
 	.flexRow > p {
 		width: 300px;
-	}
-	.SelectCatDiv {
-		/* margin-top: 1rem;
-		margin-bottom: 1rem; */
 	}
 	.marginMob {
 		margin-bottom: 2rem;

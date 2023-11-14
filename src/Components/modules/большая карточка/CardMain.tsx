@@ -17,6 +17,17 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 		}
 		return text.slice(0, 200) + '...'
 	}
+	const parsePrice = (price: string | number) => {
+		const readyToParseString = price.toString().split('').filter((char) => char !== ' ').join('')
+		return readyToParseString
+			.split('')
+			.reverse()
+			.join('')
+			.match(/.{1,3}/g)
+			?.reverse()
+			.map((el) => el.split('').reverse().join(''))
+			.join(' ')
+	}
 	if (card_noads) {
 		return card_noads.map((card) => (
 			<div key={card.id_card} className={s.mainDiv}>
@@ -32,7 +43,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 						<h2 className={s.H2Name}>{card.caption}</h2>
 					</NavLink>
 					<p className={s.Price}>
-						{card.price}
+						{parsePrice(card.price)}
 						<span>{card.price > 0 ? 'Р' : 'Цена не указана'}</span>
 					</p>
 					<p className={s.AboutHeader}>Описание:</p>
@@ -74,7 +85,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 						<h2 className={s.H2Name}>{card.caption}</h2>
 					</NavLink>
 					<p className={s.Price}>
-						{card.price}
+						{parsePrice(card.price)}
 						<span>{card.price.length > 0 ? 'Р' : 'Цена не указана'}</span>
 					</p>
 					<p className={s.AboutHeader}>Описание:</p>
@@ -83,7 +94,6 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 						className={s.AboutText}
 					/>
 
-					{/* <p className={s.AboutText}>{shortenDescription(card.description)}</p> */}
 					<p className={s.Organization}>{card.username}</p>
 					<ShowNumberBtn
 						phone={card.phone}
