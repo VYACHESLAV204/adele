@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import s from './Summary.module.css'
 import addNew from '../../../assets/addNew.svg'
 import greenMoney from '../../../assets/greenmoney.svg'
-import plus from '../../../assets/plus.svg'
 import 'react-widgets/styles.css'
 import DateInput from '../../modules/dateInput/DateInput'
 import Slider from 'react-slick'
@@ -663,7 +662,7 @@ const Summary = () => {
 											)
 										}
 									>
-										{years.map((year, index) => (
+										{years.filter((y) => y <= currentYear).map((year, index) => (
 											<option key={index} value={year}>
 												{year}
 											</option>
@@ -924,15 +923,16 @@ const Summary = () => {
 									}}
 									className={s.photoInput}
 									type='file'
-								/>
-								<img
+								>
+								</input>
+								{/* <img
 									src={plus}
 									style={{
 										position: 'relative',
 										top: '-85px',
 									}}
 									alt=''
-								/>
+								/> */}
 							</div>
 						</div>
 						<p style={{ textAlign: 'center', width: '300px' }}>

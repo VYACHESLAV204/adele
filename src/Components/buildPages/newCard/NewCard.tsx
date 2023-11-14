@@ -117,7 +117,7 @@ const NewCard: React.FC = ({}) => {
 		<div className={s.MainDiv}>
 			<h2 className={s.H2Cat}>Категория</h2>
 
-			<form onSubmit={submitForm}>
+			<form className={s.inputForm} onSubmit={submitForm}>
 				<div className={s.SelectCatDiv}>
 					<label htmlFor='Category'>
 						Выберите категорию объявления:
@@ -140,7 +140,7 @@ const NewCard: React.FC = ({}) => {
 					/>
 				</div>
 				<div
-					style={{ marginBottom: '2rem' }}
+					// style={{ marginBottom: '2rem' }}
 					className={s.SelectCatDiv}
 				>
 					<label htmlFor='underCategory'>
@@ -337,11 +337,11 @@ const NewCard: React.FC = ({}) => {
 									className={s.inputFileContainer}
 									type='file'
 								/>
-								<img
+								{/* <img
 									src={Plus}
 									className={s.inputPlusImg}
 									alt=''
-								/>
+								/> */}
 							</div>
 							<p style={{ textAlign: 'center', width: '300px' }}>
 								Качественные фото с чистым фоном - залог высоких

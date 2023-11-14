@@ -6,6 +6,7 @@
 	justify-content: space-between;
 	row-gap: 20px;
 	padding-right: 10px;
+	cursor: default;
 }
 .MainTitle {
 	color: #000;
@@ -93,6 +94,7 @@
 	display: flex;
 	color: #f2f2ff;
 	margin-right: 15px;
+	cursor: pointer;
 }
 .genderUnactive {
 	border: 1px solid #9090d8;
@@ -251,6 +253,7 @@
 	margin-top: 15px;
 	padding-left: 10px;
 }
+
 .photo {
 	color: #000;
 	width: 100px;
@@ -279,7 +282,7 @@
 	height: 150px;
 	border-radius: 6px;
 	border: 1px solid #9090d8;
-	background: #f2f2ff;
+	background: url('../../../assets/plus.svg') center no-repeat, #f2f2ff;
 	margin-left: 20px;
 	display: flex;
 	flex-direction: column;

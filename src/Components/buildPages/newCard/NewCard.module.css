@@ -13,11 +13,16 @@
 	font-weight: 600;
 	line-height: normal;
 }
+.inputForm {
+	display: flex;
+	flex-direction: column;
+	row-gap: 30px;
+}
 .SelectCatDiv {
 	display: flex;
 	width: 100%;
-	margin-top: 3rem;
-	margin-bottom: 3rem;
+	/* margin-top: 3rem;
+	margin-bottom: 3rem; */
 	align-items: center;
 	justify-content: flex-start;
 }
@@ -53,7 +58,7 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-	margin-bottom: 36px;
+	margin-bottom: 10px;
 }
 .setTitle > input {
 	width: 805px;
@@ -91,6 +96,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	row-gap: 15px;
 }
 .description > label {
 	color: #000;
@@ -100,8 +106,8 @@
 	font-style: normal;
 	font-weight: 400;
 	line-height: normal;
-	margin-top: 36px;
-	margin-bottom: 36px;
+	/* margin-top: 36px;
+	margin-bottom: 36px; */
 }
 .description > textarea {
 	width: 805px;
@@ -160,7 +166,7 @@
 	align-items: center;
 	justify-content: center;
 	border: 1px solid #9090d8;
-	background: #f2f2ff;
+	background: url('../../../assets/plus.svg') center no-repeat, #f2f2ff;
 }
 
 .plusPhoto {
@@ -197,7 +203,7 @@
 	margin-bottom: 40px;
 }
 .phoneText {
-	margin-bottom: 2rem;
+	margin-bottom: 10px;
 }
 .inputPhone {
 	width: 210px;
@@ -328,6 +334,9 @@
 	.MainDiv {
 		width: 90%;
 	}
+	.inputForm {
+		row-gap: 20px;
+	}
 	.SelectCatDiv {
 		height: 106px;
 		width: 300px;
@@ -335,8 +344,8 @@
 	.SelectCatDiv > label {
 		font-size: 15px;
 		text-align: left;
-		margin-top: 1rem;
-		margin-bottom: 1rem;
+		/* margin-top: 1rem;
+		margin-bottom: 1rem; */
 	}
 	.setTitle > input {
 		font-size: 15px;
@@ -358,11 +367,14 @@
 		width: 300px;
 	}
 	.SelectCatDiv {
-		margin-top: 1rem;
-		margin-bottom: 1rem;
+		/* margin-top: 1rem;
+		margin-bottom: 1rem; */
 	}
 	.marginMob {
 		margin-bottom: 2rem;
+	}
+	.description {
+		row-gap: 10px;
 	}
 }
 @media (max-width: 360px) {
