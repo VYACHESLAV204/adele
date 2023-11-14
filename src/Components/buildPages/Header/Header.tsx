@@ -174,11 +174,14 @@ const Header: React.FC<HeaderProps> = ({
 					</h1>
 					<ul className={styles.Ul}>
 						<NavLink to={'/my-ads/'}>
-							<li className={styles.liItem}>Мой аккаунт</li>
+							<li className={styles.liItem} onClick={() => setMenuUser(!MenuUser)}>Мой аккаунт</li>
 						</NavLink>
 						<li
 							style={{ cursor: 'pointer' }}
-							onClick={() => logout()}
+							onClick={() => {
+								logout();
+								setMenuUser(!MenuUser)
+							}}
 							className={styles.liItem}
 						>
 							Выйти
