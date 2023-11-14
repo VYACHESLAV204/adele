@@ -42,6 +42,7 @@ const Catalog: FC<ICatalogProps> = ({
 		styles.FiveCat,
 		styles.SixCat,
 		styles.SevenCat,
+		styles.EightCat
 	]
 	if (
 		categoryForNewCard === 'Работа' &&

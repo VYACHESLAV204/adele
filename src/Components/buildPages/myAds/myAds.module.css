@@ -17,7 +17,9 @@ p {
 	justify-content: space-between;
 	border-radius: 7px;
 }
-.MarginZero{margin-left: 0px;}
+.MarginZero {
+	margin-left: 0px;
+}
 .sectionContainerActive {
 	display: flex;
 	align-items: flex-start;
@@ -77,6 +79,7 @@ p {
 	align-items: flex-start;
 }
 .btnBox {
+	display: flex;
 	margin-top: 2rem;
 	margin-bottom: 5rem;
 }
@@ -235,7 +238,7 @@ p {
 	.textInCard {
 		margin-bottom: 2rem;
 	}
-	.sectionContainer{
+	.sectionContainer {
 		justify-content: center;
 	}
 }
@@ -248,16 +251,16 @@ p {
 		margin-left: 0.2rem;
 	}
 	.btn {
-		    width: 160px;
-				font-weight: 600;
-				text-transform: uppercase;
+		width: 160px;
+		font-weight: 600;
+		text-transform: uppercase;
 	}
 }
 @media (max-width: 350px) {
 	.mainTitle {
 		font-size: 20px;
 	}
-	.btn{
+	.btn {
 		width: 145px;
 	}
 }
