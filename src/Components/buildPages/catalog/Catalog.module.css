@@ -185,10 +185,7 @@
 		width: 100vw;
 		margin-bottom: 5rem;
 	}
-	.AdCardsDivMob {
-		/* width: 90vw; */
-		/* margin-left: 0; */
-	}
+	
 	.sectionBoxNew {
 		width: 100vw;
 	}
@@ -264,6 +261,5 @@
 		gap: 1rem;
 		justify-content: center;
 		margin-left: 0;
-		/* margin-bottom: 12rem; */
 	}
 }

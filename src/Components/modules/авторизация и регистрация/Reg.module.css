@@ -63,7 +63,6 @@
 	padding-left: 10px;
 	margin-bottom: 1rem;
 }
-/* убрал счётчик для поля номера в форме регистрации  */
 .InputEmail::-webkit-outer-spin-button,
 .InputEmail::-webkit-inner-spin-button {
 	-webkit-appearance: none;
@@ -71,7 +70,6 @@
 .PasswordInput {
 	position: relative;
 }
-/* добавил стилей на кнопку глаза */
 .Eye {
 	position: absolute;
 	top: 12px;

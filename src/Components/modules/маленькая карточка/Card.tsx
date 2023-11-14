@@ -17,6 +17,18 @@ const Card: FC<{
 		return text.slice(0, 40) + "...";
 	}
 
+	const parsePrice = (price: string | number) => {
+		const readyToParseString = price.toString().split('').filter((char) => char !== ' ').join('')
+		return readyToParseString
+			.split('')
+			.reverse()
+			.join('')
+			.match(/.{1,3}/g)
+			?.reverse()
+			.map((el) => el.split('').reverse().join(''))
+			.join(' ')
+	}
+
 	return (
 		<div className={styles.ML} style={cardsStyles}>
 			{card_noads
@@ -43,7 +55,7 @@ const Card: FC<{
 									<p className={styles.CardInfoDivPrice}>
 										{shortenDescription(item.description)}
 									</p>
-									<p>{`${item.price} Р`}</p>
+									<p>{`${parsePrice(item.price)} Р`}</p>
 								</div>
 							</div>
 						</Link>
@@ -71,7 +83,7 @@ const Card: FC<{
 									<p className={styles.CardInfoDivPrice}>
 										{shortenDescription(item.description)}
 									</p>
-									<p>{`${item.price} Р`}</p>
+									<p>{`${parsePrice(item.price)} Р`}</p>
 								</div>
 							</div>
 						</Link>

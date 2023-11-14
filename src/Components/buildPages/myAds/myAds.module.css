@@ -84,7 +84,6 @@ p {
 	margin-left: 0px;
 }
 .textContainer {
-	/* height: 50vh; */
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;

@@ -3,9 +3,7 @@
 	align-items: flex-end;
 }
 .Footer {
-	/* min-height: 120vh; */
 	display: flex;
-	/* flex-wrap: wrap; */
 	flex-direction: column;
 	align-content: space-between;
 	margin-top: 2rem;
