@@ -4,6 +4,9 @@
 	display: flex;
 	margin-bottom: 35px;
 }
+.mainDiv:hover {
+	cursor: pointer;
+}
 .leftDiv {
 	width: 316px;
 	height: 323px;

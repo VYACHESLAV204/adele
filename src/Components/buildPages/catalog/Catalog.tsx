@@ -92,7 +92,7 @@ const Catalog: FC<ICatalogProps> = ({
 													}
 												}}
 												key={Cat.id}
-												className={styleClass}
+												className={`${styleClass} ${styles.hoverFilter}`}
 											>
 												<p className={styles.CatText}>
 													{Cat.category.toUpperCase()}
@@ -118,7 +118,7 @@ const Catalog: FC<ICatalogProps> = ({
 													}
 												}}
 												key={Cat.id}
-												className={styleClass}
+												className={`${styleClass} ${styles.hoverFilter}`}
 											>
 												{Cat.mass[0].name.map(
 													(name, ind) => {
@@ -169,13 +169,13 @@ const Catalog: FC<ICatalogProps> = ({
 						currentPage={page}
 						setCurrentPage={setPage}
 						totalPages={total_pages_noads}
+						noads={card_noads}
 					/>
 				</div>
 			</div>
 		)
 	} else {
 		console.log('2')
-
 		return (
 			<div>
 				<div
@@ -217,7 +217,7 @@ const Catalog: FC<ICatalogProps> = ({
 												}
 											}}
 											key={Cat.id}
-											className={styleClass}
+											className={`${styleClass} ${styles.hoverFilter}`}
 										>
 											<p className={styles.CatText}>
 												{Cat.category.toUpperCase()}
@@ -246,7 +246,7 @@ const Catalog: FC<ICatalogProps> = ({
 												}
 											}}
 											key={Cat.id}
-											className={`${styleClass} ${styles.CenteredSelect}`}
+											className={`${styleClass} ${styles.CenteredSelect} ${styles.hoverFilter}`}
 											defaultValue='empty'
 										>
 											<SelectOption
@@ -300,6 +300,7 @@ const Catalog: FC<ICatalogProps> = ({
 						currentPage={page}
 						setCurrentPage={setPage}
 						totalPages={total_pages_noads}
+						noads={card_noads}
 					/>
 				</div>
 			</div>

@@ -33,7 +33,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 					</NavLink>
 					<p className={s.Price}>
 						{card.price}
-						<span>{card.price > 0 ? 'Р' : ''}</span>
+						<span>{card.price > 0 ? 'Р' : 'Цена не указана'}</span>
 					</p>
 					<p className={s.AboutHeader}>Описание:</p>
 					<p className={s.AboutText}>{card.description}</p>
@@ -75,7 +75,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 					</NavLink>
 					<p className={s.Price}>
 						{card.price}
-						<span>{card.price.length > 0 ? 'Р' : ''}</span>
+						<span>{card.price.length > 0 ? 'Р' : 'Цена не указана'}</span>
 					</p>
 					<p className={s.AboutHeader}>Описание:</p>
 					<ParsedDescription

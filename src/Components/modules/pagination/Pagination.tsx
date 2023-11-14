@@ -1,14 +1,17 @@
 import { FC, useEffect } from 'react'
 import s from './Pagination.module.css'
+import { CardAd } from '../../../interfaces/Interfaces'
 interface Pagprops {
 	totalPages: number
 	currentPage: number
 	setCurrentPage: React.Dispatch<React.SetStateAction<number>>
+	noads: CardAd[]
 }
 const Pagination: FC<Pagprops> = ({
 	totalPages,
 	currentPage,
 	setCurrentPage,
+	noads,
 }) => {
 	// Функция для изменения текущей страницы
 	const changePage = (page: number) => {
@@ -60,7 +63,7 @@ const Pagination: FC<Pagprops> = ({
 			{generatePageNumbers()}
 			<button
 				style={{ border: '0px', backgroundColor: '#ffffff' }}
-				disabled={currentPage === totalPages}
+				disabled={currentPage === totalPages || noads.length === 0}
 				onClick={() => changePage(currentPage + 1)}
 			>
 				Следующая &gt;

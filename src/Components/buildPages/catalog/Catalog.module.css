@@ -24,6 +24,9 @@
 .SelectOptionHidden {
 	display: none;
 }
+.hoverFilter {
+	cursor: pointer;
+}
 .OneCat {
 	border-radius: 8px;
 	margin-bottom: 20px;

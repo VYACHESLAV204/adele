@@ -77,7 +77,7 @@ const CardDetails: FC<CardAdResponse> = ({
 				<div className={s.rightDiv}>
 					<h2 className={s.H2Name}>{This.caption}</h2>
 					<div className={s.priceBox}>
-						<p className={s.price}>{This.price}</p>
+						<p className={s.price}>{This.price ? This.price : 'Цена не указана'}</p>
 					</div>
 					<p className={s.aboutHeader}>Описание:</p>
 					{/* добавил разделение текста на абзацы */}
