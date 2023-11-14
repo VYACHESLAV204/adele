@@ -25,6 +25,7 @@ const SelectTemplate: FC<selectCityProps> = ({
 	styles,
 }) => {
 	const [DefaultCity, setDefaultCity] = useState<City>()
+	const [open, setOpen] = useState(false)
 	useEffect(() => {
 		if (City?.label) {
 			fetch(
@@ -72,18 +73,25 @@ const SelectTemplate: FC<selectCityProps> = ({
 		<>
 			{DefaultCity && (
 				<Autocomplete
+					open={open}
 					value={City}
 					className={classes.autocomplete}
 					sx={styles}
+					onOpen={() => setOpen(true)}
 					options={Citys}
 					filterOptions={filterOptions}
 					renderInput={(params) => (
-						<TextField {...params} label={DefaultCity.value} />
+						<TextField
+							{...params}
+							label={DefaultCity.value}
+							onClick={() => setOpen(true)}
+						/>
 					)}
 					size='small'
-					onChange={(_: any, newValue: City | null) =>
+					onChange={(_, newValue: City | null) => {
 						setCity(newValue)
-					}
+						setOpen(false) // Закрывайте меню при выборе города
+					}}
 				/>
 			)}
 		</>
