@@ -1,8 +1,8 @@
 .mainDiv {
-	width: 805px;
-	height: 970px;
+	/* width: 805px; */
+	/* height: 970px; */
 	display: flex;
-	margin-top: 50px;
+	/* margin-top: 50px; */
 	flex-direction: column;
 	align-items: flex-start;
 }
@@ -83,7 +83,7 @@
 	display: flex;
 	align-items: center;
 	width: 680px;
-	height: 252px;
+	/* height: 252px; */
 }
 
 .changePhotoDiv > div > p {
@@ -132,11 +132,11 @@
 }
 .inputsDiv {
 	width: 599px;
-	margin-top: 70px;
-	height: 145px;
+	/* margin-top: 70px; */
+	/* height: 145px; */
 }
 .inputDivNameNCity {
-	width: 598px;
+	/* width: 598px; */
 	height: 56px;
 	display: flex;
 	justify-content: space-between;
@@ -204,8 +204,8 @@
 		margin-bottom: 40px;
 	}
 	.mainDiv {
-		height: 1030px;
-		margin-left: 1rem;
+		/* height: 1030px; */
+		/* margin-left: 1rem; */
 	}
 	.changePhotoDiv {
 		flex-direction: column;
@@ -230,13 +230,13 @@
 		flex-direction: column;
 		align-items: flex-start;
 		height: 104px;
-		width: 85vw;
+		/* width: 85vw; */
 	}
 	.inputDivNameNCity > input {
 		width: 85vw;
 	}
 	.mainDiv {
-		width: 100vw;
+		/* width: 100vw; */
 	}
 	.changePhotoDiv {
 		width: 100vw;
@@ -244,9 +244,9 @@
 	.editText {
 		display: none;
 	}
-	.H2Settings {
+	/* .H2Settings {
 		margin-top: 4rem;
-	}
+	} */
 	.inputDiv {
 		width: 100vw;
 	}
