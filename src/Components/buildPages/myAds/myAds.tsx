@@ -25,6 +25,7 @@ interface adminCard {
 	tariff: string
 	username: string
 }
+import profileDefaultPhoto from '../../../assets/phototool.png'
 const myAds = () => {
 	const [posts, setPosts] = useState<myAds1>()
 	const [isArchive, setIsArchive] = useState(false)
@@ -84,8 +85,13 @@ const myAds = () => {
 			<div className={s.leftWrapper}>
 				<div className={s.imageBox}>
 					<img
+						style={{ border: '1.2px solid blue' }}
 						className={s.imageItem}
-						src={posts?.photo_user}
+						src={
+							posts?.photo_user
+								? posts.photo_user
+								: profileDefaultPhoto
+						}
 						alt=''
 					/>
 				</div>

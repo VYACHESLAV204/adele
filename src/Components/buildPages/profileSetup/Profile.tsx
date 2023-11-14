@@ -147,7 +147,12 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 					/>
 
 					<div className={s.photoContainer}>
-						<img className={s.ManPhotoImg} src={ThisPhoto} alt='' />
+						<img
+							className={s.ManPhotoImg}
+							style={{ border: '1.2px solid blue' }}
+							src={ThisPhoto}
+							alt=''
+						/>
 						<label
 							className={s.labelForPhoto}
 							htmlFor='ProfilePhoto'
