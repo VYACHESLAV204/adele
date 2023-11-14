@@ -163,12 +163,12 @@
 	height: 67.859px;
 }
 .MenuStankiImg {
-	width: 65px;
-	height: 51.81px;
+	width: 70px;
+	height: 60px;
 }
 .MenuSpecialImg {
 	width: 68px;
-	margin-right: 0.1rem;
+	margin-right: -0.1rem;
 }
 .MenuToolsImg {
 	margin-right: -0.2rem;
@@ -384,7 +384,7 @@
 		margin-left: 0;
 	}
 	.MenuSpecialEquipment {
-		/* width: 227px; */
+		 width: 227px; 
 	}
 	.MenuSpecialImg {
 		margin-right: 0.3rem;
