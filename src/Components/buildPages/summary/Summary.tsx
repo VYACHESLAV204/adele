@@ -321,27 +321,29 @@ const Summary = () => {
 			</div>
 			<div className={s.genderContainer}>
 				<p className={s.marginRight}>Пол</p>
-				<button
-					className={
-						summaryFields.gender === 'Мужской'
-							? s.genderBtn
-							: `${s.genderBtn} ${s.genderUnactive}`
-					}
-					onClick={() => updateSummaryFields('gender', 'Мужской')}
-				>
-					Мужской
-				</button>
+				<div className={s.genderBtnsContainer}>
+					<button
+						className={
+							summaryFields.gender === 'Мужской'
+								? s.genderBtn
+								: `${s.genderBtn} ${s.genderUnactive}`
+						}
+						onClick={() => updateSummaryFields('gender', 'Мужской')}
+					>
+						Мужской
+					</button>
 
-				<button
-					className={
-						summaryFields.gender === 'Женский'
-							? s.genderBtn
-							: `${s.genderBtn} ${s.genderUnactive}`
-					}
-					onClick={() => updateSummaryFields('gender', 'Женский')}
-				>
-					Женский
-				</button>
+					<button
+						className={
+							summaryFields.gender === 'Женский'
+								? s.genderBtn
+								: `${s.genderBtn} ${s.genderUnactive}`
+						}
+						onClick={() => updateSummaryFields('gender', 'Женский')}
+					>
+						Женский
+					</button>
+				</div>
 			</div>
 			<div className={s.dateNewborn}>
 				<p className={s.marginRight}>Дата рождения</p>

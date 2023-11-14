@@ -32,7 +32,7 @@ const DateInput = ({ updateSummary }: DateInputProps) => {
 	const years = Array.from({ length: 100 }, (_, i) => currentYear - i)
 
 	return (
-		<div>
+		<div className={s.DateInputContainer}>
 			<select
 				onMouseLeave={handleInputClick}
 				className={`${s.input} ${s.inputNewborn}`}
