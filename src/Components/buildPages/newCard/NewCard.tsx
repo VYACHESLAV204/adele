@@ -7,7 +7,7 @@ import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import { Autocomplete, TextField } from '@mui/material'
-import "./slider.css"
+import './slider.css'
 interface CatObject {
 	catName: string
 	newOld: boolean
@@ -67,9 +67,12 @@ const NewCard: React.FC = ({}) => {
 			</div>
 		),
 		prevArrow: (
+		),
+		prevArrow: (
 			<div>
 				<div className="prev-slick-arrow">◀ </div>
 			</div>
+		),
 		),
 	}
 
@@ -309,7 +312,13 @@ const NewCard: React.FC = ({}) => {
 								}}
 							>
 								{photoStates?.length
-									? `Нажмите или перетащите новую фотографию в окно ниже, уже ${photoStates.length} ${photoStates.length === 1 ? "загружена" : "загружено"}`
+									? `Нажмите или перетащите новую фотографию в окно ниже, уже ${
+											photoStates.length
+									  } ${
+											photoStates.length === 1
+												? 'загружена'
+												: 'загружено'
+									  }`
 									: 'Нажмите или перетащите новую фотографию в окно ниже:'}
 							</p>
 							<div
@@ -328,9 +337,10 @@ const NewCard: React.FC = ({}) => {
 										if (
 											e.target.files instanceof FileList
 										) {
-											setPhotoStates(
-												[...Array.from(e.target.files), ...photoStates]
-											)
+											setPhotoStates([
+												...Array.from(e.target.files),
+												...photoStates,
+											])
 										}
 									}}
 									className={s.inputFileContainer}
