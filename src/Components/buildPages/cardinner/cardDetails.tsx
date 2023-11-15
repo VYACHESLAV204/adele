@@ -40,12 +40,12 @@ const CardDetails: FC<CardAdResponse> = ({
 		slidesToScroll: 1,
 		nextArrow: (
 			<div>
-			  <div className="next-slick-arrow"> ▶</div>
+			  <div className={`${s.SliderArrow} next-slick-arrow`}> ▶</div>
 			</div>
 		),
 		prevArrow: (
 			<div>
-			  <div className="prev-slick-arrow">◀ </div>
+			  <div className={`${s.SliderArrow} ${s.SliderArrowLeft} prev-slick-arrow`}>◀ </div>
 			</div>
 		),
 	}
