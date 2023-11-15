@@ -23,10 +23,12 @@
 	text-align: left;
 	color: #1c1c85;
 	font-family: Vela Sans;
-	font-size: 15px;height: 25px;overflow: hidden;
+	font-size: 15px;
+	height: 25px;
+	overflow: hidden;
 	font-style: normal;
 	font-weight: 600;
-	
+
 	line-height: normal;
 	margin: 0px 0px 8px 0px;
 }
@@ -46,7 +48,7 @@
 	overflow: hidden;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
-	line-clamp: 2; 
+	line-clamp: 2;
 	-webkit-box-orient: vertical;
 }
 .CardInfoDiv > p:last-child {
@@ -75,12 +77,18 @@
 	}
 	.ML {
 		margin-left: 1rem;
+		column-gap: 3%;
 	}
 	.MainCardDiv {
 		width: 40vw;
 	}
 	.CardInfoDivPrice {
 		width: 40vw;
+	}
+}
+@media (max-width: 354px) {
+	.ML {
+		column-gap: 1%;
 	}
 }
 @media (max-width: 344px) {

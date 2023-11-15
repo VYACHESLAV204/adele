@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import s from './Search.module.css'
 import lens from '../../../assets/lens.svg'
 import { NavLink } from 'react-router-dom'
@@ -13,9 +13,12 @@ const InputButton: React.FC<Isearch> = ({
 	setRes,
 	isOpen,
 }) => {
-	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setInputValue(event.target.value)
-	}
+	const handleInputChange = useCallback(
+		(event: React.ChangeEvent<HTMLInputElement>) => {
+			setInputValue(event.target.value)
+		},
+		[]
+	)
 
 	const [timer, setTimer] = useState<number | null>(null)
 

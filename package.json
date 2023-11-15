@@ -36,5 +36,9 @@
 		"eslint-plugin-react-refresh": "^0.4.3",
 		"typescript": "^5.0.2",
 		"vite": "^4.4.5"
-	}
+	},
+	"main": "index.js",
+	"repository": "https://github.com/VYACHESLAV204/adele.git",
+	"author": "VYACHESLAV204 <125289802+VYACHESLAV204@users.noreply.github.com>",
+	"license": "MIT"
 }
