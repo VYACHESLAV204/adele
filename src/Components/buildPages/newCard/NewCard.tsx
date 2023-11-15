@@ -67,12 +67,9 @@ const NewCard: React.FC = ({}) => {
 			</div>
 		),
 		prevArrow: (
-		),
-		prevArrow: (
 			<div>
 				<div className="prev-slick-arrow">◀ </div>
 			</div>
-		),
 		),
 	}
 
