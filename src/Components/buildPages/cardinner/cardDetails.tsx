@@ -6,6 +6,8 @@ import s from './cardDetails.module.css'
 import Slider from 'react-slick'
 import { CardAd, CardAdResponse } from '../../../interfaces/Interfaces'
 import ShowNumberBtn from '../../ShowNumberBtn'
+import "./detailsSlider.css"
+
 const CardDetails: FC<CardAdResponse> = ({
 	card_ads_1,
 	card_ads_2,
@@ -36,6 +38,16 @@ const CardDetails: FC<CardAdResponse> = ({
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
+		nextArrow: (
+			<div>
+			  <div className="next-slick-arrow"> ▶</div>
+			</div>
+		),
+		prevArrow: (
+			<div>
+			  <div className="prev-slick-arrow">◀ </div>
+			</div>
+		),
 	}
 	useEffect(() => {
 		console.log(numberId)

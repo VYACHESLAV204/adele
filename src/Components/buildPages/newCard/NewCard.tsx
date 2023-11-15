@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import greenMoney from '../../../assets/greenmoney.svg'
 import st from '../summary/Summary.module.css'
-import Plus from '../../../assets/plus.svg'
 import s from './NewCard.module.css'
 import style from '../summary/Summary.module.css'
 import Slider from 'react-slick'
@@ -64,14 +63,14 @@ const NewCard: React.FC = ({}) => {
 		horizontal: true,
 		nextArrow: (
 			<div>
-			  <div className="next-slick-arrow"> ▶</div>
+				<div className="next-slick-arrow"> ▶</div>
 			</div>
-		  ),
-		  prevArrow: (
+		),
+		prevArrow: (
 			<div>
-			  <div className="prev-slick-arrow">◀ </div>
+				<div className="prev-slick-arrow">◀ </div>
 			</div>
-		  ),
+		),
 	}
 
 	console.log({ underCategoryState })
