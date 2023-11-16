@@ -71,6 +71,7 @@ const Header: React.FC<HeaderProps> = ({
 	const [PcSearch, setPcSearch] = useState(true)
 	const [MenuUser, setMenuUser] = useState(false)
 	const isadmin = localStorage.getItem('is_admin')
+	console.log({ isadmin })
 
 	const myStyles: React.CSSProperties = {
 		display: 'flex',
@@ -175,7 +176,7 @@ const Header: React.FC<HeaderProps> = ({
 						{headerUsername}
 					</h1>
 					<ul className={styles.Ul}>
-						{isadmin && (
+						{isadmin != 'false' && (
 							<NavLink to={'/moderation/'}>
 								<li
 									className={styles.liItem}
