@@ -33,7 +33,7 @@ p {
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
-	margin-right: 2rem;
+	/* margin-right: 2rem; */
 }
 .secondTitle {
 	font-size: 20px;
@@ -55,6 +55,10 @@ p {
 .btnWActions {
 	margin-left: 0;
 	border-radius: 8px;
+}
+
+.centeredSelect {
+	text-align: center;
 }
 .input {
 	width: 210px;
@@ -147,24 +151,31 @@ p {
 	color: #000;
 	margin-left: 2rem;
 }
+.cardBox {
+	display: flex;
+	flex-direction: column;
+	row-gap: 2rem;
+	margin-bottom: 40px;
+}
 .cardItem {
 	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	/* justify-content: space-between; */
 	align-items: center;
-	margin-bottom: 2rem;
+	/* margin-bottom: 2rem; */
 }
 .cardImg {
 	width: 280px;
 	height: 255px;
-	margin-right: 6rem;
+	/* margin-right: 6rem; */
 }
 .cardText {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	margin-right: 6rem;
+	margin-left: 2rem;
+	row-gap: 1rem;
 }
 .textInCard {
 	font-size: 24px;
@@ -177,7 +188,8 @@ p {
 }
 .firstLine {
 	display: flex;
-	margin-top: 5rem;
+	/* margin-top: 5rem; */
+	column-gap: 2rem;
 }
 .profileBtn {
 	display: none;
@@ -185,6 +197,7 @@ p {
 .titleMob {
 	display: none;
 }
+
 @media (max-width: 1025px) {
 	.leftWrapper {
 		display: none;
@@ -211,11 +224,26 @@ p {
 }
 @media (max-width: 768px) {
 	.cardImg {
+
+		margin-left: 2rem;
 		margin-right: 2rem;
 	}
 	.cardText {
 		margin-right: 2rem;
 	}
+	.cardItem {
+		flex-direction: column;
+		align-items: start;
+	}
+	/* .ArchieveComment {
+		margin-left: 2rem;
+	} */
+	/* .firstLine {
+		margin-left: 2rem;
+	} */
+	/* .btnBox {
+		margin-left: 2rem;
+	} */
 }
 @media (max-width: 430px) {
 	.titleMob {

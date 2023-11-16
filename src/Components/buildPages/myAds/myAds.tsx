@@ -221,10 +221,10 @@ const myAds = () => {
 													setAction(e.target.value)
 													setThisId(item.id_card)
 												}}
-												defaultValue={''}
-												className={`${s.btn} ${s.btnWActions} ${s.marginZero}`}
+												defaultValue={'default'}
+												className={`${s.centeredSelect} ${s.btn} ${s.btnWActions} ${s.marginZero}`}
 											>
-												<option value='exit_archive'>
+												<option value='default' disabled={true}>
 													Выберите действие
 												</option>
 												<option value='exit_archive'>
@@ -281,9 +281,10 @@ const myAds = () => {
 														)
 														setThisId(item.id_card)
 													}}
-													className={`${s.btn} ${s.btnWActions} ${s.marginZero}`}
+													defaultValue='default'
+													className={`${s.centeredSelect} ${s.btn} ${s.btnWActions} ${s.marginZero}`}
 												>
-													<option value=''>
+													<option value='default' disabled>
 														Выберите действие
 													</option>
 													<option value='push_archive'>
@@ -299,7 +300,7 @@ const myAds = () => {
 								)
 						  })}
 				</div>
-				{isArchive?<h3>Ваши неопубликованные объявления</h3>:<h3>Cкоро ваше объявление опубликуют</h3>}
+				<h3 className={s.ArchieveComment}>{isArchive ? 'Ваши неопубликованные объявления' : 'Cкоро ваше объявление опубликуют'}</h3>
 			</div>
 		</div>
 	)
