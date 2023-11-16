@@ -84,7 +84,7 @@ const myAds = () => {
 		<div className={s.sectionContainer}>
 			<div className={s.leftWrapper}>
 				<div className={s.imageBox}>
-					<img
+					{/* <img
 						style={{ border: '1.2px solid blue' }}
 						className={s.imageItem}
 						src={
@@ -93,6 +93,16 @@ const myAds = () => {
 								: profileDefaultPhoto
 						}
 						alt=''
+					/> */}
+					<div
+						style={{ 
+							border: '1.2px solid blue',
+							backgroundImage: `url(${posts?.photo_user
+								? posts.photo_user
+								: profileDefaultPhoto})`
+							
+						}}
+						className={s.imageItem}
 					/>
 				</div>
 				<div className={s.textContainer}>

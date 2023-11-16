@@ -1,10 +1,17 @@
 .MainCardDiv {
 	height: 315px;
 	width: 215px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 .CardImgDiv {
 	width: 100%;
 	height: 177px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .CardImgDiv > img {
 	border-radius: 5px;
@@ -18,6 +25,15 @@
 }
 .ML {
 	margin-left: 0px;
+	/* align-items: center; */
+	justify-content: flex-start;
+	row-gap: 20px;
+	column-gap: 20px;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+}
+.ML:first-child {
+	margin-left: 25px;
 }
 .CardInfoDiv > h3 {
 	text-align: left;
@@ -65,9 +81,10 @@
 	width: 191px;
 	height: 177px;
 }
-@media (max-width: 1024px) {
+@media (max-width: 724px) {
 	.ML {
-		margin-left: 1rem;
+		/* margin-left: 1rem; */
+		justify-content: space-around;
 	}
 }
 @media (max-width: 430px) {
@@ -76,7 +93,7 @@
 		height: 170px;
 	}
 	.ML {
-		margin-left: 1rem;
+		/* margin-left: 1rem; */
 		column-gap: 3%;
 	}
 	.MainCardDiv {
@@ -97,6 +114,6 @@
 		height: 150px;
 	}
 	.ML {
-		margin-left: 1rem;
+		/* margin-left: 1rem; */
 	}
 }

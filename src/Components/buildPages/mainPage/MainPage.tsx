@@ -25,12 +25,12 @@ const MainPage: FC<CardAdResponse> = ({
 	}, [])
 
 	const CardStyles = {
-		marginRight: '15px',
+		marginRight: '0px',
 	}
 	const CardsStyles = {
 		display: 'flex',
 		flexWrap: 'wrap',
-		width: '100vw',
+		// width: '100vw',
 	}
 	const CardsStylesColumn = {
 		display: 'flex',
@@ -268,7 +268,7 @@ const MainPage: FC<CardAdResponse> = ({
 							<div
 								onClick={() => setCategory('Инструменты')}
 								style={{ marginRight: '1rem' }}
-								className={s.MenuTools}
+								className={`${s.MenuToolsMob} ${s.MenuTools}`}
 							>
 								<p className={s.MenuTexts}>ИНСТРУМЕНТЫ</p>
 								<img

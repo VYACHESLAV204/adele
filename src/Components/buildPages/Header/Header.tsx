@@ -220,7 +220,7 @@ const Header: React.FC<HeaderProps> = ({
 			{isLoggin ? (
 				<NavLink
 					className={styles.LinkToProfileMob}
-					style={{ width: '50px' }}
+					// style={{ width: '50px' }}
 					to={'/profile-mob/'}
 				>
 					<img src={User} alt='' />

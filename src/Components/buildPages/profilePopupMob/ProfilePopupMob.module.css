@@ -14,6 +14,8 @@
     width: 220px;
     height: 220px;
     border-radius: 100%;
+	background-size: cover;
+	background-position: center;
 }
 .iconItem{
     width: 26px;
