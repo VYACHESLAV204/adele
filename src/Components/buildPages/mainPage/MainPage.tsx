@@ -42,7 +42,7 @@ const MainPage: FC<CardAdResponse> = ({
 		flexDirection: 'row',
 		flexWrap: 'wrap',
 		justifyContent: 'space-between',
-		width: '91vw',
+		width: '86vw',
 	}
 	return (
 		<div className={s.sectionDiv}>

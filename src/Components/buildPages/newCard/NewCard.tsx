@@ -24,7 +24,7 @@ const NewCard: React.FC = ({}) => {
 	)
 	const [newOld, setNewOld] = useState<string>('null')
 	const [ShowNewOldButtons, setShowNewOldButtons] = useState(false)
-	const [underCategoryState, setUnderCategoryState] = useState<string>()
+	const [underCategoryState, setUnderCategoryState] = useState<string>(' ')
 	const [titleState, setTitleState] = useState('')
 	const [descriptionState, setDescriptionState] = useState('')
 	const [priceState, setPriceState] = useState('')
@@ -87,7 +87,7 @@ const NewCard: React.FC = ({}) => {
 		formData.append('price', priceState || '')
 		formData.append('phone', phoneState || '')
 		formData.append('tariff', tariffState || '')
-		formData.append('ads', 'False')
+		formData.append('ads', 'True')
 		if (photoStates !== null) {
 			for (let i = 0; i < photoStates.length; i++) {
 				formData.append(`photo${i + 1}`, photoStates[i])

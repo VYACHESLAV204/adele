@@ -27,7 +27,7 @@ const Catalog: FC<ICatalogProps> = ({
 		flexDirection: 'row',
 		flexWrap: 'wrap',
 		justifyContent: 'space-between',
-		width: '91vw',
+		width: '86vw',
 	}
 	const CardsStylesColumn = {
 		display: 'flex',
@@ -42,7 +42,7 @@ const Catalog: FC<ICatalogProps> = ({
 		styles.FiveCat,
 		styles.SixCat,
 		styles.SevenCat,
-		styles.EightCat
+		styles.EightCat,
 	]
 	if (
 		categoryForNewCard === 'Работа' &&

@@ -229,7 +229,8 @@
 	color: inherit;
 	text-decoration: none;
 }
-.H2BestPractique {
+.H2BestPractique {margin-top: 2rem;
+	margin-bottom: 2rem;
 	width: 202px;
 	color: #212121;
 	font-family: Vela Sans;
@@ -241,8 +242,7 @@
 .AdCardsDiv {
 	margin-top: 60px;
 	width: 271px;
-	max-height: 180vh;
-	min-height: 10rem;
+	height: 1400px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -344,7 +344,6 @@
 	.AdCardsDivMob {
 		width: 95vw;
 		margin-left: 1rem;
-
 	}
 	.MenuTexts {
 		margin-left: 0.6rem;
@@ -393,7 +392,7 @@
 		margin-left: 0;
 	}
 	.MenuSpecialEquipment {
-		 width: 227px; 
+		width: 227px;
 	}
 	.MenuSpecialImg {
 		margin-right: 0.3rem;
@@ -406,13 +405,13 @@
 		margin-left: 1rem;
 		font-size: 20px;
 	}
-	.MenuTools{
+	.MenuTools {
 		/* width: 230px; */
 	}
-	.MenuBuildingMaterials{
+	.MenuBuildingMaterials {
 		width: 271px;
 	}
-	.MenuMachines{
+	.MenuMachines {
 		width: 172px;
 	}
 }

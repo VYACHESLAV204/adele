@@ -32,9 +32,7 @@
 	margin-bottom: 20px;
 	flex-wrap: wrap;
 }
-.ML:first-child {
-	margin-left: 25px;
-}
+
 .CardInfoDiv > h3 {
 	text-align: left;
 	color: #1c1c85;
