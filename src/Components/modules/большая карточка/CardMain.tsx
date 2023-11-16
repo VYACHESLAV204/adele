@@ -49,18 +49,7 @@ const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
 					<p className={s.AboutHeader}>Описание:</p>
 					<p className={s.AboutText}>{card.description}</p>
 					<p className={s.Organization}>{card.username}</p>
-					<div
-						onClick={() => setShowNumber(!showNumber)}
-						className={s.PhoneNumberDiv}
-					>
-						{showNumber ? (
-							<p style={{ cursor: 'pointer' }}>{card.phone}</p>
-						) : (
-							<p style={{ cursor: 'pointer' }}>
-								Показать телефон
-							</p>
-						)}{' '}
-					</div>
+					<ShowNumberBtn phone={card.phone} btnClass={s.PhoneNumberDiv} />
 					<p className={s.City}>
 						<span className={s.CitySpan}>
 							{card.city ? 'Город: ' : ''}
