@@ -17,3 +17,7 @@
 .slick-next:before,.slick-prev:before {
 	content: "" !important;
 }
+
+.slick-slide {
+	border: none !important;
+}
