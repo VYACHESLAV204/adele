@@ -84,6 +84,7 @@ p{
     width: 526px;
     height: 469px;
     margin-right: 1rem;
+	border-radius: 10px;
 }
 .textContentBox{
     display: flex;
