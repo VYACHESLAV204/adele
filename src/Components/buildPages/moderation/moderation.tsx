@@ -15,6 +15,18 @@ const moderation = () => {
 	const [isArchive, setIsArchive] = useState(false)
 	const [reload, setReload] = useState(false)
 
+	const parsePrice = (price: string) => {
+		const readyToParseString = price.toString().split('').filter((char) => char !== ' ').join('')
+		return readyToParseString
+			.split('')
+			.reverse()
+			.join('')
+			.match(/.{1,3}/g)
+			?.reverse()
+			.map((el) => el.split('').reverse().join(''))
+			.join(' ')
+	}
+
 	function deletePost(
 		id_card: number,
 		id_user: string,
@@ -119,7 +131,7 @@ const moderation = () => {
 										</p>
 										<div className={s.priceBox}>
 											<p className={s.priceTitle}>
-												{item.price}
+												{parsePrice(item.price)}
 											</p>
 											<img
 												className={s.priceIco}
@@ -189,7 +201,7 @@ const moderation = () => {
 										</p>
 										<div className={s.priceBox}>
 											<p className={s.priceTitle}>
-												{item.price}
+												{parsePrice(item.price)}
 											</p>
 											<img
 												className={s.priceIco}

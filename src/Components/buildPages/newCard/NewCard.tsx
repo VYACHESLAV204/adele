@@ -260,7 +260,7 @@ const NewCard: React.FC = ({}) => {
 
 					<div className={s.photoSectionContainer}>
 						<div
-							style={{ marginRight: '20px', width: '180px' }}
+							style={{ marginRight: '20px', width: '180px', overflow: 'hidden' }}
 							className={`${st.photo} ${st.photoContainer}`}
 						>
 							<Slider adaptiveHeight {...settings}>
@@ -270,6 +270,7 @@ const NewCard: React.FC = ({}) => {
 										style={{
 											height: '179px',
 											width: '180px',
+											border: 'none',
 										}}
 										key={index}
 									>
@@ -281,7 +282,7 @@ const NewCard: React.FC = ({}) => {
 												height: '179px',
 												width: '180px',
 												objectFit: 'cover',
-												borderRadius: '8px',
+												// borderRadius: '8px',
 											}}
 											src={URL.createObjectURL(image)}
 											alt={`Slide ${index}`}
