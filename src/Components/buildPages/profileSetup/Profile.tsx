@@ -134,104 +134,106 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 	return (
 		<div className={s.mainDiv}>
 			<h2 className={s.H2Settings}>Настройки профиля</h2>
-			<div>
-				<form
-					className={s.profileSettingsDiv}
-					onSubmit={handleFormSubmit}
-					action='submit'
-				>
-					<div
-						style={{
-							flexDirection: 'column',
-							alignItems: 'flex-start',
-							height: '100px',
-						}}
-						className={s.inputDiv}
+			<div className={s.SettingsContainerMob}>
+				<div>
+					<form
+						className={s.profileSettingsDiv}
+						onSubmit={handleFormSubmit}
+						action='submit'
 					>
-						<label htmlFor='email'>Электронная почта</label>
-						<input
-							className={s.inputStyles}
-							type='email'
-							placeholder='info@info.ru'
-							id='email'
-							value={email}
-							onChange={handleEmailChange}
-						/>
-					</div>
-					<button className={s.profileSettingsButton}>
-						Сохранить
-					</button>
-				</form>
-			</div>
-			<div>
-				<h2 className={s.contactInfo}>Контактная информация</h2>
-			</div>
-			<div>
-				<div className={s.changePhotoDiv}>
-					<div>
-						<p>Фотография</p>
-					</div>
-					<input
-						type='file'
-						id='ProfilePhoto'
-						style={{ display: 'none' }}
-						onChange={handlePhotoUpload}
-					/>
-
-					<div className={s.photoContainer}>
-						{/* <img
-							className={s.ManPhotoImg}
-							style={{ border: '1.2px solid blue' }}
-							src={ThisPhoto}
-							alt=''
-						/> */}
 						<div
-							className={s.ManPhotoImg}
 							style={{
-								border: '1.2px solid blue',
-								backgroundImage: `url(${ThisPhoto})`
+								flexDirection: 'column',
+								alignItems: 'flex-start',
+								height: '100px',
 							}}
-						/>
-						<label
-							className={s.labelForPhoto}
-							htmlFor='ProfilePhoto'
+							className={s.inputDiv}
 						>
-							<div className={s.circleDiv}>
-								<img src={editPan} alt='' />
-							</div>
-							<div>
-								<p className={s.editText}>Редактировать</p>
-							</div>
-						</label>
-					</div>
+							<label htmlFor='email'>Электронная почта</label>
+							<input
+								className={s.inputStyles}
+								type='email'
+								placeholder='info@info.ru'
+								id='email'
+								value={email}
+								onChange={handleEmailChange}
+							/>
+						</div>
+						<button className={s.profileSettingsButton}>
+							Сохранить
+						</button>
+					</form>
 				</div>
-				<div className={s.inputsDiv}>
-					<div className={s.inputDivNameNCity}>
-						<label htmlFor=''>Имя</label>
+				<div>
+					<h2 className={s.contactInfo}>Контактная информация</h2>
+				</div>
+				<div>
+					<div className={s.changePhotoDiv}>
+						<div>
+							<p>Фотография</p>
+						</div>
 						<input
-							type='text'
-							placeholder='Иван Иванов'
-							defaultValue={name}
-							onChange={handleNameChange}
+							type='file'
+							id='ProfilePhoto'
+							style={{ display: 'none' }}
+							onChange={handlePhotoUpload}
 						/>
+
+						<div className={s.photoContainer}>
+							{/* <img
+								className={s.ManPhotoImg}
+								style={{ border: '1.2px solid blue' }}
+								src={ThisPhoto}
+								alt=''
+							/> */}
+							<div
+								className={s.ManPhotoImg}
+								style={{
+									border: '1.2px solid blue',
+									backgroundImage: `url(${ThisPhoto})`
+								}}
+							/>
+							<label
+								className={s.labelForPhoto}
+								htmlFor='ProfilePhoto'
+							>
+								<div className={s.circleDiv}>
+									<img src={editPan} alt='' />
+								</div>
+								<div>
+									<p className={s.editText}>Редактировать</p>
+								</div>
+							</label>
+						</div>
 					</div>
-					<div className={s.inputDivNameNCity}>
-						<label htmlFor=''>Город</label>
-						<RegionSelectTemplate
-							styles={{ marginLeft: '0px', width: '70%' }}
-							City={city}
-							setCity={setCity}
-							Citys={citys}
-						/>
+					<div className={s.inputsDiv}>
+						<div className={s.inputDivNameNCity}>
+							<label htmlFor=''>Имя</label>
+							<input
+								type='text'
+								placeholder='Иван Иванов'
+								defaultValue={name}
+								onChange={handleNameChange}
+							/>
+						</div>
+						<div className={s.inputDivNameNCity}>
+							<label htmlFor=''>Город</label>
+							<RegionSelectTemplate
+								styles={{ marginLeft: '0px', width: '70%' }}
+								City={city}
+								setCity={setCity}
+								Citys={citys}
+							/>
+						</div>
+						<button
+							onClick={(e) => {
+								handleFormSubmit(e)
+							}}
+							className={s.Button}
+						>
+							Сохранить
+						</button>
 					</div>
-					<button
-						onClick={(e) => {
-							handleFormSubmit(e)
-						}}
-						className={s.Button}
-					>
-						Сохранить
-					</button>
 				</div>
 			</div>
 		</div>

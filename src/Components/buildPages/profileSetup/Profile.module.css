@@ -214,8 +214,17 @@
 	}
 }
 @media (max-width: 430px) {
+	.contactInfo {
+		text-align: left;
+	}
+	.SettingsContainerMob {
+		margin-left: 2rem;
+	}
 	.profileSettingsDiv > div > input {
 		width: 85vw;
+	}
+	.H2Settings {
+		margin-left: 2rem;
 	}
 	.inputDivNameNCity {
 		margin-top: 2rem;

@@ -23,7 +23,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-between;
-	row-gap: 15px;
+	/* row-gap: 15px; */
 }
 .H2Name {
 	color: #1c1c85;
