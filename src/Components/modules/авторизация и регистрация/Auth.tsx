@@ -12,6 +12,7 @@ const Auth: React.FC<ModalProps> = (props) => {
 	const [isPasswordShown, setIsPasswordShown] = useState(false)
 	const navigate = useNavigate() // Get the history instance
 	const onSubmit = async (e: FormEvent) => {
+		localStorage.setItem('password', password)
 		e.preventDefault()
 		try {
 			const response = await fetch(

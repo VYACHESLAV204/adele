@@ -44,15 +44,6 @@ const Header: React.FC<HeaderProps> = ({
 	setCategory,
 	setUnderCategory,
 }) => {
-	const [BurgerisOpen, setBurgerisOpen] = useState(false)
-	const [NavOrNew, setNavOrNew] = useState(false)
-	const headerUsername = localStorage.getItem('username')
-	const [isLoggin, setIsLogin] = useState(!!localStorage.getItem('status'))
-	const [mobileSearch, setMobileSearch] = useState(false)
-	const [PcSearch, setPcSearch] = useState(true)
-	const [MenuUser, setMenuUser] = useState(false)
-	
-
 	function logout() {
 		fetch(
 			`http://stoneworking.ru/api/v1/logout?jwt=${localStorage.getItem(
@@ -72,6 +63,14 @@ const Header: React.FC<HeaderProps> = ({
 					localStorage.setItem('status', '')
 			})
 	}
+	const [BurgerisOpen, setBurgerisOpen] = useState(false)
+	const [NavOrNew, setNavOrNew] = useState(false)
+	const headerUsername = localStorage.getItem('username')
+	const [isLoggin, setIsLogin] = useState(!!localStorage.getItem('status'))
+	const [mobileSearch, setMobileSearch] = useState(false)
+	const [PcSearch, setPcSearch] = useState(true)
+	const [MenuUser, setMenuUser] = useState(false)
+
 	const myStyles: React.CSSProperties = {
 		display: 'flex',
 	}
