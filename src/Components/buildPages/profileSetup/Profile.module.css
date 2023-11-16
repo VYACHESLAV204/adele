@@ -102,6 +102,8 @@
 	width: 248px;
 	height: 248px;
 	border-radius: 248px;
+	background-size: cover;
+	background-position: center;
 }
 .circleDiv {
 	position: relative;
