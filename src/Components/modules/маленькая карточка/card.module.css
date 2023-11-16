@@ -4,7 +4,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	/* justify-content: center; */
 }
 .CardImgDiv {
 	width: 100%;
@@ -38,8 +38,8 @@
 	color: #1c1c85;
 	font-family: Vela Sans;
 	font-size: 15px;
-	height: 25px;
-	overflow: hidden;
+	/* height: 25px; */
+	/* overflow: hidden; */
 	font-style: normal;
 	font-weight: 600;
 
