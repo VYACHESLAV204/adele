@@ -25,12 +25,12 @@ const MainPage: FC<CardAdResponse> = ({
 	}, [])
 
 	const CardStyles = {
-		marginRight: '15px',
+		marginRight: '0px',
 	}
 	const CardsStyles = {
 		display: 'flex',
 		flexWrap: 'wrap',
-		width: '100vw',
+		// width: '100vw',
 	}
 	const CardsStylesColumn = {
 		display: 'flex',

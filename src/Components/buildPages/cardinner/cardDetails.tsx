@@ -88,8 +88,8 @@ const CardDetails: FC<CardAdResponse> = ({
 									src={image}
 									alt={`Slide ${index}`}
 									style={{
-										height: '420px',
-										width: '491px',
+										// height: '420px',
+										// width: '491px',
 										borderRadius: '15px',
 									}}
 								/>
@@ -102,10 +102,12 @@ const CardDetails: FC<CardAdResponse> = ({
 					<div className={s.priceBox}>
 						<p className={s.price}>{This.price ? `${parsePrice(This.price)}Р` : 'Цена не указана'}</p>
 					</div>
-					<p className={s.aboutHeader}>Описание:</p>
-					<p className={s.aboutText}>
-						{<ParsedDescription description={This.description} className=''/>}
-					</p>
+					<div>
+						<p className={s.aboutHeader}>Описание:</p>
+						<p className={s.aboutText}>
+							{<ParsedDescription description={This.description} className=''/>}
+						</p>
+					</div>
 					<p className={s.organization}>{This.username}</p>
 					<ShowNumberBtn
 						phone={This.phone}

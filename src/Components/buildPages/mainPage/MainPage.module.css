@@ -18,6 +18,8 @@
 }
 .container {
 	display: flex;
+	/* padding-left: 25px; */
+	margin-left: 25px;
 }
 .MenuCarier {
 	width: 159px;
@@ -215,7 +217,7 @@
 	height: 136px;
 	align-items: flex-start;
 	gap: 30px;
-	margin-bottom: 30px;
+	margin-bottom: 7rem;
 }
 .NavLink {
 	cursor: pointer;
@@ -300,6 +302,9 @@
 		scroll-padding: 24px;
 		flex-basis: 50%;
 	}
+	.MainMenuDiv {
+		margin-bottom: 4rem;
+	}
 	.MenuDiv {
 		display: none;
 	}
@@ -333,6 +338,8 @@
 	}
 	.AdCardsDivMob {
 		width: 95vw;
+		margin-left: 1rem;
+
 	}
 	.MenuTexts {
 		margin-left: 0.6rem;
