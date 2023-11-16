@@ -130,7 +130,7 @@
 	.mainDiv{
 		flex-direction: column;
 		width:96%;
-		height: 900px;
+		/* height: 900px; */
 	}
 }
 @media (max-width: 430px) {
@@ -159,8 +159,8 @@
 	}
 	.SliderImg{
 		width: 96vw !important;
-		margin-left: 0.5rem;
-		margin-right: 0.5rem;
+		/* margin-left: 0.5rem;
+		margin-right: 0.5rem; */
 		object-fit: cover;
 	}
 	
@@ -168,7 +168,7 @@
 @media (max-width: 376px) {
 	.mainDiv{
 		flex-direction: column;
-		height: 810px;
+		/* height: 810px; */
 	}
 	.Img{
 		height: 65vw;

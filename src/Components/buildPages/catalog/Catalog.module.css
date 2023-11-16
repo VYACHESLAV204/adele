@@ -199,7 +199,7 @@
 	.CatDiv {
 		gap: 20px;
 		width: 100vw;
-		margin-bottom: 5rem;
+		/* margin-bottom: 5rem; */
 	}
 	.sectionBoxNew {
 		width: 100vw;
@@ -216,18 +216,18 @@
 	}
 }
 @media (max-width: 430px) {
-	.CatDiv {
+	/* .CatDiv {
 		margin-bottom: 5rem;
-	}
+	} */
 	.H2NameOfCategory {
 		margin-top: 2rem;
 	}
 	.AdCardsDivMob {
 		margin-top: 0;
 	}
-	.cardsMainDiv {
+	/* .cardsMainDiv {
 		margin-top: 7rem !important;
-	}
+	} */
 	.OneCat {
 		margin-right: 0;
 		width: 45%;

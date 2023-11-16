@@ -83,7 +83,7 @@ const CardDetails: FC<CardAdResponse> = ({
 								}}
 								key={index}
 							>
-								<img
+								{/* <img
 									className={s.SliderImg}
 									src={image}
 									alt={`Slide ${index}`}
@@ -91,6 +91,20 @@ const CardDetails: FC<CardAdResponse> = ({
 										// height: '420px',
 										// width: '491px',
 										borderRadius: '15px',
+									}}
+								/> */}
+								<div
+									className={s.SliderImg}
+									// src={image}
+									// alt={`Slide ${index}`}
+									style={{
+										// height: '420px',
+										// width: '491px',
+										borderRadius: '15px',
+										backgroundImage: `url(${image})`,
+										backgroundSize: 'cover',
+										backgroundPosition: 'center',
+
 									}}
 								/>
 							</div>

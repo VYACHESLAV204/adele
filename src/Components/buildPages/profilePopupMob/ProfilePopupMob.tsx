@@ -39,11 +39,18 @@ const ProfilePopupMob = () => {
 		<div className={s.sectionContainer}>
 			<div className={s.leftWrapper}>
 				<div className={s.imageBox}>
-					<img
+					{/* <img
 						style={{ border: 'solid 1.2px blue' }}
 						className={s.imageItem}
 						src={photo}
 						alt=''
+					/> */}
+					<div
+						style={{
+							border: 'solid 1.2px blue',
+							backgroundImage: `url(${photo})`
+						}}
+						className={s.imageItem}
 					/>
 				</div>
 				<div className={s.textContainer}>

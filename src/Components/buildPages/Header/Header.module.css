@@ -232,6 +232,7 @@ li {
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin-bottom: 20px;
+		row-gap: 15px;
 	}
 	.searchContainer {
 		display: none;
