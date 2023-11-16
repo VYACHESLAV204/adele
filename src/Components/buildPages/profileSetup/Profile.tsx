@@ -34,6 +34,30 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 				setPhoto_get(data.photo)
 			})
 	}, [])
+	async function logout() {
+		const password = localStorage.getItem('password')
+
+		try {
+			const response = await fetch(
+				'http://stoneworking.ru/api/v1/login',
+				{
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ email, password }),
+				}
+			)
+			const data = await response.json()
+			if (data.status) {
+				localStorage.setItem('token', data.token)
+				localStorage.setItem('status', data.status)
+				localStorage.setItem('username', data.username)
+			} else if (data.error) {
+				alert(data.error)
+			}
+		} catch (error) {
+			alert(error)
+		}
+	}
 
 	const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setEmail(event.target.value)
@@ -67,8 +91,8 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 				method: 'POST',
 
 				headers: {
-					'Content-Type':
-						'multipart/form-data; boundary=<calculated when request is sent>',
+					//	'Content-Type':
+					// 'application/x-www-form-urlencoded',
 					Accept: '*/*',
 					'Access-control-Allow-origin': '*',
 				},
@@ -84,6 +108,11 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 			.then((data) => {
 				console.log('Data saved successfully', data)
 			})
+			.then(() => {
+				if (email != '') {
+					logout()
+				}
+			})
 			.catch((error) => {
 				console.error('Error when trying to send data', error)
 			})
@@ -92,10 +121,13 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 	useEffect(() => {
 		if (photo) {
 			setThisPhoto(URL.createObjectURL(photo))
+			console.log('1')
 		} else if (photo_get) {
 			setThisPhoto(photo_get)
+			console.log('2')
 		} else {
 			setThisPhoto(WorkMan)
+			console.log('3')
 		}
 	}, [photo, photo_get])
 
@@ -193,7 +225,9 @@ const Profile: React.FC<ProfileProps> = ({ citys }) => {
 						/>
 					</div>
 					<button
-						onClick={(e) => handleFormSubmit(e)}
+						onClick={(e) => {
+							handleFormSubmit(e)
+						}}
 						className={s.Button}
 					>
 						Сохранить

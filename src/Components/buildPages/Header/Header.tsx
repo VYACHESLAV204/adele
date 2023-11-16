@@ -44,15 +44,6 @@ const Header: React.FC<HeaderProps> = ({
 	setCategory,
 	setUnderCategory,
 }) => {
-	const [BurgerisOpen, setBurgerisOpen] = useState(false)
-	const [NavOrNew, setNavOrNew] = useState(false)
-	const headerUsername = localStorage.getItem('username')
-	const [isLoggin, setIsLogin] = useState(!!localStorage.getItem('status'))
-	const [mobileSearch, setMobileSearch] = useState(false)
-	const [PcSearch, setPcSearch] = useState(true)
-	const [MenuUser, setMenuUser] = useState(false)
-	
-
 	function logout() {
 		fetch(
 			`http://stoneworking.ru/api/v1/logout?jwt=${localStorage.getItem(
@@ -72,6 +63,15 @@ const Header: React.FC<HeaderProps> = ({
 					localStorage.setItem('status', '')
 			})
 	}
+	const [BurgerisOpen, setBurgerisOpen] = useState(false)
+	const [NavOrNew, setNavOrNew] = useState(false)
+	const headerUsername = localStorage.getItem('username')
+	const [isLoggin, setIsLogin] = useState(!!localStorage.getItem('status'))
+	const [mobileSearch, setMobileSearch] = useState(false)
+	const [PcSearch, setPcSearch] = useState(true)
+	const [MenuUser, setMenuUser] = useState(false)
+	const isadmin = localStorage.getItem('is_admin')
+
 	const myStyles: React.CSSProperties = {
 		display: 'flex',
 	}
@@ -175,6 +175,16 @@ const Header: React.FC<HeaderProps> = ({
 						{headerUsername}
 					</h1>
 					<ul className={styles.Ul}>
+						{isadmin && (
+							<NavLink to={'/moderation/'}>
+								<li
+									className={styles.liItem}
+									onClick={() => setMenuUser(!MenuUser)}
+								>
+									Модерация
+								</li>
+							</NavLink>
+						)}
 						<NavLink to={'/my-ads/'}>
 							<li
 								className={styles.liItem}
