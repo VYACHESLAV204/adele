@@ -70,6 +70,7 @@ const Header: React.FC<HeaderProps> = ({
 	const [mobileSearch, setMobileSearch] = useState(false)
 	const [PcSearch, setPcSearch] = useState(true)
 	const [MenuUser, setMenuUser] = useState(false)
+	const isadmin = localStorage.getItem('is_admin')
 
 	const myStyles: React.CSSProperties = {
 		display: 'flex',
@@ -174,6 +175,16 @@ const Header: React.FC<HeaderProps> = ({
 						{headerUsername}
 					</h1>
 					<ul className={styles.Ul}>
+						{isadmin && (
+							<NavLink to={'/moderation/'}>
+								<li
+									className={styles.liItem}
+									onClick={() => setMenuUser(!MenuUser)}
+								>
+									Модерация
+								</li>
+							</NavLink>
+						)}
 						<NavLink to={'/my-ads/'}>
 							<li
 								className={styles.liItem}
