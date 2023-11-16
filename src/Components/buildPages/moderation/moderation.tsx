@@ -3,6 +3,7 @@ import s from './moderation.module.css'
 
 import greenMoney from '../../../assets/greenmoney.svg'
 import { CardMod } from '../../../interfaces/Interfaces'
+import { ParsedDescription } from '../cardinner/descriptionParser'
 interface Imoderation {
 	cards_check: CardMod[]
 	cards_nocheck: CardMod[]
@@ -142,19 +143,19 @@ const moderation = () => {
 										<p className={s.secondTitle}>
 											Описание:
 										</p>
-										<p className={s.titleDescription}>
-											{item.description}
-										</p>
+										<div className={s.titleDescription}>
+											{<ParsedDescription description={item.description} className=''/>}
+										</div>
 										<p className={s.secondTitle}>
 											{item.username}
 										</p>
 
-										<div className={s.cityBox}>
+										{item.city && <div className={s.cityBox}>
 											<p className={s.titleText}>Город</p>
 											<p className={s.titleDescription}>
 												{item.city}
 											</p>
-										</div>
+										</div>}
 									</div>
 									<div className={s.btnActions}>
 										<button
@@ -212,19 +213,19 @@ const moderation = () => {
 										<p className={s.secondTitle}>
 											Описание:
 										</p>
-										<p className={s.titleDescription}>
-											{item.description}
-										</p>
+										<div className={s.titleDescription}>
+											{<ParsedDescription description={item.description} className=''/>}
+										</div>
 										<p className={s.secondTitle}>
 											{item.username}
 										</p>
 
-										<div className={s.cityBox}>
+										{item.city && <div className={s.cityBox}>
 											<p className={s.titleText}>Город</p>
 											<p className={s.titleDescription}>
 												{item.city}
 											</p>
-										</div>
+										</div>}
 									</div>
 									<div className={s.btnActions}>
 										<button

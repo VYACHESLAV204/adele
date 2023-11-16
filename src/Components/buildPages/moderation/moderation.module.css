@@ -89,10 +89,13 @@ p{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     margin-left: 2.5rem;
     margin-right: 1rem;
+	row-gap: 0.5rem;
 	flex-grow: 1;
+	height: 323px;
+	overflow-y: hidden;
 }
 .priceTitle{
     font-size: 25px;
@@ -113,7 +116,9 @@ p{
     margin-right: 1rem;
 }
 .cityBox{
-    display: inline-flex;
+    display: flex;
+	align-items: baseline;
+
 }
 .btnActions{align-self: center;
     display: flex;
@@ -129,4 +134,10 @@ p{
 }
 .marginTop{
     margin-top: 3rem;
+}
+
+.titleDescription {
+	overflow-y: hidden;
+	max-height: 95px;
+	max-width: 90%;
 }
