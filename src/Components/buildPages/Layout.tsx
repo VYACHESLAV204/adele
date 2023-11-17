@@ -3,6 +3,7 @@ import Header from './Header/Header'
 import Reg from '../modules/авторизация и регистрация/Reg'
 import { City } from '../modules/select/SelectTemplate'
 import { iResult } from '../../interfaces/Interfaces'
+import { useRef } from 'react'
 interface HeaderProps {
 	children?: React.ReactNode
 	citys: any[]
@@ -39,6 +40,7 @@ const Layout: React.FC<HeaderProps> = ({
 	setCategory,
 	setUnderCategory,
 }) => {
+	
 	return (
 		<>
 			<Header

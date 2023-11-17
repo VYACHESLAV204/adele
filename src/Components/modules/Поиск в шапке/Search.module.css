@@ -7,6 +7,7 @@
 	height: 40px;
 	border-radius: 5px 20px 20px 5px;
 	position: relative;
+	justify-content: space-between;
 }
 .Input {
 	border: none;
@@ -19,11 +20,12 @@
 	border: 0px;
 	background: none;
 	height: 40px;
-	position: absolute;
+	/* position: absolute; */
 	right: 0;
+	padding: 0;
 }
 .Img {
-	width: 58px;
+	width: 68px;
 	height: 46px;
 }
 .liDiv {

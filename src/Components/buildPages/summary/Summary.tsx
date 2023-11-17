@@ -507,7 +507,7 @@ const Summary = () => {
 									}
 								/>
 							</div>
-							<div>
+							<div className={s.endJob}>
 								<p className={s.marginRight}>Окончание работы</p>
 								<input
 									className={`${s.input} ${s.inputNewborn2}`}

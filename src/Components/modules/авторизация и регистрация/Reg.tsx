@@ -23,7 +23,10 @@ const Reg: React.FC<RegProps> = (props: RegProps) => {
 		<>
 			<Modal
 				isOpen={props.isOpen}
-				closeModal={() => props.setIsOpen(false)}
+				closeModal={() => {
+					props.setIsOpen(false);
+					setStage(1);
+				}}
 			>
 				{props.modalType === 'auth' && (
 					<Auth

@@ -112,6 +112,10 @@
 	width: 170px;
 	height: 56px;
 }
+.endJob {
+	display: flex;
+	flex-direction: column;
+}
 .dateNewborn {
 	display: flex;
 	flex-direction: row;
