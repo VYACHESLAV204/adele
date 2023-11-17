@@ -10,7 +10,6 @@ interface IWorkerProps {
 	res?: iResult
 }
 const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
-	const [showNumber, setShowNumber] = useState(false)
 	const [differenceInYears, setDifferenceInYears] = useState<number[]>([])
 	const [This, setThis] = useState<cardSummary | any>()
 	const { id } = useParams<{ id: string }>() // Keep it as string

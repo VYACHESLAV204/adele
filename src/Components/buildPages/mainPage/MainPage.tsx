@@ -41,8 +41,8 @@ const MainPage: FC<CardAdResponse> = ({
 		display: 'flex',
 		flexDirection: 'row',
 		flexWrap: 'wrap',
-		justifyContent: 'space-between',
-		width: '86vw',
+		justifyContent: 'space-evenly',
+		// width: '86vw',
 	}
 	return (
 		<div className={s.sectionDiv}>
@@ -186,7 +186,7 @@ const MainPage: FC<CardAdResponse> = ({
 								onClick={() => setCategory('Карьер')}
 								style={{
 									marginRight: '1rem',
-									marginLeft: '1rem',
+									// marginLeft: '1rem',
 								}}
 								className={s.MenuCarier}
 							>
@@ -252,7 +252,7 @@ const MainPage: FC<CardAdResponse> = ({
 								onClick={() => setCategory('Станки')}
 								style={{
 									marginRight: '1rem',
-									marginLeft: '1rem',
+									// marginLeft: '1rem',
 								}}
 								className={`${s.MenuMachines}`}
 							>

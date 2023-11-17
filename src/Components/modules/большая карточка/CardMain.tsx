@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import s from './cardMain.module.css'
 import { CardAd, cardSummary } from '../../../interfaces/Interfaces'
 import { NavLink } from 'react-router-dom'
@@ -9,8 +9,7 @@ interface ICardMainProps {
 	card_noads?: cardSummary[]
 }
 const CardMain: React.FC<ICardMainProps> = ({ Cards, card_noads }) => {
-	const [showNumber, setShowNumber] = useState(false)
-
+// 
 	const shortenDescription = (text: string) => {
 		if (text.length <= 200) {
 			return text
