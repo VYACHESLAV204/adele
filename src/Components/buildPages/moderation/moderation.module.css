@@ -77,6 +77,10 @@ p{
     width: 316px;
     height: 323px;
 	flex-shrink: 0;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #f4f4f46a;
 }
 
 .priceBox{

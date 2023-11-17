@@ -58,10 +58,11 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 		return (
 			<div className={s.sectionContainer}>
 				<div className={s.firstSection}>
-					<img
+					<div
 						className={s.userPhoto}
-						src={This.path_file[0]}
-						alt=''
+						style={{
+							backgroundImage: `url(${This.path_file[0]})`
+						}}
 					/>
 					<div className={s.textContentBox}>
 						<div className={s.inlineFlexBox}>
@@ -113,7 +114,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 						<ShowNumberBtn phone={This.phone} btnClass={s.btn} />
 					</div>
 				</div>
-				<div className={s.secondSection}>
+				<div className={`${s.ml} ${s.secondSection}`}>
 					<div className={`${s.inlineFlexBox} ${s.inlineFlexBox2}`}>
 						<div className={s.travelWork}>
 							<h2 className={s.mainTitle}>
@@ -154,7 +155,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 						</div>
 					</div>
 				</div>
-				<div>
+				<div className={s.ml}>
 					<h2 className={`${s.blockTitle} ${s.mainTitle}`}>
 						Опыт работы ({This.years_exp})
 					</h2>
@@ -274,7 +275,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 						)
 					})}
 				</div>
-					<div>
+					<div className={s.ml}>
 						<h2
 							className={`${s.blockTitle} ${s.mainTitle}`}
 						>

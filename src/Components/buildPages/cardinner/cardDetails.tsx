@@ -95,15 +95,13 @@ const CardDetails: FC<CardAdResponse> = ({
 								/> */}
 								<div
 									className={s.SliderImg}
-									// src={image}
-									// alt={`Slide ${index}`}
 									style={{
-										// height: '420px',
-										// width: '491px',
 										borderRadius: '15px',
 										backgroundImage: `url(${image})`,
-										backgroundSize: 'cover',
+										backgroundSize: 'contain',
+										backgroundRepeat: 'no-repeat',
 										backgroundPosition: 'center',
+										backgroundColor: '#f4f4f46a',
 
 									}}
 								/>

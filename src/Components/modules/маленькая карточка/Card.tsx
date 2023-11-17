@@ -44,10 +44,11 @@ const Card: FC<{
 								className={styles.MainCardDiv}
 							>
 								<div className={styles.CardImgDiv}>
-									<img
+									<div
 										className={styles.IMG}
-										src={item.path_file[0]}
-										alt={''}
+										style={{
+											backgroundImage: `url(${item.path_file[0]})`,
+										}}
 									/>
 								</div>
 								<div className={styles.CardInfoDiv}>
@@ -72,10 +73,11 @@ const Card: FC<{
 								className={styles.MainCardDiv}
 							>
 								<div className={styles.CardImgDiv}>
-									<img
+									<div
 										className={styles.IMG}
-										src={item.path_file[0]}
-										alt={''}
+										style={{
+											backgroundImage: `url(${item.path_file[0]})`
+										}}
 									/>
 								</div>
 								<div className={styles.CardInfoDiv}>

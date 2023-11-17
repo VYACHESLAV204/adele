@@ -119,10 +119,11 @@ const moderation = () => {
 					? posts?.cards_check.map((item) => {
 							return (
 								<div key={item.id_card} className={s.cardItem}>
-									<img
+									<div
 										className={s.cardPhoto}
-										src={item.path_file[0]}
-										alt=''
+										style={{
+											backgroundImage: `url(${item.path_file[0]})`
+										}}
 									/>
 									<div className={s.textContainer}>
 										<p
@@ -189,10 +190,11 @@ const moderation = () => {
 					: posts?.cards_nocheck.map((item) => {
 							return (
 								<div key={item.id_card} className={s.cardItem}>
-									<img
+									<div
 										className={s.cardPhoto}
-										src={item.path_file[0]}
-										alt=''
+										style={{
+											backgroundImage: `url(${item.path_file[0]})`,
+										}}
 									/>
 									<div className={s.textContainer}>
 										<p
