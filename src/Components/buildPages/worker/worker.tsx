@@ -41,17 +41,19 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 		}
 	}, [card_noads, numberId])
 	useEffect(() => {
-		This?.workExp.forEach((item: any) => {
-			console.log(item.start_work_time, item.stop_work_time)
-
-			const date1 = moment(item.start_work_time, 'YYYY')
-			const date2 = moment(item.stop_work_time, 'YYYY')
-
-			setDifferenceInYears((prevDifferenceInYears) => [
-				...prevDifferenceInYears,
-				date2.diff(date1, 'years'),
-			])
-		})
+		if (This?.worker) {
+			This?.workExp.forEach((item: any) => {
+				console.log(item.start_work_time, item.stop_work_time)
+	
+				const date1 = moment(item.start_work_time, 'YYYY')
+				const date2 = moment(item.stop_work_time, 'YYYY')
+	
+				setDifferenceInYears((prevDifferenceInYears) => [
+					...prevDifferenceInYears,
+					date2.diff(date1, 'years'),
+				])
+			})
+		}
 	}, [This])
 	console.log(This)
 
@@ -161,7 +163,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 						</div>
 					</div>
 				</div>
-				<div className={s.ml}>
+				{This.workExp && <div className={s.ml}>
 					<h2 className={`${s.blockTitle} ${s.mainTitle}`}>
 						Опыт работы ({This.years_exp})
 					</h2>
@@ -299,8 +301,8 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 								</div>
 							)
 						})}
-				</div>
-				<div className={s.ml}>
+				</div>}
+				{This.educationFields && <div className={s.ml}>
 					<h2 className={`${s.blockTitle} ${s.mainTitle}`}>
 						Образование
 					</h2>
@@ -410,9 +412,9 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 								</div>
 							)
 						})}
-				</div>
+				</div>}
 				<div className={s.fiveSection}>
-					<div className={s.languagesBlock}>
+					{This.languageFields && <div className={s.languagesBlock}>
 						<h2 className={`${s.blockTitle} ${s.mainTitle}`}>
 							Знания языков
 						</h2>
@@ -435,7 +437,7 @@ const worker: React.FC<IWorkerProps> = ({ card_noads, res }) => {
 									</div>
 								)
 							})}
-					</div>
+					</div>}
 
 					<div className={`${s.ml} ${s.inlineFlexBox}`}>
 						<h2 className={s.mainTitle}>Зарплата</h2>
