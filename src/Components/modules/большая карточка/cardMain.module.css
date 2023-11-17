@@ -149,7 +149,7 @@
 	}
 	.IMG{
 		width: 95%;
-		height: 30vh;
+		/* height: 30vh; */
 	}
 	.leftDiv{
 		display: flex;
