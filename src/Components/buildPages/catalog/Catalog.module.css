@@ -16,7 +16,8 @@
 	flex-wrap: wrap;
 	width: 862px;
 	row-gap: 20px;
-	justify-content: space-around;
+	justify-content: flex-start;
+	column-gap: 2rem;
 }
 .SelectOption {
 	font-size: '15px';
